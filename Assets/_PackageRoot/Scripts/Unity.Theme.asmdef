@@ -1,0 +1,17 @@
+{
+    "name": "Unity.Theme",
+    "rootNamespace": "",
+    "references": [
+        "UniRx",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
