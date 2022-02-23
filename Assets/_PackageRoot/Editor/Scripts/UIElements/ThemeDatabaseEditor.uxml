@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd">
+
+    <engine:VisualElement class="themeMatrix">
+
+        <engine:VisualElement class="columnColorNames" name="columnColorNames">
+            <engine:Label text="Colors" class="rowTitles"/>
+
+            <!-- Color TextFields -->
+            <engine:TextField text="New Color" class="colorTitle" name="textNewColorName"/>
+        </engine:VisualElement>
+
+        <engine:VisualElement class="columnRemoveColors" name="columnRemoveColors">
+            <!-- Remove color buttons -->
+            <engine:Button text="+" name="btnAddColor" class="btnAddColor"/>
+        </engine:VisualElement>
+
+        <engine:VisualElement class="columns" name="themeColumns">
+            <!-- Theme columns -->
+        </engine:VisualElement>
+  
+    </engine:VisualElement>
+
+</engine:UXML>

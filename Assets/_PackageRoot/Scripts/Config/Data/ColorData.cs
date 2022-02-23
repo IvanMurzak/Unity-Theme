@@ -14,7 +14,7 @@ namespace Unity.Theme
 
         [TableColumnWidth(25, false)]
         [HideLabel]
-        [Button, LabelText("X")] void X() => ThemeDatabaseInitializer.Config.RemoveColor(this);
+        // [Button, LabelText("X")] void X() => ThemeDatabaseInitializer.Config.RemoveColor(this);
 
         public static int Compare(ColorData l, ColorData r)
         {

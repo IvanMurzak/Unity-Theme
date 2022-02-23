@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd">
+
+    <engine:VisualElement class="columnThemeColors" name="columnThemeColors">
+        <engine:VisualElement class="themeTitleContainer">
+            <engine:TextField text="New Theme" class="rowTitles" name="themeName"/>
+            <engine:Button text="+" class="btnAdd" name="btnAddTheme"/>
+        </engine:VisualElement>
+
+    </engine:VisualElement>
+
+</engine:UXML>

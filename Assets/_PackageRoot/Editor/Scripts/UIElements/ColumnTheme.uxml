@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd">
+
+    <engine:VisualElement class="columnThemeColors" name="columnThemeColors">
+        <engine:VisualElement class="themeTitleContainer">
+            <engine:TextField text="Theme 1" class="rowTitles" name="themeName"/>
+            <engine:Button text="X" class="btnRemove" name="btnRemoveTheme"/>
+        </engine:VisualElement>
+    </engine:VisualElement>
+
+</engine:UXML>

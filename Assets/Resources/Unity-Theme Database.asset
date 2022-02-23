@@ -23,7 +23,7 @@ MonoBehaviour:
     SerializationNodes: []
   debug: 1
   themes:
-  - themeName: Light
+  - themeName: Dark
     colors:
     - name: Primary
       color: {r: 1, g: 1, b: 1, a: 1}
@@ -37,7 +37,7 @@ MonoBehaviour:
       color: {r: 1, g: 1, b: 1, a: 1}
     - name: Secondary Light
       color: {r: 1, g: 1, b: 1, a: 1}
-  - themeName: Dark
+  - themeName: Light
     colors:
     - name: Primary
       color: {r: 1, g: 1, b: 1, a: 1}

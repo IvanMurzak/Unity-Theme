@@ -6,26 +6,19 @@ using UnityEngine;
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
-    public sealed class ThemeDatabase : SerializedScriptableObject
+    public sealed partial class ThemeDatabase : SerializedScriptableObject
     {
-                                                                static          Color           DefaultColor                => Color.white;
+        static          Color               DefaultColor                => Color.white;
 
-                                                                public const    string          PATH                        = "Assets/Resources/Unity-Theme Database.asset";
-                                                                public const    string          PATH_FOR_RESOURCES_LOAD     = "Unity-Theme Database";
+        public const    string              PATH                        = "Assets/Resources/Unity-Theme Database.asset";
+        public const    string              PATH_FOR_RESOURCES_LOAD     = "Unity-Theme Database";
 
-        [BoxGroup("B", false), HorizontalGroup("B/H")]
-        [TitleGroup("B/H/Settings")]                            public          bool            debug                       = true;
+        public          bool                debug                       = true;
 
-        [BoxGroup("T", false), HorizontalGroup("T/H")]
-        [ListDrawerSettings(DraggableItems = false, Expanded = true, NumberOfItemsPerPage = 20, ShowItemCount = false, HideAddButton = true)]
-        [SerializeField, HideReferenceObjectPicker]                             List<ThemeData> themes                      = new List<ThemeData>();
+        public          List<ThemeData>     themes                      = new List<ThemeData>();
+        public          List<ColorName>     colorNames                  = new List<ColorName>();
 
-        [GUIColor(0, 1, 0, 1), PropertySpace]
-        [BoxGroup("T", false), ShowInInspector]                                 string          newColorName;
-
-        [GUIColor(0, 1, 0, 1), PropertySpace]
-        [HorizontalGroup("T/B"), Button(ButtonSizes.Medium), LabelText("+ THEME")]
-        public void AddTheme()
+        public void AddTheme(string themeName)
         {
             List<ColorData> colors;
             if (themes.Count > 0)
@@ -43,37 +36,66 @@ namespace Unity.Theme
 
             themes.Add(new ThemeData
             {
-                themeName = "New Theme",
+                themeName = themeName,
                 colors = colors
             });
         }
 
-        [GUIColor(0, 1, 0, 1), PropertySpace]
-        [HorizontalGroup("T/B"), Button(ButtonSizes.Medium), LabelText("+ COLOR")]
-        public void AddColor()
+        public bool AddColor(string colorName)
         {
             if (themes.Count > 0)
             {
-                if (string.IsNullOrEmpty(newColorName))
-                    return;
+                if (string.IsNullOrEmpty(colorName))
+                    return false;
 
-                if (themes[0].colors.Any(x => x.name == newColorName))
-                    return;
+                if (themes[0].colors.Any(x => x.name == colorName))
+                    return false;
 
                 foreach (var theme in themes)
                 {
                     theme.colors.Add(new ColorData
                     {
-                        name = newColorName,
+                        name = colorName,
                         color = DefaultColor
                     });
                 }
             }
+
+            colorNames.Add(new ColorName
+            {
+                name = colorName,
+                guid = System.Guid.NewGuid().ToString()
+            });
+
+            return true;
+        }
+        public void ChangeColorName(string oldName, string newName)
+        {
+            var colorName = colorNames.FirstOrDefault(x => x.name == oldName);
+            if (colorName != null)
+            {
+                foreach (var theme in themes)
+                {
+                    var color = theme.colors.FirstOrDefault(x => x.name == oldName);
+                    if (color != null)
+                    {
+                        color.name = newName;
+                    }
+                }
+
+                colorName.name = newName;
+            }
+        }
+        public void ChangeThemeName(string oldName, string newName)
+        {
+            var theme = themes.FirstOrDefault(x => x.themeName == oldName);
+            if (theme != null)
+            {
+                theme.themeName = newName;
+            }
         }
 
-        [GUIColor(0, 1, 0, 1), PropertySpace]
-        [HorizontalGroup("T/B"), Button(ButtonSizes.Medium), LabelText("SORT COLORS")] 
-        void SortColors()
+        public void SortColors()
         {
             foreach (var theme in themes)
             {
@@ -82,11 +104,15 @@ namespace Unity.Theme
         }
 
         public void RemoveTheme(ThemeData theme) => themes.Remove(theme);
-        public void RemoveColor(ColorData color)
+        public void RemoveColor(string colorName)
         {
+            var nameToRemove = colorNames.FirstOrDefault(x => x.name == colorName);
+            if (nameToRemove != null)
+                colorNames.Remove(nameToRemove);
+
             foreach (var theme in themes)
             {
-                var toRemove = theme.colors.FirstOrDefault(x => x.name == color.name);
+                var toRemove = theme.colors.FirstOrDefault(x => x.name == colorName);
                 if (toRemove != null)
                     theme.colors.Remove(toRemove);
             }
