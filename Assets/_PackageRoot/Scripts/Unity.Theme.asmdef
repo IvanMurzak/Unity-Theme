@@ -3,7 +3,7 @@
     "rootNamespace": "",
     "references": [
         "UniRx",
-        "UniTask"
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

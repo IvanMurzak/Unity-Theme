@@ -1,12 +1,11 @@
 {
-  "name": "extensions.unity.saver",
-  "displayName": "Unity Saver",
+  "name": "extensions.unity.theme",
+  "displayName": "Unity Theme",
   "author": { "name": "Ivan Murzak", "url": "https://github.com/IvanMurzak" },
-  "version": "1.0.8",
+  "version": "0.0.1",
   "unity": "2019.2",
-  "description": "Multiplatform encrypted database for Unity. Can be integrated in MonoBehaviour, ScriptableObject or be used such as simple C# class instance",
+  "description": "Create palettes of colors and components for change specific color on a specific visual element. Very useful to UI.",
   "dependencies": {
-    "com.cysharp.unitask": "2.2.5",
     "com.neuecc.unirx": "7.1.0"
   },
   "scopedRegistries": [

@@ -22,32 +22,34 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   debug: 1
+  currentThemeIndex:
+    value: 1
   themes:
   - themeName: Light
     colors:
     - name: Primary
-      color: {r: 1, g: 1, b: 1, a: 1}
+      color: {r: 0.764151, g: 0.24870951, b: 0.24870951, a: 1}
     - name: Primary Dark
-      color: {r: 1, g: 1, b: 1, a: 1}
+      color: {r: 0.48900002, g: 0.15798461, b: 0.15798461, a: 1}
     - name: Primary Light
-      color: {r: 1, g: 1, b: 1, a: 1}
+      color: {r: 0.7647059, g: 0.4825294, b: 0.4825294, a: 1}
     - name: Secondary
-      color: {r: 1, g: 1, b: 1, a: 1}
+      color: {r: 0.39716092, g: 0.567252, b: 0.8018868, a: 1}
     - name: Secondary Dark
-      color: {r: 1, g: 1, b: 1, a: 1}
+      color: {r: 0.24210297, g: 0.34757358, b: 0.48900002, a: 1}
     - name: Secondary Light
-      color: {r: 1, g: 1, b: 1, a: 1}
+      color: {r: 0.57707095, g: 0.73937076, b: 0.95699996, a: 1}
   - themeName: Dark
     colors:
     - name: Primary
-      color: {r: 1, g: 1, b: 1, a: 1}
+      color: {r: 0.8018868, g: 0.34420612, b: 0.6506938, a: 1}
     - name: Primary Dark
-      color: {r: 1, g: 1, b: 1, a: 1}
+      color: {r: 0.546, g: 0.23552944, b: 0.44429412, a: 1}
     - name: Primary Light
-      color: {r: 1, g: 1, b: 1, a: 1}
+      color: {r: 0.90099996, g: 0.517174, b: 0.7752639, a: 1}
     - name: Secondary
-      color: {r: 1, g: 1, b: 1, a: 1}
+      color: {r: 0.18422928, g: 0.7960385, b: 0.8679245, a: 1}
     - name: Secondary Dark
-      color: {r: 1, g: 1, b: 1, a: 1}
+      color: {r: 0.1297285, g: 0.5603167, b: 0.61, a: 1}
     - name: Secondary Light
-      color: {r: 1, g: 1, b: 1, a: 1}
+      color: {r: 0.53835595, g: 0.93969196, b: 0.986, a: 1}

@@ -2,26 +2,32 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UniRx;
 
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
     public sealed class ThemeDatabase : SerializedScriptableObject
     {
-                                                                static          Color           DefaultColor                => Color.white;
+                                                                static          Color                               DefaultColor                => Color.white;
 
-                                                                public const    string          PATH                        = "Assets/Resources/Unity-Theme Database.asset";
-                                                                public const    string          PATH_FOR_RESOURCES_LOAD     = "Unity-Theme Database";
+                                                                public const    string                              PATH                        = "Assets/Resources/Unity-Theme Database.asset";
+                                                                public const    string                              PATH_FOR_RESOURCES_LOAD     = "Unity-Theme Database";
 
         [BoxGroup("B", false), HorizontalGroup("B/H")]
-        [TitleGroup("B/H/Settings")]                            public          bool            debug                       = true;
+        [TitleGroup("B/H/Settings")]                            public          bool                                debug                       = true;
+        [TitleGroup("B/H/Settings")]                            public          IntReactiveProperty                 currentThemeIndex           = new IntReactiveProperty(0);
 
         [BoxGroup("T", false), HorizontalGroup("T/H")]
-        [ListDrawerSettings(DraggableItems = false, Expanded = true, NumberOfItemsPerPage = 20, ShowItemCount = false, HideAddButton = true)]
-        [SerializeField, HideReferenceObjectPicker]                             List<ThemeData> themes                      = new List<ThemeData>();
+        [ListDrawerSettings(DraggableItems = false, Expanded = true, NumberOfItemsPerPage = 20,                     ShowItemCount               = false, HideAddButton = true)]
+        [SerializeField, HideReferenceObjectPicker]                             List<ThemeData>                     themes                      = new List<ThemeData>();
+
+
+        [HideInInspector]                                       public          ReadOnlyReactiveProperty<ThemeData> CurrentTheme                => currentThemeIndex.Select(index => themes[index]).ToReadOnlyReactiveProperty();
+        [HideInInspector]                                       public          List<string>                        ColorNames                  => themes.Count > 0 ? themes[0].colors.Select(x => x.name).ToList() : null;
 
         [GUIColor(0, 1, 0, 1), PropertySpace]
-        [BoxGroup("T", false), ShowInInspector]                                 string          newColorName;
+        [BoxGroup("T", false), ShowInInspector]                                 string                              newColorName;
 
         [GUIColor(0, 1, 0, 1), PropertySpace]
         [HorizontalGroup("T/B"), Button(ButtonSizes.Medium), LabelText("+ THEME")]
