@@ -1,7 +1,6 @@
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
-using UniRx;
 using System.Linq;
 
 namespace Unity.Theme.Binders
@@ -17,12 +16,11 @@ namespace Unity.Theme.Binders
 
         protected virtual void Awake()
         {
-            TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme.Value);
-
-            ThemeDatabaseInitializer.Config.CurrentTheme
-                .Subscribe  (TrySetColor)
-                .AddTo      (this);
+            TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
         }
+        protected virtual void OnEnable() => ThemeDatabaseInitializer.Config.onThemeChanged += TrySetColor;
+        protected virtual void OnDisable() => ThemeDatabaseInitializer.Config.onThemeChanged -= TrySetColor;
+
         protected virtual void TrySetColor(ThemeData theme)
         {
             if (theme == null)
@@ -43,7 +41,7 @@ namespace Unity.Theme.Binders
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme.Value);
+            TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
         }
 #endif
         protected virtual ColorData GetColorData(ThemeData theme) => theme.colors.FirstOrDefault(x => x.name == colorName);
