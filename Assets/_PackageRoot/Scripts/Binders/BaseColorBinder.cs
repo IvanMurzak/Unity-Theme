@@ -16,6 +16,8 @@ namespace Unity.Theme.Binders
 
         protected virtual void Awake()
         {
+            if (string.IsNullOrEmpty(colorName))
+                colorName = ThemeDatabaseInitializer.Config.ColorNames.FirstOrDefault();
             TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
         }
         protected virtual void OnEnable() => ThemeDatabaseInitializer.Config.onThemeChanged += TrySetColor;

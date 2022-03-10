@@ -11,7 +11,7 @@ namespace Unity.Theme
         public static IEnumerator Init()
         {
             yield return null; // let's Unity initialize itself and project resources first
-            GetOrCreateConfig();
+            OpenOrCreateConfig(); 
         }
 
         [MenuItem("Edit/Unity-Theme Database", false, 250)]
@@ -19,7 +19,6 @@ namespace Unity.Theme
         {
             var config = GetOrCreateConfig();
 
-            EditorUtility.FocusProjectWindow();
             EditorWindow inspectorWindow = EditorWindow.GetWindow(typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.InspectorWindow"));
             inspectorWindow.Focus();
 
@@ -33,6 +32,21 @@ namespace Unity.Theme
             {
                 Debug.Log($"<color=orange><b>Creating Unity-Theme database file</b> at <i>{ThemeDatabase.PATH}</i></color>");
                 config = ScriptableObject.CreateInstance<ThemeDatabase>();
+
+                config.AddTheme("Default");
+
+                config.AddColor("Primary",          "#B0BEC5FF");
+                config.AddColor("Primary Dark",     "#809492FF");
+                config.AddColor("Primary Light",    "#E1F7F2FF");
+
+                config.AddColor("Secondary",        "#212121FF");
+                config.AddColor("Secondary Light",  "#000000FF");
+                config.AddColor("Secondary Dark",   "#484848FF");
+
+                config.AddColor("Accent",           "#FA6960FF");
+                config.AddColor("On Accent",        "#FFFFFFFF");
+                config.AddColor("On Primary",       "#000000FF");
+                config.AddColor("On Secondary",     "#FFFFFFFF");
 
                 string directory = Path.GetDirectoryName(ThemeDatabase.PATH);
                 if (!Directory.Exists(directory))

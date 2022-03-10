@@ -21,7 +21,7 @@ namespace Unity.Theme
         [TitleGroup("B/H/Settings"), ValueDropdown("ThemeNames")]
         [LabelText("Current Theme"), ShowInInspector]           public          string                              CurrentThemeName
         {
-            get => CurrentTheme.themeName;
+            get => CurrentTheme?.themeName;
             set
             {
                 for (var i = 0; i < themes.Count; i++)
@@ -57,15 +57,31 @@ namespace Unity.Theme
 
         [HideInInspector]                                       public          OnTheme                             onThemeChanged;
         [HideInInspector]                                       public          string[]                            ThemeNames                  => themes.Select(x => x.themeName).ToArray();
-        [HideInInspector]                                       public          ThemeData                           CurrentTheme                => themes[currentThemeIndex];
+        [HideInInspector]                                       public          ThemeData                           CurrentTheme                => themes.Count == 0 ? null : themes[currentThemeIndex];
         [HideInInspector]                                       public          List<string>                        ColorNames                  => themes.Count > 0 ? themes[0].colors.Select(x => x.name).ToList() : null;
 
         [GUIColor(0, 1, 0, 1), PropertySpace]
         [BoxGroup("T", false), ShowInInspector]                                 string                              newColorName;
 
-        [GUIColor(0, 1, 0, 1), PropertySpace]
+        [GUIColor(0, 1, 0, 1), PropertySpace, ShowInInspector]
         [HorizontalGroup("T/B"), Button(ButtonSizes.Medium), LabelText("+ THEME")]
-        public void AddTheme()
+        void AddTheme() => AddTheme("New Theme");
+
+        [GUIColor(0, 1, 0, 1), PropertySpace, ShowInInspector]
+        [HorizontalGroup("T/B"), Button(ButtonSizes.Medium), LabelText("+ COLOR")]
+        void AddColor() => AddColor(newColorName, DefaultColor);
+
+        [GUIColor(0, 1, 0, 1), PropertySpace]
+        [HorizontalGroup("T/B"), Button(ButtonSizes.Medium), LabelText("SORT COLORS")] 
+        void SortColors()
+        {
+            foreach (var theme in themes)
+            {
+                theme.colors.Sort(ColorData.Compare);
+            }
+        }
+
+        public void AddTheme(string themeName)
         {
             List<ColorData> colors;
             if (themes.Count > 0)
@@ -83,41 +99,38 @@ namespace Unity.Theme
 
             themes.Add(new ThemeData
             {
-                themeName = "New Theme",
+                themeName = themeName,
                 colors = colors
             });
         }
+        public void AddColor(string colorName, string colorHex)
+        {
+            var color = DefaultColor;
+            if (!ColorUtility.TryParseHtmlString(colorHex, out color))
+            {
+                Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
+            }
+            AddColor(colorName, color);
 
-        [GUIColor(0, 1, 0, 1), PropertySpace]
-        [HorizontalGroup("T/B"), Button(ButtonSizes.Medium), LabelText("+ COLOR")]
-        public void AddColor()
+        }
+        public void AddColor(string colorName, Color color)
         {
             if (themes.Count > 0)
             {
-                if (string.IsNullOrEmpty(newColorName))
+                if (string.IsNullOrEmpty(colorName))
                     return;
 
-                if (themes[0].colors.Any(x => x.name == newColorName))
+                if (themes[0].colors.Any(x => x.name == colorName))
                     return;
 
                 foreach (var theme in themes)
                 {
                     theme.colors.Add(new ColorData
                     {
-                        name = newColorName,
-                        color = DefaultColor
+                        name = colorName,
+                        color = color
                     });
                 }
-            }
-        }
-
-        [GUIColor(0, 1, 0, 1), PropertySpace]
-        [HorizontalGroup("T/B"), Button(ButtonSizes.Medium), LabelText("SORT COLORS")] 
-        void SortColors()
-        {
-            foreach (var theme in themes)
-            {
-                theme.colors.Sort(ColorData.Compare);
             }
         }
 
@@ -136,6 +149,11 @@ namespace Unity.Theme
         {
             if (currentThemeIndex < 0)              currentThemeIndex = 0;
             if (currentThemeIndex >= themes.Count)  currentThemeIndex = Mathf.Max(0, themes.Count - 1);
+
+            if (CurrentTheme != null)
+            {
+                onThemeChanged?.Invoke(CurrentTheme);
+            }
         }
     }
 #pragma warning restore CA2235 // Mark all non-serializable fields
