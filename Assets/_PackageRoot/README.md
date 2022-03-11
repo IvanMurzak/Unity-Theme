@@ -3,7 +3,7 @@
 
 Create palettes of colors and components for change specific color on a specific visual element. Very useful to UI.
 
-![Unity Saver Settings](https://imgur.com/0RQeUQg.gif)
+![Unity Theme Settings](https://imgur.com/FKVF2H9.gif)
 
 # How to install
 - Install [ODIN Inspector](https://odininspector.com/)
@@ -11,7 +11,7 @@ Create palettes of colors and components for change specific color on a specific
 ```json
 {
   "dependencies": {
-    "extensions.unity.theme": "0.0.1",
+    "extensions.unity.theme": "0.0.6",
   },
   "scopedRegistries": [
     {
@@ -31,3 +31,5 @@ Each colored component should be binded to specific color.
 - ImageColorBinder
 - SpriteRendereColorBinder
 - TextMeshProColorBinder
+
+![Color Binders](https://imgur.com/AeNC3tF.gif)

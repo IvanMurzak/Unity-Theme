@@ -7,10 +7,10 @@ namespace Unity.Theme
     [Serializable]
     public class ColorData
     {
-        [TableColumnWidth(150, false), ReadOnly]
-        public string   name = "New";
-        [TableColumnWidth(50, true)]
-        public Color    color = Color.white;
+        [HideInInspector]                           public string   guid;
+        [ReadOnly]
+        [TableColumnWidth(150, false)]              public string   name = "New";
+        [TableColumnWidth(50, true)]                public Color    color = Color.white;
 
         [TableColumnWidth(25, false)]
         [HideLabel]
@@ -18,7 +18,7 @@ namespace Unity.Theme
 
         public static int Compare(ColorData l, ColorData r)
         {
-            return l.name.CompareTo(r.name);
+            return l.guid.CompareTo(r.guid);
         }
     }
 }
