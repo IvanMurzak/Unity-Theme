@@ -32,17 +32,17 @@ namespace Unity.Theme
 
 
         [PropertyOrder(-8), PropertySpace]
-        [ListDrawerSettings(DraggableItems = true, Expanded = true, NumberOfItemsPerPage = 20, ShowItemCount = false, HideAddButton = false, HideRemoveButton = true)]
-        [TableList(AlwaysExpanded = true, NumberOfItemsPerPage = 20, IsReadOnly = true, HideToolbar = false, ShowPaging = true)]
+        [ListDrawerSettings(DraggableItems = true, Expanded = false, NumberOfItemsPerPage = 20, ShowItemCount = false, HideAddButton = false, HideRemoveButton = true)]
+        [TableList(AlwaysExpanded = false, NumberOfItemsPerPage = 20, IsReadOnly = true, HideToolbar = false, ShowPaging = true)]
         [SerializeField, HideReferenceObjectPicker]
         List<ColorDataRef> colors = new List<ColorDataRef>();
 
-        [GUIColor(0.8f, 0.8f, 0.8f, 1)]
+        [GUIColor(0.8f, 1.0f, 0.8f, 1)]
         [PropertyOrder(-7), LabelText("ADD COLOR")]
         [ButtonGroup("ColorButtons"), Button(ButtonSizes.Medium, Style = ButtonStyle.Box)]
         void AddColor() => AddColor("New Color", DefaultColor);
 
-        [GUIColor(0.8f, 0.8f, 0.8f, 1)]
+        [GUIColor(0.8f, 1.0f, 0.8f, 1)]
         [PropertyOrder(-6), LabelText("SORT")]
         [ButtonGroup("ColorButtons"), Button(ButtonSizes.Medium, Style = ButtonStyle.Box)]
         void SortColors()
@@ -55,7 +55,6 @@ namespace Unity.Theme
 
         [SerializeField, HideReferenceObjectPicker, PropertySpace]
         [ListDrawerSettings(DraggableItems = false, Expanded = true, NumberOfItemsPerPage = 20, ShowItemCount = false, HideAddButton = false, HideRemoveButton = true)]
-        //[TableList(AlwaysExpanded = true, NumberOfItemsPerPage = 20, IsReadOnly = true, HideToolbar = false, ShowPaging = true)]
         List<ThemeData> themes = new List<ThemeData>();
 
         private void OnValidate()

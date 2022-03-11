@@ -521,10 +521,6 @@ MonoBehaviour:
     name: On Primary
   - guid: 84e3e29c-c2af-45c0-aeb4-0cf1c3b6858d
     name: On Secondary
-  - guid: 47656818-6c8d-46a7-a7d9-1cc8d46602cf
-    name: New Color
-  - guid: 2ce5e822-ef64-4989-b4c6-d9315c2c0eb5
-    name: New Color
   themes:
   - themeName: Default
     colors:
@@ -558,10 +554,4 @@ MonoBehaviour:
     - guid: 84e3e29c-c2af-45c0-aeb4-0cf1c3b6858d
       name: On Secondary
       color: {r: 1, g: 1, b: 1, a: 1}
-    - guid: 47656818-6c8d-46a7-a7d9-1cc8d46602cf
-      name: New Color
-      color: {r: 0.16313633, g: 0.735849, b: 0.18569444, a: 1}
-    - guid: 2ce5e822-ef64-4989-b4c6-d9315c2c0eb5
-      name: New Color
-      color: {r: 0.8773585, g: 0.07035423, b: 0.07035423, a: 1}
   currentThemeIndex: 0

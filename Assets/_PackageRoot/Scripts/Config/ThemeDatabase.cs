@@ -17,7 +17,7 @@ namespace Unity.Theme
         [HideInInspector]
         public              OnTheme             onThemeChanged;
         public              string[]            ThemeNames                  => themes.Select(x => x.themeName).ToArray();
-        public              ThemeData           CurrentTheme                => themes.Count == 0 ? null : themes[currentThemeIndex];
+        public              ThemeData           CurrentTheme                => themes.Count == 0 ? null : ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count) ? themes[currentThemeIndex] : null);
         public              List<string>        ColorNames                  => colors?.Select(x => x.name)?.ToList();
         public              List<string>        ColorGuids                  => colors?.Select(x => x.guid)?.ToList();
 
