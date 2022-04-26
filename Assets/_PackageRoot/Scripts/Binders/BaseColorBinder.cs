@@ -1,17 +1,23 @@
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 namespace Unity.Theme.Binders
 {
     [ExecuteAlways, ExecuteInEditMode]
     public abstract class BaseColorBinder : MonoBehaviour
     {
+
         [SerializeField, HideInInspector]                                   string          colorGuid;
-        [ValueDropdown("GetColors"), ShowInInspector]                       string          ColorName
+        [HorizontalGroup("H"), ValueDropdown("GetColors"), ShowInInspector] string          ColorName
         {
-            get => ThemeDatabaseInitializer.Config?.GetColorByGuid(colorGuid)?.name;
+            get
+            {
+                var colorData = ThemeDatabaseInitializer.Config?.GetColorByGuid(colorGuid);
+                if (colorData == null)
+                    colorGuid = null;
+                return colorData?.name;
+            }
             set
             {
                 var colorData = ThemeDatabaseInitializer.Config.GetColorByName(value);
@@ -19,6 +25,8 @@ namespace Unity.Theme.Binders
                     colorGuid = colorData.guid;
             }
         }
+        [GUIColor(1.0f, 0.5f, 0.5f)]
+        [HorizontalGroup("H", 60), Button("RESET")]                         void            ResetColor() { colorGuid = null; }
         [SerializeField]                                                    bool            overrideAlpha;
         [SerializeField, ShowIf("overrideAlpha"), PropertyRange(0f, 1f)]    float           alpha = 1f;
 
@@ -41,25 +49,23 @@ namespace Unity.Theme.Binders
         {
             if (theme == null)
             {
-                Debug.LogError("Current theme is null");
+                Debug.LogError($"Current theme is null at gameObject {name}", gameObject);
                 return;
             }
             
             var colorData = theme.GetColorByGuid(colorGuid);
             if (colorData == null)
             {
-                Debug.LogError($"color not found by key '{ColorName}'");
+                Debug.LogError($"color not found by name '{ColorName}' at <b>{GameObjectPath()}</b>, guid='{colorGuid}'", gameObject);
             }
             else
             {
                 SetColor(GetColor(colorData));
             }
         }
+
 #if UNITY_EDITOR
-        private void OnValidate()
-        {
-            TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
-        }
+        private void OnValidate() => TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
 #endif
         protected virtual Color GetColor(ColorData colorData)
         {
@@ -72,5 +78,17 @@ namespace Unity.Theme.Binders
         }
         protected abstract void SetColor(Color color);
 
+        // UTILS ----------------------------------------------------------------------//
+        private string GameObjectPath() => GameObjectPath(transform);                  //
+        private static string GameObjectPath(Transform trans, string path = "")        //
+        {                                                                              //
+            if (trans == null) return path;                                            //
+            if (string.IsNullOrEmpty(path))                                            //
+                path = trans.name;                                                     //
+            else                                                                       //
+                path = $"{trans.name}/{path}";                                         //
+            return GameObjectPath(trans.parent, path);                                 //
+        }                                                                              //
+        // ============================================================================//
     }
 }
