@@ -5,6 +5,17 @@ Create palettes of colors and components for change specific color on a specific
 
 ![Unity Theme Settings](https://imgur.com/FKVF2H9.gif)
 
+## Features
+
+- create custom themes
+- name color as you want
+- add as many colors as you need
+- name theme as you want
+- change theme any moment by name
+- bind color to: Image, SpriteRenderer, TextMeshPro
+- ease way to add custom color binder by new C# class with just few lines of code
+- ability to rename color even after binding to component, no broken links
+
 # How to install
 - Install [ODIN Inspector](https://odininspector.com/)
 - Add this code to <code>/Packages/manifest.json</code>
