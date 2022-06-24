@@ -25,6 +25,12 @@ Create palettes of colors and components for change specific color on a specific
 }
 ```
 
+# How to use 
+
+- Go to `Edit/Unity-Theme Preferences...`.
+- Customize color pallets as you want
+- Add ColorBinder to colorised GameObject
+
 # Color Binder
 Each colored component should be binded to specific color.
 
@@ -33,3 +39,32 @@ Each colored component should be binded to specific color.
 - TextMeshProColorBinder
 
 ![Color Binders](https://imgur.com/AeNC3tF.gif)
+
+# Custom Color Binder
+
+If you want to bind color to something else, you may extends from `BaseColorBinder` as listed below.
+
+```C#
+using Sirenix.OdinInspector;
+using UnityEngine;
+using TMPro;
+
+namespace Unity.Theme.Binders
+{
+    [AddComponentMenu("Theme/TextMeshPro Color Binder")]
+    public class TextMeshProColorBinder : BaseColorBinder
+    {
+        [SerializeField, Required] TextMeshProUGUI textMeshPro;
+
+        protected override void Awake()
+        {
+            if (textMeshPro == null) textMeshPro = GetComponent<TextMeshProUGUI>();
+            base.Awake();
+        }
+        protected override void SetColor(Color color)
+        {
+            textMeshPro.color = color;
+        }
+    }
+}
+```
