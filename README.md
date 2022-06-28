@@ -40,7 +40,7 @@ Create palettes of colors and components for change specific color on a specific
 
 - Go to `Edit/Unity-Theme Preferences...`.
 - Customize color pallets as you want
-- Add ColorBinder to colorised GameObject
+- Add ColorBinder to colorized GameObject
 
 # Color Binder
 Each colored component should be binded to specific color.
