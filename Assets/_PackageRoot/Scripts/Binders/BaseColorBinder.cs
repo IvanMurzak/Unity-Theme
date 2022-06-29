@@ -78,17 +78,29 @@ namespace Unity.Theme.Binders
         }
         protected abstract void SetColor(Color color);
 
-        // UTILS ----------------------------------------------------------------------//
-        private string GameObjectPath() => GameObjectPath(transform);                  //
-        private static string GameObjectPath(Transform trans, string path = "")        //
-        {                                                                              //
-            if (trans == null) return path;                                            //
-            if (string.IsNullOrEmpty(path))                                            //
-                path = trans.name;                                                     //
-            else                                                                       //
-                path = $"{trans.name}/{path}";                                         //
-            return GameObjectPath(trans.parent, path);                                 //
-        }                                                                              //
-        // ============================================================================//
+        // UTILS ---------------------------------------------------------------------------//
+        private string GameObjectPath() => GameObjectPath(transform);                       //
+        private static string GameObjectPath(Transform trans, string path = "")             //
+        {                                                                                   //
+            if (string.IsNullOrEmpty(path))                                                 //
+                path = trans.name;                                                          //
+            else                                                                            //
+                path = $"{trans.name}/{path}";                                              //
+                                                                                            //
+            if (trans.parent == null)                                                       //
+            {                                                                               //
+                var isPrefab = string.IsNullOrEmpty(trans.gameObject.scene.name);           //
+                if (isPrefab)                                                               //
+                    path = $"<color=cyan>Prefabs</color>/{path}";                           //
+                else                                                                        //
+                    path = $"<color=cyan>{trans.gameObject.scene.name}</color>/{path}";     //
+                return path;                                                                //
+            }                                                                               //
+            else                                                                            //
+            {                                                                               //
+                return GameObjectPath(trans.parent, path);                                  //
+            }                                                                               //
+        }                                                                                   //
+        // =================================================================================//
     }
 }

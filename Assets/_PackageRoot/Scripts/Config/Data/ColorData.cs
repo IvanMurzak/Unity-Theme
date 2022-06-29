@@ -18,7 +18,7 @@ namespace Unity.Theme
 
         public static int Compare(ColorData l, ColorData r)
         {
-            return l.guid.CompareTo(r.guid);
+            return l.name.CompareTo(r.name);
         }
     }
 }
