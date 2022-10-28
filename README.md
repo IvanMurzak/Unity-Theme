@@ -16,7 +16,13 @@ Create palettes of colors and components for change specific color on a specific
 - ease way to add custom color binder by new C# class with just few lines of code
 - ability to rename color even after binding to component, no broken links
 
-# How to install
+# How to install - Option 1 (RECOMMENDED)
+- Install [ODIN Inspector](https://odininspector.com/)
+- [Install OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
+- open command line in Unity project folder
+- `openupm --registry https://registry.npmjs.org add extensions.unity.theme`
+
+# How to install - Option 2
 - Install [ODIN Inspector](https://odininspector.com/)
 - Add this code to <code>/Packages/manifest.json</code>
 ```json
