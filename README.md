@@ -1,5 +1,5 @@
 # Unity-Theme
-![npm](https://img.shields.io/npm/v/extensions.unity.theme) ![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme)
+![npm](https://img.shields.io/npm/v/extensions.unity.theme) ![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme) [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
 Create palettes of colors and components for change specific color on a specific visual element. Very useful to UI.
 
