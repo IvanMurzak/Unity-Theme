@@ -42,8 +42,15 @@ namespace Unity.Theme.Binders
             }
             TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
         }
-        protected virtual void OnEnable() => ThemeDatabaseInitializer.Config.onThemeChanged += TrySetColor;
-        protected virtual void OnDisable() => ThemeDatabaseInitializer.Config.onThemeChanged -= TrySetColor;
+        protected virtual void OnEnable()
+        {
+            TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
+            ThemeDatabaseInitializer.Config.onThemeChanged += TrySetColor;
+        }
+        protected virtual void OnDisable()
+        {
+            ThemeDatabaseInitializer.Config.onThemeChanged -= TrySetColor;
+        }
 
         protected virtual void TrySetColor(ThemeData theme)
         {
