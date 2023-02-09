@@ -1,5 +1,5 @@
 # Unity-Theme
-![npm](https://img.shields.io/npm/v/extensions.unity.theme) ![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme) [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
+![npm](https://img.shields.io/npm/v/extensions.unity.theme) [![openupm](https://img.shields.io/npm/v/extensions.unity.theme?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.theme/) ![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme) [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
 Create palettes of colors and components for change specific color on a specific visual element. Very useful to UI.
 
@@ -20,7 +20,7 @@ Create palettes of colors and components for change specific color on a specific
 - Install [ODIN Inspector](https://odininspector.com/)
 - [Install OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
 - Open command line in Unity project folder
-- `openupm --registry https://registry.npmjs.org add extensions.unity.theme`
+- `openupm add extensions.unity.theme`
 
 # How to install - Option 2
 - Install [ODIN Inspector](https://odininspector.com/)
@@ -32,8 +32,8 @@ Create palettes of colors and components for change specific color on a specific
   },
   "scopedRegistries": [
     {
-      "name": "Unity Extensions",
-      "url": "https://registry.npmjs.org",
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
       "scopes": [
         "extensions.unity"
       ]
