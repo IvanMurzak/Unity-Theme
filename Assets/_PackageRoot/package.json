@@ -1,8 +1,11 @@
 {
   "name": "extensions.unity.theme",
   "displayName": "Unity Theme",
-  "author": { "name": "Ivan Murzak", "url": "https://github.com/IvanMurzak" },
-  "version": "0.1.15",
+  "author": {
+    "name": "Ivan Murzak",
+    "url": "https://github.com/IvanMurzak"
+  },
+  "version": "1.0.0",
   "unity": "2019.2",
   "description": "Create palettes of colors and components for change specific color on a specific visual element. Very useful to UI.",
   "keywords": [
@@ -12,6 +15,6 @@
     "unity"
   ],
   "dependencies": {
-	  
+    
   }
 }
