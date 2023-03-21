@@ -93,6 +93,6 @@ namespace Unity.Theme.Binders
 // path to the file in your project: `/Assets/Resources/Unity-Theme Database.asset`
 [SerializedField] ThemeDatabase themeDatabase;
 
-// change current theme to a new theme in themes list
+// change the current theme to a new theme from existed themes list
 themeDatabase.CurrentThemeIndex = 1;
 ```
