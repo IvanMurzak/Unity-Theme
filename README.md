@@ -85,3 +85,14 @@ namespace Unity.Theme.Binders
     }
 }
 ```
+
+# Theme change in Play Time (Runtime)
+
+```C#
+// Link ThemeDatabase, 
+// path to the file in your project: `/Assets/Resources/Unity-Theme Database.asset`
+[SerializedField] ThemeDatabase themeDatabase;
+
+// change current time to a new theme in themes list
+themeDatabase.CurrentThemeIndex = 1;
+```
