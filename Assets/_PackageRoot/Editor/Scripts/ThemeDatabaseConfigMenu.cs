@@ -3,7 +3,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace Unity.Theme
+namespace Unity.Theme.Editor.Scripts
 {
     public static class ThemeDatabaseConfigMenu
     {
