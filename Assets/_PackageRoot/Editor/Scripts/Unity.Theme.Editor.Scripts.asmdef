@@ -1,9 +1,7 @@
 {
-    "name": "Unity.Theme.Editor",
-    "rootNamespace": "",
+    "name": "Unity.Theme.Editor.Scripts",
+    "rootNamespace": "Unity.Theme.Editor.Scripts",
     "references": [
-        "UniRx",
-        "UniTask",
         "Unity.Theme"
     ],
     "includePlatforms": [
