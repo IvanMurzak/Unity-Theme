@@ -28,7 +28,7 @@ Create palettes of colors and components to change specific colors on a specific
 ```json
 {
   "dependencies": {
-    "extensions.unity.theme": "0.1.15",
+    "extensions.unity.theme": "1.0.0",
   },
   "scopedRegistries": [
     {
