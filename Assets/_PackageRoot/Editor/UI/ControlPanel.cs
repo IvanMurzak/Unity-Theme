@@ -78,6 +78,7 @@ namespace Unity.Theme.Editor
 
                 var foldoutTheme = themePanel.Query<Foldout>("foldoutTheme").First();
                 var textFieldName = themePanel.Query<TextField>("txtName").First();
+                var contColors = themePanel.Query<VisualElement>("contColors").First();
                 
                 foldoutTheme.text = theme.themeName;
 
@@ -95,7 +96,7 @@ namespace Unity.Theme.Editor
                 foreach (var themeColor in theme.colors)
                 {
                     var themeColorPanel = TemplateThemeColor.Instantiate();
-                    foldoutTheme.Add(themeColorPanel);
+                    contColors.Add(themeColorPanel);
 
                     var txtColorName = themeColorPanel.Query<TextField>("txtName").First();
                     var colorField = themeColorPanel.Query<ColorField>("color").First();

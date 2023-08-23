@@ -1,8 +1,23 @@
+.AnimatedSelectable:hover {
+    scale: 0.9 0.9;
+    rotate: 90deg;
+}
+
+.AnimatedSelectable {
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out-cubic;
+}
+
 .Header {
     font-size: 20px;
     padding-top: 10px;
+    padding-left: 10px;
     -unity-font-style: bold;
-    color: rgb(68, 138, 255);
+}
+
+.ContentItem {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .Divider {
