@@ -7,7 +7,6 @@ namespace Unity.Theme.Binders
     [ExecuteAlways, ExecuteInEditMode]
     public abstract class BaseColorBinder : MonoBehaviour
     {
-
         [SerializeField, HideInInspector]                                   string          colorGuid;
         [HorizontalGroup("H"), ValueDropdown("GetColors"), ShowInInspector] string          ColorName
         {
@@ -57,18 +56,23 @@ namespace Unity.Theme.Binders
         {
             if (theme == null)
             {
-                Debug.LogError($"Current theme is null at gameObject {name}", gameObject);
+                if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Error)
+                    Debug.LogError($"Current theme is null at gameObject {name}", gameObject);
                 return;
             }
             
             var colorData = theme.GetColorByGuid(colorGuid);
             if (colorData == null)
             {
-                Debug.LogError($"color not found by name '{ColorName}' at <b>{GameObjectPath()}</b>, guid='{colorGuid}'", gameObject);
+                if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Error)
+                    Debug.LogError($"color not found by name '{ColorName}' at <b>{GameObjectPath()}</b>, guid='{colorGuid}'", gameObject);
             }
             else
             {
-                SetColor(GetColor(colorData));
+                var color = GetColor(colorData);
+                if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Log)
+                    Debug.Log($"SetColor: '<b>{ColorName}</b>' #{color} at <b>{GameObjectPath()}</b>", gameObject);
+                SetColor(color);
             }
         }
 

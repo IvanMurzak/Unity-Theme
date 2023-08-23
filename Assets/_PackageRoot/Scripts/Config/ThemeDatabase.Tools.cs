@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
-    public sealed partial class ThemeDatabase : ScriptableObject
+    public partial class ThemeDatabase : ScriptableObject
     {                           
                static       Color               DefaultColor                => Color.white;
         public delegate     void                OnTheme                     (ThemeData theme);
@@ -25,25 +25,27 @@ namespace Unity.Theme
             if (currentThemeIndex < 0) currentThemeIndex = 0;
             if (currentThemeIndex >= themes.Count) currentThemeIndex = Mathf.Max(0, themes.Count - 1);
 
+            var changed = false;
             foreach (var theme in themes)
             {
-                RemoveLegacyColors(theme);
-                AddMissedColors(theme);
-                UpdateColorNames(theme);
-                SortColors(theme);
+                changed |= RemoveLegacyColors(theme);
+                changed |= AddMissedColors(theme);
+                changed |= UpdateColorNames(theme);
+                changed |= SortColors(theme);
             }
 
-            // if (CurrentTheme != null)
-            // {
-            //     onThemeChanged?.Invoke(CurrentTheme);
-            // }
+            if (changed && CurrentTheme != null)
+            {
+                onThemeChanged?.Invoke(CurrentTheme);
+            }
         }
-        private void RemoveLegacyColors(ThemeData theme)
+        private bool RemoveLegacyColors(ThemeData theme)
         {
-            theme.colors.RemoveAll(colorData => colors.All(colorRef => colorRef.guid != colorData.guid));
+            return theme.colors.RemoveAll(colorData => colors.All(colorRef => colorRef.guid != colorData.guid)) > 0;
         }
-        private void AddMissedColors(ThemeData theme)
+        private bool AddMissedColors(ThemeData theme)
         {
+            var changed = false;
             foreach (var colorRef in colors)
             {
                 if (theme.colors.All(colorData => colorData.guid != colorRef.guid))
@@ -54,19 +56,25 @@ namespace Unity.Theme
                         name = colorRef.name,
                         color = DefaultColor
                     });
+                    changed = true;
                 }
             }
+            return changed;
         }
-        private void UpdateColorNames(ThemeData theme)
+        private bool UpdateColorNames(ThemeData theme)
         {
+            var changed = false;
             foreach (var colorData in theme.colors)
             {
                 var colorRef = colors.First(x => x.guid == colorData.guid);
                 colorData.name = colorRef.name;
+                changed = true;
             }
+            return changed;
         }
-        private void SortColors(ThemeData theme)
+        private bool SortColors(ThemeData theme)
         {
+            var changed = false;
             for (int i = 0; i < colors.Count; i++)
             {
                 if (theme.colors[i].guid != colors[i].guid)
@@ -77,8 +85,11 @@ namespace Unity.Theme
                     var temp = theme.colors[i];
                     theme.colors[i] = theme.colors[colorIndex];
                     theme.colors[colorIndex] = temp;
+
+                    changed = true;
                 }
             }
+            return changed;
         }
     }
 #pragma warning restore CA2235 // Mark all non-serializable fields

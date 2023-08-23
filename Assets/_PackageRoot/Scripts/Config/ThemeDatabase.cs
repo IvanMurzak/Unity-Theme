@@ -5,16 +5,8 @@ using UnityEngine;
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
-    public sealed partial class ThemeDatabase : ScriptableObject
-    {
-        [SerializeField]    public bool         debug = true;
-
-        [HideInInspector]
-        [SerializeField]    int                 currentThemeIndex   = 0;
-        [SerializeField]    List<ColorDataRef>  colors = new List<ColorDataRef>();
-        [SerializeField]    List<ThemeData>     themes = new List<ThemeData>();
-
-        
+    public partial class ThemeDatabase : ScriptableObject
+    {        
         public              List<ThemeData>     Themes              => themes;
         public              string[]            ThemeNames          => themes.Select(x => x.themeName).ToArray();
         public              ThemeData           CurrentTheme        => themes.Count == 0 ? null : ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count) ? themes[currentThemeIndex] : null);
@@ -78,7 +70,8 @@ namespace Unity.Theme
             var color = DefaultColor;
             if (!ColorUtility.TryParseHtmlString(colorHex, out color))
             {
-                Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
+                if (debugLevel <= DebugLevel.Error)
+                    Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
             }
             AddColor(colorName, color);
         }

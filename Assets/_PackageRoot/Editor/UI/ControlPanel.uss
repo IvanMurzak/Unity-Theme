@@ -18,7 +18,7 @@
 
 .Button-Alert {
     -unity-font-style: bold;
-    background-color: rgb(229, 9, 19);
+    background-color: rgb(229, 64, 64);
 }
 
 .Button-Accept {

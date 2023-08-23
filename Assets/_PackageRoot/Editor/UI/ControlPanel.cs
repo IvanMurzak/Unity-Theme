@@ -24,7 +24,8 @@ namespace Unity.Theme.Editor
 
         private void SaveChanges(string message)
         {
-            Debug.Log(message);
+            if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Log)
+                Debug.Log(message);
             saveChangesMessage = message;
             base.SaveChanges();
         }
@@ -38,7 +39,7 @@ namespace Unity.Theme.Editor
             root.Add(panel);
             
             var dropdownCurrentTheme = panel.Query<DropdownField>("dropdownCurrentTheme").First();
-            var toggleDebug = panel.Query<Toggle>("toggleDebug").First();
+            var toggleDebug = panel.Query<EnumField>("dropdownDebugLevel").First();
 
             // Header
             // -----------------------------------------------------------------
@@ -52,11 +53,11 @@ namespace Unity.Theme.Editor
                     SaveChanges($"Theme Changed: {evt.newValue}");
                 });
             
-            toggleDebug.value = config.debug;
+            toggleDebug.value = config.debugLevel;
             toggleDebug
                 .RegisterValueChangedCallback(evt => 
                 {
-                    config.debug = evt.newValue;
+                    config.debugLevel = (DebugLevel)evt.newValue;
                     SaveChanges($"Debug status changed: {evt.newValue}");
                 });
   

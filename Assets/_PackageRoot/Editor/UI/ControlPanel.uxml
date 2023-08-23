@@ -1,10 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <Style src="project://database/Assets/_PackageRoot/Editor/UI/ControlPanel.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#ControlPanel" />
-    <ui:ListView focusable="true" />
     <ui:Box name="contHeader" style="background-color: rgba(222, 222, 222, 0);">
         <ui:Label text="Settings" name="labelSettings" class="Header" />
         <ui:VisualElement name="divider" class="Divider" />
-        <ui:Toggle name="toggleDebug" label="Debug" />
+        <ui:EnumField label="Debug Level" name="dropdownDebugLevel" type="Unity.Theme.DebugLevel, Unity.Theme" />
         <ui:DropdownField label="Current Theme" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="dropdownCurrentTheme" />
     </ui:Box>
     <ui:VisualElement name="contPalettes" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
