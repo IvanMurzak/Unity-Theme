@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
@@ -7,14 +6,10 @@ namespace Unity.Theme
     [Serializable]
     public class ColorData
     {
-        [HideInInspector]                           public string   guid;
-        [ReadOnly]
-        [TableColumnWidth(150, false)]              public string   name = "New";
-        [TableColumnWidth(50, true)]                public Color    color = Color.white;
-
-        [TableColumnWidth(25, false)]
-        [HideLabel]
-        [Button, LabelText("X")] void X() => ThemeDatabaseInitializer.Config.RemoveColor(this);
+        [HideInInspector]
+        public string   guid;
+        public string   name = "New";
+        public Color    color = Color.white;
 
         public static int Compare(ColorData l, ColorData r)
         {
