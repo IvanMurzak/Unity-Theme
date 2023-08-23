@@ -12,7 +12,7 @@ namespace Unity.Theme
         public string themeName = "New Theme";
 
         [GUIColor(1, 0.2f, 0.2f, 1)]
-        void Remove() => ThemeDatabaseInitializer.Config.RemoveTheme(this);
+        internal void Remove() => ThemeDatabaseInitializer.Config.RemoveTheme(this);
 
         [HideReferenceObjectPicker, HideLabel]
         [TableList(AlwaysExpanded = true, NumberOfItemsPerPage = 20, IsReadOnly = true, HideToolbar = true)]

@@ -1,0 +1,27 @@
+.Header {
+    font-size: 20px;
+    padding-top: 10px;
+    -unity-font-style: bold;
+    color: rgb(68, 138, 255);
+}
+
+.Divider {
+    width: auto;
+    height: 1px;
+    max-height: 1px;
+    background-color: rgb(26, 26, 26);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Button-Alert {
+    -unity-font-style: bold;
+    background-color: rgb(229, 9, 19);
+}
+
+.Button-Accept {
+    -unity-font-style: bold;
+    color: rgb(63, 226, 9);
+}

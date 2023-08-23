@@ -40,12 +40,12 @@ namespace Unity.Theme
         [GUIColor(0.8f, 1.0f, 0.8f, 1)]
         [PropertyOrder(-7), LabelText("ADD COLOR")]
         [ButtonGroup("ColorButtons"), Button(ButtonSizes.Medium, Style = ButtonStyle.Box)]
-        void AddColor() => AddColor("New Color", DefaultColor);
+        internal void AddColor() => AddColor("New Color", DefaultColor);
 
         [GUIColor(0.8f, 1.0f, 0.8f, 1)]
         [PropertyOrder(-6), LabelText("SORT")]
         [ButtonGroup("ColorButtons"), Button(ButtonSizes.Medium, Style = ButtonStyle.Box)]
-        void SortColors()
+        internal void SortColors()
         {
             foreach (var theme in themes)
             {
@@ -54,8 +54,10 @@ namespace Unity.Theme
         }
 
         [SerializeField, HideReferenceObjectPicker, PropertySpace]
-        [ListDrawerSettings(DraggableItems = false, Expanded = true, NumberOfItemsPerPage = 20, ShowItemCount = false, HideAddButton = false, HideRemoveButton = true)]
+        // [ListDrawerSettings(DraggableItems = false, Expanded = true, NumberOfItemsPerPage = 20, ShowItemCount = false, HideAddButton = false, HideRemoveButton = true)]
         List<ThemeData> themes = new List<ThemeData>();
+
+        public List<ThemeData> Themes => themes;
 
         private void OnValidate()
         {
