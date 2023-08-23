@@ -46,12 +46,13 @@ namespace Unity.Theme.Binders
         {
             TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
             ThemeDatabaseInitializer.Config.onThemeChanged += TrySetColor;
+            ThemeDatabaseInitializer.Config.onThemeColorChanged += OnThemeColorChanged;
         }
         protected virtual void OnDisable()
         {
             ThemeDatabaseInitializer.Config.onThemeChanged -= TrySetColor;
+            ThemeDatabaseInitializer.Config.onThemeColorChanged -= OnThemeColorChanged;
         }
-
         protected virtual void TrySetColor(ThemeData theme)
         {
             if (theme == null)
@@ -85,6 +86,11 @@ namespace Unity.Theme.Binders
         }
         protected abstract void SetColor(Color color);
 
+        private void OnThemeColorChanged(ThemeData themeData, ColorData colorData)
+        {
+            if (colorData.guid == colorGuid)
+                TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
+        }
         // UTILS ---------------------------------------------------------------------------//
         private string GameObjectPath() => GameObjectPath(transform);                       //
         private static string GameObjectPath(Transform trans, string path = "")             //

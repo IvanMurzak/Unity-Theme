@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,24 +5,22 @@ using UnityEngine;
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
-    public sealed partial class ThemeDatabase : SerializedScriptableObject
+    public sealed partial class ThemeDatabase : ScriptableObject
     {
-               static       Color               DefaultColor                => Color.white;
-        public delegate     void                OnTheme                     (ThemeData theme);
-
-        public const        string              PATH                        = "Assets/Resources/Unity-Theme Database.asset";
-        public const        string              PATH_FOR_RESOURCES_LOAD     = "Unity-Theme Database";
+        [SerializeField]    public bool         debug = true;
 
         [HideInInspector]
-        public              OnTheme             onThemeChanged;
-        public              string[]            ThemeNames                  => themes.Select(x => x.themeName).ToArray();
-        public              ThemeData           CurrentTheme                => themes.Count == 0 ? null : ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count) ? themes[currentThemeIndex] : null);
-        public              List<string>        ColorNames                  => colors?.Select(x => x.name)?.ToList();
-        public              List<string>        ColorGuids                  => colors?.Select(x => x.guid)?.ToList();
+        [SerializeField]    int                 currentThemeIndex   = 0;
+        [SerializeField]    List<ColorDataRef>  colors = new List<ColorDataRef>();
+        [SerializeField]    List<ThemeData>     themes = new List<ThemeData>();
 
-        [SerializeField, HideInInspector]
-                            int                 currentThemeIndex           = 0;
-        [HideInInspector]
+        
+        public              List<ThemeData>     Themes              => themes;
+        public              string[]            ThemeNames          => themes.Select(x => x.themeName).ToArray();
+        public              ThemeData           CurrentTheme        => themes.Count == 0 ? null : ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count) ? themes[currentThemeIndex] : null);
+        public              List<string>        ColorNames          => colors?.Select(x => x.name)?.ToList();
+        public              List<string>        ColorGuids          => colors?.Select(x => x.guid)?.ToList();
+
         public              int                 CurrentThemeIndex
         {
             get => currentThemeIndex;
@@ -39,14 +36,19 @@ namespace Unity.Theme
                 }
             }
         }
+        public              string              CurrentThemeName
+        {
+            get => CurrentTheme?.themeName;
+            set => CurrentThemeIndex = themes.FindIndex(x => x.themeName == value);
+        }
 
         public ColorData GetColorByGuid(string guid)                    => GetColorByGuid(guid, ThemeDatabaseInitializer.Config.CurrentTheme);
         public ColorData GetColorByGuid(string guid, ThemeData theme)   => string.IsNullOrEmpty(guid) ? null : theme?.colors?.FirstOrDefault(x => x.guid == guid);
         public ColorData GetColorByName(string name)                    => GetColorByName(name, ThemeDatabaseInitializer.Config.CurrentTheme);
         public ColorData GetColorByName(string name, ThemeData theme)   => string.IsNullOrEmpty(name) ? null : GetColorByGuid(colors.FirstOrDefault(x => x.name == name)?.guid, theme);
 
-        public ColorData GetColorFirst() => GetColorFirst(ThemeDatabaseInitializer.Config.CurrentTheme);
-        public ColorData GetColorFirst(ThemeData theme) => theme?.colors?.FirstOrDefault();
+        public ColorData GetColorFirst()                                => GetColorFirst(ThemeDatabaseInitializer.Config.CurrentTheme);
+        public ColorData GetColorFirst(ThemeData theme)                 => theme?.colors?.FirstOrDefault();
 
         public void AddTheme(string themeName)
         {
@@ -110,15 +112,15 @@ namespace Unity.Theme
         }
 
         public void RemoveTheme(ThemeData theme) => themes.Remove(theme);
-        public void RemoveColor(ColorData colorData)
+        public void RemoveColor(ColorData color)
         {
             foreach (var theme in themes)
             {
-                var toRemove = theme.colors.FirstOrDefault(x => x.guid == colorData.guid);
+                var toRemove = theme.colors.FirstOrDefault(x => x.guid == color.guid);
                 if (toRemove != null)
                     theme.colors.Remove(toRemove);
             }
-            var refToRemove = colors.FirstOrDefault(x => x.guid == colorData.guid);
+            var refToRemove = colors.FirstOrDefault(x => x.guid == color.guid);
             if (refToRemove != null) 
                 colors.Remove(refToRemove);
         }
@@ -132,6 +134,15 @@ namespace Unity.Theme
             }
             if (colorRef != null)
                 colors.Remove(colorRef);
+        }
+        public void SetColor(ThemeData theme, ColorData color)
+        {
+            onThemeColorChanged?.Invoke(theme, color);
+        }
+        public void SortColorsByName()
+        {
+            foreach (var theme in themes)
+                theme.colors.Sort(ColorData.Compare);
         }
     }
 #pragma warning restore CA2235 // Mark all non-serializable fields

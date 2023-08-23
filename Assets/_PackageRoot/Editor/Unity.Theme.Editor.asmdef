@@ -1,6 +1,6 @@
 {
-    "name": "Unity.Theme.Editor.Scripts",
-    "rootNamespace": "Unity.Theme.Editor.Scripts",
+    "name": "Unity.Theme.Editor",
+    "rootNamespace": "Unity.Theme.Editor",
     "references": [
         "Unity.Theme"
     ],

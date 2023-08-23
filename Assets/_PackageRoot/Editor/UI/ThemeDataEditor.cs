@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 
-namespace Unity.Theme.Editor.UI
+namespace Unity.Theme.Editor
 {
     [CustomPropertyDrawer(typeof(ThemeData))]
     public class ThemeDataEditor : PropertyDrawer

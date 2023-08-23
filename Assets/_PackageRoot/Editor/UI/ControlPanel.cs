@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 
-namespace Unity.Theme.Editor.UI
+namespace Unity.Theme.Editor
 {
     public class ControlPanel : EditorWindow
     {
@@ -20,6 +20,13 @@ namespace Unity.Theme.Editor.UI
         {
             var wnd = GetWindow<ControlPanel>();
             wnd.titleContent = new GUIContent("ControlPanelEditor");
+        }
+
+        private void SaveChanges(string message)
+        {
+            Debug.Log(message);
+            saveChangesMessage = message;
+            base.SaveChanges();
         }
 
         public void CreateGUI()
@@ -41,8 +48,8 @@ namespace Unity.Theme.Editor.UI
             dropdownCurrentTheme
                 .RegisterValueChangedCallback(evt => 
                 {
-                    config.CurrentThemeIndex = config.ThemeNames.ToList().IndexOf(evt.newValue);
-                    this.SaveChanges();
+                    config.CurrentThemeName = evt.newValue;
+                    SaveChanges($"Theme Changed: {evt.newValue}");
                 });
             
             toggleDebug.value = config.debug;
@@ -50,7 +57,7 @@ namespace Unity.Theme.Editor.UI
                 .RegisterValueChangedCallback(evt => 
                 {
                     config.debug = evt.newValue;
-                    this.SaveChanges();
+                    SaveChanges($"Debug status changed: {evt.newValue}");
                 });
   
             // Colors
@@ -79,7 +86,7 @@ namespace Unity.Theme.Editor.UI
                     theme.themeName = evt.newValue;
                     foldoutTheme.text = evt.newValue;
                     dropdownCurrentTheme.value = config.ThemeNames[config.CurrentThemeIndex];
-                    this.SaveChanges();
+                    SaveChanges($"Theme name changed: {evt.newValue}");
                 });
 
                 // Colors
@@ -97,11 +104,18 @@ namespace Unity.Theme.Editor.UI
                     txtColorName.value = themeColor.name;
                     colorField.value = themeColor.color;
 
+                    colorField.RegisterValueChangedCallback(evt =>
+                    {
+                        themeColor.color = evt.newValue;
+                        config.SetColor(theme, themeColor);
+                        SaveChanges($"Theme color[{themeColor.name}] changed: {evt.newValue}");
+                    });
+
                     btnDelete.clicked += () =>
                     {
                         theme.colors.Remove(themeColor);
                         foldoutTheme.Remove(themeColorPanel);
-                        this.SaveChanges();
+                        SaveChanges($"Theme color[{themeColor.name}] deleted");
                     };
                 }
             }
