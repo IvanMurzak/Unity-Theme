@@ -1,5 +1,3 @@
-using Sirenix.OdinInspector;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Unity.Theme.Binders
@@ -7,24 +5,13 @@ namespace Unity.Theme.Binders
     [ExecuteAlways, ExecuteInEditMode]
     public abstract class BaseColorBinder : MonoBehaviour
     {
-        [SerializeField, HideInInspector]                                   string          colorGuid;
-        [HorizontalGroup("H"), ValueDropdown("GetColors"), ShowInInspector] string          ColorName
-        {
-            get => ThemeDatabaseInitializer.Config?.GetColorName(colorGuid);
-            set
-            {
-                var colorData = ThemeDatabaseInitializer.Config.GetColorByName(value);
-                if (colorData != null)
-                    colorGuid = colorData.Guid;
-            }
-        }
-        [GUIColor(1.0f, 0.5f, 0.5f)]
-        [HorizontalGroup("H", 60), Button("RESET")]                         void            ResetColor() { colorGuid = null; }
-        [SerializeField]                                                    bool            overrideAlpha;
-        [SerializeField, ShowIf("overrideAlpha"), PropertyRange(0f, 1f)]    float           alpha = 1f;
+        [SerializeField, HideInInspector] string colorGuid;                             
+        [SerializeField, HideInInspector] bool overrideAlpha;
+        [SerializeField, HideInInspector] float alpha = 1f;
 
-        private                                                             List<string>    GetColors() => ThemeDatabaseInitializer.Config.ColorNames;
-
+        public string ColorName => ThemeDatabaseInitializer.Config?.GetColorName(colorGuid);
+        public void ResetColor() => colorGuid = null;
+        
         protected virtual void Awake()
         {
             if (string.IsNullOrEmpty(ColorName))
