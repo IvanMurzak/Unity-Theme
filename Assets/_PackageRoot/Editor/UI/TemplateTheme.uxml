@@ -7,6 +7,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="contColors" class="ContentItem" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
         <ui:VisualElement class="ContentItem" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: flex-end;">
+            <ui:Button text="SORT" display-tooltip-when-elided="true" name="btnSortColors" class="Button-Accept" />
             <ui:Button text="ADD COLOR" display-tooltip-when-elided="true" name="btnAddColor" class="Button-Accept" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); height: 10px; flex-shrink: 0;" />

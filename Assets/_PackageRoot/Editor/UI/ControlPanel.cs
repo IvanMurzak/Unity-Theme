@@ -114,8 +114,7 @@ namespace Unity.Theme.Editor
                 colors          = new Dictionary<string, UIThemeColor>()
             };
 
-            var btnAddColor = themePanel.Query<Button>("btnAddColor").First();
-            btnAddColor.clicked += () =>
+            themePanel.Query<Button>("btnAddColor").First().clicked += () =>
             {
                 var colorName = "New";
                 var themeColorRef = config.AddColor(colorName);
@@ -126,6 +125,15 @@ namespace Unity.Theme.Editor
                     
                 SaveChanges($"Color added: {colorName}");
             };
+            themePanel.Query<Button>("btnSortColors").First().clicked += () =>
+            {
+                // config.SortColors(theme);
+
+                // foreach (var uiTheme in uiThemeColors.Values)
+                //     UIAddThemeColor(config, uiTheme, new ColorData(themeColor));
+                    
+                SaveChanges($"Sorted colors");
+            };            
             
             uiTheme.foldoutTheme.text = theme.themeName;
             uiTheme.textFieldName.value = theme.themeName;

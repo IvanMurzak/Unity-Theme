@@ -33,19 +33,20 @@
 
 .Button-Alert {
     -unity-font-style: bold;
-    background-color: rgb(150, 64, 64);
+    background-color: rgb(88, 44, 44);
     transition-duration: 200ms;
 }
 
 .Button-Alert:hover {
     -unity-font-style: bold;
-    background-color: rgb(200, 64, 64);
+    background-color: rgb(255, 110, 110);
     transition-duration: 200ms;
+    color: black;
 }
 
 .Button-Accept {
     transition-duration: 200ms;
 }
-.Button-Accept:Hover {
+.Button-Accept:hover {
     transition-duration: 200ms;
 }
