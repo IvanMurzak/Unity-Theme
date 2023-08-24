@@ -17,7 +17,7 @@ namespace Unity.Theme.Editor
         private DropdownField dropdownCurrentTheme;
 
         [MenuItem("Window/Unity-Theme")]
-        public static void ShowExample()
+        public static void Show()
         {
             var wnd = GetWindow<ControlPanel>();
             wnd.titleContent = new GUIContent("Unity-Theme");

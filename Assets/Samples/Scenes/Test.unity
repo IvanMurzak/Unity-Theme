@@ -899,7 +899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.alpha
-      value: 0.447
+      value: 0.892
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.colorGuid
@@ -907,7 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.overrideAlpha
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.a

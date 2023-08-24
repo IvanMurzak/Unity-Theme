@@ -16,6 +16,7 @@ namespace Unity.Theme.Editor
             var root = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath(templateGuid)).Instantiate();
             var toggleOverrideAlpha = root.Query<Toggle>("toggleOverrideAlpha").First();
             var dropdownColor = root.Query<DropdownField>("dropdownColor").First();
+            var btnOpenConfig = root.Query<Button>("btnOpenConfig").First();
             var sliderAlpha = root.Query<Slider>("sliderAlpha").First();
             var colorFill = root.Query<VisualElement>("colorFill").First();
 
@@ -35,24 +36,26 @@ namespace Unity.Theme.Editor
             {
                 var guid = ThemeDatabaseInitializer.Config?.GetColorByName(evt.newValue)?.Guid;
                 colorGuid.stringValue = guid;
-                colorGuid.serializedObject.ApplyModifiedProperties();
                 UpdateColorFill(colorFill, colorGuid.stringValue, overrideAlpha.boolValue ? alpha.floatValue : 1f);
+                colorGuid.serializedObject.ApplyModifiedProperties();
             });
 
             toggleOverrideAlpha.RegisterValueChangedCallback(evt =>
             {
                 overrideAlpha.boolValue = evt.newValue;
-                overrideAlpha.serializedObject.ApplyModifiedProperties();
                 sliderAlpha.visible = evt.newValue;
                 UpdateColorFill(colorFill, colorGuid.stringValue, overrideAlpha.boolValue ? alpha.floatValue : 1f);
+                overrideAlpha.serializedObject.ApplyModifiedProperties();
             });
 
             sliderAlpha.RegisterValueChangedCallback(evt =>
             {
                 alpha.floatValue = evt.newValue;
-                alpha.serializedObject.ApplyModifiedProperties();
                 UpdateColorFill(colorFill, colorGuid.stringValue, overrideAlpha.boolValue ? alpha.floatValue : 1f);
+                alpha.serializedObject.ApplyModifiedProperties();
             });
+
+            btnOpenConfig.clicked += () => ControlPanel.Show();
 
             return root;
         }
@@ -60,7 +63,7 @@ namespace Unity.Theme.Editor
         {
             var color = ThemeDatabaseInitializer.Config?.GetColorByGuid(colorGuid)?.color ?? ThemeDatabase.DefaultColor;
             color.a = alpha;
-            colorFill.style.unityBackgroundImageTintColor = new StyleColor(color);
+            colorFill.style.color = new StyleColor(color);
         }
     }
 }

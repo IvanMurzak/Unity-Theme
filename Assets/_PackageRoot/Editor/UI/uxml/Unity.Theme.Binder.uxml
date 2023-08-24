@@ -1,12 +1,14 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
     <ui:Template name="colorFill" src="project://database/Assets/_PackageRoot/Editor/UI/uxml/colorFill.uxml?fileID=9197481963319205126&amp;guid=07c8baad910b3e244bd677fa7d79370b&amp;type=3#colorFill" />
     <Style src="project://database/Assets/_PackageRoot/Editor/UI/uss/Unity.Theme.Style.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#Unity.Theme.Style" />
-    <ui:DropdownField label="Color" index="-1" name="dropdownColor">
-        <ui:Instance template="colorFill" name="colorFill" style="position: absolute;" />
-    </ui:DropdownField>
-    <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: stretch;">
-        <ui:Toggle label="Override Alpha" name="toggleOverrideAlpha" binding-path="overrideAlpha" />
-        <ui:Slider picking-mode="Ignore" value="1" high-value="1" binding-path="alpha" name="sliderAlpha" show-input-field="true" style="flex-grow: 1; padding-left: 15px; flex-shrink: 1;" />
+    <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-shrink: 0;">
+        <ui:DropdownField label="Color" index="-1" name="dropdownColor" style="flex-grow: 1;">
+            <ui:Instance template="colorFill" name="colorFill" style="position: absolute;" />
+        </ui:DropdownField>
+        <ui:Button text="T" display-tooltip-when-elided="true" name="btnOpenConfig" class="Button-Accept" />
     </ui:VisualElement>
-    <uie:PropertyField />
+    <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: stretch;">
+        <ui:Toggle label="Override Alpha" name="toggleOverrideAlpha" />
+        <ui:Slider picking-mode="Ignore" value="1" high-value="1" name="sliderAlpha" show-input-field="true" style="flex-grow: 1; padding-left: 15px; flex-shrink: 1;" />
+    </ui:VisualElement>
 </ui:UXML>
