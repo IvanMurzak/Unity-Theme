@@ -16,6 +16,8 @@ namespace Unity.Theme.Editor
         public static VisualTreeAsset TemplateTheme           => AssetDatabase.LoadAssetAtPath<VisualTreeAsset>($"{PATH}/TemplateTheme.uxml");
         public static VisualTreeAsset TemplateThemeColor      => AssetDatabase.LoadAssetAtPath<VisualTreeAsset>($"{PATH}/TemplateThemeColor.uxml");
 
+        private Dictionary<string, UITheme> uiThemeColors = new Dictionary<string, UITheme>();
+
         [MenuItem("Window/Unity-Theme")]
         public static void ShowExample()
         {
@@ -33,6 +35,9 @@ namespace Unity.Theme.Editor
 
         public void CreateGUI()
         {
+            rootVisualElement.Query<ScrollView>().First()?.RemoveFromHierarchy();
+            uiThemeColors.Clear();
+
             var config = ThemeDatabaseInitializer.Config;
             
             var root = new ScrollView();
@@ -49,20 +54,18 @@ namespace Unity.Theme.Editor
 
             dropdownCurrentTheme.choices = config.ThemeNames.ToList();
             dropdownCurrentTheme.value = config.ThemeNames[config.CurrentThemeIndex];
-            dropdownCurrentTheme
-                .RegisterValueChangedCallback(evt => 
-                {
-                    config.CurrentThemeName = evt.newValue;
-                    SaveChanges($"Theme Changed: {evt.newValue}");
-                });
+            dropdownCurrentTheme.RegisterValueChangedCallback(evt => 
+            {
+                config.CurrentThemeName = evt.newValue;
+                SaveChanges($"Theme Changed: {evt.newValue}");
+            });
             
             toggleDebug.value = config.debugLevel;
-            toggleDebug
-                .RegisterValueChangedCallback(evt => 
-                {
-                    config.debugLevel = (DebugLevel)evt.newValue;
-                    SaveChanges($"Debug status changed: {evt.newValue}");
-                });
+            toggleDebug.RegisterValueChangedCallback(evt => 
+            {
+                config.debugLevel = (DebugLevel)evt.newValue;
+                SaveChanges($"Debug status changed: {evt.newValue}");
+            });
   
             // Colors
             // -----------------------------------------------------------------
@@ -77,7 +80,12 @@ namespace Unity.Theme.Editor
 
             btnCreateNewColor.RegisterCallback<ClickEvent>(evt =>
             {
-                config.AddTheme(inputFieldNewColorName.value);
+                var themeColorRef = config.AddColor(inputFieldNewColorName.value);
+                var themeColor = new ColorData(themeColorRef);
+                foreach (var uiTheme in uiThemeColors.Values)
+                {
+                    UIAddThemeColor(config, uiTheme, themeColor);
+                }
                 SaveChanges($"Color added: {inputFieldNewColorName.value}");
             });
 
@@ -97,103 +105,117 @@ namespace Unity.Theme.Editor
 
             btnCreateNewTheme.RegisterCallback<ClickEvent>(evt =>
             {
-                config.AddColor(inputFieldNewColorName.value);
-                SaveChanges($"Color added: {inputFieldNewColorName.value}");
+                var theme = config.AddTheme(inputFieldNewColorName.value);
+                UIAddTheme(config, rootThemes, theme);
+                SaveChanges($"Theme added: {inputFieldNewColorName.value}");
             });
 
-            var uiThemeColors = new Dictionary<string, Dictionary<string, UIThemeColor>>();
-
             foreach (var theme in config.Themes)
-            {
-                var themePanel = TemplateTheme.Instantiate();
-                rootThemes.Add(themePanel);
-
-                uiThemeColors[theme.themeName] = new Dictionary<string, UIThemeColor>();
-
-                var foldoutTheme = themePanel.Query<Foldout>("foldoutTheme").First();
-                var textFieldName = themePanel.Query<TextField>("txtName").First();
-                var btnDeleteTheme = themePanel.Query<Button>("btnRemove").First();
-                var contColors = themePanel.Query<VisualElement>("contColors").First();
-                
-                foldoutTheme.text = theme.themeName;
-
-                textFieldName.value = theme.themeName;
-                textFieldName.RegisterValueChangedCallback(evt =>
-                {
-                    theme.themeName = evt.newValue;
-                    foldoutTheme.text = evt.newValue;
-                    dropdownCurrentTheme.value = config.ThemeNames[config.CurrentThemeIndex];
-                    SaveChanges($"Theme name changed: {evt.newValue}");
-                });
-
-                btnDeleteTheme.RegisterValueChangedCallback(evt =>
-                {
-                    config.RemoveTheme(theme);
-                    rootThemes.Remove(themePanel);
-                    uiThemeColors.Remove(theme.themeName);
-                    SaveChanges($"Theme deleted: {theme.themeName}");
-                });
-
-                // Colors
-                // ---------------------------
-                foreach (var themeColor in theme.colors)
-                {
-                    var themeColorPanel = TemplateThemeColor.Instantiate();
-                    contColors.Add(themeColorPanel);
-
-                    var uiThemeColor = new UIThemeColor
-                    {
-                        root = themeColorPanel,
-                        txtName = themeColorPanel.Query<TextField>("txtName").First(),
-                        colorField = themeColorPanel.Query<ColorField>("color").First(),
-                        btnDelete = themeColorPanel.Query<Button>("btnDelete").First()
-                    };
-                    uiThemeColors[theme.themeName][themeColor.Guid] = uiThemeColor;
-
-                    uiThemeColor.txtName.value = config.GetColorName(themeColor.Guid);
-                    uiThemeColor.colorField.value = themeColor.color;
-
-                    uiThemeColor.txtName.RegisterValueChangedCallback(evt =>
-                    {
-                        var colorName = config.GetColorName(themeColor.Guid);
-                        var colorRef = config.GetColorRef(themeColor.Guid);
-                        
-                        colorRef.name = evt.newValue;
-                        config.UpdateColor(themeColor);
-                        foreach (var uiTheme in uiThemeColors.Values)
-                        {
-                            if (uiTheme.ContainsKey(themeColor.Guid))
-                                uiTheme[themeColor.Guid].txtName.value = evt.newValue;
-                        }
-                        SaveChanges($"Theme color[{colorRef.name}] changed: {evt.newValue}");
-                    });
-
-                    uiThemeColor.colorField.RegisterValueChangedCallback(evt =>
-                    {
-                        themeColor.color = evt.newValue;
-                        config.SetColor(theme, themeColor);
-                        SaveChanges($"Theme color[{config.GetColorName(themeColor.Guid)}] changed: {evt.newValue}");
-                    });
-
-                    uiThemeColor.btnDelete.clicked += () =>
-                    {
-                        var colorName = config.GetColorName(themeColor.Guid);
-                        theme.colors.Remove(themeColor);
-                        foldoutTheme.Remove(themeColorPanel);
-                        foreach (var uiTheme in uiThemeColors.Values)
-                        {
-                            if (uiTheme.ContainsKey(themeColor.Guid))
-                            {
-                                uiTheme[themeColor.Guid].root.RemoveFromHierarchy();
-                                uiTheme.Remove(themeColor.Guid);
-                            }
-                        }
-                        SaveChanges($"Theme color[{colorName}] deleted");
-                    };
-                }
-            }
+                UIAddTheme(config, rootThemes, theme);
         }
 
+        void UIAddTheme(ThemeDatabase config, VisualElement rootThemes, ThemeData theme)
+        {
+            var themePanel = TemplateTheme.Instantiate();
+            rootThemes.Add(themePanel);
+
+            var uiTheme = uiThemeColors[theme.themeName] = new UITheme()
+            {
+                root = themePanel,
+                foldoutTheme = themePanel.Query<Foldout>("foldoutTheme").First(),
+                textFieldName = themePanel.Query<TextField>("textFieldName").First(),
+                btnDelete = themePanel.Query<Button>("btnRemove").First(),
+                contColors = themePanel.Query<VisualElement>("contColors").First(),
+                theme = theme,
+                colors = new Dictionary<string, UIThemeColor>()
+            };
+            
+            uiTheme.foldoutTheme.text = theme.themeName;
+            uiTheme.textFieldName.value = theme.themeName;
+            uiTheme.textFieldName.RegisterValueChangedCallback(evt =>
+            {
+                theme.themeName = evt.newValue;
+                uiThemeColors[theme.themeName].foldoutTheme.text = evt.newValue;
+                SaveChanges($"Theme name changed: {evt.newValue}");
+            });
+            uiTheme.btnDelete.clicked += () =>
+            {
+                config.RemoveTheme(theme);
+                rootThemes.Remove(themePanel);
+                uiThemeColors.Remove(theme.themeName);
+                SaveChanges($"Theme deleted: {theme.themeName}");
+            };
+
+            foreach (var themeColor in theme.colors)
+                UIAddThemeColor(config, uiTheme, themeColor);
+        }
+        void UIAddThemeColor(ThemeDatabase config, UITheme uiTheme, ColorData themeColor)
+        {
+            var themeColorPanel = TemplateThemeColor.Instantiate();
+            uiTheme.contColors.Add(themeColorPanel);
+
+            var uiThemeColor = new UIThemeColor
+            {
+                root = themeColorPanel,
+                txtName = themeColorPanel.Query<TextField>("txtName").First(),
+                colorField = themeColorPanel.Query<ColorField>("color").First(),
+                btnDelete = themeColorPanel.Query<Button>("btnDelete").First()
+            };
+            uiTheme.colors[themeColor.Guid] = uiThemeColor;
+
+            uiThemeColor.txtName.value = config.GetColorName(themeColor.Guid);
+            uiThemeColor.colorField.value = themeColor.color;
+
+            uiThemeColor.txtName.RegisterValueChangedCallback(evt =>
+            {
+                var colorName = config.GetColorName(themeColor.Guid);
+                var colorRef = config.GetColorRef(themeColor.Guid);
+
+                colorRef.name = evt.newValue;
+                foreach (var uiTheme in uiThemeColors.Values)
+                {
+                    if (uiTheme.colors.ContainsKey(themeColor.Guid))
+                        uiTheme.colors[themeColor.Guid].txtName.value = evt.newValue;
+                }
+                config.UpdateColor(themeColor);
+                SaveChanges($"Theme color[{colorRef.name}] changed: {evt.newValue}");
+            });
+
+            uiThemeColor.colorField.RegisterValueChangedCallback(evt =>
+            {
+                themeColor.color = evt.newValue;
+                config.SetColor(uiTheme.theme, themeColor);
+                SaveChanges($"Theme color[{config.GetColorName(themeColor.Guid)}] changed: {evt.newValue}");
+            });
+
+            uiThemeColor.btnDelete.clicked += () =>
+            {
+                var colorName = config.GetColorName(themeColor.Guid);
+                uiTheme.theme.colors.Remove(themeColor);
+                uiTheme.contColors.Remove(themeColorPanel);
+                foreach (var uiTheme in uiThemeColors.Values)
+                {
+                    if (uiTheme.colors.ContainsKey(themeColor.Guid))
+                    {
+                        uiTheme.colors[themeColor.Guid].root.RemoveFromHierarchy();
+                        uiTheme.colors.Remove(themeColor.Guid);
+                    }
+                }
+                config.RemoveColor(themeColor);
+                SaveChanges($"Theme color[{colorName}] deleted");
+            };
+        }
+
+        struct UITheme
+        {
+            public VisualElement root;
+            public Foldout foldoutTheme;
+            public TextField textFieldName;
+            public Button btnDelete;
+            public VisualElement contColors;
+            public ThemeData theme;
+            public Dictionary<string, UIThemeColor> colors;
+        }
         struct UIThemeColor
         {
             public VisualElement root;

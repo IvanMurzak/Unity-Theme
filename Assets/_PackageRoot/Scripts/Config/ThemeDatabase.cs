@@ -45,7 +45,7 @@ namespace Unity.Theme
         public ColorData GetColorFirst()                                => GetColorFirst(ThemeDatabaseInitializer.Config.CurrentTheme);
         public ColorData GetColorFirst(ThemeData theme)                 => theme?.colors?.FirstOrDefault();
 
-        public void AddTheme(string themeName)
+        public ThemeData AddTheme(string themeName)
         {
             List<ColorData> colors;
             if (themes.Count > 0)
@@ -58,15 +58,16 @@ namespace Unity.Theme
             {
                 colors = new List<ColorData>();
             }
-
-            themes.Add(new ThemeData
+            var theme = new ThemeData
             {
                 themeName = themeName,
                 colors = colors
-            });
+            };
+            themes.Add(theme);
+            return theme;
         }
-        public void AddColor(string colorName) => AddColor(colorName, DefaultColor);
-        public void AddColor(string colorName, string colorHex)
+        public ColorDataRef AddColor(string colorName) => AddColor(colorName, DefaultColor);
+        public ColorDataRef AddColor(string colorName, string colorHex)
         {
             var color = DefaultColor;
             if (!ColorUtility.TryParseHtmlString(colorHex, out color))
@@ -74,26 +75,28 @@ namespace Unity.Theme
                 if (debugLevel <= DebugLevel.Error)
                     Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
             }
-            AddColor(colorName, color);
+            return AddColor(colorName, color);
         }
-        public void AddColor(string colorName, Color color)
+        public ColorDataRef AddColor(string colorName, Color color)
         {
             var guid = System.Guid.NewGuid().ToString();
-            colors.Add(new ColorDataRef(guid, colorName));
+            var colorDataRef = new ColorDataRef(guid, colorName);
+            colors.Add(colorDataRef);
 
             if (themes.Count > 0)
             {
                 if (string.IsNullOrEmpty(colorName))
-                    return;
+                    return colorDataRef;
 
                 if (themes[0].colors.Any(x => x.Guid == guid))
-                    return;
+                    return colorDataRef;
 
                 foreach (var theme in themes)
                 {
                     theme.colors.Add(new ColorData(guid, color));
                 }
             }
+            return colorDataRef;
         }
 
         public void RemoveTheme(ThemeData theme) => themes.Remove(theme);

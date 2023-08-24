@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/_PackageRoot/Editor/UI/ControlPanel.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#ControlPanel" />
     <ui:Foldout text="Foldout" name="foldoutTheme" value="true" style="margin-bottom: 15px;">
         <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
-            <ui:TextField picking-mode="Ignore" value="Brown" name="txtName" style="flex-grow: 1;" />
+            <ui:TextField picking-mode="Ignore" value="Brown" name="textFieldName" style="flex-grow: 1;" />
             <ui:Button text="REMOVE" display-tooltip-when-elided="true" name="btnRemove" class="Button-Alert" />
         </ui:VisualElement>
         <ui:VisualElement name="contColors" class="ContentItem" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
