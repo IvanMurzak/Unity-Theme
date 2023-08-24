@@ -14,6 +14,10 @@
     <ui:VisualElement name="contPalettes" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
         <ui:Label text="Palettes" name="labelPalettes" class="Header" />
         <ui:VisualElement name="divider" class="Divider" />
+        <ui:VisualElement name="contNewTheme" class="ContentItem" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-shrink: 0; margin-bottom: 10px;">
+            <ui:TextField picking-mode="Ignore" label="Theme Name" value="New Theme" name="txtNewThemeName" style="flex-grow: 1;" />
+            <ui:Button text="CREATE" display-tooltip-when-elided="true" name="btnCreateTheme" class="Button-Accept" />
+        </ui:VisualElement>
         <ui:ListView focusable="true" name="listView" />
     </ui:VisualElement>
 </ui:UXML>
