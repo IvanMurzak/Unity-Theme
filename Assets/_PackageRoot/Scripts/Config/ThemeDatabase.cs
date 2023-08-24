@@ -10,8 +10,8 @@ namespace Unity.Theme
         public              List<ThemeData>     Themes              => themes;
         public              IEnumerable<string> ThemeNames          => themes.Select(x => x.themeName);
         public              ThemeData           CurrentTheme        => themes.Count == 0 ? null : ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count) ? themes[currentThemeIndex] : null);
-        public              List<string>        ColorNames          => colors?.Select(x => x.name)?.ToList();
-        public              List<string>        ColorGuids          => colors?.Select(x => x.Guid)?.ToList();
+        public              IEnumerable<string> ColorNames          => colors?.Select(x => x.name);
+        public              IEnumerable<string> ColorGuids          => colors?.Select(x => x.Guid);
 
         public              int                 CurrentThemeIndex
         {
@@ -35,8 +35,8 @@ namespace Unity.Theme
         }
 
         public ColorDataRef GetColorRef(ColorData colorData)            => GetColorRef(colorData.Guid);
-        public ColorDataRef GetColorRef(string guid)                    => colors.FirstOrDefault(x => x.Guid == guid);
-        public string    GetColorName  (string guid)                    => colors.FirstOrDefault(x => x.Guid == guid)?.name;
+        public ColorDataRef GetColorRef(string guid)                    => string.IsNullOrEmpty(guid) ? null : colors.FirstOrDefault(x => x.Guid == guid);
+        public string    GetColorName  (string guid)                    => GetColorRef(guid)?.name;
         public ColorData GetColorByGuid(string guid)                    => GetColorByGuid(guid, ThemeDatabaseInitializer.Config.CurrentTheme);
         public ColorData GetColorByGuid(string guid, ThemeData theme)   => string.IsNullOrEmpty(guid) ? null : theme?.colors?.FirstOrDefault(x => x.Guid == guid);
         public ColorData GetColorByName(string name)                    => GetColorByName(name, ThemeDatabaseInitializer.Config.CurrentTheme);

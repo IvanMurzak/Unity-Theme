@@ -13,10 +13,7 @@ namespace Unity.Theme
 
         public string Guid => guid;
 
-        public ColorDataRef()
-        {
-            guid = System.Guid.NewGuid().ToString();
-        }
+        public ColorDataRef() { }
         public ColorDataRef(string guid, string name)
         {
             this.guid = guid;

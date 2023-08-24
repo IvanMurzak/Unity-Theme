@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 namespace Unity.Theme.Binders
@@ -5,22 +6,17 @@ namespace Unity.Theme.Binders
     [ExecuteAlways, ExecuteInEditMode]
     public abstract class BaseColorBinder : MonoBehaviour
     {
-        [SerializeField, HideInInspector] string colorGuid;                             
-        [SerializeField, HideInInspector] bool overrideAlpha;
-        [SerializeField, HideInInspector] float alpha = 1f;
+        [SerializeField] protected ColorBinderData data;
 
-        public string ColorName => ThemeDatabaseInitializer.Config?.GetColorName(colorGuid);
-        public void ResetColor() => colorGuid = null;
-        
         protected virtual void Awake()
         {
-            if (string.IsNullOrEmpty(ColorName))
+            if (!data.IsConnected)
             {
                 if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Error)
-                    Debug.Log($"Color not found in database. Guid={colorGuid}", gameObject);
+                    Debug.Log($"Color not found in database. Guid={data.colorGuid}", gameObject);
                 var colorData = ThemeDatabaseInitializer.Config?.GetColorFirst();
                 if (colorData != null)
-                    colorGuid = colorData.Guid;
+                    data.colorGuid = colorData.Guid;
             }
             TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
         }
@@ -44,30 +40,37 @@ namespace Unity.Theme.Binders
                 return;
             }
             
-            var colorData = theme.GetColorByGuid(colorGuid);
+            var colorData = theme.GetColorByGuid(data.colorGuid);
             if (colorData == null)
             {
                 if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"color not found by name '{ColorName}' at <b>{GameObjectPath()}</b>, guid='{colorGuid}'", gameObject);
+                    Debug.LogError($"color not found by name '{data.ColorName}' at <b>{GameObjectPath()}</b>, guid='{data.colorGuid}'", gameObject);
             }
             else
             {
                 var color = GetColor(colorData);
                 if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Log)
-                    Debug.Log($"SetColor: '<b>{ColorName}</b>' #{color} at <b>{GameObjectPath()}</b>", gameObject);
+                    Debug.Log($"SetColor: '<b>{data.ColorName}</b>' #{color} at <b>{GameObjectPath()}</b>", gameObject);
                 SetColor(color);
             }
         }
 
 #if UNITY_EDITOR
-        private void OnValidate() => TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
+        private void OnValidate()
+        {
+            // Attaching to first color
+            if (string.IsNullOrEmpty(data.colorGuid) || ThemeDatabaseInitializer.Config?.ColorGuids.Contains(data.colorGuid) == false)
+                data.colorGuid = ThemeDatabaseInitializer.Config?.GetColorFirst().Guid;
+
+            TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
+        }
 #endif
         protected virtual Color GetColor(ColorData colorData)
         {
             var result = colorData.color;
             
-            if (overrideAlpha) 
-                result.a = alpha;
+            if (data.overrideAlpha) 
+                result.a = data.alpha;
 
             return result;
         }
@@ -75,7 +78,7 @@ namespace Unity.Theme.Binders
 
         private void OnThemeColorChanged(ThemeData themeData, ColorData colorData)
         {
-            if (colorData.Guid == colorGuid)
+            if (colorData.Guid == data.colorGuid)
                 TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
         }
         // UTILS ---------------------------------------------------------------------------//

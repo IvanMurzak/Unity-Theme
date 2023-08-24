@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="colorFill" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); position: absolute; left: 40px; height: 13px; width: 13px; align-self: center; background-image: url(&apos;project://database/Assets/_PackageRoot/Editor/Gizmos/circle_64_64.png?fileID=2800000&amp;guid=4b3055f266310964aacca4ede0a943ed&amp;type=3#circle_64_64&apos;);" />
+</ui:UXML>

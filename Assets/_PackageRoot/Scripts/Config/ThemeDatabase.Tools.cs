@@ -7,7 +7,7 @@ namespace Unity.Theme
 #pragma warning disable CA2235 // Mark all non-serializable fields
     public partial class ThemeDatabase : ScriptableObject
     {                           
-               static       Color               DefaultColor                => Color.white;
+        public static       Color               DefaultColor                => Color.white;
         public delegate     void                OnTheme                     (ThemeData theme);
         public delegate     void                OnColor                     (ThemeData theme, ColorData color);
 
