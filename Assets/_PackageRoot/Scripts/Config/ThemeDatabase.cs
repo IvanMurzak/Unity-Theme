@@ -11,7 +11,7 @@ namespace Unity.Theme
         public              string[]            ThemeNames          => themes.Select(x => x.themeName).ToArray();
         public              ThemeData           CurrentTheme        => themes.Count == 0 ? null : ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count) ? themes[currentThemeIndex] : null);
         public              List<string>        ColorNames          => colors?.Select(x => x.name)?.ToList();
-        public              List<string>        ColorGuids          => colors?.Select(x => x.guid)?.ToList();
+        public              List<string>        ColorGuids          => colors?.Select(x => x.Guid)?.ToList();
 
         public              int                 CurrentThemeIndex
         {
@@ -34,10 +34,13 @@ namespace Unity.Theme
             set => CurrentThemeIndex = themes.FindIndex(x => x.themeName == value);
         }
 
+        public ColorDataRef GetColorRef(ColorData colorData)            => GetColorRef(colorData.Guid);
+        public ColorDataRef GetColorRef(string guid)                    => colors.FirstOrDefault(x => x.Guid == guid);
+        public string    GetColorName  (string guid)                    => colors.FirstOrDefault(x => x.Guid == guid)?.name;
         public ColorData GetColorByGuid(string guid)                    => GetColorByGuid(guid, ThemeDatabaseInitializer.Config.CurrentTheme);
-        public ColorData GetColorByGuid(string guid, ThemeData theme)   => string.IsNullOrEmpty(guid) ? null : theme?.colors?.FirstOrDefault(x => x.guid == guid);
+        public ColorData GetColorByGuid(string guid, ThemeData theme)   => string.IsNullOrEmpty(guid) ? null : theme?.colors?.FirstOrDefault(x => x.Guid == guid);
         public ColorData GetColorByName(string name)                    => GetColorByName(name, ThemeDatabaseInitializer.Config.CurrentTheme);
-        public ColorData GetColorByName(string name, ThemeData theme)   => string.IsNullOrEmpty(name) ? null : GetColorByGuid(colors.FirstOrDefault(x => x.name == name)?.guid, theme);
+        public ColorData GetColorByName(string name, ThemeData theme)   => string.IsNullOrEmpty(name) ? null : GetColorByGuid(colors.FirstOrDefault(x => x.name == name)?.Guid, theme);
 
         public ColorData GetColorFirst()                                => GetColorFirst(ThemeDatabaseInitializer.Config.CurrentTheme);
         public ColorData GetColorFirst(ThemeData theme)                 => theme?.colors?.FirstOrDefault();
@@ -47,12 +50,9 @@ namespace Unity.Theme
             List<ColorData> colors;
             if (themes.Count > 0)
             {
-                colors = themes[0].colors.Select(c => new ColorData
-                {
-                    guid    = c.guid,
-                    name    = c.name,
-                    color   = c.color
-                }).ToList();
+                colors = themes[0].colors
+                    .Select(c => new ColorData(c))
+                    .ToList();
             }
             else
             {
@@ -79,28 +79,19 @@ namespace Unity.Theme
         public void AddColor(string colorName, Color color)
         {
             var guid = System.Guid.NewGuid().ToString();
-            colors.Add(new ColorDataRef
-            {
-                guid = guid,
-                name = colorName
-            });
+            colors.Add(new ColorDataRef(guid, colorName));
 
             if (themes.Count > 0)
             {
                 if (string.IsNullOrEmpty(colorName))
                     return;
 
-                if (themes[0].colors.Any(x => x.guid == guid))
+                if (themes[0].colors.Any(x => x.Guid == guid))
                     return;
 
                 foreach (var theme in themes)
                 {
-                    theme.colors.Add(new ColorData
-                    {
-                        guid    = guid,
-                        name    = colorName,
-                        color   = color
-                    });
+                    theme.colors.Add(new ColorData(guid, color));
                 }
             }
         }
@@ -110,11 +101,11 @@ namespace Unity.Theme
         {
             foreach (var theme in themes)
             {
-                var toRemove = theme.colors.FirstOrDefault(x => x.guid == color.guid);
+                var toRemove = theme.colors.FirstOrDefault(x => x.Guid == color.Guid);
                 if (toRemove != null)
                     theme.colors.Remove(toRemove);
             }
-            var refToRemove = colors.FirstOrDefault(x => x.guid == color.guid);
+            var refToRemove = colors.FirstOrDefault(x => x.Guid == color.Guid);
             if (refToRemove != null) 
                 colors.Remove(refToRemove);
         }
@@ -122,12 +113,16 @@ namespace Unity.Theme
         {
             foreach (var theme in themes)
             {
-                var toRemove = theme.colors.FirstOrDefault(x => x.guid == colorRef.guid);
+                var toRemove = theme.colors.FirstOrDefault(x => x.Guid == colorRef.Guid);
                 if (toRemove != null)
                     theme.colors.Remove(toRemove);
             }
             if (colorRef != null)
                 colors.Remove(colorRef);
+        }
+        public void UpdateColor(ColorData color)
+        {
+            
         }
         public void SetColor(ThemeData theme, ColorData color)
         {
@@ -136,7 +131,12 @@ namespace Unity.Theme
         public void SortColorsByName()
         {
             foreach (var theme in themes)
-                theme.colors.Sort(ColorData.Compare);
+                theme.colors.Sort((l, r) => 
+                {
+                    var refL = colors.FirstOrDefault(x => x.Guid == l.Guid);
+                    var refR = colors.FirstOrDefault(x => x.Guid == r.Guid);
+                    return ColorDataRef.Compare(refL, refR);
+                });
         }
     }
 #pragma warning restore CA2235 // Mark all non-serializable fields

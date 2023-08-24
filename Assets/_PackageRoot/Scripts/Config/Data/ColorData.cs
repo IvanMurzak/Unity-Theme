@@ -6,14 +6,21 @@ namespace Unity.Theme
     [Serializable]
     public class ColorData
     {
-        [HideInInspector]
-        public string   guid;
-        public string   name = "New";
-        public Color    color = Color.white;
+        [SerializeField, HideInInspector]
+        private string guid;
 
-        public static int Compare(ColorData l, ColorData r)
+        public Color color = Color.white;
+
+        public string Guid => guid;
+
+        public ColorData() { }
+        public ColorData(ColorData colorData) : this(colorData.guid, colorData.color) { }
+        public ColorData(ColorDataRef colorRef) : this(colorRef, Color.white) { }
+        public ColorData(ColorDataRef colorRef, Color color) : this(colorRef.Guid, color) { }
+        public ColorData(string guid, Color color) : this()
         {
-            return l.name.CompareTo(r.name);
+            this.guid = guid;
+            this.color = color;
         }
     }
 }

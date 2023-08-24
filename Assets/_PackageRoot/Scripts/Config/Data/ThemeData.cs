@@ -10,6 +10,6 @@ namespace Unity.Theme
         public string themeName = "New Theme";
         public List<ColorData> colors = new List<ColorData>();
 
-        public ColorData GetColorByGuid(string guid) => string.IsNullOrEmpty(guid) ? null : colors?.FirstOrDefault(x => x.guid == guid);
+        public ColorData GetColorByGuid(string guid) => string.IsNullOrEmpty(guid) ? null : colors?.FirstOrDefault(x => x.Guid == guid);
     }
 }

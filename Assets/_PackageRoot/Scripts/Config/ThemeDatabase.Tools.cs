@@ -30,7 +30,6 @@ namespace Unity.Theme
             {
                 changed |= RemoveLegacyColors(theme);
                 changed |= AddMissedColors(theme);
-                changed |= UpdateColorNames(theme);
                 changed |= SortColors(theme);
             }
 
@@ -41,34 +40,18 @@ namespace Unity.Theme
         }
         private bool RemoveLegacyColors(ThemeData theme)
         {
-            return theme.colors.RemoveAll(colorData => colors.All(colorRef => colorRef.guid != colorData.guid)) > 0;
+            return theme.colors.RemoveAll(colorData => colors.All(colorRef => colorRef.Guid != colorData.Guid)) > 0;
         }
         private bool AddMissedColors(ThemeData theme)
         {
             var changed = false;
             foreach (var colorRef in colors)
             {
-                if (theme.colors.All(colorData => colorData.guid != colorRef.guid))
+                if (theme.colors.All(colorData => colorData.Guid != colorRef.Guid))
                 {
-                    theme.colors.Add(new ColorData
-                    {
-                        guid = colorRef.guid,
-                        name = colorRef.name,
-                        color = DefaultColor
-                    });
+                    theme.colors.Add(new ColorData(colorRef, DefaultColor));
                     changed = true;
                 }
-            }
-            return changed;
-        }
-        private bool UpdateColorNames(ThemeData theme)
-        {
-            var changed = false;
-            foreach (var colorData in theme.colors)
-            {
-                var colorRef = colors.First(x => x.guid == colorData.guid);
-                colorData.name = colorRef.name;
-                changed = true;
             }
             return changed;
         }
@@ -77,9 +60,9 @@ namespace Unity.Theme
             var changed = false;
             for (int i = 0; i < colors.Count; i++)
             {
-                if (theme.colors[i].guid != colors[i].guid)
+                if (theme.colors[i].Guid != colors[i].Guid)
                 {
-                    var colorData = theme.colors.First(colorData => colorData.guid == colors[i].guid);
+                    var colorData = theme.colors.First(colorData => colorData.Guid == colors[i].Guid);
                     var colorIndex = theme.colors.IndexOf(colorData);
                     
                     var temp = theme.colors[i];

@@ -10,18 +10,12 @@ namespace Unity.Theme.Binders
         [SerializeField, HideInInspector]                                   string          colorGuid;
         [HorizontalGroup("H"), ValueDropdown("GetColors"), ShowInInspector] string          ColorName
         {
-            get
-            {
-                var colorData = ThemeDatabaseInitializer.Config?.GetColorByGuid(colorGuid);
-                if (colorData == null)
-                    colorGuid = null;
-                return colorData?.name;
-            }
+            get => ThemeDatabaseInitializer.Config?.GetColorName(colorGuid);
             set
             {
                 var colorData = ThemeDatabaseInitializer.Config.GetColorByName(value);
                 if (colorData != null)
-                    colorGuid = colorData.guid;
+                    colorGuid = colorData.Guid;
             }
         }
         [GUIColor(1.0f, 0.5f, 0.5f)]
@@ -35,9 +29,11 @@ namespace Unity.Theme.Binders
         {
             if (string.IsNullOrEmpty(ColorName))
             {
+                if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Error)
+                    Debug.Log($"Color not found in database. Guid={colorGuid}", gameObject);
                 var colorData = ThemeDatabaseInitializer.Config?.GetColorFirst();
                 if (colorData != null)
-                    colorGuid = colorData.guid;
+                    colorGuid = colorData.Guid;
             }
             TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
         }
@@ -92,7 +88,7 @@ namespace Unity.Theme.Binders
 
         private void OnThemeColorChanged(ThemeData themeData, ColorData colorData)
         {
-            if (colorData.guid == colorGuid)
+            if (colorData.Guid == colorGuid)
                 TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
         }
         // UTILS ---------------------------------------------------------------------------//
