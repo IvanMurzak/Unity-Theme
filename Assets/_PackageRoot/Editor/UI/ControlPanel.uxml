@@ -13,10 +13,6 @@
         </ui:VisualElement>
     </ui:Box>
     <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
-        <ui:Instance template="contHeader" name="contHeaderColors">
-            <AttributeOverrides element-name="labelHeader" text="Colors" />
-            <AttributeOverrides element-name="textFieldNewName" value="New Color" />
-        </ui:Instance>
         <ui:Instance template="contHeader" name="contHeaderThemes">
             <AttributeOverrides element-name="labelHeader" text="Themes" />
             <AttributeOverrides element-name="textFieldNewName" value="New Theme" />

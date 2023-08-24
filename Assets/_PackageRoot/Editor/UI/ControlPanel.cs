@@ -16,6 +16,7 @@ namespace Unity.Theme.Editor
         public static VisualTreeAsset TemplateThemeColor      => AssetDatabase.LoadAssetAtPath<VisualTreeAsset>($"{PATH}/TemplateThemeColor.uxml");
 
         private Dictionary<string, UITheme> uiThemeColors = new Dictionary<string, UITheme>();
+        private DropdownField dropdownCurrentTheme;
 
         [MenuItem("Window/Unity-Theme")]
         public static void ShowExample()
@@ -32,61 +33,40 @@ namespace Unity.Theme.Editor
             base.SaveChanges();
         }
 
+        private void UpdateDropdownCurrentTheme(ThemeDatabase config)
+        {
+            dropdownCurrentTheme.choices = config.ThemeNames.ToList();
+            dropdownCurrentTheme.value = config.CurrentThemeName;
+        }
+
         public void CreateGUI()
         {
-            rootVisualElement.Query<ScrollView>().First()?.RemoveFromHierarchy();
-            uiThemeColors.Clear();
-
-            var config = ThemeDatabaseInitializer.Config;
-            
+            var config = ThemeDatabaseInitializer.Config;            
+            var panel = TemplateControlPanel.Instantiate();
             var root = new ScrollView();
             rootVisualElement.Add(root);
-
-            var panel = TemplateControlPanel.Instantiate();
             root.Add(panel);
             
-            var dropdownCurrentTheme = panel.Query<DropdownField>("dropdownCurrentTheme").First();
-            var toggleDebug = panel.Query<EnumField>("dropdownDebugLevel").First();
-
-            // Header
+            // Settings
             // -----------------------------------------------------------------
 
-            dropdownCurrentTheme.choices = config.ThemeNames.ToList();
-            dropdownCurrentTheme.value = config.ThemeNames[config.CurrentThemeIndex];
+            var enumDebugLevel = panel.Query<EnumField>("dropdownDebugLevel").First();
+            dropdownCurrentTheme = panel.Query<DropdownField>("dropdownCurrentTheme").First();
+
+            UpdateDropdownCurrentTheme(config);
+
             dropdownCurrentTheme.RegisterValueChangedCallback(evt => 
             {
                 config.CurrentThemeName = evt.newValue;
                 SaveChanges($"Theme Changed: {evt.newValue}");
             });
             
-            toggleDebug.value = config.debugLevel;
-            toggleDebug.RegisterValueChangedCallback(evt => 
+            enumDebugLevel.value = config.debugLevel;
+            enumDebugLevel.RegisterValueChangedCallback(evt => 
             {
                 config.debugLevel = (DebugLevel)evt.newValue;
                 SaveChanges($"Debug status changed: {evt.newValue}");
             });
-  
-            // Colors
-            // -----------------------------------------------------------------
-
-            var inputFieldNewColorName = panel
-                .Query<VisualElement>("contHeaderColors").First()
-                .Query<TextField>("textFieldNewName").First();
-
-            var btnCreateNewColor = panel
-                .Query<VisualElement>("contHeaderColors").First()
-                .Query<Button>("btnCreateNew").First();
-
-            btnCreateNewColor.clicked += () =>
-            {
-                var themeColorRef = config.AddColor(inputFieldNewColorName.value);
-                var themeColor = new ColorData(themeColorRef);
-
-                foreach (var uiTheme in uiThemeColors.Values)
-                    UIAddThemeColor(config, uiTheme, themeColor);
-                    
-                SaveChanges($"Color added: {inputFieldNewColorName.value}");
-            };
 
             // Themes
             // -----------------------------------------------------------------
@@ -104,9 +84,14 @@ namespace Unity.Theme.Editor
 
             btnCreateNewTheme.RegisterCallback<ClickEvent>(evt =>
             {
-                var theme = config.AddTheme(inputFieldNewThemeName.value);
+                var themeName = inputFieldNewThemeName.value;
+                inputFieldNewThemeName.value = "New Theme";
+                var theme = config.AddTheme(themeName);
+                
+                UpdateDropdownCurrentTheme(config);
+
                 UIAddTheme(config, rootThemes, theme);
-                SaveChanges($"Theme added: {inputFieldNewThemeName.value}");
+                SaveChanges($"Theme added: {themeName}");
             });
 
             foreach (var theme in config.Themes)
@@ -118,7 +103,7 @@ namespace Unity.Theme.Editor
             var themePanel = TemplateTheme.Instantiate();
             rootThemes.Add(themePanel);
 
-            var uiTheme = uiThemeColors[theme.themeName] = new UITheme()
+            var uiTheme = uiThemeColors[theme.Guid] = new UITheme()
             {
                 root            = themePanel,
                 btnDelete       = themePanel.Query<Button>("btnRemove").First(),
@@ -128,20 +113,34 @@ namespace Unity.Theme.Editor
                 theme           = theme,
                 colors          = new Dictionary<string, UIThemeColor>()
             };
+
+            var btnAddColor = themePanel.Query<Button>("btnAddColor").First();
+            btnAddColor.clicked += () =>
+            {
+                var colorName = "New";
+                var themeColorRef = config.AddColor(colorName);
+                var themeColor = new ColorData(themeColorRef);
+
+                foreach (var uiTheme in uiThemeColors.Values)
+                    UIAddThemeColor(config, uiTheme, new ColorData(themeColor));
+                    
+                SaveChanges($"Color added: {colorName}");
+            };
             
             uiTheme.foldoutTheme.text = theme.themeName;
             uiTheme.textFieldName.value = theme.themeName;
             uiTheme.textFieldName.RegisterValueChangedCallback(evt =>
             {
                 theme.themeName = evt.newValue;
-                uiThemeColors[theme.themeName].foldoutTheme.text = evt.newValue;
+                uiThemeColors[theme.Guid].foldoutTheme.text = evt.newValue;
                 SaveChanges($"Theme name changed: {evt.newValue}");
             });
             uiTheme.btnDelete.clicked += () =>
             {
                 config.RemoveTheme(theme);
                 rootThemes.Remove(themePanel);
-                uiThemeColors.Remove(theme.themeName);
+                uiThemeColors.Remove(theme.Guid);
+                UpdateDropdownCurrentTheme(config);
                 SaveChanges($"Theme deleted: {theme.themeName}");
             };
 

@@ -8,7 +8,7 @@ namespace Unity.Theme
     public partial class ThemeDatabase : ScriptableObject
     {        
         public              List<ThemeData>     Themes              => themes;
-        public              string[]            ThemeNames          => themes.Select(x => x.themeName).ToArray();
+        public              IEnumerable<string> ThemeNames          => themes.Select(x => x.themeName);
         public              ThemeData           CurrentTheme        => themes.Count == 0 ? null : ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count) ? themes[currentThemeIndex] : null);
         public              List<string>        ColorNames          => colors?.Select(x => x.name)?.ToList();
         public              List<string>        ColorGuids          => colors?.Select(x => x.Guid)?.ToList();
