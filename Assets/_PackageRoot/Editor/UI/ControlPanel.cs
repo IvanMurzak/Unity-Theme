@@ -33,7 +33,9 @@ namespace Unity.Theme.Editor
         public void CreateGUI()
         {
             var config = ThemeDatabaseInitializer.Config;
-            var root = rootVisualElement;
+            
+            var root = new ScrollView();
+            rootVisualElement.Add(root);
 
             var panel = TemplateControlPanel.Instantiate();
             root.Add(panel);
@@ -64,17 +66,44 @@ namespace Unity.Theme.Editor
             // Colors
             // -----------------------------------------------------------------
 
+            var inputFieldNewColorName = panel
+                .Query<VisualElement>("contHeaderColors").First()
+                .Query<TextField>("textFieldNewName").First();
+
+            var btnCreateNewColor = panel
+                .Query<VisualElement>("contHeaderColors").First()
+                .Query<Button>("btnCreateNew").First();
+
+            btnCreateNewColor.RegisterCallback<ClickEvent>(evt =>
+            {
+                config.AddTheme(inputFieldNewColorName.value);
+                SaveChanges($"Color added: {inputFieldNewColorName.value}");
+            });
+
             // Themes
             // -----------------------------------------------------------------
 
-            var themesRoot = panel
-                .Query<ListView>("listView").First()
-                .Query<VisualElement>("unity-content-container").First();
+            var inputFieldNewThemeName = panel
+                .Query<VisualElement>("contHeaderThemes").First()
+                .Query<TextField>("textFieldNewName").First();
+
+            var btnCreateNewTheme = panel
+                .Query<VisualElement>("contHeaderThemes").First()
+                .Query<Button>("btnCreateNew").First();
+
+            var rootThemes = panel
+                .Query<VisualElement>("rootThemes").First();
+
+            btnCreateNewTheme.RegisterCallback<ClickEvent>(evt =>
+            {
+                config.AddColor(inputFieldNewColorName.value);
+                SaveChanges($"Color added: {inputFieldNewColorName.value}");
+            });
 
             foreach (var theme in config.Themes)
             {
                 var themePanel = TemplateTheme.Instantiate();
-                themesRoot.Add(themePanel);
+                rootThemes.Add(themePanel);
 
                 var foldoutTheme = themePanel.Query<Foldout>("foldoutTheme").First();
                 var textFieldName = themePanel.Query<TextField>("txtName").First();

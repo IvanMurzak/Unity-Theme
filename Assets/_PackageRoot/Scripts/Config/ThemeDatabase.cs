@@ -65,6 +65,7 @@ namespace Unity.Theme
                 colors = colors
             });
         }
+        public void AddColor(string colorName) => AddColor(colorName, DefaultColor);
         public void AddColor(string colorName, string colorHex)
         {
             var color = DefaultColor;

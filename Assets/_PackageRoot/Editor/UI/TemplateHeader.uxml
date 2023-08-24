@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/_PackageRoot/Editor/UI/ControlPanel.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#ControlPanel" />
+    <ui:VisualElement name="contHeader" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-shrink: 0;">
+        <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: stretch; align-items: flex-end; flex-shrink: 0; flex-wrap: nowrap; justify-content: space-around;">
+            <ui:Label text="Themes" name="labelThemes" class="Header" style="flex-grow: 1;" />
+            <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-self: flex-end; flex-shrink: 0;">
+                <ui:VisualElement name="contNewTheme" class="ContentItem" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-shrink: 0; align-self: stretch; align-items: stretch;">
+                    <ui:TextField picking-mode="Ignore" value="New Theme" name="textFieldNewThemeName" style="flex-grow: 1; align-items: stretch;" />
+                    <ui:Button text="CREATE" display-tooltip-when-elided="true" name="btnCreateNewTheme" class="Button-Accept" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="divider" class="Divider" />
+    </ui:VisualElement>
+</ui:UXML>
