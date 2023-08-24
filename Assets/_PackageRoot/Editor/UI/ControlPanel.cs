@@ -11,6 +11,7 @@ namespace Unity.Theme.Editor
     {
         public const string PATH = "Assets/_PackageRoot/Editor/UI";
 
+        [SerializeField] static Texture icon;
         [SerializeField] VisualTreeAsset templateControlPanel;
         [SerializeField] VisualTreeAsset templateTheme;
         [SerializeField] VisualTreeAsset templateThemeColor;
@@ -22,7 +23,8 @@ namespace Unity.Theme.Editor
         public static void ShowExample()
         {
             var wnd = GetWindow<ControlPanel>();
-            wnd.titleContent = new GUIContent("ControlPanelEditor");
+            wnd.titleContent = new GUIContent("Unity-Theme", icon);
+            wnd.Focus();
         }
 
         private void SaveChanges(string message)
