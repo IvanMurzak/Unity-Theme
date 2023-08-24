@@ -47,6 +47,7 @@
 .Button-Accept {
     transition-duration: 200ms;
 }
+
 .Button-Accept:hover {
     transition-duration: 200ms;
 }

@@ -1,17 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-    <ui:VisualElement name="contHeader">
-        <Style src="project://database/Assets/_PackageRoot/Editor/UI/ControlPanel.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#ControlPanel" />
-        <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-shrink: 0;">
-            <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: stretch; align-items: flex-end; flex-shrink: 0; flex-wrap: nowrap; justify-content: space-around;">
-                <ui:Label text="Colors" name="labelHeader" class="Header" style="flex-grow: 1;" />
-                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); align-self: flex-end; flex-shrink: 0;">
-                    <ui:VisualElement name="contNew" class="ContentItem" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-shrink: 0; align-self: stretch; align-items: stretch; justify-content: flex-end;">
-                        <ui:TextField picking-mode="Ignore" value="New" name="textFieldNewName" style="flex-grow: 1; align-items: stretch; max-width: 200px;" />
-                        <ui:Button text="CREATE" display-tooltip-when-elided="true" name="btnCreateNew" class="Button-Accept" />
-                    </ui:VisualElement>
-                </ui:VisualElement>
-            </ui:VisualElement>
-            <ui:VisualElement name="divider" class="Divider" />
-        </ui:VisualElement>
+    <Style src="project://database/Assets/_PackageRoot/Editor/UI/uss/Unity.Theme.Style.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#Unity.Theme.Style" />
+    <ui:DropdownField label="Color" index="-1" name="dropdownColor" />
+    <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+        <ui:Toggle label="Override Alpha" name="toggleOverrideAlpha" />
+        <ui:Slider picking-mode="Ignore" value="1" high-value="1" binding-path="overrideAlpha" name="sliderAlpha" style="flex-grow: 1; padding-left: 15px;" />
     </ui:VisualElement>
+    <uie:PropertyField />
 </ui:UXML>
