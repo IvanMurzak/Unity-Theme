@@ -123,13 +123,15 @@ namespace Unity.Theme
             if (colorRef != null)
                 colors.Remove(colorRef);
         }
-        public void UpdateColor(ColorData color)
+        public void UpdateColor(ThemeData theme, ColorData color)
         {
-            
-        }
-        public void SetColor(ThemeData theme, ColorData color)
-        {
-            onThemeColorChanged?.Invoke(theme, color);
+            var index = theme.colors.FindIndex(x => x.Guid == color.Guid);
+            if (index >= 0)
+            {
+                theme.colors[index] = color;
+                if (CurrentTheme == theme)
+                    onThemeColorChanged?.Invoke(theme, color);
+            }
         }
         public void SortColorsByName()
         {

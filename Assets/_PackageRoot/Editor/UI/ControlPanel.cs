@@ -4,7 +4,6 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
-using System;
 
 namespace Unity.Theme.Editor
 {
@@ -78,16 +77,16 @@ namespace Unity.Theme.Editor
                 .Query<VisualElement>("contHeaderColors").First()
                 .Query<Button>("btnCreateNew").First();
 
-            btnCreateNewColor.RegisterCallback<ClickEvent>(evt =>
+            btnCreateNewColor.clicked += () =>
             {
                 var themeColorRef = config.AddColor(inputFieldNewColorName.value);
                 var themeColor = new ColorData(themeColorRef);
+
                 foreach (var uiTheme in uiThemeColors.Values)
-                {
                     UIAddThemeColor(config, uiTheme, themeColor);
-                }
+                    
                 SaveChanges($"Color added: {inputFieldNewColorName.value}");
-            });
+            };
 
             // Themes
             // -----------------------------------------------------------------
@@ -105,9 +104,9 @@ namespace Unity.Theme.Editor
 
             btnCreateNewTheme.RegisterCallback<ClickEvent>(evt =>
             {
-                var theme = config.AddTheme(inputFieldNewColorName.value);
+                var theme = config.AddTheme(inputFieldNewThemeName.value);
                 UIAddTheme(config, rootThemes, theme);
-                SaveChanges($"Theme added: {inputFieldNewColorName.value}");
+                SaveChanges($"Theme added: {inputFieldNewThemeName.value}");
             });
 
             foreach (var theme in config.Themes)
@@ -121,13 +120,13 @@ namespace Unity.Theme.Editor
 
             var uiTheme = uiThemeColors[theme.themeName] = new UITheme()
             {
-                root = themePanel,
-                foldoutTheme = themePanel.Query<Foldout>("foldoutTheme").First(),
-                textFieldName = themePanel.Query<TextField>("textFieldName").First(),
-                btnDelete = themePanel.Query<Button>("btnRemove").First(),
-                contColors = themePanel.Query<VisualElement>("contColors").First(),
-                theme = theme,
-                colors = new Dictionary<string, UIThemeColor>()
+                root            = themePanel,
+                btnDelete       = themePanel.Query<Button>("btnRemove").First(),
+                foldoutTheme    = themePanel.Query<Foldout>("foldoutTheme").First(),
+                textFieldName   = themePanel.Query<TextField>("textFieldName").First(),
+                contColors      = themePanel.Query<VisualElement>("contColors").First(),
+                theme           = theme,
+                colors          = new Dictionary<string, UIThemeColor>()
             };
             
             uiTheme.foldoutTheme.text = theme.themeName;
@@ -156,10 +155,10 @@ namespace Unity.Theme.Editor
 
             var uiThemeColor = new UIThemeColor
             {
-                root = themeColorPanel,
-                txtName = themeColorPanel.Query<TextField>("txtName").First(),
-                colorField = themeColorPanel.Query<ColorField>("color").First(),
-                btnDelete = themeColorPanel.Query<Button>("btnDelete").First()
+                root        = themeColorPanel,
+                btnDelete   = themeColorPanel.Query<Button>("btnDelete").First(),
+                txtName     = themeColorPanel.Query<TextField>("txtName").First(),
+                colorField  = themeColorPanel.Query<ColorField>("color").First()
             };
             uiTheme.colors[themeColor.Guid] = uiThemeColor;
 
@@ -177,14 +176,13 @@ namespace Unity.Theme.Editor
                     if (uiTheme.colors.ContainsKey(themeColor.Guid))
                         uiTheme.colors[themeColor.Guid].txtName.value = evt.newValue;
                 }
-                config.UpdateColor(themeColor);
                 SaveChanges($"Theme color[{colorRef.name}] changed: {evt.newValue}");
             });
 
             uiThemeColor.colorField.RegisterValueChangedCallback(evt =>
             {
                 themeColor.color = evt.newValue;
-                config.SetColor(uiTheme.theme, themeColor);
+                config.UpdateColor(uiTheme.theme, themeColor);
                 SaveChanges($"Theme color[{config.GetColorName(themeColor.Guid)}] changed: {evt.newValue}");
             });
 
