@@ -10,10 +10,10 @@ namespace Unity.Theme.Editor
     public class ControlPanel : EditorWindow
     {
         public const string PATH = "Assets/_PackageRoot/Editor/UI";
-        public static VisualTreeAsset TemplateControlPanel    => AssetDatabase.LoadAssetAtPath<VisualTreeAsset>($"{PATH}/ControlPanel.uxml");
-        public static VisualTreeAsset TemplateColor           => AssetDatabase.LoadAssetAtPath<VisualTreeAsset>($"{PATH}/TemplateColor.uxml");
-        public static VisualTreeAsset TemplateTheme           => AssetDatabase.LoadAssetAtPath<VisualTreeAsset>($"{PATH}/TemplateTheme.uxml");
-        public static VisualTreeAsset TemplateThemeColor      => AssetDatabase.LoadAssetAtPath<VisualTreeAsset>($"{PATH}/TemplateThemeColor.uxml");
+
+        [SerializeField] VisualTreeAsset templateControlPanel;
+        [SerializeField] VisualTreeAsset templateTheme;
+        [SerializeField] VisualTreeAsset templateThemeColor;
 
         private Dictionary<string, UITheme> uiThemeColors = new Dictionary<string, UITheme>();
         private DropdownField dropdownCurrentTheme;
@@ -42,7 +42,7 @@ namespace Unity.Theme.Editor
         public void CreateGUI()
         {
             var config = ThemeDatabaseInitializer.Config;            
-            var panel = TemplateControlPanel.Instantiate();
+            var panel = templateControlPanel.Instantiate();
             var root = new ScrollView();
             rootVisualElement.Add(root);
             root.Add(panel);
@@ -100,7 +100,7 @@ namespace Unity.Theme.Editor
 
         void UIAddTheme(ThemeDatabase config, VisualElement rootThemes, ThemeData theme)
         {
-            var themePanel = TemplateTheme.Instantiate();
+            var themePanel = templateTheme.Instantiate();
             rootThemes.Add(themePanel);
 
             var uiTheme = uiThemeColors[theme.Guid] = new UITheme()
@@ -149,7 +149,7 @@ namespace Unity.Theme.Editor
         }
         void UIAddThemeColor(ThemeDatabase config, UITheme uiTheme, ColorData themeColor)
         {
-            var themeColorPanel = TemplateThemeColor.Instantiate();
+            var themeColorPanel = templateThemeColor.Instantiate();
             uiTheme.contColors.Add(themeColorPanel);
 
             var uiThemeColor = new UIThemeColor

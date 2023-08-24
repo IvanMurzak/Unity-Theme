@@ -1,9 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/_PackageRoot/Editor/UI/ControlPanel.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#ControlPanel" />
-    <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between; align-self: flex-start; align-items: flex-start; max-width: 100%;">
-        <ui:TextField picking-mode="Ignore" value="filler text" name="txtName" readonly="true" style="min-width: 100px; flex-direction: column; align-items: flex-start; align-self: flex-start; flex-shrink: 1;" />
-        <uie:ColorField value="RGBA(0.000, 1.000, 1.000, 1.000)" name="color" style="min-width: 100px; flex-grow: 0; flex-shrink: 1;" />
-        <ui:Button text="E" display-tooltip-when-elided="true" name="btnRename" style="align-self: flex-start; align-items: flex-end;" />
-        <ui:Button text="X" display-tooltip-when-elided="true" name="btnDelete" class="Button-Alert" style="align-self: flex-start; align-items: flex-end;" />
-    </ui:VisualElement>
-</ui:UXML>
