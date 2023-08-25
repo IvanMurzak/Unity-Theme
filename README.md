@@ -34,7 +34,7 @@ openupm add extensions.unity.theme`
 
 ### Color Binder
 
-A component that binds a color to a specific target, such as `Image`, `SpriteRenderer`, `TextMeshPro` or anything else. There are list of built-in color binders:
+A component that binds a color to a specific target, such as `Image`, `SpriteRenderer`, `TextMeshPro`, or anything else. There is list of built-in color binders:
 
 - `ImageColorBinder`
 - `SpriteRendererColorBinder`
