@@ -504,12 +504,20 @@ PrefabInstance:
       value: e4335a43-dfb4-44d0-b0a7-07abd1ec6261
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: data.alpha
+      value: 0.877
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: overrideAlpha
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.colorGuid
-      value: 84e3e29c-c2af-45c0-aeb4-0cf1c3b6858d
+      value: dfce33f5-ec1a-47a3-816c-bbe51d37e2f0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: data.overrideAlpha
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6072569451378429772, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Name

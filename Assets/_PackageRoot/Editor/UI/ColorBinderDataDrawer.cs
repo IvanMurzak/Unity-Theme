@@ -18,7 +18,7 @@ namespace Unity.Theme.Editor
             var dropdownColor = root.Query<DropdownField>("dropdownColor").First();
             var btnOpenConfig = root.Query<Button>("btnOpenConfig").First();
             var sliderAlpha = root.Query<Slider>("sliderAlpha").First();
-            var colorFill = root.Query<VisualElement>("colorFill").First();
+            var colorFill = root.Query<VisualElement>("colorFill").Last();
 
             var colorGuid = property.FindPropertyRelative("colorGuid");
             var overrideAlpha = property.FindPropertyRelative("overrideAlpha");
@@ -63,7 +63,7 @@ namespace Unity.Theme.Editor
         {
             var color = ThemeDatabaseInitializer.Config?.GetColorByGuid(colorGuid)?.color ?? ThemeDatabase.DefaultColor;
             color.a = alpha;
-            colorFill.style.color = new StyleColor(color);
+            colorFill.style.unityBackgroundImageTintColor = new StyleColor(color);
         }
     }
 }

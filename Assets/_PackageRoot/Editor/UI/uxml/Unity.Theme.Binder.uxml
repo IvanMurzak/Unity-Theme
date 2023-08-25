@@ -3,7 +3,7 @@
     <Style src="project://database/Assets/_PackageRoot/Editor/UI/uss/Unity.Theme.Style.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#Unity.Theme.Style" />
     <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-shrink: 0;">
         <ui:DropdownField label="Color" index="-1" name="dropdownColor" style="flex-grow: 1;">
-            <ui:Instance template="colorFill" name="colorFill" style="position: absolute;" />
+            <ui:Instance template="colorFill" name="colorFill" style="position: absolute; align-self: center; justify-content: space-around; align-items: flex-end; flex-direction: row; margin-left: 40px;" />
         </ui:DropdownField>
         <ui:Button text="T" display-tooltip-when-elided="true" name="btnOpenConfig" class="Button-Accept" />
     </ui:VisualElement>
