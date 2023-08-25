@@ -132,6 +132,17 @@ namespace Unity.Theme
                 NotifyColorChanged(color);
             return result;
         }
+        public bool RemoveColorByName(string name)
+        {
+            var colorRef = colors.FirstOrDefault(x => x.name == name);
+            if (colorRef == null)
+            {
+                if (debugLevel <= DebugLevel.Error)
+                    Debug.LogError($"Can't RemoveColorByName(`{name}`), because it doesn't exist");
+                return false;
+            }
+            return RemoveColor(colorRef);
+        }
         public void UpdateColor(ThemeData theme, ColorData color)
         {
             var index = theme.colors.FindIndex(x => x.Guid == color.Guid);
