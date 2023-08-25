@@ -68,7 +68,7 @@ namespace Unity.Theme
             {
                 colors = new List<ColorData>();
             }
-            var theme = new ThemeData
+            var theme = new ThemeData(Guid.NewGuid().ToString())
             {
                 themeName = themeName,
                 colors = colors

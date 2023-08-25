@@ -112,6 +112,8 @@ namespace Unity.Theme.Editor
             config.SetColor("Outline",                  "#938F99");
             config.SetColor("Surface-Variant",          "#49454F");
             config.SetColor("On Surface-Variant",       "#CAC4D0");
+            
+            EditorUtility.SetDirty(config);
         }
     }
 }
