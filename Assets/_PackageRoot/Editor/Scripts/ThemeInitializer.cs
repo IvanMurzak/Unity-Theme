@@ -3,26 +3,16 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace Unity.Theme.Editor.Scripts
+namespace Unity.Theme.Editor
 {
-    public static class ThemeDatabaseConfigMenu
+    public static class ThemeInitializer
     {
         [InitializeOnLoadMethod]
         public static IEnumerator Init()
         {
             yield return null; // let's Unity initialize itself and project resources first
-            OpenOrCreateConfig(); 
-        }
-
-        [MenuItem("Edit/Unity-Theme Database", false, 250)]
-        public static void OpenOrCreateConfig()
-        {
             var config = GetOrCreateConfig();
-
-            EditorWindow inspectorWindow = EditorWindow.GetWindow(typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.InspectorWindow"));
-            inspectorWindow.Focus();
-
-            Selection.activeObject = config;
+            ControlPanel.ShowWindow();
         }
 
         public static ThemeDatabase GetOrCreateConfig()
