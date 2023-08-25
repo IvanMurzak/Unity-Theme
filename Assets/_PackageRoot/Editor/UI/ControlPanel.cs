@@ -9,6 +9,8 @@ namespace Unity.Theme.Editor
 {
     public class ControlPanel : EditorWindow
     {
+        const string colorFillTemplateGuid = "07c8baad910b3e244bd677fa7d79370b";
+
         [SerializeField] VisualTreeAsset templateControlPanel;
         [SerializeField] VisualTreeAsset templateTheme;
         [SerializeField] VisualTreeAsset templateThemeColor;
@@ -17,7 +19,7 @@ namespace Unity.Theme.Editor
         private DropdownField dropdownCurrentTheme;
 
         [MenuItem("Window/Unity-Theme")]
-        public static void Show()
+        public static void ShowWindow()
         {
             var wnd = GetWindow<ControlPanel>();
             wnd.titleContent = new GUIContent("Unity-Theme");
@@ -106,9 +108,11 @@ namespace Unity.Theme.Editor
             {
                 root            = themePanel,
                 btnDelete       = themePanel.Query<Button>("btnRemove").First(),
-                foldoutTheme    = themePanel.Query<Foldout>("foldoutTheme").First(),
+                toggleFoldout   = themePanel.Query<Toggle>("toggleFoldout").First(),
                 textFieldName   = themePanel.Query<TextField>("textFieldName").First(),
                 contColors      = themePanel.Query<VisualElement>("contColors").First(),
+                contPreview     = themePanel.Query<VisualElement>("contPreview").First(),
+                contContent     = themePanel.Query<VisualElement>("contContent").First(),
                 theme           = theme,
                 colors          = new Dictionary<string, UIThemeColor>()
             };
@@ -132,14 +136,21 @@ namespace Unity.Theme.Editor
                 //     UIAddThemeColor(config, uiTheme, new ColorData(themeColor));
                     
                 SaveChanges($"Sorted colors");
-            };            
+            };
             
-            uiTheme.foldoutTheme.text = theme.themeName;
+            uiTheme.contContent.style.display = new StyleEnum<DisplayStyle>(theme.expanded ? DisplayStyle.Flex : DisplayStyle.None);
+            uiTheme.toggleFoldout.value = theme.expanded;
+            uiTheme.toggleFoldout.RegisterValueChangedCallback(evt =>
+            {
+                uiTheme.contContent.style.display = new StyleEnum<DisplayStyle>(evt.newValue ? DisplayStyle.Flex : DisplayStyle.None);
+                theme.expanded = evt.newValue;
+                // SaveChanges($"Theme foldout changed: {evt.newValue}");
+            });
+
             uiTheme.textFieldName.value = theme.themeName;
             uiTheme.textFieldName.RegisterValueChangedCallback(evt =>
             {
                 theme.themeName = evt.newValue;
-                uiThemeColors[theme.Guid].foldoutTheme.text = evt.newValue;
                 SaveChanges($"Theme name changed: {evt.newValue}");
             });
             uiTheme.btnDelete.clicked += () =>
@@ -150,6 +161,14 @@ namespace Unity.Theme.Editor
                 UpdateDropdownCurrentTheme(config);
                 SaveChanges($"Theme deleted: {theme.themeName}");
             };
+
+            var colorFillTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath(colorFillTemplateGuid));            
+            foreach (var themeColor in theme.colors)
+            {
+                var colorFill = colorFillTemplate.Instantiate();
+                colorFill.Query<VisualElement>("colorFill").Last().style.unityBackgroundImageTintColor = new StyleColor(themeColor.color);
+                uiTheme.contPreview.Add(colorFill);
+            }
 
             foreach (var themeColor in theme.colors)
                 UIAddThemeColor(config, uiTheme, themeColor);
@@ -213,10 +232,12 @@ namespace Unity.Theme.Editor
         struct UITheme
         {
             public VisualElement root;
-            public Foldout foldoutTheme;
             public TextField textFieldName;
             public Button btnDelete;
+            public Toggle toggleFoldout;
             public VisualElement contColors;
+            public VisualElement contPreview;
+            public VisualElement contContent;
             public ThemeData theme;
             public Dictionary<string, UIThemeColor> colors;
         }

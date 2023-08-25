@@ -55,7 +55,9 @@ namespace Unity.Theme.Editor
                 alpha.serializedObject.ApplyModifiedProperties();
             });
 
-            btnOpenConfig.clicked += () => ControlPanel.Show();
+            btnOpenConfig.clicked += () => ControlPanel.ShowWindow();
+
+            colorFill.BringToFront();
 
             return root;
         }

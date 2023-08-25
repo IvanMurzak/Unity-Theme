@@ -11,6 +11,7 @@ namespace Unity.Theme
         [SerializeField, HideInInspector] 
         private string guid;
 
+        public bool expanded = true;
         public string themeName = "New Theme";
         public List<ColorData> colors = new List<ColorData>();
         

@@ -1,15 +1,17 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/_PackageRoot/Editor/UI/ControlPanel.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#ControlPanel" />
-    <ui:Foldout text="Foldout" name="foldoutTheme" value="true">
-        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
-            <ui:TextField picking-mode="Ignore" value="Brown" name="textFieldName" style="flex-grow: 1; font-size: 16px; -unity-font-style: bold;" />
-            <ui:Button text="REMOVE" display-tooltip-when-elided="true" name="btnRemove" class="Button-Alert" />
-        </ui:VisualElement>
-        <ui:VisualElement name="contColors" class="ContentItem" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
-        <ui:VisualElement class="ContentItem" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: flex-end;">
-            <ui:Button text="SORT" display-tooltip-when-elided="true" name="btnSortColors" class="Button-Accept" />
+    <Style src="project://database/Assets/_PackageRoot/Editor/UI/uss/Unity.Theme.Style.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#Unity.Theme.Style" />
+    <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+        <ui:Toggle name="toggleFoldout" class="unity-foldout__toggle" />
+        <ui:TextField picking-mode="Ignore" value="Brown" name="textFieldName" style="flex-grow: 1; font-size: 16px; -unity-font-style: bold;" />
+        <ui:Button text="REMOVE" display-tooltip-when-elided="true" name="btnRemove" class="Button-Alert" />
+    </ui:VisualElement>
+    <ui:VisualElement name="contPreview" class="ContentItem" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: stretch; margin-top: 3px; margin-left: 25px; justify-content: space-around; align-items: auto;" />
+    <ui:VisualElement name="contContent" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); margin-left: 21px;">
+        <ui:VisualElement name="contColors" class="ContentItem" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); margin-top: 4px;" />
+        <ui:VisualElement class="ContentItem" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: flex-end;">
+            <ui:Button text="SORT" display-tooltip-when-elided="true" name="btnSortColors" class="Button-Accept" style="display: none;" />
             <ui:Button text="ADD COLOR" display-tooltip-when-elided="true" name="btnAddColor" class="Button-Accept" />
         </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); height: 10px; flex-shrink: 0;" />
-    </ui:Foldout>
+    </ui:VisualElement>
+    <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); height: 10px;" />
 </ui:UXML>

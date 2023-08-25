@@ -51,3 +51,14 @@
 .Button-Accept:hover {
     transition-duration: 200ms;
 }
+
+.ScaleX2OnHover {
+    transition-duration: 0ms;
+    scale: 1 1;
+}
+
+.ScaleX2OnHover:hover {
+    transition-duration: 200ms;
+    transition-timing-function: ease-out-cubic;
+    scale: 2 2;
+}
