@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 96dc507415f5b554ca672aac54a39b83
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - templateControlPanel: {fileID: 9197481963319205126, guid: 37fdbddf207484e478ce74ceeb17c8d1, type: 3}
+  - templateTheme: {fileID: 9197481963319205126, guid: b258793507f973d4585bf2185fe1a4cf, type: 3}
+  - templateThemeColor: {fileID: 9197481963319205126, guid: 4f55717dde579854cb7c9168b0857992, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

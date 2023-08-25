@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Unity.Theme.Binders
@@ -6,7 +5,7 @@ namespace Unity.Theme.Binders
     [AddComponentMenu("Theme/SpriteRenderer Color Binder")]
     public class SpriteRendererColorBinder : BaseColorBinder
     {
-        [SerializeField, Required] SpriteRenderer spriteRenderer;
+        [SerializeField] SpriteRenderer spriteRenderer;
 
         protected override void Awake()
         {

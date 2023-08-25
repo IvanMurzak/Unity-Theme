@@ -1,0 +1,64 @@
+.AnimatedSelectable:hover {
+    scale: 0.9 0.9;
+    rotate: 90deg;
+}
+
+.AnimatedSelectable {
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out-cubic;
+}
+
+.Header {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    -unity-font-style: bold;
+}
+
+.ContentItem {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.Divider {
+    width: auto;
+    height: 1px;
+    max-height: 1px;
+    background-color: rgb(26, 26, 26);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Button-Alert {
+    -unity-font-style: bold;
+    background-color: rgb(88, 44, 44);
+    transition-duration: 200ms;
+}
+
+.Button-Alert:hover {
+    -unity-font-style: bold;
+    background-color: rgb(255, 110, 110);
+    transition-duration: 200ms;
+    color: black;
+}
+
+.Button-Accept {
+    transition-duration: 200ms;
+}
+
+.Button-Accept:hover {
+    transition-duration: 200ms;
+}
+
+.ScaleX2OnHover {
+    transition-duration: 0ms;
+    scale: 1 1;
+}
+
+.ScaleX2OnHover:hover {
+    transition-duration: 200ms;
+    transition-timing-function: ease-out-cubic;
+    scale: 2 2;
+}

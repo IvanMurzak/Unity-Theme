@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using UnityEngine;
 using TMPro;
 
@@ -7,7 +6,7 @@ namespace Unity.Theme.Binders
     [AddComponentMenu("Theme/TextMeshPro Color Binder")]
     public class TextMeshProColorBinder : BaseColorBinder
     {
-        [SerializeField, Required] TextMeshProUGUI textMeshPro;
+        [SerializeField] TextMeshProUGUI textMeshPro;
 
         protected override void Awake()
         {

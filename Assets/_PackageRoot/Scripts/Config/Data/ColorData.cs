@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
@@ -7,18 +6,21 @@ namespace Unity.Theme
     [Serializable]
     public class ColorData
     {
-        [HideInInspector]                           public string   guid;
-        [ReadOnly]
-        [TableColumnWidth(150, false)]              public string   name = "New";
-        [TableColumnWidth(50, true)]                public Color    color = Color.white;
+        [SerializeField, HideInInspector]
+        private string guid;
 
-        [TableColumnWidth(25, false)]
-        [HideLabel]
-        [Button, LabelText("X")] void X() => ThemeDatabaseInitializer.Config.RemoveColor(this);
+        public Color color = Color.white;
 
-        public static int Compare(ColorData l, ColorData r)
+        public string Guid => guid;
+
+        public ColorData() { }
+        public ColorData(ColorData colorData) : this(colorData.guid, colorData.color) { }
+        public ColorData(ColorDataRef colorRef) : this(colorRef, Color.white) { }
+        public ColorData(ColorDataRef colorRef, Color color) : this(colorRef.Guid, color) { }
+        public ColorData(string guid, Color color) : this()
         {
-            return l.name.CompareTo(r.name);
+            this.guid = guid;
+            this.color = color;
         }
     }
 }
