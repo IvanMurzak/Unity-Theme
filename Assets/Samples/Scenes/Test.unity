@@ -476,7 +476,15 @@ PrefabInstance:
       value: 9d54a474-9c92-4355-914f-102d0db27505
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: data.alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: overrideAlpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: data.overrideAlpha
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
