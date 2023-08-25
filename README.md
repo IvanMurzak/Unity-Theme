@@ -22,10 +22,6 @@ Create palettes of colors and components to change specific colors on a specific
 - [Install OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
 - Open command line in Unity project folder
 
-```bash
-openupm add extensions.unity.theme`
-```
-
 ## Usage
 
 - Go to `Window/Unity-Theme`.
