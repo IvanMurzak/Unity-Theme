@@ -7,7 +7,7 @@ using UnityEditor.UIElements;
 
 namespace Unity.Theme.Editor
 {
-    public class ThemeDatabaseEditor : EditorWindow
+    public class ThemeWindowEditor : EditorWindow
     {
         const string colorFillTemplateGuid = "07c8baad910b3e244bd677fa7d79370b";
 
@@ -21,7 +21,7 @@ namespace Unity.Theme.Editor
         [MenuItem("Window/Unity-Theme")]
         public static void ShowWindow()
         {
-            var wnd = GetWindow<ThemeDatabaseEditor>();
+            var wnd = GetWindow<ThemeWindowEditor>();
             wnd.titleContent = new GUIContent("Unity-Theme");
             wnd.Focus();
         }
@@ -162,13 +162,7 @@ namespace Unity.Theme.Editor
                 SaveChanges($"Theme deleted: {theme.themeName}");
             };
 
-            var colorFillTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath(colorFillTemplateGuid));            
-            foreach (var themeColor in theme.colors)
-            {
-                var colorFill = colorFillTemplate.Instantiate();
-                colorFill.Query<VisualElement>("colorFill").Last().style.unityBackgroundImageTintColor = new StyleColor(themeColor.color);
-                uiTheme.contPreview.Add(colorFill);
-            }
+            UIGenerateColorPreviews(uiTheme);
 
             foreach (var themeColor in theme.colors)
                 UIAddThemeColor(config, uiTheme, themeColor);
@@ -208,6 +202,7 @@ namespace Unity.Theme.Editor
             {
                 themeColor.color = evt.newValue;
                 config.UpdateColor(uiTheme.theme, themeColor);
+                UIGenerateColorPreviews(uiTheme);
                 SaveChanges($"Theme color[{config.GetColorName(themeColor.Guid)}] changed: {evt.newValue}");
             });
 
@@ -225,8 +220,20 @@ namespace Unity.Theme.Editor
                     }
                 }
                 config.RemoveColor(themeColor);
+                UIGenerateColorPreviews(uiTheme);
                 SaveChanges($"Theme color[{colorName}] deleted");
             };
+        }
+        void UIGenerateColorPreviews(UITheme uiTheme)
+        {
+            uiTheme.contPreview.Clear();
+            var colorFillTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath(colorFillTemplateGuid));            
+            foreach (var themeColor in uiTheme.theme.colors)
+            {
+                var colorFill = colorFillTemplate.Instantiate();
+                colorFill.Query<VisualElement>("colorFill").Last().style.unityBackgroundImageTintColor = new StyleColor(themeColor.color);
+                uiTheme.contPreview.Add(colorFill);
+            }
         }
 
         struct UITheme
