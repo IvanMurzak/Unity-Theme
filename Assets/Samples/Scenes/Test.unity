@@ -925,6 +925,10 @@ PrefabInstance:
       propertyPath: data.overrideAlpha
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5886343440413528677, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: m_Name
+      value: Image
+      objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.a
       value: 0.146
@@ -943,11 +947,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.alpha
-      value: 0.802
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.colorGuid
-      value: 1e5e3b18-5a33-4fa2-81af-1b10867f6d34
+      value: dfce33f5-ec1a-47a3-816c-bbe51d37e2f0
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.overrideAlpha
