@@ -29,7 +29,7 @@ openupm add extensions.unity.theme`
 ## Usage
 
 - Go to `Window/Unity-Theme`
-- Customize color paletts as you want
+- Customize color palettes as you want
 - Add `ColorBinder` components to a target GameObject
 
 ### Color Binder
@@ -47,35 +47,35 @@ There is a list of built-in color binders:
 ### C# API
 
 ```csharp
-// Colors ----------------------------------------------
+// Colors -------------------------------------------
 using Unity.Theme;
 
-Theme.Instance.AddColor("Primary", "#6750A4");        //
-Theme.Instance.AddColor("Primary", Color.white);      //
+Theme.Instance.AddColor("Primary", "#6750A4");
+Theme.Instance.AddColor("Primary", Color.white);
 
-Theme.Instance.SetColor("Primary", "#6750A4");        //
-Theme.Instance.SetColor("Primary", Color.white);      //
+Theme.Instance.SetColor("Primary", "#6750A4");
+Theme.Instance.SetColor("Primary", Color.white);
 
-Theme.Instance.SetOrAddColor("Primary", "#6750A4");   //
-Theme.Instance.SetOrAddColor("Primary", Color.white); //
+Theme.Instance.SetOrAddColor("Primary", "#6750A4");
+Theme.Instance.SetOrAddColor("Primary", Color.white);
 
-Theme.Instance.RemoveColorByName("Primary");          //
-Theme.Instance.RemoveColor(colorData);                //
-Theme.Instance.RemoveAllColors();                     //
+Theme.Instance.RemoveColorByName("Primary");
+Theme.Instance.RemoveColor(colorData);
+Theme.Instance.RemoveAllColors();
 ```
 
 ```csharp
-// Themes ----------------------------------------------
+// Themes -------------------------------------------
 using Unity.Theme;
 
-Theme.Instance.AddTheme("Light");                     //
-Theme.Instance.SetOrAddTheme("Primary");              //
+Theme.Instance.AddTheme("Light");
+Theme.Instance.SetOrAddTheme("Light");
 
-Theme.Instance.CurrentThemeName = "Light";            //
-Theme.Instance.CurrentThemeIndex = 0;                 //
+Theme.Instance.CurrentThemeName = "Light";
+Theme.Instance.CurrentThemeIndex = 0;
 
-Theme.Instance.RemoveTheme("Light");                  //
-Theme.Instance.RemoveAllThemes();                     //
+Theme.Instance.RemoveTheme("Light");
+Theme.Instance.RemoveAllThemes();
 ```
 
 ### Create a custom `ColorBinder`
