@@ -24,12 +24,16 @@ namespace Unity.Theme.Editor
             config.RemoveAllColors();
 
             SetDefaultPalettes(config);
+
+            ThemeWindowEditor.ShowWindow().Invalidate();
         }
         [MenuItem("Edit/Unity-Theme/Set Default Palettes")]
         public static void SetDefaultPalettes()
         {
             var config = GetOrCreateConfig();
             SetDefaultPalettes(config);
+
+            ThemeWindowEditor.ShowWindow().Invalidate();
         }
 
         public static Theme GetOrCreateConfig()

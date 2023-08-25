@@ -19,12 +19,15 @@ namespace Unity.Theme.Editor
         private DropdownField dropdownCurrentTheme;
 
         [MenuItem("Window/Unity-Theme")]
-        public static void ShowWindow()
+        public static ThemeWindowEditor ShowWindow()
         {
-            var wnd = GetWindow<ThemeWindowEditor>();
-            wnd.titleContent = new GUIContent("Unity-Theme");
-            wnd.Focus();
+            var window = GetWindow<ThemeWindowEditor>();
+            window.titleContent = new GUIContent("Unity-Theme");
+            window.Focus();
+            return window;
         }
+
+        public void Invalidate() => CreateGUI();
 
         private void SaveChanges(string message)
         {
@@ -32,6 +35,7 @@ namespace Unity.Theme.Editor
                 Debug.Log(message);
             saveChangesMessage = message;
             base.SaveChanges();
+            Undo.RecordObject(Theme.Instance, message);
         }
 
         private void UpdateDropdownCurrentTheme(Theme config)
@@ -45,6 +49,8 @@ namespace Unity.Theme.Editor
         private void OnDisable() => Theme.Instance.onThemeChanged -= OnThemeChanged;
         public void CreateGUI()
         {
+            rootVisualElement.Clear();
+
             var config = Theme.Instance;            
             var panel = templateControlPanel.Instantiate();
             var root = new ScrollView();
