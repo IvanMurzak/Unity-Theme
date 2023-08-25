@@ -28,7 +28,7 @@ namespace Unity.Theme.Editor
 
         private void SaveChanges(string message)
         {
-            if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Log)
+            if (ThemeDatabase.Instance?.debugLevel <= DebugLevel.Log)
                 Debug.Log(message);
             saveChangesMessage = message;
             base.SaveChanges();
@@ -42,7 +42,7 @@ namespace Unity.Theme.Editor
 
         public void CreateGUI()
         {
-            var config = ThemeDatabaseInitializer.Config;            
+            var config = ThemeDatabase.Instance;            
             var panel = templateControlPanel.Instantiate();
             var root = new ScrollView();
             rootVisualElement.Add(root);

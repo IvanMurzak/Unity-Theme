@@ -7,15 +7,13 @@ namespace Unity.Theme
 #pragma warning disable CA2235 // Mark all non-serializable fields
     public partial class ThemeDatabase : ScriptableObject
     {                           
-        public static       Color               DefaultColor                => Color.white;
-        public delegate     void                OnTheme                     (ThemeData theme);
-        public delegate     void                OnColor                     (ThemeData theme, ColorData color);
+        public static     Color    DefaultColor                => Color.white;
 
-        public const        string              PATH                        = "Assets/Resources/Unity-Theme Database.asset";
-        public const        string              PATH_FOR_RESOURCES_LOAD     = "Unity-Theme Database";
+        public delegate   void     OnTheme                     (ThemeData theme);
+        public delegate   void     OnColor                     (ThemeData theme, ColorData color);
 
-        public              OnTheme             onThemeChanged;
-        public              OnColor             onThemeColorChanged;
+        public            OnTheme  onThemeChanged;
+        public            OnColor  onThemeColorChanged;
 
         private void OnValidate()
         {
@@ -25,18 +23,36 @@ namespace Unity.Theme
             if (currentThemeIndex < 0) currentThemeIndex = 0;
             if (currentThemeIndex >= themes.Count) currentThemeIndex = Mathf.Max(0, themes.Count - 1);
 
-            var changed = false;
+            var changed = CreateThemeGuid(themes);
             foreach (var theme in themes)
             {
                 changed |= RemoveLegacyColors(theme);
                 changed |= AddMissedColors(theme);
-                changed |= SortColors(theme);
             }
 
             if (changed && CurrentTheme != null)
             {
                 onThemeChanged?.Invoke(CurrentTheme);
             }
+        }
+        private bool CreateThemeGuid(List<ThemeData> themes)
+        {
+            var changed = false;
+            for (var i = 0; i < themes.Count; i++)
+            {
+                if (string.IsNullOrEmpty(themes[i].Guid))
+                {
+                    var guid = System.Guid.NewGuid().ToString();
+                    themes[i] = new ThemeData(guid)
+                    {
+                        expanded = themes[i].expanded,
+                        themeName = themes[i].themeName,
+                        colors = themes[i].colors
+                    };
+                    changed = true;
+                }
+            }
+            return changed;
         }
         private bool RemoveLegacyColors(ThemeData theme)
         {

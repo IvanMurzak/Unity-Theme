@@ -12,30 +12,30 @@ namespace Unity.Theme.Binders
         {
             if (!data.IsConnected)
             {
-                if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Error)
+                if (ThemeDatabase.Instance?.debugLevel <= DebugLevel.Error)
                     Debug.Log($"Color not found in database. Guid={data.colorGuid}", gameObject);
-                var colorData = ThemeDatabaseInitializer.Config?.GetColorFirst();
+                var colorData = ThemeDatabase.Instance?.GetColorFirst();
                 if (colorData != null)
                     data.colorGuid = colorData.Guid;
             }
-            TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
+            TrySetColor(ThemeDatabase.Instance.CurrentTheme);
         }
         protected virtual void OnEnable()
         {
-            TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
-            ThemeDatabaseInitializer.Config.onThemeChanged += TrySetColor;
-            ThemeDatabaseInitializer.Config.onThemeColorChanged += OnThemeColorChanged;
+            TrySetColor(ThemeDatabase.Instance.CurrentTheme);
+            ThemeDatabase.Instance.onThemeChanged += TrySetColor;
+            ThemeDatabase.Instance.onThemeColorChanged += OnThemeColorChanged;
         }
         protected virtual void OnDisable()
         {
-            ThemeDatabaseInitializer.Config.onThemeChanged -= TrySetColor;
-            ThemeDatabaseInitializer.Config.onThemeColorChanged -= OnThemeColorChanged;
+            ThemeDatabase.Instance.onThemeChanged -= TrySetColor;
+            ThemeDatabase.Instance.onThemeColorChanged -= OnThemeColorChanged;
         }
         protected virtual void TrySetColor(ThemeData theme)
         {
             if (theme == null)
             {
-                if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Error)
+                if (ThemeDatabase.Instance?.debugLevel <= DebugLevel.Error)
                     Debug.LogError($"Current theme is null at gameObject {name}", gameObject);
                 return;
             }
@@ -43,13 +43,13 @@ namespace Unity.Theme.Binders
             var colorData = theme.GetColorByGuid(data.colorGuid);
             if (colorData == null)
             {
-                if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Error)
+                if (ThemeDatabase.Instance?.debugLevel <= DebugLevel.Error)
                     Debug.LogError($"color not found by name '{data.ColorName}' at <b>{GameObjectPath()}</b>, guid='{data.colorGuid}'", gameObject);
             }
             else
             {
                 var color = GetColor(colorData);
-                if (ThemeDatabaseInitializer.Config?.debugLevel <= DebugLevel.Log)
+                if (ThemeDatabase.Instance?.debugLevel <= DebugLevel.Log)
                     Debug.Log($"SetColor: '<b>{data.ColorName}</b>' #{color} at <b>{GameObjectPath()}</b>", gameObject);
                 SetColor(color);
             }
@@ -59,10 +59,10 @@ namespace Unity.Theme.Binders
         private void OnValidate()
         {
             // Attaching to first color
-            if (string.IsNullOrEmpty(data.colorGuid) || ThemeDatabaseInitializer.Config?.ColorGuids.Contains(data.colorGuid) == false)
-                data.colorGuid = ThemeDatabaseInitializer.Config?.GetColorFirst().Guid;
+            if (string.IsNullOrEmpty(data.colorGuid) || ThemeDatabase.Instance?.ColorGuids.Contains(data.colorGuid) == false)
+                data.colorGuid = ThemeDatabase.Instance?.GetColorFirst().Guid;
 
-            TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
+            TrySetColor(ThemeDatabase.Instance.CurrentTheme);
         }
 #endif
         protected virtual Color GetColor(ColorData colorData)
@@ -79,7 +79,7 @@ namespace Unity.Theme.Binders
         private void OnThemeColorChanged(ThemeData themeData, ColorData colorData)
         {
             if (colorData.Guid == data.colorGuid)
-                TrySetColor(ThemeDatabaseInitializer.Config.CurrentTheme);
+                TrySetColor(ThemeDatabase.Instance.CurrentTheme);
         }
         // UTILS ---------------------------------------------------------------------------//
         private string GameObjectPath() => GameObjectPath(transform);                       //

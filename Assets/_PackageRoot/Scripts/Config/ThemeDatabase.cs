@@ -7,13 +7,13 @@ namespace Unity.Theme
 #pragma warning disable CA2235 // Mark all non-serializable fields
     public partial class ThemeDatabase : ScriptableObject
     {        
-        public              List<ThemeData>     Themes              => themes;
-        public              IEnumerable<string> ThemeNames          => themes.Select(x => x.themeName);
-        public              ThemeData           CurrentTheme        => themes.Count == 0 ? null : ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count) ? themes[currentThemeIndex] : null);
-        public              IEnumerable<string> ColorNames          => colors?.Select(x => x.name);
-        public              IEnumerable<string> ColorGuids          => colors?.Select(x => x.Guid);
+        public List<ThemeData>     Themes              => themes;
+        public IEnumerable<string> ThemeNames          => themes.Select(x => x.themeName);
+        public ThemeData           CurrentTheme        => themes.Count == 0 ? null : ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count) ? themes[currentThemeIndex] : null);
+        public IEnumerable<string> ColorNames          => colors?.Select(x => x.name);
+        public IEnumerable<string> ColorGuids          => colors?.Select(x => x.Guid);
 
-        public              int                 CurrentThemeIndex
+        public int                 CurrentThemeIndex
         {
             get => currentThemeIndex;
             set
@@ -28,7 +28,7 @@ namespace Unity.Theme
                 }
             }
         }
-        public              string              CurrentThemeName
+        public string              CurrentThemeName
         {
             get => CurrentTheme?.themeName;
             set => CurrentThemeIndex = themes.FindIndex(x => x.themeName == value);
@@ -37,12 +37,12 @@ namespace Unity.Theme
         public ColorDataRef GetColorRef(ColorData colorData)            => GetColorRef(colorData.Guid);
         public ColorDataRef GetColorRef(string guid)                    => string.IsNullOrEmpty(guid) ? null : colors.FirstOrDefault(x => x.Guid == guid);
         public string    GetColorName  (string guid)                    => GetColorRef(guid)?.name;
-        public ColorData GetColorByGuid(string guid)                    => GetColorByGuid(guid, ThemeDatabaseInitializer.Config.CurrentTheme);
+        public ColorData GetColorByGuid(string guid)                    => GetColorByGuid(guid, CurrentTheme);
         public ColorData GetColorByGuid(string guid, ThemeData theme)   => string.IsNullOrEmpty(guid) ? null : theme?.colors?.FirstOrDefault(x => x.Guid == guid);
-        public ColorData GetColorByName(string name)                    => GetColorByName(name, ThemeDatabaseInitializer.Config.CurrentTheme);
+        public ColorData GetColorByName(string name)                    => GetColorByName(name, CurrentTheme);
         public ColorData GetColorByName(string name, ThemeData theme)   => string.IsNullOrEmpty(name) ? null : GetColorByGuid(colors.FirstOrDefault(x => x.name == name)?.Guid, theme);
 
-        public ColorData GetColorFirst()                                => GetColorFirst(ThemeDatabaseInitializer.Config.CurrentTheme);
+        public ColorData GetColorFirst()                                => GetColorFirst(CurrentTheme);
         public ColorData GetColorFirst(ThemeData theme)                 => theme?.colors?.FirstOrDefault();
 
         public ThemeData AddTheme(string themeName)
@@ -66,6 +66,8 @@ namespace Unity.Theme
             themes.Add(theme);
             return theme;
         }
+        public void RemoveTheme(ThemeData theme) => themes.Remove(theme);
+
         public ColorDataRef AddColor(string colorName) => AddColor(colorName, DefaultColor);
         public ColorDataRef AddColor(string colorName, string colorHex)
         {
@@ -99,7 +101,6 @@ namespace Unity.Theme
             return colorDataRef;
         }
 
-        public void RemoveTheme(ThemeData theme) => themes.Remove(theme);
         public void RemoveColor(ColorData color)
         {
             foreach (var theme in themes)
