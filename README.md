@@ -26,21 +26,21 @@ Create palettes of colors and components to change specific colors on a specific
 
 - Go to `Window/Unity-Theme`.
 - Customize color pallets as you want
-- Add `ColorBinder` components to colorized GameObject
+- Add `ColorBinder` components to a target GameObject
 
 ### Color Binder
 
-Each colored component should be bound to a specific color.
+Component that binds a color to a specific target, such as `Image`, `SpriteRenderer`, `TextMeshPro` or anything else. There are list of built-in color binders:
 
-- ImageColorBinder
-- SpriteRendererColorBinder
-- TextMeshProColorBinder
+- `ImageColorBinder`
+- `SpriteRendererColorBinder`
+- `TextMeshProColorBinder`
 
 ![Color Binders](https://imgur.com/AeNC3tF.gif)
 
-#### Custom Color Binder
+#### Create custom `ColorBinder`
 
-If you want to bind color to something else, you may extend from `BaseColorBinder` as listed below.
+When need to bind color to something else, you may extend from `BaseColorBinder` as listed below.
 
 ```C#
 using UnityEngine;
@@ -69,10 +69,8 @@ namespace Unity.Theme.Binders
 ### Theme change in Play Time (Runtime)
 
 ```C#
-// Link ThemeDatabase, 
-// path to the file in your project: `/Assets/Resources/Unity-Theme Database.asset`
-[SerializedField] ThemeDatabase themeDatabase;
+using Unity.Theme;
 
 // change the current theme to a new theme from existed themes list
-themeDatabase.CurrentThemeIndex = 1;
+Theme.Instance.CurrentThemeIndex = 1;
 ```

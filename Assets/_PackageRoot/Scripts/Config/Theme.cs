@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
-    public partial class ThemeDatabase : ScriptableObject
+    public partial class Theme : ScriptableObject
     {        
         public List<ThemeData>     Themes              => themes;
         public IEnumerable<string> ThemeNames          => themes.Select(x => x.themeName);
@@ -36,6 +36,7 @@ namespace Unity.Theme
 
         public ColorDataRef GetColorRef(ColorData colorData)            => GetColorRef(colorData.Guid);
         public ColorDataRef GetColorRef(string guid)                    => string.IsNullOrEmpty(guid) ? null : colors.FirstOrDefault(x => x.Guid == guid);
+        
         public string    GetColorName  (string guid)                    => GetColorRef(guid)?.name;
         public ColorData GetColorByGuid(string guid)                    => GetColorByGuid(guid, CurrentTheme);
         public ColorData GetColorByGuid(string guid, ThemeData theme)   => string.IsNullOrEmpty(guid) ? null : theme?.colors?.FirstOrDefault(x => x.Guid == guid);

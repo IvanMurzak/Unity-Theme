@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
-    public partial class ThemeDatabase : ScriptableObject
+    public partial class Theme : ScriptableObject
     {                           
         public static     Color    DefaultColor                => Color.white;
 

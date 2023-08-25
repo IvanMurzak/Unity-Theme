@@ -15,13 +15,13 @@ namespace Unity.Theme.Editor
             ThemeDatabaseEditor.ShowWindow();
         }
 
-        public static ThemeDatabase GetOrCreateConfig()
+        public static Theme GetOrCreateConfig()
         {
-            var config = Resources.Load<ThemeDatabase>(ThemeDatabase.PATH_FOR_RESOURCES_LOAD);
+            var config = Resources.Load<Theme>(Theme.PATH_FOR_RESOURCES_LOAD);
             if (config == null)
             {
-                Debug.Log($"<color=orange><b>Creating Unity-Theme database file</b> at <i>{ThemeDatabase.PATH}</i></color>");
-                config = ScriptableObject.CreateInstance<ThemeDatabase>();
+                Debug.Log($"<color=orange><b>Creating Unity-Theme database file</b> at <i>{Theme.PATH}</i></color>");
+                config = ScriptableObject.CreateInstance<Theme>();
 
                 config.AddTheme("Default");
 
@@ -38,13 +38,13 @@ namespace Unity.Theme.Editor
                 config.AddColor("On Primary",       "#000000FF");
                 config.AddColor("On Secondary",     "#FFFFFFFF");
 
-                string directory = Path.GetDirectoryName(ThemeDatabase.PATH);
+                string directory = Path.GetDirectoryName(Theme.PATH);
                 if (!Directory.Exists(directory))
                 {
                     Directory.CreateDirectory(directory);
                 }
 
-                AssetDatabase.CreateAsset(config, ThemeDatabase.PATH);
+                AssetDatabase.CreateAsset(config, Theme.PATH);
                 AssetDatabase.SaveAssets();
             }
             return config;

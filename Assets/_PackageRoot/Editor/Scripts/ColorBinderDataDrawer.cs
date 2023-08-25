@@ -24,8 +24,8 @@ namespace Unity.Theme.Editor
             var overrideAlpha = property.FindPropertyRelative("overrideAlpha");
             var alpha = property.FindPropertyRelative("alpha");
 
-            dropdownColor.choices = ThemeDatabase.Instance?.ColorNames?.ToList() ?? new List<string>() { "error" };
-            dropdownColor.value = ThemeDatabase.Instance?.GetColorName(colorGuid.stringValue);
+            dropdownColor.choices = Theme.Instance?.ColorNames?.ToList() ?? new List<string>() { "error" };
+            dropdownColor.value = Theme.Instance?.GetColorName(colorGuid.stringValue);
             toggleOverrideAlpha.value = overrideAlpha.boolValue;
             sliderAlpha.visible = overrideAlpha.boolValue;
             sliderAlpha.value = alpha.floatValue;
@@ -34,7 +34,7 @@ namespace Unity.Theme.Editor
 
             dropdownColor.RegisterValueChangedCallback(evt =>
             {
-                var guid = ThemeDatabase.Instance?.GetColorByName(evt.newValue)?.Guid;
+                var guid = Theme.Instance?.GetColorByName(evt.newValue)?.Guid;
                 colorGuid.stringValue = guid;
                 UpdateColorFill(colorFill, colorGuid.stringValue, overrideAlpha.boolValue ? alpha.floatValue : 1f);
                 colorGuid.serializedObject.ApplyModifiedProperties();
@@ -63,7 +63,7 @@ namespace Unity.Theme.Editor
         }
         void UpdateColorFill(VisualElement colorFill, string colorGuid, float alpha)
         {
-            var color = ThemeDatabase.Instance?.GetColorByGuid(colorGuid)?.color ?? ThemeDatabase.DefaultColor;
+            var color = Theme.Instance?.GetColorByGuid(colorGuid)?.color ?? Theme.DefaultColor;
             color.a = alpha;
             colorFill.style.unityBackgroundImageTintColor = new StyleColor(color);
         }

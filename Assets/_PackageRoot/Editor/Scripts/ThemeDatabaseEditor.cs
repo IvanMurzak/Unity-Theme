@@ -28,13 +28,13 @@ namespace Unity.Theme.Editor
 
         private void SaveChanges(string message)
         {
-            if (ThemeDatabase.Instance?.debugLevel <= DebugLevel.Log)
+            if (Theme.Instance?.debugLevel <= DebugLevel.Log)
                 Debug.Log(message);
             saveChangesMessage = message;
             base.SaveChanges();
         }
 
-        private void UpdateDropdownCurrentTheme(ThemeDatabase config)
+        private void UpdateDropdownCurrentTheme(Theme config)
         {
             dropdownCurrentTheme.choices = config.ThemeNames.ToList();
             dropdownCurrentTheme.value = config.CurrentThemeName;
@@ -42,7 +42,7 @@ namespace Unity.Theme.Editor
 
         public void CreateGUI()
         {
-            var config = ThemeDatabase.Instance;            
+            var config = Theme.Instance;            
             var panel = templateControlPanel.Instantiate();
             var root = new ScrollView();
             rootVisualElement.Add(root);
@@ -99,7 +99,7 @@ namespace Unity.Theme.Editor
                 UIAddTheme(config, rootThemes, theme);
         }
 
-        void UIAddTheme(ThemeDatabase config, VisualElement rootThemes, ThemeData theme)
+        void UIAddTheme(Theme config, VisualElement rootThemes, ThemeData theme)
         {
             var themePanel = templateTheme.Instantiate();
             rootThemes.Add(themePanel);
@@ -173,7 +173,7 @@ namespace Unity.Theme.Editor
             foreach (var themeColor in theme.colors)
                 UIAddThemeColor(config, uiTheme, themeColor);
         }
-        void UIAddThemeColor(ThemeDatabase config, UITheme uiTheme, ColorData themeColor)
+        void UIAddThemeColor(Theme config, UITheme uiTheme, ColorData themeColor)
         {
             var themeColorPanel = templateThemeColor.Instantiate();
             uiTheme.contColors.Add(themeColorPanel);
