@@ -44,10 +44,11 @@ There is a list of built-in color binders:
 
 ![Unity-Theme-Binder](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/6198af48-9f0e-4cda-b5e9-40508bbd5c45)
 
-### C# API
+## C# Api
+
+### Colors
 
 ```csharp
-// Colors -------------------------------------------
 using Unity.Theme;
 
 Theme.Instance.AddColor("Primary", "#6750A4");
@@ -64,8 +65,9 @@ Theme.Instance.RemoveColor(colorData);
 Theme.Instance.RemoveAllColors();
 ```
 
+### Themes
+
 ```csharp
-// Themes -------------------------------------------
 using Unity.Theme;
 
 Theme.Instance.AddTheme("Light");
@@ -105,3 +107,7 @@ namespace Unity.Theme.Binders
     }
 }
 ```
+
+## Other
+
+- **[Color palette builder](https://m3.material.io/theme-builder#/custom)** by Google's Material Design V3
