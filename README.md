@@ -4,7 +4,7 @@
 
 Create palettes of colors and components to change specific colors on a specific visual element. Very useful for UI.
 
-![Unity Theme Settings](https://imgur.com/FKVF2H9.gif)
+![Unity-Theme-1](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/1c545d11-aea4-4cd2-8aaa-75539bbb6699)
 
 ## Features
 
@@ -28,23 +28,59 @@ openupm add extensions.unity.theme`
 
 ## Usage
 
-- Go to `Window/Unity-Theme`.
-- Customize color pallets as you want
+- Go to `Window/Unity-Theme`
+- Customize color paletts as you want
 - Add `ColorBinder` components to a target GameObject
 
 ### Color Binder
 
-A component that binds a color to a specific target, such as `Image`, `SpriteRenderer`, `TextMeshPro`, or anything else. There is list of built-in color binders:
+A component that binds a color to a specific target, such as `Image`, `SpriteRenderer`, `TextMeshPro`, or anything else. 
+
+There is a list of built-in color binders:
 
 - `ImageColorBinder`
 - `SpriteRendererColorBinder`
 - `TextMeshProColorBinder`
 
-![Color Binders](https://imgur.com/AeNC3tF.gif)
+![Unity-Theme-Binder](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/6198af48-9f0e-4cda-b5e9-40508bbd5c45)
 
-#### Create a custom `ColorBinder`
+### C# API
 
-When need to bind color to something else, you may extend from `BaseColorBinder` as listed below.
+```csharp
+// Colors ----------------------------------------------
+using Unity.Theme;
+
+Theme.Instance.AddColor("Primary", "#6750A4");        //
+Theme.Instance.AddColor("Primary", Color.white);      //
+
+Theme.Instance.SetColor("Primary", "#6750A4");        //
+Theme.Instance.SetColor("Primary", Color.white);      //
+
+Theme.Instance.SetOrAddColor("Primary", "#6750A4");   //
+Theme.Instance.SetOrAddColor("Primary", Color.white); //
+
+Theme.Instance.RemoveColorByName("Primary");          //
+Theme.Instance.RemoveColor(colorData);                //
+Theme.Instance.RemoveAllColors();                     //
+```
+
+```csharp
+// Themes ----------------------------------------------
+using Unity.Theme;
+
+Theme.Instance.AddTheme("Light");                     //
+Theme.Instance.SetOrAddTheme("Primary");              //
+
+Theme.Instance.CurrentThemeName = "Light";            //
+Theme.Instance.CurrentThemeIndex = 0;                 //
+
+Theme.Instance.RemoveTheme("Light");                  //
+Theme.Instance.RemoveAllThemes();                     //
+```
+
+### Create a custom `ColorBinder`
+
+If you need to bind color to something else, you may extend from `BaseColorBinder` as listed below.
 
 ```C#
 using UnityEngine;
@@ -68,13 +104,4 @@ namespace Unity.Theme.Binders
         }
     }
 }
-```
-
-### Theme change in Play Time (Runtime)
-
-```C#
-using Unity.Theme;
-
-// Change the current theme to a new theme from the existing themes list
-Theme.Instance.CurrentThemeIndex = 1;
 ```
