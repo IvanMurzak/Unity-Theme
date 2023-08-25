@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -32,7 +33,15 @@ namespace Unity.Theme
 
             if (changed && CurrentTheme != null)
             {
-                onThemeChanged?.Invoke(CurrentTheme);
+                try
+                {
+                    onThemeChanged?.Invoke(CurrentTheme);
+                }
+                catch (Exception e)
+                {
+                    if (debugLevel <= DebugLevel.Exception)
+                        Debug.LogException(e);
+                }
             }
         }
         private bool CreateThemeGuid(List<ThemeData> themes)

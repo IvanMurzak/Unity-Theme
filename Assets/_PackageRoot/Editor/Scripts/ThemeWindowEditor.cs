@@ -39,7 +39,10 @@ namespace Unity.Theme.Editor
             dropdownCurrentTheme.choices = config.ThemeNames.ToList();
             dropdownCurrentTheme.value = config.CurrentThemeName;
         }
+        private void OnThemeChanged(ThemeData themeData) => Repaint();
 
+        private void OnEnable() => Theme.Instance.onThemeChanged += OnThemeChanged;
+        private void OnDisable() => Theme.Instance.onThemeChanged -= OnThemeChanged;
         public void CreateGUI()
         {
             var config = Theme.Instance;            

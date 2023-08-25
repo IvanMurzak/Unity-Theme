@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -23,7 +24,15 @@ namespace Unity.Theme
                     if (currentThemeIndex != value)
                     {
                         currentThemeIndex = value;
-                        onThemeChanged?.Invoke(CurrentTheme);
+                        try
+                        {
+                            onThemeChanged?.Invoke(CurrentTheme);
+                        }
+                        catch (Exception e)
+                        {
+                            if (debugLevel <= DebugLevel.Exception)
+                                Debug.LogException(e);
+                        }
                     }
                 }
             }
@@ -46,7 +55,7 @@ namespace Unity.Theme
         public ColorData GetColorFirst()                                => GetColorFirst(CurrentTheme);
         public ColorData GetColorFirst(ThemeData theme)                 => theme?.colors?.FirstOrDefault();
 
-        public ThemeData AddTheme(string themeName)
+        public ThemeData AddTheme(string themeName, bool setCurrent = false)
         {
             List<ColorData> colors;
             if (themes.Count > 0)
@@ -65,6 +74,10 @@ namespace Unity.Theme
                 colors = colors
             };
             themes.Add(theme);
+
+            if (setCurrent)
+                CurrentThemeIndex = themes.Count - 1;
+                
             return theme;
         }
         public void RemoveTheme(ThemeData theme) => themes.Remove(theme);
@@ -101,6 +114,22 @@ namespace Unity.Theme
             }
             return colorDataRef;
         }
+        public ColorData SetColor(string colorName, string colorHex)
+        {
+            var color = DefaultColor;
+            if (!ColorUtility.TryParseHtmlString(colorHex, out color))
+            {
+                if (debugLevel <= DebugLevel.Error)
+                    Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
+            }
+            return SetColor(colorName, color);
+        }
+        public ColorData SetColor(string colorName, Color color)
+        {
+            var colorData = GetColorByName(colorName);
+            colorData.color = color;
+            return colorData;
+        }
 
         public void RemoveColor(ColorData color)
         {
@@ -132,8 +161,30 @@ namespace Unity.Theme
             {
                 theme.colors[index] = color;
                 if (CurrentTheme == theme)
-                    onThemeColorChanged?.Invoke(theme, color);
+                {
+                    try
+                    {
+                        onThemeColorChanged?.Invoke(theme, color);
+                    }
+                    catch (Exception e)
+                    {
+                        if (debugLevel <= DebugLevel.Exception)
+                            Debug.LogException(e);
+                    }
+                }
             }
+        }
+
+        public void RemoveAllThemes()
+        {
+            themes.Clear();
+            currentThemeIndex = -1;
+        }
+        public void RemoveAllColors()
+        {
+            colors.Clear();
+            foreach (var theme in themes)
+                theme.colors.Clear();
         }
         public void SortColorsByName()
         {

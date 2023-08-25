@@ -10,6 +10,13 @@ namespace Unity.Theme.Binders
 
         protected virtual void Awake()
         {
+            if (data == null)
+            {
+                data = new ColorBinderData()
+                {
+                    colorGuid = Theme.Instance?.GetColorFirst().Guid
+                };
+            }
             if (!data.IsConnected)
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
