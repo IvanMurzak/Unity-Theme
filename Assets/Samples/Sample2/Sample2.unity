@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    colorGuid: 4b1cb58d-6a38-4954-b0aa-2b8d98f5cf0e
+    colorGuid: 1c31e8b9-953e-4278-8afe-8308ab87227a
     overrideAlpha: 0
     alpha: 1
   image: {fileID: 166118184}
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.84705883, b: 0.89411765, a: 1}
+  m_Color: {r: 0.3882353, g: 0.23137255, b: 0.28235295, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    colorGuid: 4b1cb58d-6a38-4954-b0aa-2b8d98f5cf0e
+    colorGuid: 1c31e8b9-953e-4278-8afe-8308ab87227a
     overrideAlpha: 0
     alpha: 1
   image: {fileID: 455028418}
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.84705883, b: 0.89411765, a: 1}
+  m_Color: {r: 0.3882353, g: 0.23137255, b: 0.28235295, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    colorGuid: 44e8aadf-271a-47f3-92df-4a104479a740
+    colorGuid: 5d255797-0487-457d-9309-dea410a1f02b
     overrideAlpha: 0
     alpha: 1
   image: {fileID: 521320735}
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.90588236, g: 0.8784314, b: 0.9254902, a: 1}
+  m_Color: {r: 0.2901961, g: 0.26666668, b: 0.34509805, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    colorGuid: 44e8aadf-271a-47f3-92df-4a104479a740
+    colorGuid: 5d255797-0487-457d-9309-dea410a1f02b
     overrideAlpha: 0
     alpha: 1
   image: {fileID: 1112631966}
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.90588236, g: 0.8784314, b: 0.9254902, a: 1}
+  m_Color: {r: 0.2901961, g: 0.26666668, b: 0.34509805, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    colorGuid: ca0bfda0-fe22-46c1-88f7-075169b14c50
+    colorGuid: 0774ae24-94db-4d65-b751-3f0c755ce1bc
     overrideAlpha: 0
     alpha: 1
   image: {fileID: 1204950111}
@@ -761,7 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.10980392, g: 0.105882354, b: 0.12156863, a: 1}
+  m_Color: {r: 0.9019608, g: 0.88235295, b: 0.8980392, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    colorGuid: 4b1cb58d-6a38-4954-b0aa-2b8d98f5cf0e
+    colorGuid: 1c31e8b9-953e-4278-8afe-8308ab87227a
     overrideAlpha: 0
     alpha: 1
   image: {fileID: 1229332221}
@@ -855,7 +855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.84705883, b: 0.89411765, a: 1}
+  m_Color: {r: 0.3882353, g: 0.23137255, b: 0.28235295, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -931,7 +931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    colorGuid: ca0bfda0-fe22-46c1-88f7-075169b14c50
+    colorGuid: 0774ae24-94db-4d65-b751-3f0c755ce1bc
     overrideAlpha: 0
     alpha: 1
   image: {fileID: 1233163870}
@@ -948,7 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.10980392, g: 0.105882354, b: 0.12156863, a: 1}
+  m_Color: {r: 0.9019608, g: 0.88235295, b: 0.8980392, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    colorGuid: ca0bfda0-fe22-46c1-88f7-075169b14c50
+    colorGuid: 0774ae24-94db-4d65-b751-3f0c755ce1bc
     overrideAlpha: 0
     alpha: 1
   image: {fileID: 1452508899}
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.10980392, g: 0.105882354, b: 0.12156863, a: 1}
+  m_Color: {r: 0.9019608, g: 0.88235295, b: 0.8980392, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    colorGuid: 313f2126-b4e7-4f03-92c8-7d65876708da
+    colorGuid: 6b072958-1f3d-42d4-9ca9-705f108286b7
     overrideAlpha: 0
     alpha: 1
   image: {fileID: 1607249511}
@@ -1171,7 +1171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9843137, b: 0.99607843, a: 1}
+  m_Color: {r: 0.10980392, g: 0.105882354, b: 0.12156863, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -1341,7 +1341,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1000, y: 2000}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 0.641
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1444,7 +1444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    colorGuid: 8bde3b25-6555-4004-a5e8-1a9297ef4e9b
+    colorGuid: c17be719-c931-47e7-8478-115cd5ccfd24
     overrideAlpha: 0
     alpha: 1
   image: {fileID: 1717525514}
@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19215687, g: 0.06666667, b: 0.11372549, a: 1}
+  m_Color: {r: 0.9372549, g: 0.72156864, b: 0.78431374, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -1537,7 +1537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    colorGuid: ca0bfda0-fe22-46c1-88f7-075169b14c50
+    colorGuid: 0774ae24-94db-4d65-b751-3f0c755ce1bc
     overrideAlpha: 0
     alpha: 1
   image: {fileID: 1731738397}
@@ -1554,7 +1554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.10980392, g: 0.105882354, b: 0.12156863, a: 1}
+  m_Color: {r: 0.9019608, g: 0.88235295, b: 0.8980392, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0

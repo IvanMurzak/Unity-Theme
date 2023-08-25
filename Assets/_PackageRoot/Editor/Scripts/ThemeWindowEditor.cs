@@ -50,6 +50,8 @@ namespace Unity.Theme.Editor
             var root = new ScrollView();
             rootVisualElement.Add(root);
             root.Add(panel);
+
+            uiThemeColors.Clear();
             
             // Settings
             // -----------------------------------------------------------------
