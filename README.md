@@ -44,6 +44,12 @@ There is a list of built-in color binders:
 
 ![Unity-Theme-Binder](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/6198af48-9f0e-4cda-b5e9-40508bbd5c45)
 
+### Color palettes
+
+Modify palettes, instant response with all connected GameObjects.
+
+![Unity-Theme-Palettes](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/179215af-23f1-4a8e-bb29-a7169f3433a5)
+
 ## C# Api
 
 ### Colors
