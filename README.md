@@ -8,14 +8,14 @@ Create palettes of colors and components to change specific colors on a specific
 
 ## Features
 
-✔️ create custom themes
-✔️ name color as you want
-✔️ add as many colors as you need
-✔️ name a theme as you want
-✔️ change theme any moment by name
-✔️ bind color to: `Image`, `SpriteRenderer`, `TextMeshPro`, etc
-✔️ easy way to add custom color binder by new C# class with just a few lines of code
-✔️ rename color even after binding to a component, with no broken links
+- ✔️ Name colors
+- ✔️ Create custom themes with names
+- ✔️ Add as many colors as you need
+- ✔️ Name a theme as you want
+- ✔️ Change theme any moment by name
+- ✔️ Bind color to: `Image`, `SpriteRenderer`, `TextMeshPro`, etc
+- ✔️ Easy way to add custom color binder by new C# class with just a few lines of code
+- ✔️ Rename color even after binding to a component, with no broken links
 
 ## Installation
 
@@ -30,7 +30,7 @@ Create palettes of colors and components to change specific colors on a specific
 
 ### Color Binder
 
-Component that binds a color to a specific target, such as `Image`, `SpriteRenderer`, `TextMeshPro` or anything else. There are list of built-in color binders:
+A component that binds a color to a specific target, such as `Image`, `SpriteRenderer`, `TextMeshPro` or anything else. There are list of built-in color binders:
 
 - `ImageColorBinder`
 - `SpriteRendererColorBinder`
@@ -38,7 +38,7 @@ Component that binds a color to a specific target, such as `Image`, `SpriteRende
 
 ![Color Binders](https://imgur.com/AeNC3tF.gif)
 
-#### Create custom `ColorBinder`
+#### Create a custom `ColorBinder`
 
 When need to bind color to something else, you may extend from `BaseColorBinder` as listed below.
 
@@ -71,6 +71,6 @@ namespace Unity.Theme.Binders
 ```C#
 using Unity.Theme;
 
-// change the current theme to a new theme from existed themes list
+// Change the current theme to a new theme from the existing themes list
 Theme.Instance.CurrentThemeIndex = 1;
 ```
