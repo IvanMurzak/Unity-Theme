@@ -7,7 +7,7 @@ using UnityEditor.UIElements;
 
 namespace Unity.Theme.Editor
 {
-    public class ControlPanel : EditorWindow
+    public class ThemeDatabaseEditor : EditorWindow
     {
         const string colorFillTemplateGuid = "07c8baad910b3e244bd677fa7d79370b";
 
@@ -21,7 +21,7 @@ namespace Unity.Theme.Editor
         [MenuItem("Window/Unity-Theme")]
         public static void ShowWindow()
         {
-            var wnd = GetWindow<ControlPanel>();
+            var wnd = GetWindow<ThemeDatabaseEditor>();
             wnd.titleContent = new GUIContent("Unity-Theme");
             wnd.Focus();
         }

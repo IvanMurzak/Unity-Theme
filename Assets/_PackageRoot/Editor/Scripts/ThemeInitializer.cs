@@ -12,7 +12,7 @@ namespace Unity.Theme.Editor
         {
             yield return null; // let's Unity initialize itself and project resources first
             var config = GetOrCreateConfig();
-            ControlPanel.ShowWindow();
+            ThemeDatabaseEditor.ShowWindow();
         }
 
         public static ThemeDatabase GetOrCreateConfig()

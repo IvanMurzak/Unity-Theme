@@ -55,7 +55,7 @@ namespace Unity.Theme.Editor
                 alpha.serializedObject.ApplyModifiedProperties();
             });
 
-            btnOpenConfig.clicked += () => ControlPanel.ShowWindow();
+            btnOpenConfig.clicked += () => ThemeDatabaseEditor.ShowWindow();
 
             colorFill.BringToFront();
 
