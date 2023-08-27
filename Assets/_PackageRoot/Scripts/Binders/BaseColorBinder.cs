@@ -89,8 +89,8 @@ namespace Unity.Theme.Binders
                 TrySetColor(Theme.Instance.CurrentTheme);
         }
         // UTILS ---------------------------------------------------------------------------//
-        private string GameObjectPath() => GameObjectPath(transform);                       //
-        private static string GameObjectPath(Transform trans, string path = "")             //
+        protected string GameObjectPath() => GameObjectPath(transform);                     //
+        protected static string GameObjectPath(Transform trans, string path = "")           //
         {                                                                                   //
             if (string.IsNullOrEmpty(path))                                                 //
                 path = trans.name;                                                          //

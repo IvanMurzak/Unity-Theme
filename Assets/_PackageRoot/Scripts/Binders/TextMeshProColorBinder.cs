@@ -15,6 +15,12 @@ namespace Unity.Theme.Binders
         }
         protected override void SetColor(Color color)
         {
+            if (textMeshPro == null)
+            {
+                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
+                    Debug.LogError($"TextMeshPro not found at <b>{GameObjectPath()}</b>", gameObject);
+                return;
+            }
             textMeshPro.color = color;
         }
     }
