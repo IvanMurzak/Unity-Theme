@@ -1,4 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
-    <Style src="project://database/Assets/_PackageRoot/Editor/UI/uss/Unity.Theme.Style.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#Unity.Theme.Style" />
-    <ui:VisualElement name="colorFill" class="ScaleX2OnHover" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); height: 16px; width: 16px; background-image: url(&apos;project://database/Assets/_PackageRoot/Editor/Gizmos/circle_64_64.png?fileID=2800000&amp;guid=4b3055f266310964aacca4ede0a943ed&amp;type=3#circle_64_64&apos;); flex-shrink: 0;" />
+    <Style src="?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#Unity.Theme.Style" />
+    <ui:VisualElement name="colorFill" class="ScaleX2OnHover" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); height: 16px; width: 16px; background-image: url(&apos;?fileID=2800000&amp;guid=4b3055f266310964aacca4ede0a943ed&amp;type=3#circle_64_64&apos;); flex-shrink: 0;" />
 </ui:UXML>

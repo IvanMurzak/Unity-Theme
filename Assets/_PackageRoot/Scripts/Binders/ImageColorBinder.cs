@@ -15,6 +15,12 @@ namespace Unity.Theme.Binders
         }
         protected override void SetColor(Color color)
         {
+            if (image == null)
+            {
+                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
+                    Debug.LogError($"Image not found at <b>{GameObjectPath()}</b>", gameObject);
+                return;
+            }
             image.color = color;
         }
     }

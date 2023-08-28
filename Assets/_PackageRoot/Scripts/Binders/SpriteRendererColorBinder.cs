@@ -14,6 +14,12 @@ namespace Unity.Theme.Binders
         }
         protected override void SetColor(Color color)
         {
+            if (spriteRenderer == null)
+            {
+                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
+                    Debug.LogError($"SpriteRenderer not found at <b>{GameObjectPath()}</b>", gameObject);
+                return;
+            }
             spriteRenderer.color = color;
         }
     }
