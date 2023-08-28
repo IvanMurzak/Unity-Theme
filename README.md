@@ -23,7 +23,7 @@ Create palettes of colors and components to change specific colors on a specific
 - Open command line in Unity project folder
 
 ```bash
-openupm add extensions.unity.theme`
+openupm add extensions.unity.theme
 ```
 
 ## Usage
