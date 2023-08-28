@@ -2,15 +2,35 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine.UIElements;
-using Unity.Theme.Binders;
+using UnityEngine;
 
 namespace Unity.Theme.Editor
 {
-    [CustomPropertyDrawer(typeof(ColorBinderData))]
+    [CustomPropertyDrawer(typeof(Unity.Theme.Binders.ColorBinderData), true)]
     public class ColorBinderDataDrawer : PropertyDrawer
     {
         const string templateGuid = "7bc7f57ecc1dcb54ebd343051d02f17b";
 
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            var colorGuid = property.FindPropertyRelative("colorGuid");
+            var overrideAlpha = property.FindPropertyRelative("overrideAlpha");
+            var alpha = property.FindPropertyRelative("alpha");
+
+            var selected = Theme.Instance?.GetColorIndexByGuid(colorGuid.stringValue) ?? -1;
+            var options = Theme.Instance?.ColorNames?.ToArray() ?? new string[] { "error" };
+
+            selected = EditorGUILayout.Popup("Color", selected, options);
+            colorGuid.stringValue = Theme.Instance?.GetColorGuidByIndex(selected);
+            colorGuid.serializedObject.ApplyModifiedProperties();
+
+            EditorGUILayout.PropertyField(overrideAlpha);
+            if (overrideAlpha.boolValue)
+            {
+                alpha.floatValue = EditorGUILayout.Slider(alpha.floatValue, 0f, 1f);
+                alpha.serializedObject.ApplyModifiedProperties();
+            }
+        }
         public override VisualElement CreatePropertyGUI(SerializedProperty property)
         {
             var root = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath(templateGuid)).Instantiate();

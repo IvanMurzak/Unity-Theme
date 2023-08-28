@@ -14,6 +14,8 @@ namespace Unity.Theme
         public ColorDataRef GetColorRef(ColorData colorData)            => GetColorRef(colorData.Guid);
         public ColorDataRef GetColorRef(string guid)                    => string.IsNullOrEmpty(guid) ? null : colors.FirstOrDefault(x => x.Guid == guid);
         
+        public string    GetColorGuidByIndex(int index)                 => colors?[index]?.Guid;
+        public int       GetColorIndexByGuid(string guid)               => colors?.FindIndex(x => x.Guid == guid) ?? -1;
         public string    GetColorName  (string guid)                    => GetColorRef(guid)?.name;
         public ColorData GetColorByGuid(string guid)                    => GetColorByGuid(guid, CurrentTheme);
         public ColorData GetColorByGuid(string guid, ThemeData theme)   => string.IsNullOrEmpty(guid) ? null : theme?.colors?.FirstOrDefault(x => x.Guid == guid);
