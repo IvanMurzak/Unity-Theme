@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/_PackageRoot/Editor/UI/uss/Unity.Theme.Style.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#Unity.Theme.Style" />
+    <Style src="Packages/extensions.unity.theme/Editor/UI/uss/Unity.Theme.Style.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#Unity.Theme.Style" />
     <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
         <ui:Toggle name="toggleFoldout" class="unity-foldout__toggle" />
         <ui:TextField picking-mode="Ignore" value="Brown" name="textFieldName" style="flex-grow: 1; font-size: 16px; -unity-font-style: bold;" />

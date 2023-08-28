@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <ui:Template name="contHeader" src="project://database/Assets/_PackageRoot/Editor/UI/uxml/contHeader.uxml?fileID=9197481963319205126&amp;guid=e5e7b965c1524f54fa7af0a2c2ebaef4&amp;type=3#contHeader" />
-    <Style src="project://database/Assets/_PackageRoot/Editor/UI/ControlPanel.uss?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#ControlPanel" />
+    <ui:Template name="contHeader" src="?fileID=9197481963319205126&amp;guid=e5e7b965c1524f54fa7af0a2c2ebaef4&amp;type=3#contHeader" />
+    <Style src="?fileID=7433441132597879392&amp;guid=1de094590b74bcd41b9e3b2085342908&amp;type=3#ControlPanel" />
     <ui:Box name="contHeader" style="background-color: rgba(222, 222, 222, 0); flex-direction: row; flex-shrink: 0;">
         <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
             <ui:Label text="Settings" name="labelSettings" class="Header" />
@@ -9,7 +9,7 @@
             <ui:DropdownField label="Current Theme" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="dropdownCurrentTheme" class="ContentItem" />
         </ui:VisualElement>
         <ui:VisualElement name="imgLogoPivot" class="AnimatedSelectable" style="flex-grow: 0; align-self: flex-start; height: 90px; width: 90px; right: 0; margin-left: 15px; justify-content: flex-start; flex-shrink: 0; margin-right: 10px; align-items: center; margin-top: 10px;">
-            <ui:VisualElement name="imgLogo" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/_PackageRoot/Editor/Gizmos/ThemeDatabaseConfigIcon.jpg?fileID=2800000&amp;guid=5ea984948bb0eb54a8d1fef427f3fb90&amp;type=3#ThemeDatabaseConfigIcon&apos;); -unity-background-scale-mode: scale-to-fit; align-self: stretch;" />
+            <ui:VisualElement name="imgLogo" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;?fileID=2800000&amp;guid=5ea984948bb0eb54a8d1fef427f3fb90&amp;type=3#ThemeDatabaseConfigIcon&apos;); -unity-background-scale-mode: scale-to-fit; align-self: stretch;" />
         </ui:VisualElement>
     </ui:Box>
     <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
