@@ -23,7 +23,7 @@ Create palettes of colors and components to change specific colors on a specific
 - Open command line in Unity project folder
 
 ```bash
-openupm add extensions.unity.theme`
+openupm add extensions.unity.theme
 ```
 
 ## Usage
@@ -34,7 +34,7 @@ openupm add extensions.unity.theme`
 
 ### Color Binder
 
-A component that binds a color to a specific target, such as `Image`, `SpriteRenderer`, `TextMeshPro`, or anything else. 
+A component that binds a color to a specific target, such as `Image`, `SpriteRenderer`, `TextMeshPro`, or anything else.
 
 There is a list of built-in color binders:
 
