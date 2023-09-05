@@ -35,6 +35,7 @@ namespace Unity.Theme.Editor
                 Debug.Log(message);
             saveChangesMessage = message;
             base.SaveChanges();
+            EditorUtility.SetDirty(Theme.Instance);
             Undo.RecordObject(Theme.Instance, message);
         }
 
