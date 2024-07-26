@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Unity.Theme
@@ -13,6 +12,9 @@ namespace Unity.Theme
             {
                 if (instance == null)
                     instance = GetOrCreateInstance();
+
+                if (instance == null)
+                    Debug.LogError("Theme instance is null");
 
                 return instance;
             }

@@ -75,11 +75,17 @@ namespace Unity.Theme.Binders
         private void OnValidate()
         {
             // Attaching to first color
-            if (string.IsNullOrEmpty(data.colorGuid) || Theme.Instance?.ColorGuids.Contains(data.colorGuid) == false)
+            if (string.IsNullOrEmpty(data.colorGuid))
             {
-                data.colorGuid = Theme.Instance?.GetColorFirst().Guid;
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"colorGuid is null or doesn't match to any existed colors at:  <b>{GameObjectPath()}</b>", gameObject);
+                    Debug.LogError($"colorGuid is null at: <b>{GameObjectPath()}</b>. Taking the first one available.", gameObject);
+                data.colorGuid = Theme.Instance?.GetColorFirst().Guid;
+            }
+            if (!data.IsConnected)
+            {
+                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
+                    Debug.LogError($"colorGuid='{data.colorGuid}' doesn't match to any existed colors at: <b>{GameObjectPath()}</b>. Taking the first one available.", gameObject);
+                data.colorGuid = Theme.Instance?.GetColorFirst().Guid;
             }
 
             TrySetColor(Theme.Instance.CurrentTheme);
