@@ -12,13 +12,8 @@ namespace Unity.Theme
             get
             {
                 if (instance == null)
-                {
                     instance = GetOrCreateInstance();
-                    if (instance == null)
-                    {
-                        return null;
-                    }
-                }
+
                 return instance;
             }
         }
