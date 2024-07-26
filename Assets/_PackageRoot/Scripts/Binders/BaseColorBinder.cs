@@ -78,8 +78,8 @@ namespace Unity.Theme.Binders
             if (string.IsNullOrEmpty(data.colorGuid) || Theme.Instance?.ColorGuids.Contains(data.colorGuid) == false)
             {
                 data.colorGuid = Theme.Instance?.GetColorFirst().Guid;
-                if (Theme.Instance?.debugLevel <= DebugLevel.Log)
-                    Debug.Log($"colorGuid is null or doesn't match to any existed colors at:  <b>{GameObjectPath()}</b>", gameObject);
+                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
+                    Debug.LogError($"colorGuid is null or doesn't match to any existed colors at:  <b>{GameObjectPath()}</b>", gameObject);
             }
 
             TrySetColor(Theme.Instance.CurrentTheme);

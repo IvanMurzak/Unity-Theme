@@ -16,7 +16,12 @@ namespace Unity.Theme.Binders
                 return false;
             }
             data.colorGuid = colorData.Guid;
-            SetColor(GetColor(colorData));
+            var color = GetColor(colorData);
+
+            if (Theme.Instance?.debugLevel <= DebugLevel.Log)
+                Debug.Log($"SetColor: '<b>{data.ColorName}</b>' {color.ToHexRGBA()} at <b>{GameObjectPath()}</b>", gameObject);
+
+            SetColor(color);
             return true;
         }
     }
