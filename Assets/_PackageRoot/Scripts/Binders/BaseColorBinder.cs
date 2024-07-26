@@ -122,10 +122,8 @@ namespace Unity.Theme.Binders
         private void SetDirty(Object obj)
         {
 #if UNITY_EDITOR
-            if (UnityEditor.PrefabUtility.IsPartOfAnyPrefab(obj))
-                UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(obj);
-            else
-                UnityEditor.EditorUtility.SetDirty(obj);
+            UnityEditor.EditorUtility.SetDirty(obj);
+            UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(obj);
 #endif
         }
         private void OnThemeColorChanged(ThemeData themeData, ColorData colorData) => TrySetColor(Theme.Instance.CurrentTheme);
