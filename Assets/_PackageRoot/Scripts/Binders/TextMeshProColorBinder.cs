@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 namespace Unity.Theme.Binders
 {
@@ -7,6 +8,8 @@ namespace Unity.Theme.Binders
     public class TextMeshProColorBinder : BaseColorBinder
     {
         [SerializeField] TextMeshProUGUI textMeshPro;
+
+        protected override IEnumerable<Object> ColorTargets { get { yield return textMeshPro; } }
 
         protected override void Awake()
         {

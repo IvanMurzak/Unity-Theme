@@ -16,6 +16,7 @@ namespace Unity.Theme.Binders
                 return false;
             }
             data.colorGuid = colorData.Guid;
+            SetDirty();
             var color = GetColor(colorData);
 
             if (Theme.Instance?.debugLevel <= DebugLevel.Log)

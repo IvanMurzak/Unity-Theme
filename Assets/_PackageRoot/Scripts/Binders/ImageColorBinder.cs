@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,8 @@ namespace Unity.Theme.Binders
     public class ImageColorBinder : BaseColorBinder
     {
         [SerializeField] Image image;
+
+        protected override IEnumerable<Object> ColorTargets { get { yield return image; } }
 
         protected override void Awake()
         {

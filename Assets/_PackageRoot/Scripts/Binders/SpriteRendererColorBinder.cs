@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Unity.Theme.Binders
@@ -6,6 +7,8 @@ namespace Unity.Theme.Binders
     public class SpriteRendererColorBinder : BaseColorBinder
     {
         [SerializeField] SpriteRenderer spriteRenderer;
+
+        protected override IEnumerable<Object> ColorTargets { get { yield return spriteRenderer; } }
 
         protected override void Awake()
         {

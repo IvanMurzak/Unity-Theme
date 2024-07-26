@@ -34,17 +34,12 @@ namespace Unity.Theme
 
         public ThemeData AddTheme(string themeName, bool setCurrent = false)
         {
-            List<ColorData> colors;
-            if (themes.Count > 0)
-            {
-                colors = themes[0].colors
+            var colors = themes.Count == 0
+                ? new List<ColorData>()
+                : themes[0].colors
                     .Select(c => new ColorData(c))
                     .ToList();
-            }
-            else
-            {
-                colors = new List<ColorData>();
-            }
+
             var theme = new ThemeData(Guid.NewGuid().ToString())
             {
                 themeName = themeName,
@@ -59,9 +54,7 @@ namespace Unity.Theme
         }
         public ThemeData SetOrAddTheme(string themeName, bool setCurrent = false)
         {
-            var theme = themes.FirstOrDefault(x => x.themeName == themeName);
-            if (theme == null)
-                theme = AddTheme(themeName, setCurrent);
+            var theme = themes.FirstOrDefault(x => x.themeName == themeName) ?? AddTheme(themeName, setCurrent);
             if (setCurrent)
                 CurrentThemeIndex = themes.IndexOf(theme);
             return theme;

@@ -1,4 +1,4 @@
-using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Unity.Theme.Binders
@@ -8,24 +8,28 @@ namespace Unity.Theme.Binders
     {
         [SerializeField] protected ColorBinderData data;
 
+        protected virtual IEnumerable<Object> ColorTargets { get; } = null;
+
         protected virtual void Awake()
         {
             if (data == null)
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"ColorBinderData is null at gameObject {name}", gameObject);
-                data = new ColorBinderData()
-                {
-                    colorGuid = Theme.Instance?.GetColorFirst().Guid
-                };
+                    Debug.LogError($"ColorBinderData is null at <b>{GameObjectPath()}</b>, replacing it by first color", gameObject);
+
+                data = new ColorBinderData() { colorGuid = Theme.Instance?.GetColorFirst().Guid };
+                SetDirty();
             }
             if (!data.IsConnected)
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"Color not found in database. Guid={data.colorGuid}", gameObject);
+                    Debug.LogError($"Color not found in database at <b>{GameObjectPath()}</b> Guid={data.colorGuid}", gameObject);
                 var colorData = Theme.Instance?.GetColorFirst();
                 if (colorData != null)
+                {
                     data.colorGuid = colorData.Guid;
+                    SetDirty();
+                }
                 else
                 {
                     if (Theme.Instance?.debugLevel <= DebugLevel.Error)
@@ -46,6 +50,15 @@ namespace Unity.Theme.Binders
         {
             Theme.Instance.onThemeChanged -= TrySetColor;
             Theme.Instance.onThemeColorChanged -= OnThemeColorChanged;
+        }
+        protected virtual void SetDirty()
+        {
+            SetDirty(this);
+            if (ColorTargets != null)
+            {
+                foreach (var target in ColorTargets)
+                    SetDirty(target);
+            }
         }
         protected virtual void TrySetColor(ThemeData theme)
         {
@@ -74,18 +87,21 @@ namespace Unity.Theme.Binders
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            // Attaching to first color
             if (string.IsNullOrEmpty(data.colorGuid))
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
                     Debug.LogError($"colorGuid is null at: <b>{GameObjectPath()}</b>. Taking the first one available.", gameObject);
+
                 data.colorGuid = Theme.Instance?.GetColorFirst().Guid;
+                SetDirty();
             }
             if (!data.IsConnected)
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
                     Debug.LogError($"colorGuid='{data.colorGuid}' doesn't match to any existed colors at: <b>{GameObjectPath()}</b>. Taking the first one available.", gameObject);
+
                 data.colorGuid = Theme.Instance?.GetColorFirst().Guid;
+                SetDirty();
             }
 
             TrySetColor(Theme.Instance.CurrentTheme);
@@ -102,10 +118,16 @@ namespace Unity.Theme.Binders
         }
         protected abstract void SetColor(Color color);
 
-        private void OnThemeColorChanged(ThemeData themeData, ColorData colorData)
+        private void SetDirty(Object obj)
         {
-            TrySetColor(Theme.Instance.CurrentTheme);
+#if UNITY_EDITOR
+            if (UnityEditor.PrefabUtility.IsPartOfAnyPrefab(obj))
+                UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(obj);
+            else
+                UnityEditor.EditorUtility.SetDirty(obj);
+#endif
         }
+        private void OnThemeColorChanged(ThemeData themeData, ColorData colorData) => TrySetColor(Theme.Instance.CurrentTheme);
         // UTILS ---------------------------------------------------------------------------//
         protected string GameObjectPath() => GameObjectPath(transform);                     //
         protected static string GameObjectPath(Transform trans, string path = "")           //

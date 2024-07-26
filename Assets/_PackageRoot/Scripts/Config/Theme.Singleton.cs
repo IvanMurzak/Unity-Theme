@@ -10,8 +10,7 @@ namespace Unity.Theme
         {
             get
             {
-                if (instance == null)
-                    instance = GetOrCreateInstance();
+                instance ??= GetOrCreateInstance();
 
                 if (instance == null)
                     Debug.LogError("Theme instance is null");
