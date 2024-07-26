@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ff1dc9c64b296469122d9b7a7d6df0, type: 3}
   m_Name: Unity-Theme Database
   m_EditorClassIdentifier: 
-  debugLevel: 2
+  debugLevel: 0
   currentThemeIndex: 1
   colors:
   - guid: c1a53828-f2d5-4129-ac25-a315c3584b93
