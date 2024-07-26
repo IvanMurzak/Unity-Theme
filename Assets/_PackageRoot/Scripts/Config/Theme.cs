@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -18,11 +17,10 @@ namespace Unity.Theme
 
         private void OnValidate()
         {
-            if (colors == null) colors = new List<ColorDataRef>();
-            if (themes == null) themes = new List<ThemeData>();
+            colors ??= new List<ColorDataRef>();
+            themes ??= new List<ThemeData>();
 
-            if (currentThemeIndex < 0) currentThemeIndex = 0;
-            if (currentThemeIndex >= themes.Count) currentThemeIndex = Mathf.Max(0, themes.Count - 1);
+            currentThemeIndex = Mathf.Clamp(currentThemeIndex, 0, themes.Count - 1);
 
             var changed = CreateThemeGuid(themes);
             foreach (var theme in themes)

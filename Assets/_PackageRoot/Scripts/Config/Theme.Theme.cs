@@ -10,7 +10,12 @@ namespace Unity.Theme
     {        
         public List<ThemeData>     Themes              => themes;
         public IEnumerable<string> ThemeNames          => themes.Select(x => x.themeName);
-        public ThemeData           CurrentTheme        => themes.Count == 0 ? null : ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count) ? themes[currentThemeIndex] : null);
+        public ThemeData           CurrentTheme        => themes.Count > 0 
+            ? ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count)
+                ? themes[currentThemeIndex]
+                : null)
+            : null;
+
         public int                 CurrentThemeIndex
         {
             get => currentThemeIndex;
@@ -24,6 +29,8 @@ namespace Unity.Theme
                         NotifyThemeChanged(CurrentTheme);
                     }
                 }
+                else if (debugLevel <= DebugLevel.Error)
+                    Debug.LogError($"Theme index {value} is out of range");
             }
         }
         public string              CurrentThemeName

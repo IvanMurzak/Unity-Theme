@@ -152,7 +152,7 @@ namespace Unity.Theme
             {
                 theme.colors[index] = color;
                 if (CurrentTheme == theme)
-                    NotifyColorChanged(color);
+                    NotifyColorChanged(color, theme);
             }
         }
 

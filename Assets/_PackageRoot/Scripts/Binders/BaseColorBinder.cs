@@ -24,6 +24,7 @@ namespace Unity.Theme.Binders
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
                     Debug.LogError($"Color not found in database at <b>{GameObjectPath()}</b> Guid={data.colorGuid}", gameObject);
+
                 var colorData = Theme.Instance?.GetColorFirst();
                 if (colorData != null)
                 {
@@ -84,6 +85,17 @@ namespace Unity.Theme.Binders
             }
         }
 
+        protected virtual Color GetColor(ColorData colorData)
+        {
+            var result = colorData.color;
+            
+            if (data.overrideAlpha) 
+                result.a = data.alpha;
+
+            return result;
+        }
+        protected abstract void SetColor(Color color);
+
 #if UNITY_EDITOR
         private void OnValidate()
         {
@@ -107,17 +119,6 @@ namespace Unity.Theme.Binders
             TrySetColor(Theme.Instance.CurrentTheme);
         }
 #endif
-        protected virtual Color GetColor(ColorData colorData)
-        {
-            var result = colorData.color;
-            
-            if (data.overrideAlpha) 
-                result.a = data.alpha;
-
-            return result;
-        }
-        protected abstract void SetColor(Color color);
-
         private void SetDirty(Object obj)
         {
 #if UNITY_EDITOR
@@ -128,6 +129,7 @@ namespace Unity.Theme.Binders
 #endif
         }
         private void OnThemeColorChanged(ThemeData themeData, ColorData colorData) => TrySetColor(Theme.Instance.CurrentTheme);
+
         // UTILS ---------------------------------------------------------------------------//
         protected string GameObjectPath() => GameObjectPath(transform);                     //
         protected static string GameObjectPath(Transform trans, string path = "")           //
