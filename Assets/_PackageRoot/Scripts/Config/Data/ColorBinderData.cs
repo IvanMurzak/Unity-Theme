@@ -6,7 +6,7 @@ namespace Unity.Theme.Binders
     [Serializable]
     public class ColorBinderData
     {
-        [SerializeField, HideInInspector] public string colorGuid;                             
+        [SerializeField, HideInInspector] public string colorGuid;
         [SerializeField, HideInInspector] public bool overrideAlpha;
         [SerializeField, HideInInspector] public float alpha = 1f;
 
