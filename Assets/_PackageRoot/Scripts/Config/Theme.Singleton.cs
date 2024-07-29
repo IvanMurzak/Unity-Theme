@@ -13,7 +13,7 @@ namespace Unity.Theme
                 instance ??= GetOrCreateInstance();
 
                 if (instance == null)
-                    Debug.LogError("Theme instance is null");
+                    Debug.LogWarning("Theme instance is null");
 
                 return instance;
             }
