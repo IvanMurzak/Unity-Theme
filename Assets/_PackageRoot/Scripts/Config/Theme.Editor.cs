@@ -5,37 +5,45 @@ namespace Unity.Theme
 #pragma warning disable CA2235 // Mark all non-serializable fields
     public partial class Theme : ScriptableObject
     {
-        public const string PATH                    = "Assets/Resources/Unity-Theme Database.asset";
-        public const string PATH_FOR_RESOURCES_LOAD = "Unity-Theme Database";
+        public const string ASSETS_PATH = "Assets/Resources/Unity-Theme Database.asset";
+        public const string RESOURCES_PATH = "Unity-Theme Database";
 
+#if UNITY_EDITOR
         public static Theme GetOrCreateInstance()
         {
-            var config = Resources.Load<Theme>(PATH_FOR_RESOURCES_LOAD);
+            var config = Application.isPlaying
+                ? Resources.Load<Theme>(RESOURCES_PATH)
+                : UnityEditor.AssetDatabase.LoadAssetAtPath<Theme>(ASSETS_PATH);
+
             if (config == null)
             {
-#if UNITY_EDITOR
-                Debug.Log($"<color=orange><b>Creating Unity-Theme database file</b> at <i>{PATH}</i></color>");
+                Debug.Log($"<color=orange><b>Creating Unity-Theme database file</b> at <i>{ASSETS_PATH}</i></color>");
                 config = ScriptableObject.CreateInstance<Theme>();
 
                 config.SetDefaultPalettes();
 
-                var directory = System.IO.Path.GetDirectoryName(PATH);
+                var directory = System.IO.Path.GetDirectoryName(ASSETS_PATH);
                 if (!System.IO.Directory.Exists(directory))
                 {
                     System.IO.Directory.CreateDirectory(directory);
                 }
 
-                UnityEditor.AssetDatabase.CreateAsset(config, PATH);
+                UnityEditor.AssetDatabase.CreateAsset(config, ASSETS_PATH);
                 UnityEditor.AssetDatabase.SaveAssets();
-
-                return config;
-#else
-                Debug.LogError($"Can't find <b>Unity-Theme database file</b> at <i>{PATH}</i>");
-#endif
             }
             return config;
         }
-
+#else
+        public static Theme GetOrCreateInstance()
+        {
+            var config = Resources.Load<Theme>(RESOURCES_PATH);
+            if (config == null)
+            {
+                Debug.LogError($"Can't find <b>Unity-Theme database file</b> at <i>{ASSETS_PATH}</i>");
+            }
+            return config;
+        }
+#endif
         public void SetDefaultPalettes()
         {
             SetOrAddTheme("Light", true);

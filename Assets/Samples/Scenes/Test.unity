@@ -219,6 +219,18 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5601321488045288320, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.972549
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601321488045288320, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.87058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601321488045288320, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9098039
+      objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: alpha
       value: 0.402
@@ -229,11 +241,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.colorGuid
-      value: dfce33f5-ec1a-47a3-816c-bbe51d37e2f0
+      value: 79554701-52d6-45fa-bb83-0234e9561513
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.a
-      value: 1
+      value: 0.668
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.72156864
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9372549
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: alpha
@@ -249,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.colorGuid
-      value: 9d54a474-9c92-4355-914f-102d0db27505
+      value: c17be719-c931-47e7-8478-115cd5ccfd24
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.overrideAlpha
@@ -461,11 +485,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288320, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.b
-      value: 0.7019608
+      value: 0.44705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601321488045288320, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.11764706
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288320, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.r
-      value: 0.7187408
+      value: 0.21960784
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: alpha
@@ -484,24 +512,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
+      propertyPath: data.colorGuid
+      value: 9e099043-a40e-460e-8c7d-a8f382d08869
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.overrideAlpha
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.a
-      value: 1
+      value: 0.877
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.b
-      value: 0.7019608
+      value: 0.0627451
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.g
-      value: 0.85882354
+      value: 0.078431375
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.r
-      value: 0.7187408
+      value: 0.3764706
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: alpha
@@ -521,7 +553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.colorGuid
-      value: dfce33f5-ec1a-47a3-816c-bbe51d37e2f0
+      value: e5b85ceb-41f7-4e94-8ad5-53eba5509e42
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.overrideAlpha
@@ -899,19 +931,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288320, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.a
-      value: 0.462
+      value: 0.892
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288320, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.b
-      value: 0.7019608
+      value: 0.19607843
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288320, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.g
-      value: 0.85882354
+      value: 0.14509805
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288320, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.r
-      value: 0.7187408
+      value: 0.28627452
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.alpha
@@ -919,7 +951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.colorGuid
-      value: dfce33f5-ec1a-47a3-816c-bbe51d37e2f0
+      value: bf3106a2-589e-48da-86ac-e71c39583d83
       objectReference: {fileID: 0}
     - target: {fileID: 5601321488045288321, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.overrideAlpha
@@ -931,19 +963,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.a
-      value: 0.146
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.b
-      value: 0.7019608
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.g
-      value: 0.85882354
+      value: 0.72156864
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528678, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: m_Color.r
-      value: 0.7187408
+      value: 0.9372549
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.alpha
@@ -951,7 +983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.colorGuid
-      value: dfce33f5-ec1a-47a3-816c-bbe51d37e2f0
+      value: c17be719-c931-47e7-8478-115cd5ccfd24
       objectReference: {fileID: 0}
     - target: {fileID: 5886343440413528679, guid: a7497797f1922894899c4729fd5b884b, type: 3}
       propertyPath: data.overrideAlpha

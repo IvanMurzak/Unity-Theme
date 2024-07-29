@@ -137,16 +137,12 @@ namespace Unity.Theme.Editor
 
                 foreach (var uiTheme in uiThemeColors.Values)
                     UIAddThemeColor(config, uiTheme, new ColorData(themeColor));
-                    
+
                 SaveChanges($"Color added: {colorName}");
             };
             themePanel.Query<Button>("btnSortColors").First().clicked += () =>
             {
-                // config.SortColors(theme);
-
-                // foreach (var uiTheme in uiThemeColors.Values)
-                //     UIAddThemeColor(config, uiTheme, new ColorData(themeColor));
-                    
+                config.SortColorsByName();
                 SaveChanges($"Sorted colors");
             };
             
@@ -239,7 +235,7 @@ namespace Unity.Theme.Editor
         void UIGenerateColorPreviews(UITheme uiTheme)
         {
             uiTheme.contPreview.Clear();
-            var colorFillTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath(colorFillTemplateGuid));            
+            var colorFillTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath(colorFillTemplateGuid));
             foreach (var themeColor in uiTheme.theme.colors)
             {
                 var colorFill = colorFillTemplate.Instantiate();

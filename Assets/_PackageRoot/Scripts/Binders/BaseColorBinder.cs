@@ -21,7 +21,6 @@ namespace Unity.Theme.Binders
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
                     Debug.LogError($"Color not found in database at <b>{GameObjectPath()}</b> Guid={data.colorGuid}", gameObject);
             }
-            
         }
         protected virtual void Start()
         {
@@ -54,7 +53,7 @@ namespace Unity.Theme.Binders
             if (theme == null)
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"Current theme is null at gameObject {name}", gameObject);
+                    Debug.LogError($"Current theme is null at <b>{GameObjectPath()}</b>", gameObject);
                 return;
             }
             
@@ -62,7 +61,7 @@ namespace Unity.Theme.Binders
             if (colorData == null)
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"color not found by name '{data.ColorName}' at <b>{GameObjectPath()}</b>, guid='{data.colorGuid}'", gameObject);
+                    Debug.LogError($"Color with GUID='{data.colorGuid}' not found in database at <b>{GameObjectPath()}</b>", gameObject);
             }
             else
             {
@@ -95,16 +94,18 @@ namespace Unity.Theme.Binders
             if (string.IsNullOrEmpty(data.colorGuid))
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"colorGuid is null at: <b>{GameObjectPath()}</b>", gameObject);
+                    Debug.LogError($"Color GUID is <b><color=red>null</color></b> at <b>{GameObjectPath()}</b>", gameObject);
                 return;
             }
             if (!data.IsConnected)
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"colorGuid='{data.colorGuid}' doesn't match to any existed colors at: <b>{GameObjectPath()}</b>", gameObject);
+                    Debug.LogError($"Color with GUID='{data.colorGuid}' not found in database at <b>{GameObjectPath()}</b>", gameObject);
                 return;
             }
+#if UNITY_EDITOR
             TrySetColor(Theme.Instance.CurrentTheme);
+#endif
         }
         private void SetDirty(Object obj)
         {
