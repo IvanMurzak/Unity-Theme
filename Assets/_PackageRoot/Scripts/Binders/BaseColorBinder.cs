@@ -6,37 +6,25 @@ namespace Unity.Theme.Binders
     [ExecuteAlways, ExecuteInEditMode]
     public abstract partial class BaseColorBinder : MonoBehaviour
     {
-        [SerializeField] protected ColorBinderData data;
+        [SerializeField] protected ColorBinderData data = new ColorBinderData();
 
         protected virtual IEnumerable<Object> ColorTargets { get; } = null;
 
         protected virtual void Awake()
         {
-            if (data == null)
-            {
-                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"ColorBinderData is null at <b>{GameObjectPath()}</b>, replacing it by first color", gameObject);
+            data = data ?? new ColorBinderData();
+            if (string.IsNullOrEmpty(data.colorGuid) && string.IsNullOrEmpty(data.ColorName))
+                data.colorGuid = Theme.Instance?.GetColorFirst().Guid;
 
-                data = new ColorBinderData() { colorGuid = Theme.Instance?.GetColorFirst().Guid };
-                SetDirty();
-            }
             if (!data.IsConnected)
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
                     Debug.LogError($"Color not found in database at <b>{GameObjectPath()}</b> Guid={data.colorGuid}", gameObject);
-
-                var colorData = Theme.Instance?.GetColorFirst();
-                if (colorData != null)
-                {
-                    data.colorGuid = colorData.Guid;
-                    SetDirty();
-                }
-                else
-                {
-                    if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                        Debug.LogError($"First color not found in database.", gameObject);
-                }
             }
+            
+        }
+        protected virtual void Start()
+        {
 #if UNITY_EDITOR
             TrySetColor(Theme.Instance.CurrentTheme);
 #endif
@@ -78,14 +66,19 @@ namespace Unity.Theme.Binders
             }
             else
             {
-                var color = GetColor(colorData);
+                var targetColor = GetTargetColor(colorData);
+                var currentColor = GetColor();
+                if (targetColor == currentColor)
+                    return; // skip if color is the same
+
                 if (Theme.Instance?.debugLevel <= DebugLevel.Log)
-                    Debug.Log($"SetColor: '<b>{data.ColorName}</b>' {color.ToHexRGBA()} at <b>{GameObjectPath()}</b>", gameObject);
-                SetColor(color);
+                    Debug.Log($"SetColor: '<b>{data.ColorName}</b>' {targetColor.ToHexRGBA()} at <b>{GameObjectPath()}</b>", gameObject);
+                SetColor(targetColor);
+                SetDirty();
             }
         }
 
-        protected virtual Color GetColor(ColorData colorData)
+        protected virtual Color GetTargetColor(ColorData colorData)
         {
             var result = colorData.color;
             
@@ -95,30 +88,24 @@ namespace Unity.Theme.Binders
             return result;
         }
         protected abstract void SetColor(Color color);
+        protected abstract Color? GetColor();
 
-#if UNITY_EDITOR
-        private void OnValidate()
+        protected virtual void OnValidate()
         {
             if (string.IsNullOrEmpty(data.colorGuid))
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"colorGuid is null at: <b>{GameObjectPath()}</b>. Taking the first one available.", gameObject);
-
-                data.colorGuid = Theme.Instance?.GetColorFirst().Guid;
-                SetDirty();
+                    Debug.LogError($"colorGuid is null at: <b>{GameObjectPath()}</b>", gameObject);
+                return;
             }
             if (!data.IsConnected)
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"colorGuid='{data.colorGuid}' doesn't match to any existed colors at: <b>{GameObjectPath()}</b>. Taking the first one available.", gameObject);
-
-                data.colorGuid = Theme.Instance?.GetColorFirst().Guid;
-                SetDirty();
+                    Debug.LogError($"colorGuid='{data.colorGuid}' doesn't match to any existed colors at: <b>{GameObjectPath()}</b>", gameObject);
+                return;
             }
-
             TrySetColor(Theme.Instance.CurrentTheme);
         }
-#endif
         private void SetDirty(Object obj)
         {
 #if UNITY_EDITOR

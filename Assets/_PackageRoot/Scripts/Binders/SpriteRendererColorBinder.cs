@@ -25,5 +25,6 @@ namespace Unity.Theme.Binders
             }
             spriteRenderer.color = color;
         }
+        protected override Color? GetColor() => spriteRenderer?.color;
     }
 }

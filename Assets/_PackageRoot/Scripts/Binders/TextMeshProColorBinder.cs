@@ -26,5 +26,6 @@ namespace Unity.Theme.Binders
             }
             textMeshPro.color = color;
         }
+        protected override Color? GetColor() => textMeshPro?.color;
     }
 }

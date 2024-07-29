@@ -15,14 +15,17 @@ namespace Unity.Theme.Binders
                     Debug.LogError($"Color is null. Can't set it as a color for the binder", gameObject);
                 return false;
             }
+            if (data.colorGuid == colorData.Guid)
+                return true; // skip if the same color
+
             data.colorGuid = colorData.Guid;
-            SetDirty();
-            var color = GetColor(colorData);
+            var color = GetTargetColor(colorData);
 
             if (Theme.Instance?.debugLevel <= DebugLevel.Log)
                 Debug.Log($"SetColor: '<b>{data.ColorName}</b>' {color.ToHexRGBA()} at <b>{GameObjectPath()}</b>", gameObject);
 
             SetColor(color);
+            SetDirty();
             return true;
         }
     }

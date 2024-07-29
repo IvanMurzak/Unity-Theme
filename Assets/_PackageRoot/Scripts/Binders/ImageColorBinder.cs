@@ -26,5 +26,6 @@ namespace Unity.Theme.Binders
             }
             image.color = color;
         }
+        protected override Color? GetColor() => image?.color;
     }
 }

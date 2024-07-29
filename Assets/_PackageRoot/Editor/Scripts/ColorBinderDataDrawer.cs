@@ -1,8 +1,8 @@
+using System;
 using System.Linq;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine.UIElements;
-using UnityEngine;
+using UnityEditor;
 
 namespace Unity.Theme.Editor
 {
@@ -11,26 +11,6 @@ namespace Unity.Theme.Editor
     {
         const string templateGuid = "7bc7f57ecc1dcb54ebd343051d02f17b";
 
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-        {
-            var colorGuid = property.FindPropertyRelative("colorGuid");
-            var overrideAlpha = property.FindPropertyRelative("overrideAlpha");
-            var alpha = property.FindPropertyRelative("alpha");
-
-            var selected = Theme.Instance?.GetColorIndexByGuid(colorGuid.stringValue) ?? -1;
-            var options = Theme.Instance?.ColorNames?.ToArray() ?? new string[] { "error" };
-
-            selected = EditorGUILayout.Popup("Color", selected, options);
-            colorGuid.stringValue = Theme.Instance?.GetColorGuidByIndex(selected);
-            colorGuid.serializedObject.ApplyModifiedProperties();
-
-            EditorGUILayout.PropertyField(overrideAlpha);
-            if (overrideAlpha.boolValue)
-            {
-                alpha.floatValue = EditorGUILayout.Slider(alpha.floatValue, 0f, 1f);
-                alpha.serializedObject.ApplyModifiedProperties();
-            }
-        }
         public override VisualElement CreatePropertyGUI(SerializedProperty property)
         {
             var root = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath(templateGuid)).Instantiate();
@@ -52,7 +32,7 @@ namespace Unity.Theme.Editor
 
             UpdateColorFill(colorFill, colorGuid.stringValue, overrideAlpha.boolValue ? alpha.floatValue : 1f);
 
-            dropdownColor.RegisterValueChangedCallback(evt =>
+            dropdownColor.SubscribeOnValueChanged(root, evt =>
             {
                 var guid = Theme.Instance?.GetColorByName(evt.newValue)?.Guid;
                 colorGuid.stringValue = guid;
@@ -60,7 +40,7 @@ namespace Unity.Theme.Editor
                 colorGuid.serializedObject.ApplyModifiedProperties();
             });
 
-            toggleOverrideAlpha.RegisterValueChangedCallback(evt =>
+            toggleOverrideAlpha.SubscribeOnValueChanged(root, evt =>
             {
                 overrideAlpha.boolValue = evt.newValue;
                 sliderAlpha.visible = evt.newValue;
@@ -68,14 +48,16 @@ namespace Unity.Theme.Editor
                 overrideAlpha.serializedObject.ApplyModifiedProperties();
             });
 
-            sliderAlpha.RegisterValueChangedCallback(evt =>
+            sliderAlpha.SubscribeOnValueChanged(root, evt =>
             {
                 alpha.floatValue = evt.newValue;
                 UpdateColorFill(colorFill, colorGuid.stringValue, overrideAlpha.boolValue ? alpha.floatValue : 1f);
                 alpha.serializedObject.ApplyModifiedProperties();
             });
 
-            btnOpenConfig.clicked += () => ThemeWindowEditor.ShowWindow();
+            Action onOpenConfigClicked = () => ThemeWindowEditor.ShowWindow();
+            btnOpenConfig.clicked += onOpenConfigClicked;
+            root.RegisterCallback<DetachFromPanelEvent>(evt => btnOpenConfig.clicked -= onOpenConfigClicked);
 
             colorFill.BringToFront();
 
