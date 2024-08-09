@@ -28,6 +28,10 @@ namespace Unity.Theme.Editor
         }
 
         public void Invalidate() => CreateGUI();
+        void OnValidate()
+        {
+            Theme.Instance.OnValidate();
+        }
 
         private void SaveChanges(string message)
         {
@@ -35,8 +39,8 @@ namespace Unity.Theme.Editor
                 Debug.Log(message);
             saveChangesMessage = message;
             base.SaveChanges();
-            EditorUtility.SetDirty(Theme.Instance);
-            Undo.RecordObject(Theme.Instance, message);
+            Theme.Instance.Save();
+            Undo.RecordObject(Theme.Instance.AssetFile, message);
         }
 
         private void UpdateDropdownCurrentTheme(Theme config)
@@ -52,7 +56,7 @@ namespace Unity.Theme.Editor
         {
             rootVisualElement.Clear();
 
-            var config = Theme.Instance;            
+            var config = Theme.Instance;
             var panel = templateControlPanel.Instantiate();
             var root = new ScrollView();
             rootVisualElement.Add(root);
@@ -190,7 +194,7 @@ namespace Unity.Theme.Editor
             uiTheme.colors[themeColor.Guid] = uiThemeColor;
 
             uiThemeColor.txtName.value = config.GetColorName(themeColor.Guid);
-            uiThemeColor.colorField.value = themeColor.color;
+            uiThemeColor.colorField.value = themeColor.Color;
 
             uiThemeColor.txtName.RegisterValueChangedCallback(evt =>
             {
@@ -208,7 +212,7 @@ namespace Unity.Theme.Editor
 
             uiThemeColor.colorField.RegisterValueChangedCallback(evt =>
             {
-                themeColor.color = evt.newValue;
+                themeColor.Color = evt.newValue;
                 config.UpdateColor(uiTheme.theme, themeColor);
                 UIGenerateColorPreviews(uiTheme);
                 SaveChanges($"Theme color[{config.GetColorName(themeColor.Guid)}] changed: {evt.newValue}");
@@ -239,7 +243,7 @@ namespace Unity.Theme.Editor
             foreach (var themeColor in uiTheme.theme.colors)
             {
                 var colorFill = colorFillTemplate.Instantiate();
-                colorFill.Query<VisualElement>("colorFill").Last().style.unityBackgroundImageTintColor = new StyleColor(themeColor.color);
+                colorFill.Query<VisualElement>("colorFill").Last().style.unityBackgroundImageTintColor = new StyleColor(themeColor.Color);
                 uiTheme.contPreview.Add(colorFill);
             }
         }

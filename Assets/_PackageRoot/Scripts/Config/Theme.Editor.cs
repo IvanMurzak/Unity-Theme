@@ -1,37 +1,51 @@
+using System;
+using System.IO;
 using UnityEngine;
 
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
-    public partial class Theme : ScriptableObject
+    public partial class Theme
     {
-        public const string ASSETS_PATH = "Assets/Resources/Unity-Theme Database.asset";
-        public const string RESOURCES_PATH = "Unity-Theme Database";
+        public static string ResourcesFileName => "Unity-Theme-Database";
+        public static string AssetsFilePath => $"Assets/Resources/{ResourcesFileName}.json";
+#if UNITY_EDITOR
+        public TextAsset AssetFile => UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset>(AssetsFilePath);
+#endif
 
 #if UNITY_EDITOR
         public static Theme GetOrCreateInstance()
         {
-            var config = Application.isPlaying
-                ? Resources.Load<Theme>(RESOURCES_PATH)
-                : UnityEditor.AssetDatabase.LoadAssetAtPath<Theme>(ASSETS_PATH);
-
-            if (config == null)
+            try
             {
-                Debug.Log($"<color=orange><b>Creating Unity-Theme database file</b> at <i>{ASSETS_PATH}</i></color>");
-                config = ScriptableObject.CreateInstance<Theme>();
+                var json = Application.isPlaying
+                    ? Resources.Load<TextAsset>(ResourcesFileName).text
+                    : File.Exists(AssetsFilePath)
+                        ? File.ReadAllText(AssetsFilePath)
+                        : null;
 
-                config.SetDefaultPalettes();
-
-                var directory = System.IO.Path.GetDirectoryName(ASSETS_PATH);
-                if (!System.IO.Directory.Exists(directory))
+                Theme config = null;
+                try { config = JsonUtility.FromJson<Theme>(json); }
+                catch (Exception e)
                 {
-                    System.IO.Directory.CreateDirectory(directory);
+                    Debug.LogError($"<color=red><b>{ResourcesFileName}</b> file is corrupted at <i>{AssetsFilePath}</i></color>");
+                    Debug.LogException(e);
                 }
-
-                UnityEditor.AssetDatabase.CreateAsset(config, ASSETS_PATH);
-                UnityEditor.AssetDatabase.SaveAssets();
+                if (config == null)
+                {
+                    Debug.Log($"<color=orange><b>Creating {ResourcesFileName}</b> file at <i>{AssetsFilePath}</i></color>");
+                    config = new Theme();
+                    config.SetDefaultPalettes();
+                    config.Save();
+                }
+                return config;
             }
-            return config;
+            catch (Exception e)
+            {
+                Debug.LogError($"<color=red><b>{ResourcesFileName}</b> file can't be loaded from <i>{AssetsFilePath}</i></color>");
+                Debug.LogException(e);
+            }
+            return null;
         }
 #else
         public static Theme GetOrCreateInstance()
@@ -39,7 +53,7 @@ namespace Unity.Theme
             var config = Resources.Load<Theme>(RESOURCES_PATH);
             if (config == null)
             {
-                Debug.LogError($"Can't find <b>Unity-Theme database file</b> at <i>{ASSETS_PATH}</i>");
+                Debug.LogError($"Can't find <b>{RESOURCES_FILE_NAME}</b> file at <i>{ASSETS_PATH}</i>");
             }
             return config;
         }
@@ -110,8 +124,30 @@ namespace Unity.Theme
             SetOrAddColor("Surface-Variant",          "#49454F");
             SetOrAddColor("On Surface-Variant",       "#CAC4D0");
 
+            Save();
+        }
+
+        public void Save()
+        {
 #if UNITY_EDITOR
-            UnityEditor.EditorUtility.SetDirty(this);
+            OnValidate();
+            try
+            {
+                var directory = Path.GetDirectoryName(AssetsFilePath);
+                if (!Directory.Exists(directory))
+                    Directory.CreateDirectory(directory);
+
+                var json = JsonUtility.ToJson(this, true);
+                File.WriteAllText(AssetsFilePath, json);
+                UnityEditor.EditorUtility.SetDirty(AssetFile);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"<color=red><b>{ResourcesFileName}</b> file can't be saved at <i>{AssetsFilePath}</i></color>");
+                Debug.LogException(e);
+            }
+#else
+            return;
 #endif
         }
     }

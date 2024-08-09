@@ -1,0 +1,298 @@
+{
+    "debugLevel": 2,
+    "currentThemeIndex": 0,
+    "colors": [
+        {
+            "guid": "c1a53828-f2d5-4129-ac25-a315c3584b93",
+            "name": "Primary"
+        },
+        {
+            "guid": "9e099043-a40e-460e-8c7d-a8f382d08869",
+            "name": "On Primary"
+        },
+        {
+            "guid": "d56cc8cb-8732-4810-b374-034acd1b667d",
+            "name": "Primary Container"
+        },
+        {
+            "guid": "595cc7f8-00e2-436d-b252-cdacf09534ea",
+            "name": "On Primary Container"
+        },
+        {
+            "guid": "a0c561f4-e79c-4d8f-9fef-1b6ee7b42b8c",
+            "name": "Secondary"
+        },
+        {
+            "guid": "504c48e6-eec6-48e3-9800-318b0432bf89",
+            "name": "On Secondary"
+        },
+        {
+            "guid": "5d255797-0487-457d-9309-dea410a1f02b",
+            "name": "Secondary Container"
+        },
+        {
+            "guid": "79554701-52d6-45fa-bb83-0234e9561513",
+            "name": "On Secondary Container"
+        },
+        {
+            "guid": "c17be719-c931-47e7-8478-115cd5ccfd24",
+            "name": "Tertiary"
+        },
+        {
+            "guid": "bf3106a2-589e-48da-86ac-e71c39583d83",
+            "name": "On Tertiary"
+        },
+        {
+            "guid": "1c31e8b9-953e-4278-8afe-8308ab87227a",
+            "name": "Tertiary Container"
+        },
+        {
+            "guid": "e0a80c4c-e254-4129-adf7-1573036bb1ab",
+            "name": "On Tertiary Container"
+        },
+        {
+            "guid": "9c7c42d7-4d10-468b-9462-eed1222bb2ab",
+            "name": "Error"
+        },
+        {
+            "guid": "e5b85ceb-41f7-4e94-8ad5-53eba5509e42",
+            "name": "On Error"
+        },
+        {
+            "guid": "fa46b747-6bc6-4e27-aa52-501174599797",
+            "name": "Error Container"
+        },
+        {
+            "guid": "672d7657-2bde-4509-9317-79b9ac48aad7",
+            "name": "On Error Container"
+        },
+        {
+            "guid": "6b072958-1f3d-42d4-9ca9-705f108286b7",
+            "name": "Background"
+        },
+        {
+            "guid": "0774ae24-94db-4d65-b751-3f0c755ce1bc",
+            "name": "On Background"
+        },
+        {
+            "guid": "2d9a5145-3e26-4550-be57-3527a57a2172",
+            "name": "Surface"
+        },
+        {
+            "guid": "8cf63047-10b4-496a-8a85-52d3771a28f0",
+            "name": "On Surface"
+        },
+        {
+            "guid": "1429e101-aae5-4ae8-9490-6435a57f9a37",
+            "name": "Outline"
+        },
+        {
+            "guid": "6f6bb671-9e5f-48db-9131-5b41f1d4e6c4",
+            "name": "Surface-Variant"
+        },
+        {
+            "guid": "c6100240-c4e5-4485-994e-a1cafc3c4749",
+            "name": "On Surface-Variant"
+        }
+    ],
+    "themes": [
+        {
+            "guid": "a1aa6e11-8df7-47e4-a920-e9eb1e48312c",
+            "expanded": true,
+            "themeName": "Light",
+            "colors": [
+                {
+                    "guid": "c1a53828-f2d5-4129-ac25-a315c3584b93",
+                    "colorHex": "#DB8181FF"
+                },
+                {
+                    "guid": "9e099043-a40e-460e-8c7d-a8f382d08869",
+                    "colorHex": "#C85E5EFF"
+                },
+                {
+                    "guid": "d56cc8cb-8732-4810-b374-034acd1b667d",
+                    "colorHex": "#6A2626FF"
+                },
+                {
+                    "guid": "595cc7f8-00e2-436d-b252-cdacf09534ea",
+                    "colorHex": "#370C0CFF"
+                },
+                {
+                    "guid": "a0c561f4-e79c-4d8f-9fef-1b6ee7b42b8c",
+                    "colorHex": "#E9E0A0FF"
+                },
+                {
+                    "guid": "504c48e6-eec6-48e3-9800-318b0432bf89",
+                    "colorHex": "#B0B74FFF"
+                },
+                {
+                    "guid": "5d255797-0487-457d-9309-dea410a1f02b",
+                    "colorHex": "#7F822FFF"
+                },
+                {
+                    "guid": "79554701-52d6-45fa-bb83-0234e9561513",
+                    "colorHex": "#3F4118FF"
+                },
+                {
+                    "guid": "c17be719-c931-47e7-8478-115cd5ccfd24",
+                    "colorHex": "#DE8DE7FF"
+                },
+                {
+                    "guid": "bf3106a2-589e-48da-86ac-e71c39583d83",
+                    "colorHex": "#B03D97FF"
+                },
+                {
+                    "guid": "1c31e8b9-953e-4278-8afe-8308ab87227a",
+                    "colorHex": "#731F64FF"
+                },
+                {
+                    "guid": "e0a80c4c-e254-4129-adf7-1573036bb1ab",
+                    "colorHex": "#3C0F34FF"
+                },
+                {
+                    "guid": "9c7c42d7-4d10-468b-9462-eed1222bb2ab",
+                    "colorHex": "#FF0000FF"
+                },
+                {
+                    "guid": "e5b85ceb-41f7-4e94-8ad5-53eba5509e42",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "fa46b747-6bc6-4e27-aa52-501174599797",
+                    "colorHex": "#6C4C4CFF"
+                },
+                {
+                    "guid": "672d7657-2bde-4509-9317-79b9ac48aad7",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "6b072958-1f3d-42d4-9ca9-705f108286b7",
+                    "colorHex": "#A6A6A6FF"
+                },
+                {
+                    "guid": "0774ae24-94db-4d65-b751-3f0c755ce1bc",
+                    "colorHex": "#000000FF"
+                },
+                {
+                    "guid": "2d9a5145-3e26-4550-be57-3527a57a2172",
+                    "colorHex": "#C9D8F1FF"
+                },
+                {
+                    "guid": "8cf63047-10b4-496a-8a85-52d3771a28f0",
+                    "colorHex": "#000000FF"
+                },
+                {
+                    "guid": "1429e101-aae5-4ae8-9490-6435a57f9a37",
+                    "colorHex": "#8DEED7FF"
+                },
+                {
+                    "guid": "6f6bb671-9e5f-48db-9131-5b41f1d4e6c4",
+                    "colorHex": "#9F9F9FFF"
+                },
+                {
+                    "guid": "c6100240-c4e5-4485-994e-a1cafc3c4749",
+                    "colorHex": "#000000FF"
+                }
+            ]
+        },
+        {
+            "guid": "828eccfe-604f-4621-96c9-ae358f6e7017",
+            "expanded": false,
+            "themeName": "Dark",
+            "colors": [
+                {
+                    "guid": "c1a53828-f2d5-4129-ac25-a315c3584b93",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "9e099043-a40e-460e-8c7d-a8f382d08869",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "d56cc8cb-8732-4810-b374-034acd1b667d",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "595cc7f8-00e2-436d-b252-cdacf09534ea",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "a0c561f4-e79c-4d8f-9fef-1b6ee7b42b8c",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "504c48e6-eec6-48e3-9800-318b0432bf89",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "5d255797-0487-457d-9309-dea410a1f02b",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "79554701-52d6-45fa-bb83-0234e9561513",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "c17be719-c931-47e7-8478-115cd5ccfd24",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "bf3106a2-589e-48da-86ac-e71c39583d83",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "1c31e8b9-953e-4278-8afe-8308ab87227a",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "e0a80c4c-e254-4129-adf7-1573036bb1ab",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "9c7c42d7-4d10-468b-9462-eed1222bb2ab",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "e5b85ceb-41f7-4e94-8ad5-53eba5509e42",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "fa46b747-6bc6-4e27-aa52-501174599797",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "672d7657-2bde-4509-9317-79b9ac48aad7",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "6b072958-1f3d-42d4-9ca9-705f108286b7",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "0774ae24-94db-4d65-b751-3f0c755ce1bc",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "2d9a5145-3e26-4550-be57-3527a57a2172",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "8cf63047-10b4-496a-8a85-52d3771a28f0",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "1429e101-aae5-4ae8-9490-6435a57f9a37",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "6f6bb671-9e5f-48db-9131-5b41f1d4e6c4",
+                    "colorHex": "#FFFFFFFF"
+                },
+                {
+                    "guid": "c6100240-c4e5-4485-994e-a1cafc3c4749",
+                    "colorHex": "#FFFFFFFF"
+                }
+            ]
+        }
+    ]
+}

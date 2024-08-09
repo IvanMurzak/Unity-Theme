@@ -1,10 +1,15 @@
+using System.Text;
 using UnityEngine;
 
 namespace Unity.Theme.Binders
 {
     public abstract partial class BaseColorBinder : MonoBehaviour
     {
-        protected virtual void OnValidate()
+#if UNITY_EDITOR
+        protected virtual void OnValidate() => UnityEditor.EditorApplication.delayCall += Validate;
+#endif
+
+        protected virtual void Validate()
         {
             if (string.IsNullOrEmpty(data.colorGuid))
             {
@@ -22,23 +27,45 @@ namespace Unity.Theme.Binders
             TrySetColor(Theme.Instance.CurrentTheme);
 #endif
         }
-        
+
         // UTILS ---------------------------------------------------------------------------//
-        protected string GameObjectPath() => GameObjectPath(transform);                     //
-        protected static string GameObjectPath(Transform trans, string path = "")           //
+        protected string GameObjectPath()                                                   //
         {                                                                                   //
-            if (string.IsNullOrEmpty(path))                                                 //
-                path = trans.name;                                                          //
+#pragma warning disable CS0168                                                              //
+            try { return GameObjectPath(transform).ToString(); }                            //
+            catch (MissingReferenceException e) { /* ignore */ }                            //
+#pragma warning restore CS0168                                                              //
+            return null;                                                                    //
+        }                                                                                   //
+        protected StringBuilder GameObjectPath(Transform trans, StringBuilder path = null)  //
+        {                                                                                   //
+            if (path == null)                                                               //
+                path = new StringBuilder();                                                 //
+                                                                                            //
+            if (path.Length == 0)                                                           //
+            {                                                                               //
+                path.Append(trans.name);                                                    //
+            }                                                                               //
             else                                                                            //
-                path = $"{trans.name}/{path}";                                              //
+            {                                                                               //
+                // $"{trans.name}/{path}"                                                   //
+                path.Insert(0, "/");                                                        //
+                path.Insert(0, trans.name);                                                 //
+            }                                                                               //
                                                                                             //
             if (trans.parent == null)                                                       //
             {                                                                               //
                 var isPrefab = string.IsNullOrEmpty(trans.gameObject.scene.name);           //
                 if (isPrefab)                                                               //
-                    path = $"<color=cyan>Prefabs</color>/{path}";                           //
+                {                                                                           //
+                    path.Insert(0, "<color=cyan>Prefabs</color>/");                         //
+                }                                                                           //
                 else                                                                        //
-                    path = $"<color=cyan>{trans.gameObject.scene.name}</color>/{path}";     //
+                {                                                                           //
+                    path.Insert(0, "</color>/");                                            //
+                    path.Insert(0, trans.gameObject.scene.name);                            //
+                    path.Insert(0, "<color=cyan>");                                         //
+                }                                                                           //
                 return path;                                                                //
             }                                                                               //
             else                                                                            //
