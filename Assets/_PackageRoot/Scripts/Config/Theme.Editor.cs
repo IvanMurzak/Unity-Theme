@@ -13,17 +13,19 @@ namespace Unity.Theme
         public TextAsset AssetFile => UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset>(AssetsFilePath);
 #endif
 
-#if UNITY_EDITOR
         public static Theme GetOrCreateInstance()
         {
             try
             {
+#if UNITY_EDITOR
                 var json = Application.isPlaying
                     ? Resources.Load<TextAsset>(ResourcesFileName).text
                     : File.Exists(AssetsFilePath)
                         ? File.ReadAllText(AssetsFilePath)
                         : null;
-
+#else
+                var json = Resources.Load<TextAsset>(ResourcesFileName).text;
+#endif
                 Theme config = null;
                 try { config = JsonUtility.FromJson<Theme>(json); }
                 catch (Exception e)
@@ -36,7 +38,6 @@ namespace Unity.Theme
                     Debug.Log($"<color=orange><b>Creating {ResourcesFileName}</b> file at <i>{AssetsFilePath}</i></color>");
                     config = new Theme();
                     config.SetDefaultPalettes();
-                    config.Save();
                 }
                 return config;
             }
@@ -47,17 +48,7 @@ namespace Unity.Theme
             }
             return null;
         }
-#else
-        public static Theme GetOrCreateInstance()
-        {
-            var config = Resources.Load<Theme>(RESOURCES_PATH);
-            if (config == null)
-            {
-                Debug.LogError($"Can't find <b>{RESOURCES_FILE_NAME}</b> file at <i>{ASSETS_PATH}</i>");
-            }
-            return config;
-        }
-#endif
+
         public void SetDefaultPalettes()
         {
             SetOrAddTheme("Light", true);
