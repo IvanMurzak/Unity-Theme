@@ -6,7 +6,7 @@ using UnityEditor;
 
 namespace Unity.Theme.Editor
 {
-    [CustomPropertyDrawer(typeof(Unity.Theme.Binders.ColorBinderData), true)]
+    [CustomPropertyDrawer(typeof(Binders.ColorBinderData), true)]
     public class ColorBinderDataDrawer : PropertyDrawer
     {
         const string templateGuid = "7bc7f57ecc1dcb54ebd343051d02f17b";
@@ -65,7 +65,7 @@ namespace Unity.Theme.Editor
         }
         void UpdateColorFill(VisualElement colorFill, string colorGuid, float alpha)
         {
-            var color = Theme.Instance?.GetColorByGuid(colorGuid)?.color ?? Theme.DefaultColor;
+            var color = Theme.Instance?.GetColorByGuid(colorGuid)?.Color ?? Theme.DefaultColor;
             color.a = alpha;
             colorFill.style.unityBackgroundImageTintColor = new StyleColor(color);
         }

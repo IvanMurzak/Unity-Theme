@@ -28,7 +28,23 @@ namespace Unity.Theme.Binders
             TrySetColor(Theme.Instance.CurrentTheme);
 #endif
         }
+        
         protected virtual void OnEnable()
+        {
+#if UNITY_EDITOR
+            if (Application.isPlaying)
+            {
+                Enable();
+            }
+            else
+            {
+                UnityEditor.EditorApplication.delayCall += Enable;
+            }
+#else
+            Enable();
+#endif
+        }
+        protected virtual void Enable()
         {
             TrySetColor(Theme.Instance.CurrentTheme);
             Theme.Instance.onThemeChanged += TrySetColor;
@@ -79,7 +95,7 @@ namespace Unity.Theme.Binders
 
         protected virtual Color GetTargetColor(ColorData colorData)
         {
-            var result = colorData.color;
+            var result = colorData.Color;
             
             if (data.overrideAlpha) 
                 result.a = data.alpha;

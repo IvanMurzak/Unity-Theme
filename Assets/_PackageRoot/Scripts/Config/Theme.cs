@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -5,7 +6,8 @@ using UnityEngine;
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
-    public partial class Theme : ScriptableObject
+    [Serializable]
+    public partial class Theme
     {
         public static     Color    DefaultColor                => Color.white;
 
@@ -15,7 +17,7 @@ namespace Unity.Theme
         public            OnTheme  onThemeChanged;
         public            OnColor  onThemeColorChanged;
 
-        private void OnValidate()
+        public void OnValidate()
         {
             colors ??= new List<ColorDataRef>();
             themes ??= new List<ThemeData>();

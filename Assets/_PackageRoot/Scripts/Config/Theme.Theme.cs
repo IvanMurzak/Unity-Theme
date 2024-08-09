@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
-    public partial class Theme : ScriptableObject
+    public partial class Theme
     {        
         public List<ThemeData>     Themes              => themes;
         public IEnumerable<string> ThemeNames          => themes.Select(x => x.themeName);

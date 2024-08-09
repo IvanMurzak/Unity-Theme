@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
-    public partial class Theme : ScriptableObject
+    public partial class Theme
     {        
         public IEnumerable<string> ColorNames => colors?.Select(x => x.name);
         public IEnumerable<string> ColorGuids => colors?.Select(x => x.Guid);
@@ -28,9 +28,9 @@ namespace Unity.Theme
         public ColorDataRef AddColor(string colorName) => AddColor(colorName, DefaultColor);
         public ColorDataRef AddColor(string colorName, string colorHex)
         {
-            var color = DefaultColor;
-            if (!ColorUtility.TryParseHtmlString(colorHex, out color))
+            if (!ColorUtility.TryParseHtmlString(colorHex, out var color))
             {
+                color = DefaultColor;
                 if (debugLevel <= DebugLevel.Error)
                     Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
             }
@@ -59,9 +59,9 @@ namespace Unity.Theme
         }
         public ColorData SetColor(string colorName, string colorHex)
         {
-            var color = DefaultColor;
-            if (!ColorUtility.TryParseHtmlString(colorHex, out color))
+            if (!ColorUtility.TryParseHtmlString(colorHex, out var color))
             {
+                color = DefaultColor;
                 if (debugLevel <= DebugLevel.Error)
                     Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
             }
@@ -76,14 +76,14 @@ namespace Unity.Theme
                     Debug.LogError($"SetColor error. Color with name '{colorName}' not found");
                 return null;
             }
-            colorData.color = color;
+            colorData.Color = color;
             return colorData;
         }
         public ColorData SetOrAddColor(string colorName, string colorHex)
         {
-            var color = DefaultColor;
-            if (!ColorUtility.TryParseHtmlString(colorHex, out color))
+            if (!ColorUtility.TryParseHtmlString(colorHex, out var color))
             {
+                color = DefaultColor;
                 if (debugLevel <= DebugLevel.Error)
                     Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
             }
@@ -97,7 +97,7 @@ namespace Unity.Theme
                 AddColor(colorName, color);
                 colorData = GetColorByName(colorName);
             }
-            colorData.color = color;
+            colorData.Color = color;
             NotifyColorChanged(colorData);
             return colorData;
         }
@@ -165,12 +165,11 @@ namespace Unity.Theme
         public void SortColorsByName()
         {
             foreach (var theme in themes)
-                theme.colors.Sort((l, r) => 
-                {
-                    var refL = colors.FirstOrDefault(x => x.Guid == l.Guid);
-                    var refR = colors.FirstOrDefault(x => x.Guid == r.Guid);
-                    return ColorDataRef.Compare(refL, refR);
-                });
+            {
+                theme.colors.Sort((l, r) => ColorDataRef.Compare(
+                    colors.FirstOrDefault(x => x.Guid == l.Guid),
+                    colors.FirstOrDefault(x => x.Guid == r.Guid)));
+            }
         }
 
         protected virtual void NotifyColorChanged(ColorData colorData, ThemeData theme = null)

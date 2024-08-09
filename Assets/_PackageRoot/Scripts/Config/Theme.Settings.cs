@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
-    public partial class Theme : ScriptableObject
+    public partial class Theme
     {
         [SerializeField]    public DebugLevel   debugLevel = DebugLevel.Error;
         
