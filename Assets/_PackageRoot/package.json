@@ -5,7 +5,7 @@
     "name": "Ivan Murzak",
     "url": "https://github.com/IvanMurzak"
   },
-  "version": "3.0.0",
+  "version": "3.0.1",
   "unity": "2019.2",
   "description": "Create palettes of colors and components for change specific color on a specific visual element. Very useful to UI.",
   "keywords": [
@@ -18,6 +18,10 @@
     "color binding"
   ],
   "dependencies": {
+    "com.unity.2d.sprite": "1.0.0",
+    "com.unity.modules.imgui": "1.0.0",
+    "com.unity.modules.jsonserialize": "1.0.0",
+    "com.unity.modules.ui": "1.0.0",
     "com.unity.modules.uielements": "1.0.0"
   }
 }
