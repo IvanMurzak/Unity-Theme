@@ -13,12 +13,13 @@ namespace Unity.Theme.Binders
 
         protected override void Awake()
         {
-            if (textMeshPro == null) textMeshPro = GetComponent<TextMeshProUGUI>();
+            if (ReferenceEquals(textMeshPro, null))
+                textMeshPro = GetComponent<TextMeshProUGUI>();
             base.Awake();
         }
         protected override void SetColor(Color color)
         {
-            if (textMeshPro == null)
+            if (textMeshPro.IsNull())
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
                     Debug.LogError($"TextMeshPro not found at <b>{GameObjectPath()}</b>", gameObject);
@@ -26,6 +27,12 @@ namespace Unity.Theme.Binders
             }
             textMeshPro.color = color;
         }
-        protected override Color? GetColor() => textMeshPro?.color;
+        protected override Color? GetColor()
+        {
+            if (textMeshPro.IsNull())
+                return null;
+
+            return textMeshPro.color;
+        }
     }
 }

@@ -13,12 +13,13 @@ namespace Unity.Theme.Binders
 
         protected override void Awake()
         {
-            if (image == null) image = GetComponent<Image>();
+            if (ReferenceEquals(image, null))
+                image = GetComponent<Image>();
             base.Awake();
         }
         protected override void SetColor(Color color)
         {
-            if (image == null)
+            if (image.IsNull())
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
                     Debug.LogError($"Image not found at <b>{GameObjectPath()}</b>", gameObject);
@@ -26,6 +27,12 @@ namespace Unity.Theme.Binders
             }
             image.color = color;
         }
-        protected override Color? GetColor() => image?.color;
+        protected override Color? GetColor()
+        {
+            if (image.IsNull())
+                return null;
+
+            return image.color;
+        }
     }
 }
