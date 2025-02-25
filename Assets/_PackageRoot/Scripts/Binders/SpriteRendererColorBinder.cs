@@ -12,12 +12,13 @@ namespace Unity.Theme.Binders
 
         protected override void Awake()
         {
-            if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
+            if (ReferenceEquals(spriteRenderer, null))
+                spriteRenderer = GetComponent<SpriteRenderer>();
             base.Awake();
         }
         protected override void SetColor(Color color)
         {
-            if (spriteRenderer == null)
+            if (spriteRenderer.IsNull())
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
                     Debug.LogError($"SpriteRenderer not found at <b>{GameObjectPath()}</b>", gameObject);
@@ -25,6 +26,12 @@ namespace Unity.Theme.Binders
             }
             spriteRenderer.color = color;
         }
-        protected override Color? GetColor() => spriteRenderer?.color;
+        protected override Color? GetColor()
+        {
+            if (spriteRenderer.IsNull())
+                return null;
+
+            return spriteRenderer.color;
+        }
     }
 }

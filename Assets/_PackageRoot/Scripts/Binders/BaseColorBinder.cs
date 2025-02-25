@@ -28,7 +28,7 @@ namespace Unity.Theme.Binders
             TrySetColor(Theme.Instance.CurrentTheme);
 #endif
         }
-        
+
         protected virtual void OnEnable()
         {
 #if UNITY_EDITOR
@@ -47,10 +47,18 @@ namespace Unity.Theme.Binders
         protected virtual void Enable()
         {
             TrySetColor(Theme.Instance.CurrentTheme);
+            Subscribe();
+        }
+        protected virtual void OnDisable()
+        {
+            Unsubscribe();
+        }
+        protected virtual void Subscribe()
+        {
             Theme.Instance.onThemeChanged += TrySetColor;
             Theme.Instance.onThemeColorChanged += OnThemeColorChanged;
         }
-        protected virtual void OnDisable()
+        protected virtual void Unsubscribe()
         {
             Theme.Instance.onThemeChanged -= TrySetColor;
             Theme.Instance.onThemeColorChanged -= OnThemeColorChanged;
@@ -66,38 +74,53 @@ namespace Unity.Theme.Binders
         }
         protected virtual void TrySetColor(ThemeData theme)
         {
-            if (theme == null)
+            try
             {
-                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"Current theme is null at <b>{GameObjectPath()}</b>", gameObject);
-                return;
-            }
-            
-            var colorData = theme.GetColorByGuid(data.colorGuid);
-            if (colorData == null)
-            {
-                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"Color with GUID='{data.colorGuid}' not found in database at <b>{GameObjectPath()}</b>", gameObject);
-            }
-            else
-            {
-                var targetColor = GetTargetColor(colorData);
-                var currentColor = GetColor();
-                if (targetColor == currentColor)
-                    return; // skip if color is the same
+                if (this.IsNull())
+                {
+                    // `this` is destroyed component. Need to unsubscribe.
+                    Unsubscribe();
+                    Object.DestroyImmediate(this);
+                    return;
+                }
+                if (theme == null)
+                {
+                    if (Theme.Instance?.debugLevel <= DebugLevel.Error)
+                        Debug.LogError($"Current theme is null at <b>{GameObjectPath()}</b>", gameObject);
+                    return;
+                }
 
-                if (Theme.Instance?.debugLevel <= DebugLevel.Log)
-                    Debug.Log($"SetColor: '<b>{data.ColorName}</b>' {targetColor.ToHexRGBA()} at <b>{GameObjectPath()}</b>", gameObject);
-                SetColor(targetColor);
-                SetDirty();
+                var colorData = theme.GetColorByGuid(data.colorGuid);
+                if (colorData == null)
+                {
+                    if (Theme.Instance?.debugLevel <= DebugLevel.Error)
+                        Debug.LogError($"Color with GUID='{data.colorGuid}' not found in database at <b>{GameObjectPath()}</b>", gameObject);
+                }
+                else
+                {
+                    var targetColor = GetTargetColor(colorData);
+                    var currentColor = GetColor();
+                    if (targetColor == currentColor)
+                        return; // skip if color is the same
+
+                    if (Theme.Instance?.debugLevel <= DebugLevel.Log)
+                        Debug.Log($"SetColor: '<b>{data.ColorName}</b>' {targetColor.ToHexRGBA()} at <b>{GameObjectPath()}</b>", gameObject);
+                    SetColor(targetColor);
+                    SetDirty();
+                }
+            }
+            catch (System.Exception e)
+            {
+                if (Theme.Instance?.debugLevel <= DebugLevel.Exception)
+                    Debug.LogException(e);
             }
         }
 
         protected virtual Color GetTargetColor(ColorData colorData)
         {
             var result = colorData.Color;
-            
-            if (data.overrideAlpha) 
+
+            if (data.overrideAlpha)
                 result.a = data.alpha;
 
             return result;
@@ -108,6 +131,8 @@ namespace Unity.Theme.Binders
         private void SetDirty(Object obj)
         {
 #if UNITY_EDITOR
+            if (obj.IsNull())
+                return;
             UnityEditor.EditorUtility.SetDirty(obj);
             UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(obj);
 #endif

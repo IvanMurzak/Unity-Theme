@@ -58,5 +58,10 @@
         "Temp/":true
     },
     "omnisharp.enableRoslynAnalyzers": true,
-    "dotnet.defaultSolution": "Unity-Theme.sln"
+    "dotnet.defaultSolution": "Unity-Theme.sln",
+    "cSpell.words": [
+        "imgui",
+        "jsonserialize",
+        "uielements"
+    ]
 }

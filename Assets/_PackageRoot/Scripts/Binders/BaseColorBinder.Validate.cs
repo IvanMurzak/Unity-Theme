@@ -31,6 +31,9 @@ namespace Unity.Theme.Binders
         // UTILS ---------------------------------------------------------------------------//
         protected string GameObjectPath()                                                   //
         {                                                                                   //
+            if (this.IsNull())                                                              //
+                return null;                                                                //
+                                                                                            //
 #pragma warning disable CS0168                                                              //
             try { return GameObjectPath(transform).ToString(); }                            //
             catch (MissingReferenceException e) { /* ignore */ }                            //
@@ -39,6 +42,9 @@ namespace Unity.Theme.Binders
         }                                                                                   //
         protected StringBuilder GameObjectPath(Transform trans, StringBuilder path = null)  //
         {                                                                                   //
+            if (trans.IsNull())                                                             //
+                return null;                                                                //
+                                                                                            //
             if (path == null)                                                               //
                 path = new StringBuilder();                                                 //
                                                                                             //
@@ -53,7 +59,7 @@ namespace Unity.Theme.Binders
                 path.Insert(0, trans.name);                                                 //
             }                                                                               //
                                                                                             //
-            if (trans.parent == null)                                                       //
+            if (trans.parent.IsNull())                                                      //
             {                                                                               //
                 var isPrefab = string.IsNullOrEmpty(trans.gameObject.scene.name);           //
                 if (isPrefab)                                                               //
