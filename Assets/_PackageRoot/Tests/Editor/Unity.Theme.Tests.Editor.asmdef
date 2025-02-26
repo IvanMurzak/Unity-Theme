@@ -1,0 +1,22 @@
+{
+    "name": "Unity.Theme.Tests.Editor",
+    "rootNamespace": "Unity.Theme.Tests.Editor",
+    "references": [
+        "Unity.Theme.Tests.Base",
+        "Unity.TextMeshPro",
+        "Unity.Theme",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

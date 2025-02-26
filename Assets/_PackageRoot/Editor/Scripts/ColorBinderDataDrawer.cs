@@ -55,9 +55,8 @@ namespace Unity.Theme.Editor
                 alpha.serializedObject.ApplyModifiedProperties();
             });
 
-            Action onOpenConfigClicked = () => ThemeWindowEditor.ShowWindow();
-            btnOpenConfig.clicked += onOpenConfigClicked;
-            root.RegisterCallback<DetachFromPanelEvent>(evt => btnOpenConfig.clicked -= onOpenConfigClicked);
+            btnOpenConfig.clicked += ThemeWindowEditor.ShowWindowVoid;
+            root.RegisterCallback<DetachFromPanelEvent>(evt => btnOpenConfig.clicked -= ThemeWindowEditor.ShowWindowVoid);
 
             colorFill.BringToFront();
 

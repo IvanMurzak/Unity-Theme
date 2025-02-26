@@ -8,7 +8,7 @@ namespace Unity.Theme
     {
         [SerializeField, HideInInspector]
         private string guid;
-        
+
         public string name = "New";
 
         public string Guid => guid;

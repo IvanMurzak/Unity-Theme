@@ -12,9 +12,6 @@ namespace Unity.Theme
         [SerializeField, HideInInspector]
         private string colorHex = "#FFFFFFFF";
 
-        // [NonSerialized]
-        // public Color color = Color.white;
-
         public Color Color
         {
             get => ColorUtility.TryParseHtmlString(colorHex, out var color)

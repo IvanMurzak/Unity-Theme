@@ -7,13 +7,13 @@ namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
     public partial class Theme
-    {        
+    {
         public IEnumerable<string> ColorNames => colors?.Select(x => x.name);
         public IEnumerable<string> ColorGuids => colors?.Select(x => x.Guid);
-        
+
         public ColorDataRef GetColorRef(ColorData colorData)            => GetColorRef(colorData.Guid);
         public ColorDataRef GetColorRef(string guid)                    => string.IsNullOrEmpty(guid) ? null : colors.FirstOrDefault(x => x.Guid == guid);
-        
+
         public string    GetColorGuidByIndex(int index)                 => colors?[index]?.Guid;
         public int       GetColorIndexByGuid(string guid)               => colors?.FindIndex(x => x.Guid == guid) ?? -1;
         public string    GetColorName  (string guid)                    => GetColorRef(guid)?.name;

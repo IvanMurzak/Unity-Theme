@@ -7,7 +7,7 @@ namespace Unity.Theme
     public partial class Theme
     {
         [SerializeField]    public DebugLevel   debugLevel = DebugLevel.Error;
-        
+
         [HideInInspector]
         [SerializeField]    int                 currentThemeIndex   = 0;
         [SerializeField]    List<ColorDataRef>  colors = new List<ColorDataRef>();
@@ -15,6 +15,7 @@ namespace Unity.Theme
     }
     public enum DebugLevel
     {
+        Trace       = -1,
         Log         = 0,
         Warning     = 1,
         Error       = 2,

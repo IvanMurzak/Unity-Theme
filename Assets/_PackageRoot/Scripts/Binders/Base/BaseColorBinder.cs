@@ -98,15 +98,19 @@ namespace Unity.Theme.Binders
                 }
                 else
                 {
+                    if (!CanApplyColor())
+                    {
+                        if (Theme.Instance?.debugLevel <= DebugLevel.Warning)
+                            Debug.LogWarning($"Can't apply color at <b>{GameObjectPath()}</b>", gameObject);
+                        return;
+                    }
                     var targetColor = GetTargetColor(colorData);
                     var currentColor = GetColor();
                     if (targetColor == currentColor)
                         return; // skip if color is the same
 
-                    if (Theme.Instance?.debugLevel <= DebugLevel.Log)
-                        Debug.Log($"SetColor: '<b>{data.ColorName}</b>' {targetColor.ToHexRGBA()} at <b>{GameObjectPath()}</b>", gameObject);
-                    SetColor(targetColor);
-                    SetDirty();
+                    if (InternalSetColor(targetColor))
+                        SetDirty();
                 }
             }
             catch (System.Exception e)
@@ -125,8 +129,16 @@ namespace Unity.Theme.Binders
 
             return result;
         }
+        protected virtual bool InternalSetColor(Color color)
+        {
+            if (Theme.Instance?.debugLevel <= DebugLevel.Log)
+                Debug.Log($"SetColor: '<b>{data.ColorName}</b>' {color.ToHexRGBA()} at <b>{GameObjectPath()}</b>", gameObject);
+            SetColor(color);
+            return true;
+        }
+        protected virtual bool CanApplyColor() => true;
         protected abstract void SetColor(Color color);
-        protected abstract Color? GetColor();
+        public abstract Color? GetColor();
 
         private void SetDirty(Object obj)
         {

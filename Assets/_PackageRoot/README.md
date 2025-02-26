@@ -90,26 +90,20 @@ Theme.Instance.RemoveAllThemes();
 
 If you need to bind color to something else, you may extend from `BaseColorBinder` as listed below.
 
-```C#
+```csharp
 using UnityEngine;
 using TMPro;
 
 namespace Unity.Theme.Binders
 {
     [AddComponentMenu("Theme/TextMeshPro Color Binder")]
-    public class TextMeshProColorBinder : BaseColorBinder
+    public class TextMeshProColorBinder : GenericColorBinder<TextMeshProUGUI>
     {
-        [SerializeField] TextMeshProUGUI textMeshPro;
+        protected override void SetColor(TextMeshProUGUI target, Color color)
+            => target.color = color;
 
-        protected override void Awake()
-        {
-            if (textMeshPro == null) textMeshPro = GetComponent<TextMeshProUGUI>();
-            base.Awake();
-        }
-        protected override void SetColor(Color color)
-        {
-            textMeshPro.color = color;
-        }
+        protected override Color? GetColor(TextMeshProUGUI target)
+            => target.color;
     }
 }
 ```
