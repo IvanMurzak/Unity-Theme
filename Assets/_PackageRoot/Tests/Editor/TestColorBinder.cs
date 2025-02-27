@@ -44,6 +44,7 @@ namespace Unity.Theme.Tests.Editor
             var colorData = Theme.Instance.GetColorFirst();
             var color = colorData.Color;
             var colorBinder = TestUtils.CreateGenericColorBinder<Image, ImageColorBinder>(out var target);
+            yield return null;
             TestUtils.SetColor(colorBinder, colorData);
             Assert.AreEqual(color, target.color);
             yield return null;
@@ -55,6 +56,7 @@ namespace Unity.Theme.Tests.Editor
             var colorData = Theme.Instance.GetColorFirst();
             var color = colorData.Color;
             var colorBinder = TestUtils.CreateGenericColorBinder<TextMeshProUGUI, TextMeshProColorBinder>(out var target);
+            yield return null;
             TestUtils.SetColor(colorBinder, colorData);
             Assert.AreEqual(color, target.color);
             yield return null;
@@ -66,6 +68,7 @@ namespace Unity.Theme.Tests.Editor
             var colorData = Theme.Instance.GetColorFirst();
             var color = colorData.Color;
             var colorBinder = TestUtils.CreateGenericColorBinder<SpriteRenderer, SpriteRendererColorBinder>(out var target);
+            yield return null;
             TestUtils.SetColor(colorBinder, colorData);
             Assert.AreEqual(color, target.color);
             yield return null;

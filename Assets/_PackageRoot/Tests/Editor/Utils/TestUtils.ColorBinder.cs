@@ -26,7 +26,7 @@ namespace Unity.Theme.Tests.Editor
         public static void SetColor(BaseColorBinder colorBinder, ColorData colorData)
         {
             Assert.True(colorBinder.SetColor(colorData));
-            Assert.AreEqual(Color.red, colorBinder.GetColor().Value);
+            Assert.AreEqual(colorData.Color, colorBinder.GetColor().Value);
         }
     }
 }

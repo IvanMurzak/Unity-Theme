@@ -8,6 +8,10 @@ namespace Unity.Theme.Binders
     {
         [SerializeField] protected ColorBinderData data = new ColorBinderData();
 
+        /// <summary>
+        /// List of objects that should be marked as dirty when color is changed.
+        /// This is useful when editing prefabs in the editor.
+        /// </summary>
         protected virtual IEnumerable<Object> ColorTargets { get; } = null;
 
         protected virtual void Awake()
@@ -149,6 +153,6 @@ namespace Unity.Theme.Binders
             UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(obj);
 #endif
         }
-        private void OnThemeColorChanged(ThemeData themeData, ColorData colorData) => TrySetColor(Theme.Instance.CurrentTheme);
+        private void OnThemeColorChanged(ThemeData themeData, ColorData colorData) => TrySetColor(themeData);
     }
 }
