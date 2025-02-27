@@ -6,12 +6,12 @@ namespace Unity.Theme
 #pragma warning disable CA2235 // Mark all non-serializable fields
     public partial class Theme
     {
-        [SerializeField]    public DebugLevel   debugLevel = DebugLevel.Error;
+        [SerializeField] public DebugLevel debugLevel = DebugLevel.Error;
 
         [HideInInspector]
-        [SerializeField]    int                 currentThemeIndex   = 0;
-        [SerializeField]    List<ColorDataRef>  colors = new List<ColorDataRef>();
-        [SerializeField]    List<ThemeData>     themes = new List<ThemeData>();
+        [SerializeField] int currentThemeIndex = 0;
+        [SerializeField] List<ColorDataRef> colors = new();
+        [SerializeField] List<ThemeData> themes = new();
     }
     public enum DebugLevel
     {
