@@ -138,7 +138,7 @@ The version 3.x.x has a different database structure, so you need to migrate you
 
 Take a look at the `guid: 6b934efb-0b9b-42fd-82fd-7a0dbd1de53c`, the file contains it 3 times, depends on your setup. You would need to copy the guid to the `Unity-Theme-Database.json` file.
 
-```
+```yaml
   colors:
   - guid: 6b934efb-0b9b-42fd-82fd-7a0dbd1de53c
     name: Primary
