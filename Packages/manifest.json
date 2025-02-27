@@ -2,10 +2,9 @@
   "dependencies": {
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ide.visualstudio": "2.0.22",
-    "com.unity.recorder": "5.1.2",
     "com.unity.test-framework": "1.4.5",
-    "com.unity.ugui": "2.0.0",
-    "com.utkaka.scale-nine-slicer": "1.0.3",
+    "com.unity.textmeshpro": "3.0.6",
+    "com.unity.ugui": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.assetbundle": "1.0.0",
@@ -28,8 +27,7 @@
       "name": "package.openupm.com",
       "url": "https://package.openupm.com",
       "scopes": [
-        "com.openupm",
-        "com.utkaka.scale-nine-slicer"
+        "com.openupm"
       ]
     }
   ]
