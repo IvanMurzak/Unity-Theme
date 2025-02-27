@@ -2,7 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using Unity.Theme.Binders;
 
-namespace Unity.Theme.Tests.Editor
+namespace Unity.Theme.Tests.Base
 {
     public static partial class TestUtils
     {
