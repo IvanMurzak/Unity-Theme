@@ -14,41 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: -1622.6666
-    y: 164.66667
-    width: 542
-    height: 1136.6667
-  m_ShowMode: 0
-  m_Title: ControlPanelEditor
-  m_RootView: {fileID: 5}
-  m_MinSize: {x: 100, y: 121}
-  m_MaxSize: {x: 4000, y: 4021}
-  m_Maximized: 0
---- !u!114 &2
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PixelRect:
-    serializedVersion: 2
     x: 2.6666667
     y: 0.6666667
     width: 0.6666667
     height: 6.666667
   m_ShowMode: 0
   m_Title: 
-  m_RootView: {fileID: 6}
+  m_RootView: {fileID: 5}
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_Maximized: 0
---- !u!114 &3
+--- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,17 +38,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: -2560
+    x: 0
     y: 42.666668
     width: 2560
-    height: 1357.3334
+    height: 1349.3334
   m_ShowMode: 4
-  m_Title: Console
-  m_RootView: {fileID: 7}
+  m_Title: Hierarchy
+  m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 471}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
---- !u!114 &4
+--- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,23 +58,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ControlPanel
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 542
-    height: 1136.6667
-  m_MinSize: {x: 100, y: 121}
-  m_MaxSize: {x: 4000, y: 4021}
-  m_ActualView: {fileID: 17}
+    y: 729.3333
+    width: 1320.6666
+    height: 570.00006
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 19}
   m_Panes:
-  - {fileID: 17}
+  - {fileID: 19}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &5
+--- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,18 +87,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 4}
+  - {fileID: 10}
+  - {fileID: 3}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 542
-    height: 1136.6667
-  m_MinSize: {x: 100, y: 121}
-  m_MaxSize: {x: 4000, y: 4021}
-  vertical: 0
-  controlID: 10382
---- !u!114 &6
+    width: 1320.6666
+    height: 1299.3334
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 8096, y: 16192}
+  vertical: 1
+  controlID: 51
+--- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,7 +122,7 @@ MonoBehaviour:
   m_MaxSize: {x: 0, y: 0}
   vertical: 0
   controlID: 0
---- !u!114 &7
+--- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,22 +135,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-  - {fileID: 8}
-  - {fileID: 10}
+  - {fileID: 7}
   - {fileID: 9}
+  - {fileID: 8}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
     width: 2560
-    height: 1357.3334
+    height: 1349.3334
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
   m_UseBottomView: 1
   m_BottomViewHeight: 20
---- !u!114 &8
+--- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
---- !u!114 &9
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,12 +188,12 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 1337.3334
+    y: 1329.3334
     width: 2560
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
---- !u!114 &10
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,46 +206,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
+  - {fileID: 4}
   - {fileID: 11}
-  - {fileID: 14}
-  - {fileID: 15}
-  - {fileID: 16}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 30
-    width: 2560
-    height: 1307.3334
-  m_MinSize: {x: 400, y: 100}
-  m_MaxSize: {x: 32384, y: 16192}
-  vertical: 0
-  controlID: 140
---- !u!114 &11
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
   - {fileID: 12}
   - {fileID: 13}
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1294.6666
-    height: 1307.3334
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 8096, y: 16192}
-  vertical: 1
-  controlID: 16
---- !u!114 &12
+    y: 30
+    width: 2560
+    height: 1299.3334
+  m_MinSize: {x: 400, y: 100}
+  m_MaxSize: {x: 32384, y: 16192}
+  vertical: 0
+  controlID: 98
+--- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,18 +237,18 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1294.6666
-    height: 455.33334
+    width: 1320.6666
+    height: 729.3333
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 21}
+  m_ActualView: {fileID: 18}
   m_Panes:
-  - {fileID: 19}
-  - {fileID: 20}
-  - {fileID: 21}
-  m_Selected: 2
+  - {fileID: 17}
+  - {fileID: 18}
+  - {fileID: 15}
+  m_Selected: 1
   m_LastSelected: 0
---- !u!114 &13
+--- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,49 +258,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: ThemeWindowEditor
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 0
-    y: 455.33334
-    width: 1294.6666
-    height: 852
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 22}
-  m_Panes:
-  - {fileID: 22}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &14
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: InspectorWindow
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 1294.6666
+    x: 1320.6666
     y: 0
-    width: 500.66675
-    height: 1307.3334
-  m_MinSize: {x: 277, y: 71}
+    width: 462
+    height: 1299.3334
+  m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 23}
+  m_ActualView: {fileID: 14}
   m_Panes:
-  - {fileID: 23}
-  m_Selected: 0
+  - {fileID: 20}
+  - {fileID: 14}
+  m_Selected: 1
   m_LastSelected: 0
---- !u!114 &15
+--- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,18 +290,18 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1795.3334
+    x: 1782.6666
     y: 0
-    width: 334.66663
-    height: 1307.3334
+    width: 412.00012
+    height: 1299.3334
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 16}
   m_Panes:
-  - {fileID: 18}
+  - {fileID: 16}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &16
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -389,18 +316,18 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 2130
+    x: 2194.6667
     y: 0
-    width: 430
-    height: 1307.3334
+    width: 365.33325
+    height: 1299.3334
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 24}
+  m_ActualView: {fileID: 21}
   m_Panes:
-  - {fileID: 24}
+  - {fileID: 21}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &17
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -415,49 +342,15 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: ControlPanelEditor
+    m_Text: Unity-Theme
     m_Image: {fileID: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -1622.6666
-    y: 164.66667
-    width: 542
-    height: 1115.6667
-  m_SerializedDataModeController:
-    m_DataMode: 0
-    m_PreferredDataMode: 0
-    m_SupportedDataModes: 
-    isAutomatic: 1
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-    m_OverlaysVisible: 1
---- !u!114 &18
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Hierarchy
-    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: -764.6666
+    x: 1320.6667
     y: 72.66667
-    width: 332.66663
-    height: 1286.3334
+    width: 460
+    height: 1278.3334
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -468,36 +361,10 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
-  m_SceneHierarchy:
-    m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2c520000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 7cbfffff
-      m_RenameOverlay:
-        m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
-        m_EditFieldRect:
-          serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-        m_UserData: 0
-        m_IsWaitingForDelay: 0
-        m_IsRenaming: 0
-        m_OriginalEventType: 11
-        m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 15}
-      m_SearchString: 
-    m_ExpandedScenes: []
-    m_CurrenRootInstanceID: 0
-    m_LockTracker:
-      m_IsLocked: 0
-    m_CurrentSortingName: TransformSorting
-  m_WindowGUID: d1650c47ffe3d7748a881725c9b54ce9
---- !u!114 &19
+  templateControlPanel: {fileID: 9197481963319205126, guid: 37fdbddf207484e478ce74ceeb17c8d1, type: 3}
+  templateTheme: {fileID: 9197481963319205126, guid: b258793507f973d4585bf2185fe1a4cf, type: 3}
+  templateThemeColor: {fileID: 9197481963319205126, guid: 4f55717dde579854cb7c9168b0857992, type: 3}
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -519,8 +386,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: -2560
     y: 72.66667
-    width: 1283
-    height: 669
+    width: 837
+    height: 756.3333
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -548,9 +415,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -141, y: 149}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 1
+      snapOffset: {x: -141, y: -26.666664}
+      snapOffsetDelta: {x: 0, y: -0.000022888184}
+      snapCorner: 3
       id: unity-grid-and-snap-toolbar
       index: 1
       layout: 1
@@ -822,7 +689,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: -218, y: -327.3333}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 119.99997}
       snapCorner: 3
       id: AINavigationOverlay
       index: 0
@@ -864,7 +731,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: UnityEditor.SceneViewCameraOverlay
-      index: 11
+      index: 8
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -882,19 +749,19 @@ MonoBehaviour:
       size: {x: 0, y: 0}
       sizeOverriden: 0
     m_OverlaysVisible: 1
-  m_WindowGUID: c96bfa7311fb1ff429744a8b2e414245
+  m_WindowGUID: 527b62c2c6b472f44be934983b3f212e
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
-  m_SceneIsLit: 1
+  m_SceneIsLit: 0
   m_SceneLighting: 1
-  m_2DMode: 0
+  m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 1152.091, y: 1127.262, z: -1.762332}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: 1152.091, y: 1127.262, z: -1.762332}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -927,7 +794,7 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 1, y: 1}
+      m_Size: {x: 0, y: 0}
     zGrid:
       m_Fade:
         m_Target: 0
@@ -935,22 +802,22 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 1, y: 1}
+      m_Size: {x: 0, y: 0}
     m_ShowGrid: 0
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10
+    m_Target: 1285.029
     speed: 2
-    m_Value: 10
+    m_Value: 1285.029
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1.3233997
     m_SpeedNormalized: 0.65999985
@@ -971,7 +838,70 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &20
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Hierarchy
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1782.6667
+    y: 72.66667
+    width: 410.00012
+    height: 1278.3334
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 86f7ffffc4f7ffff5ef8ffff2cfbffff
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 12}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 0
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: d1650c47ffe3d7748a881725c9b54ce9
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -991,10 +921,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
+    x: -2560
     y: 72.66667
-    width: 1265
-    height: 694.3333
+    width: 1150.3334
+    height: 756.3333
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1006,12 +936,12 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_Spl:
-    ID: 180
+    ID: 1209
     splitterInitialOffset: 513.6667
     currentActiveSplitter: -1
     realSizes:
-    - 440.66666
-    - 183.33334
+    - 484.66666
+    - 201.33334
     relativeSizes:
     - 0.7067307
     - 0.29326928
@@ -1021,7 +951,7 @@ MonoBehaviour:
     maxSizes:
     - 0
     - 0
-    lastTotalSize: 624
+    lastTotalSize: 686
     splitSize: 6
     xOffset: 0
     m_Version: 1
@@ -1066,15 +996,15 @@ MonoBehaviour:
       availableCategories: []
     m_SelectedOption: 0
   m_EditModeTestListGUI:
-    m_Window: {fileID: 20}
+    m_Window: {fileID: 17}
     m_NewResultList:
     - id: 1000
-      uniqueId: '[Castaways][suite]'
-      name: Castaways
-      fullName: Castaways
-      resultStatus: 2
-      duration: 0.4869401
-      messages: One or more child tests had errors
+      uniqueId: '[Unity-Theme][suite]'
+      name: Unity-Theme
+      fullName: Unity-Theme
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1084,356 +1014,6 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
-    - id: 1015
-      uniqueId: '[Extensions.Unity.ImageLoader.Editor.Tests.dll][suite]'
-      name: Extensions.Unity.ImageLoader.Editor.Tests.dll
-      fullName: F:/Projects/Unity/BranchGG/Library/ScriptAssemblies/Extensions.Unity.ImageLoader.Editor.Tests.dll
-      resultStatus: 1
-      duration: 1.4466236
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1000
-      parentUniqueId: '[castaways][suite]'
-    - id: 1016
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/[Extensions][suite]
-      name: Extensions
-      fullName: Extensions
-      resultStatus: 1
-      duration: 1.4329386
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1015
-      parentUniqueId: '[Extensions.Unity.ImageLoader.Editor.Tests.dll][suite]'
-    - id: 1017
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/[Unity][suite]
-      name: Unity
-      fullName: Extensions.Unity
-      resultStatus: 1
-      duration: 1.4308392
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1016
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/[Extensions][suite]
-    - id: 1018
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/[ImageLoader][suite]
-      name: ImageLoader
-      fullName: Extensions.Unity.ImageLoader
-      resultStatus: 1
-      duration: 1.4269539
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1017
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/[Unity][suite]
-    - id: 1019
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests][suite]
-      name: Tests
-      fullName: Extensions.Unity.ImageLoader.Tests
-      resultStatus: 1
-      duration: 1.4236691
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1018
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/[ImageLoader][suite]
-    - id: 1001
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache][suite]
-      name: TestCache
-      fullName: Extensions.Unity.ImageLoader.Tests.TestCache
-      resultStatus: 1
-      duration: 1.4188906
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1019
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests][suite]
-    - id: 1006
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestCache/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache.ClearDiskCache]
-      name: ClearDiskCache
-      fullName: Extensions.Unity.ImageLoader.Tests.TestCache.ClearDiskCache
-      resultStatus: 1
-      duration: 0.9288725
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache][suite]
-    - id: 1008
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestCache/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache.ClearDiskCacheAll]
-      name: ClearDiskCacheAll
-      fullName: Extensions.Unity.ImageLoader.Tests.TestCache.ClearDiskCacheAll
-      resultStatus: 1
-      duration: 1.4095674
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache][suite]
-    - id: 1007
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestCache/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache.ClearMemoryCache]
-      name: ClearMemoryCache
-      fullName: Extensions.Unity.ImageLoader.Tests.TestCache.ClearMemoryCache
-      resultStatus: 1
-      duration: 0.56494
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache][suite]
-    - id: 1009
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestCache/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache.ClearMemoryCacheAll]
-      name: ClearMemoryCacheAll
-      fullName: Extensions.Unity.ImageLoader.Tests.TestCache.ClearMemoryCacheAll
-      resultStatus: 1
-      duration: 0.5674483
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache][suite]
-    - id: 1003
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestCache/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache.DiskCacheDisable]
-      name: DiskCacheDisable
-      fullName: Extensions.Unity.ImageLoader.Tests.TestCache.DiskCacheDisable
-      resultStatus: 1
-      duration: 0.2450489
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache][suite]
-    - id: 1002
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestCache/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache.DiskCacheEnable]
-      name: DiskCacheEnable
-      fullName: Extensions.Unity.ImageLoader.Tests.TestCache.DiskCacheEnable
-      resultStatus: 1
-      duration: 0.4256183
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache][suite]
-    - id: 1003
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestCache/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache.LoadingFromDiskCache]
-      name: LoadingFromDiskCache
-      fullName: Extensions.Unity.ImageLoader.Tests.TestCache.LoadingFromDiskCache
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache][suite]
-    - id: 1002
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestCache/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache.LoadingFromMemoryCache]
-      name: LoadingFromMemoryCache
-      fullName: Extensions.Unity.ImageLoader.Tests.TestCache.LoadingFromMemoryCache
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache][suite]
-    - id: 1005
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestCache/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache.MemoryCacheDisabled]
-      name: MemoryCacheDisabled
-      fullName: Extensions.Unity.ImageLoader.Tests.TestCache.MemoryCacheDisabled
-      resultStatus: 1
-      duration: 0.3093842
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache][suite]
-    - id: 1004
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestCache/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache.MemoryCacheEnabled]
-      name: MemoryCacheEnabled
-      fullName: Extensions.Unity.ImageLoader.Tests.TestCache.MemoryCacheEnabled
-      resultStatus: 1
-      duration: 0.3638953
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestCache][suite]
-    - id: 1010
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestLoading][suite]
-      name: TestLoading
-      fullName: Extensions.Unity.ImageLoader.Tests.TestLoading
-      resultStatus: 1
-      duration: 0.9087734
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1019
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests][suite]
-    - id: 1013
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestLoading/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestLoading.LoadSpritesCacheDisk]
-      name: LoadSpritesCacheDisk
-      fullName: Extensions.Unity.ImageLoader.Tests.TestLoading.LoadSpritesCacheDisk
-      resultStatus: 1
-      duration: 0.3692713
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1010
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestLoading][suite]
-    - id: 1012
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestLoading/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestLoading.LoadSpritesCacheMemory]
-      name: LoadSpritesCacheMemory
-      fullName: Extensions.Unity.ImageLoader.Tests.TestLoading.LoadSpritesCacheMemory
-      resultStatus: 1
-      duration: 0.1238211
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1010
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestLoading][suite]
-    - id: 1011
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestLoading/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestLoading.LoadSpritesCacheMemoryDisk]
-      name: LoadSpritesCacheMemoryDisk
-      fullName: Extensions.Unity.ImageLoader.Tests.TestLoading.LoadSpritesCacheMemoryDisk
-      resultStatus: 1
-      duration: 0.2881856
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1010
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestLoading][suite]
-    - id: 1014
-      uniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/TestLoading/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestLoading.LoadSpritesNoCache]
-      name: LoadSpritesNoCache
-      fullName: Extensions.Unity.ImageLoader.Tests.TestLoading.LoadSpritesNoCache
-      resultStatus: 1
-      duration: 0.1213288
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1010
-      parentUniqueId: Extensions.Unity.ImageLoader.Editor.Tests.dll/Extensions/Unity/ImageLoader/Tests/[Extensions.Unity.ImageLoader.Editor.Tests][Extensions.Unity.ImageLoader.Tests.TestLoading][suite]
     m_ResultText: "Each_Is_Empty (0.122s)\n---\nSystem.Exception : Failed to IntantiateNetwork<CastawaysPlayer>\n---\nat
       Castaways.TestNetworkInventoryBase.IntantiateNetwork[O,T] () [0x00090] in F:\\Projects\\Unity\\BranchGG\\Assets\\Code\\Tests\\Editor\\Network\\TestNetworkInventoryBase.cs:89
       \r\n  at Castaways.TestNetworkInventoryBase.InstantiateNetworkInventory (CastawaysCommon.Item[]
@@ -1461,7 +1041,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 756586af
       m_LastClickedID: -1350146699
-      m_ExpandedIDs: 3188c69c7378b4a171c71cb8a9f3cdbcea399cbe3e4291c4473f96cf0cb9b8d4e82815dcebb2b8de7933ecdedadb6be15cb353e4c1b879e5103303e8827c36eb8f70ac112c00aa176c6c0926c6d8032a9c40483ec5e3ec5472deae5629c6dd5c50138c696f6ced7fffffff7f
+      m_ExpandedIDs: 3188c69c7378b4a171c71cb8a9f3cdbcea399cbe3e4291c4473f96cf0cb9b8d4e82815dcebb2b8de7933ecdedadb6be15cb353e4c1b879e5103303e8827c36eb8f70ac112c00aa176c6c0926ad73f929c6d8032a9c40483ec5e3ec5472deae5629c6dd5c50138c696f6ced7fffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1487,7 +1067,7 @@ MonoBehaviour:
       selectedCategoryMask: 0
       availableCategories:
       - Uncategorized
---- !u!114 &21
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1507,10 +1087,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -2560
+    x: 0
     y: 72.66667
-    width: 1293.6666
-    height: 434.33334
+    width: 1319.6666
+    height: 708.3333
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1521,7 +1101,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
---- !u!114 &22
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1541,10 +1121,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -2560
-    y: 528
-    width: 1293.6666
-    height: 831
+    x: 0
+    y: 802
+    width: 1319.6666
+    height: 549.00006
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1561,7 +1141,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1940.5, y: 1215}
+  m_TargetSize: {x: 3840, y: 2160}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -1570,16 +1150,16 @@ MonoBehaviour:
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000023000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 0c000000000000000000000013000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -646.8334
-    m_HBaseRangeMax: 646.8334
-    m_VBaseRangeMin: -405
-    m_VBaseRangeMax: 405
+    m_HBaseRangeMin: -1280
+    m_HBaseRangeMax: 1280
+    m_VBaseRangeMin: -720
+    m_VBaseRangeMax: 720
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1597,29 +1177,29 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1293.6666
-      height: 810
-    m_Scale: {x: 0.9999999, y: 0.9999998}
-    m_Translation: {x: 646.8333, y: 405}
+      width: 1319.6666
+      height: 528.00006
+    m_Scale: {x: 0.3666667, y: 0.3666667}
+    m_Translation: {x: 659.8333, y: 264.00003}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -646.8334
-      y: -405.00006
-      width: 1293.6667
-      height: 810.0001
+      x: -1799.5452
+      y: -720
+      width: 3599.0903
+      height: 1440
     m_MinimalGUI: 1
-  m_defaultScale: 0.9999999
-  m_LastWindowPixelSize: {x: 1940.5, y: 1246.5}
+  m_defaultScale: 0.3666667
+  m_LastWindowPixelSize: {x: 1979.5, y: 823.5001}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &23
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1639,10 +1219,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -1265.3333
+    x: 1191.3334
     y: 72.66667
-    width: 498.66675
-    height: 1286.3334
+    width: 589.33325
+    height: 1278.3334
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1656,7 +1236,7 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 541
+    m_CachedPref: -442
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
@@ -1666,7 +1246,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &24
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1686,10 +1266,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -430
+    x: 2194.6667
     y: 72.66667
-    width: 429
-    height: 1286.3334
+    width: 364.33325
+    height: 1278.3334
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1711,7 +1291,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_PackageRoot/Editor/UI
+    - Assets/Samples/Sample2
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1720,14 +1300,14 @@ MonoBehaviour:
   m_StartGridSize: 16
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: F:\Projects\Unity\Ivan Murzak Unity Modules\Unity-Theme
+  m_LastProjectPath: D:\Projects\Unity\Ivan Murzak Unity Modules\Unity-Theme
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 62800200
     m_LastClickedID: 163938
-    m_ExpandedIDs: 00000000d64000000e410000a6410000ba410000e6410000ee41000006420000124200002e420000564200007a4200007e4200009a420000ca4200003e4300004a43000052430000c6430000fa4300000244000006440000224400002a4400007a460000d85300006a5400006c5400006e54000070540000725400007454000076540000785400007a5400007c5400007e5400008054000082540000
+    m_ExpandedIDs: 0000000000450000384d00003a4d00003c4d00003e4d0000404d0000424d0000444d0000464d0000484d00004a4d00004c4d00004e4d0000504d0000524d0000544d0000564d0000584d00005a4d00005c4d00005e4d0000604d0000624d0000644d0000664d0000684d00006a4d00006c4d00006e4d0000704d0000724d0000744d0000764d0000784d00007a4d00007c4d00007e4d0000804d0000824d0000844d0000864d0000884d00008a4d00008c4d00008e4d0000904d0000924d0000944d0000964d0000984d00009a4d00009c4d00009e4d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1752,10 +1332,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 15.666626}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000d64000000e410000a6410000ba410000e6410000ee41000006420000124200002e420000564200007a4200007e4200009a420000a6420000ca4200003e4300004a43000052430000c6430000fa4300000244000006440000224400002a4400007a4600006a5400006c5400006e54000070540000725400007454000076540000785400007a5400007c5400007e5400008054000082540000
+    m_ExpandedIDs: ffffffff0000000000450000384d00003a4d00003c4d00003e4d0000404d0000424d0000444d0000464d0000484d00004a4d00004c4d00004e4d0000504d0000524d0000544d0000564d0000584d00005a4d00005c4d00005e4d0000604d0000624d0000644d0000664d0000684d00006a4d00006c4d00006e4d0000704d0000724d0000744d0000764d0000784d00007a4d00007c4d00007e4d0000804d0000824d0000844d0000864d0000884d00008a4d00008c4d00008e4d0000904d0000924d0000944d0000964d0000984d00009a4d00009c4d00009e4d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1771,7 +1351,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 16}
+      m_ClientGUIView: {fileID: 13}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1799,7 +1379,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 16}
+      m_ClientGUIView: {fileID: 13}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
