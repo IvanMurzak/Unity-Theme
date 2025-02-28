@@ -1,11 +1,13 @@
+using System.Collections;
 using NUnit.Framework;
 using Unity.Theme.Tests.Base;
+using UnityEngine.TestTools;
 
 namespace Unity.Theme.Tests.Editor
 {
     public partial class TestColorBinder : TestBase
     {
-        [SetUp] public override void SetUp() => base.SetUp();
-        [TearDown] public override void TearDown() => base.TearDown();
+        [UnitySetUp] public override IEnumerator SetUp() => base.SetUp();
+        [UnityTearDown] public override IEnumerator TearDown() => base.TearDown();
     }
 }

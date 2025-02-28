@@ -10,11 +10,20 @@ namespace Unity.Theme
     {
         public List<ThemeData>     Themes              => themes;
         public IEnumerable<string> ThemeNames          => themes.Select(x => x.themeName);
-        public ThemeData           CurrentTheme        => themes.Count > 0
-            ? ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count)
-                ? themes[currentThemeIndex]
-                : null)
-            : null;
+        public ThemeData           CurrentTheme
+        {
+            get
+            {
+                if ((themes?.Count ?? 0) == 0)
+                    return null;
+
+                if (currentThemeIndex < themes.Count)
+                    return themes[currentThemeIndex];
+
+                CurrentThemeIndex = themes.Count - 1;
+                return themes[currentThemeIndex];
+            }
+        }
 
         public int                 CurrentThemeIndex
         {
@@ -61,7 +70,12 @@ namespace Unity.Theme
         }
         public ThemeData SetOrAddTheme(string themeName, bool setCurrent = false)
         {
-            var theme = themes.FirstOrDefault(x => x.themeName == themeName) ?? AddTheme(themeName, setCurrent);
+            var theme = themes.FirstOrDefault(x => x.themeName == themeName);
+            if (theme == null)
+            {
+                theme = AddTheme(themeName, setCurrent);
+                return theme;
+            }
             if (setCurrent)
                 CurrentThemeIndex = themes.IndexOf(theme);
             return theme;
