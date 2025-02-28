@@ -7,10 +7,10 @@ namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
     public partial class Theme
-    {        
+    {
         public List<ThemeData>     Themes              => themes;
         public IEnumerable<string> ThemeNames          => themes.Select(x => x.themeName);
-        public ThemeData           CurrentTheme        => themes.Count > 0 
+        public ThemeData           CurrentTheme        => themes.Count > 0
             ? ((currentThemeIndex >= 0 && currentThemeIndex < themes.Count)
                 ? themes[currentThemeIndex]
                 : null)
@@ -56,7 +56,7 @@ namespace Unity.Theme
 
             if (setCurrent)
                 CurrentThemeIndex = themes.Count - 1;
-                
+
             return theme;
         }
         public ThemeData SetOrAddTheme(string themeName, bool setCurrent = false)
@@ -66,7 +66,22 @@ namespace Unity.Theme
                 CurrentThemeIndex = themes.IndexOf(theme);
             return theme;
         }
-        public void RemoveTheme(ThemeData theme) => themes.Remove(theme);
+        public bool RemoveTheme(ThemeData theme)
+        {
+            var currentTheme = CurrentTheme;
+            var result = themes.Remove(theme);
+            if (result && currentTheme == theme)
+                NotifyThemeChanged(CurrentTheme);
+            return result;
+        }
+        public int RemoveTheme(string themeName)
+        {
+            var currentTheme = CurrentTheme;
+            var result = themes.RemoveAll(x => x.themeName == themeName);
+            if (result > 0 && currentTheme != CurrentTheme)
+                NotifyThemeChanged(CurrentTheme);
+            return result;
+        }
 
         public void RemoveAllThemes()
         {

@@ -1,33 +1,37 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Unity.Theme.Tests.Base
 {
     public static partial class TestUtils
     {
-        public const string Theme1Name = "Theme1";
-        public const string Theme2Name = "Theme2";
-        public const string Color1Name = "Color1";
-        public const string Color2Name = "Color2";
+        public const string Theme1Name = "__Theme1";
+        public const string Theme2Name = "__Theme2";
+        public const string Color1Name = "__Color1";
+        public const string Color2Name = "__Color2";
         public const string Color1Theme1Value = "#FF0000";
         public const string Color2Theme1Value = "#00FF00";
         public const string Color1Theme2Value = "#FFFF00";
         public const string Color2Theme2Value = "#00FFFF";
 
-        public static Theme BuildTestTheme()
+        public static void BuildTestTheme()
         {
-            var theme = new Theme();
+            Theme.Instance.SetOrAddTheme(Theme1Name, setCurrent: true);
+            Theme.Instance.SetOrAddColor(Color1Name, Color1Theme1Value);
+            Theme.Instance.SetOrAddColor(Color2Name, Color2Theme1Value);
 
-            theme.AddTheme(Theme1Name, setCurrent: true);
-            theme.AddColor(Color1Name, Color1Theme1Value);
-            theme.AddColor(Color2Name, Color2Theme1Value);
-
-            theme.AddTheme(Theme2Name, setCurrent: true);
-            theme.AddColor(Color1Name, Color1Theme2Value);
-            theme.AddColor(Color2Name, Color2Theme2Value);
-
-            return theme;
+            Theme.Instance.SetOrAddTheme(Theme2Name, setCurrent: true);
+            Theme.Instance.SetOrAddColor(Color1Name, Color1Theme2Value);
+            Theme.Instance.SetOrAddColor(Color2Name, Color2Theme2Value);
+        }
+        public static void DeleteTestTheme()
+        {
+            Theme.Instance.RemoveColorByName(Color1Name);
+            Theme.Instance.RemoveColorByName(Color2Name);
+            Theme.Instance.RemoveTheme(Theme1Name);
+            Theme.Instance.RemoveTheme(Theme2Name);
         }
 
         public static IEnumerator RunNoLogs(Func<IEnumerator> test)
