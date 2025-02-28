@@ -28,5 +28,26 @@ namespace Unity.Theme.Binders
             SetDirty();
             return true;
         }
+        /// <summary>
+        /// Set color with alpha override
+        /// </summary>
+        /// <param name="overrideAlpha">If true - override the original alpha color with new alpha value. If false - disable alpha override.</param>
+        /// <param name="alpha">alpha value in the range from 0.0 to 1.0</param>
+        /// <returns>Operation success</returns>
+        public bool SetAlpha(bool overrideAlpha, float alpha = 1.0f)
+        {
+            if (data.overrideAlpha == overrideAlpha && data.alpha == alpha)
+                return true; // skip if the same alpha
+
+            data.overrideAlpha = overrideAlpha;
+            data.alpha = alpha;
+
+            if (Theme.Instance?.debugLevel <= DebugLevel.Trace)
+                Debug.Log($"SetAlpha: '<b>{data.ColorName}</b>' {alpha} at <b>{GameObjectPath()}</b>", gameObject);
+
+            TrySetColor(Theme.Instance?.CurrentTheme);
+            SetDirty();
+            return true;
+        }
     }
 }
