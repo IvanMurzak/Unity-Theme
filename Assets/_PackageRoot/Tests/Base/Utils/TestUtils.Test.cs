@@ -12,6 +12,35 @@ namespace Unity.Theme.Tests.Base
     {
         const string TestThemeName = "TestTheme";
 
+        public static IEnumerator ColorBinder_SetColor_Image<T, B>(Func<T, Color> getter) where T : Component where B : GenericColorBinder<T>
+        {
+            var colorData = Theme.Instance.GetColorFirst();
+            var color = colorData.Color;
+            var colorBinder = CreateGenericColorBinder<T, B>(out var target);
+            yield return null;
+
+            SetColor(colorBinder, colorData);
+            Assert.AreEqual(color, getter(target));
+            yield return null;
+        }
+
+        public static IEnumerator ColorBinder_SetColor_OverrideAlpha<T, B>(Func<T, Color> getter, float alpha = 0.2f) where T : Component where B : GenericColorBinder<T>
+        {
+            var colorData = Theme.Instance.GetColorFirst();
+            var color = colorData.Color;
+            var colorBinder = CreateGenericColorBinder<T, B>(out var target);
+            yield return null;
+
+            SetColor(colorBinder, colorData);
+
+            colorBinder.SetAlpha(overrideAlpha: true, alpha);
+            Assert.AreEqual(color.SetA(alpha), getter(target));
+
+            colorBinder.SetAlpha(overrideAlpha: false);
+            Assert.AreEqual(color, getter(target));
+            yield return null;
+        }
+
         public static IEnumerator ColorBinder_SwitchColor<T, B>(Func<T, Color> getter) where T : Component where B : GenericColorBinder<T>
         {
             var colorData1 = Theme.Instance.GetColorByGuid(Theme.Instance.ColorGuids.Skip(0).First());
@@ -23,10 +52,10 @@ namespace Unity.Theme.Tests.Base
             var colorBinder = CreateGenericColorBinder<T, B>(out var target);
             yield return null;
 
-            TestUtils.SetColor(colorBinder, colorData1);
+            SetColor(colorBinder, colorData1);
             Assert.AreEqual(color1, getter(target));
 
-            TestUtils.SetColor(colorBinder, colorData2);
+            SetColor(colorBinder, colorData2);
             Assert.AreEqual(color2, getter(target));
             yield return null;
         }
