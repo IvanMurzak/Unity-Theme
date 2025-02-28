@@ -8,9 +8,9 @@ namespace Unity.Theme
 #pragma warning disable CA2235 // Mark all non-serializable fields
     public partial class Theme
     {
-        public List<ThemeData>     Themes              => themes;
-        public IEnumerable<string> ThemeNames          => themes.Select(x => x.themeName);
-        public ThemeData           CurrentTheme
+        public List<ThemeData> Themes => themes;
+        public IEnumerable<string> ThemeNames => themes.Select(x => x.themeName);
+        public ThemeData CurrentTheme
         {
             get
             {
@@ -25,7 +25,7 @@ namespace Unity.Theme
             }
         }
 
-        public int                 CurrentThemeIndex
+        public int CurrentThemeIndex
         {
             get => currentThemeIndex;
             set
@@ -42,7 +42,7 @@ namespace Unity.Theme
                     Debug.LogError($"Theme index {value} is out of range");
             }
         }
-        public string              CurrentThemeName
+        public string CurrentThemeName
         {
             get => CurrentTheme?.themeName;
             set => CurrentThemeIndex = themes.FindIndex(x => x.themeName == value);
