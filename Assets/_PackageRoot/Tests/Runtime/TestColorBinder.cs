@@ -1,5 +1,4 @@
 using System.Collections;
-using NUnit.Framework;
 using Unity.Theme.Tests.Base;
 using UnityEngine.TestTools;
 

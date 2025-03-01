@@ -6,6 +6,8 @@
 
 ![2022.3.57f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2022.3.57f1_player.yml?label=2022.3.57f1-Player) ![2023.1.20f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2023.1.20f1_player.yml?label=2023.1.20f1-Player) ![2023.2.20f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2023.2.20f1_player.yml?label=2023.2.20f1-Player) ![6000.0.37f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/6000.0.37f1_player.yml?label=6000.0.37f1-Player)
 
+![2022.3.57f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2022.3.57f1_build.yml?label=2022.3.57f1-Build) ![2023.1.20f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2023.1.20f1_build.yml?label=2023.1.20f1-Build) ![2023.2.20f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2023.2.20f1_build.yml?label=2023.2.20f1-Build) ![6000.0.37f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/6000.0.37f1_build.yml?label=6000.0.37f1-Build)
+
 Create palettes of colors and components to change specific colors on a specific visual element. Very useful for UI.
 
 ![Unity-Theme-1](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/1c545d11-aea4-4cd2-8aaa-75539bbb6699)
