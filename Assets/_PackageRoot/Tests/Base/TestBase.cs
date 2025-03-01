@@ -14,7 +14,7 @@ namespace Unity.Theme.Tests.Base
             startThemeName = Theme.Instance.CurrentThemeName;
             Theme.Instance.debugLevel = DebugLevel.Trace;
             TestUtils.BuildTestTheme();
-            Theme.Instance.CurrentThemeName = TestUtils.Theme1Name;
+            Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
             yield return null;
         }
         public virtual IEnumerator TearDown()

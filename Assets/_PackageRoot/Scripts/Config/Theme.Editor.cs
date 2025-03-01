@@ -30,12 +30,12 @@ namespace Unity.Theme
                 try { config = JsonUtility.FromJson<Theme>(json); }
                 catch (Exception e)
                 {
-                    Debug.LogError($"<color=red><b>{ResourcesFileName}</b> file is corrupted at <i>{AssetsFilePath}</i></color>");
+                    Debug.LogError($"[Theme] <color=red><b>{ResourcesFileName}</b> file is corrupted at <i>{AssetsFilePath}</i></color>");
                     Debug.LogException(e);
                 }
                 if (config == null)
                 {
-                    Debug.Log($"<color=orange><b>Creating {ResourcesFileName}</b> file at <i>{AssetsFilePath}</i></color>");
+                    Debug.Log($"[Theme] <color=orange><b>Creating {ResourcesFileName}</b> file at <i>{AssetsFilePath}</i></color>");
                     config = new Theme();
                     config.SetDefaultPalettes();
                 }
@@ -43,7 +43,7 @@ namespace Unity.Theme
             }
             catch (Exception e)
             {
-                Debug.LogError($"<color=red><b>{ResourcesFileName}</b> file can't be loaded from <i>{AssetsFilePath}</i></color>");
+                Debug.LogError($"[Theme] <color=red><b>{ResourcesFileName}</b> file can't be loaded from <i>{AssetsFilePath}</i></color>");
                 Debug.LogException(e);
             }
             return null;
@@ -139,7 +139,7 @@ namespace Unity.Theme
             }
             catch (Exception e)
             {
-                Debug.LogError($"<color=red><b>{ResourcesFileName}</b> file can't be saved at <i>{AssetsFilePath}</i></color>");
+                Debug.LogError($"[Theme] <color=red><b>{ResourcesFileName}</b> file can't be saved at <i>{AssetsFilePath}</i></color>");
                 Debug.LogException(e);
             }
 #else

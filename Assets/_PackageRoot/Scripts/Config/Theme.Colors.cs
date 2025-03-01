@@ -33,7 +33,7 @@ namespace Unity.Theme
             {
                 color = DefaultColor;
                 if (debugLevel.IsActive(DebugLevel.Error))
-                    Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
+                    Debug.LogError($"[Theme] Color HEX can't be parsed from '{colorHex}'");
             }
             return AddColor(colorName, color);
         }
@@ -64,7 +64,7 @@ namespace Unity.Theme
             {
                 color = DefaultColor;
                 if (debugLevel.IsActive(DebugLevel.Error))
-                    Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
+                    Debug.LogError($"[Theme] Color HEX can't be parsed from '{colorHex}'");
             }
             return SetColor(colorName, color);
         }
@@ -74,7 +74,7 @@ namespace Unity.Theme
             if (colorData == null)
             {
                 if (debugLevel.IsActive(DebugLevel.Error))
-                    Debug.LogError($"SetColor error. Color with name '{colorName}' not found");
+                    Debug.LogError($"[Theme] SetColor error. Color with name '{colorName}' not found");
                 return null;
             }
             colorData.Color = color;
@@ -86,7 +86,7 @@ namespace Unity.Theme
             {
                 color = DefaultColor;
                 if (debugLevel.IsActive(DebugLevel.Error))
-                    Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
+                    Debug.LogError($"[Theme] Color HEX can't be parsed from '{colorHex}'");
             }
             return SetOrAddColor(colorName, color);
         }
@@ -141,7 +141,7 @@ namespace Unity.Theme
             if (colorRef == null)
             {
                 if (debugLevel.IsActive(DebugLevel.Error))
-                    Debug.LogError($"Can't RemoveColorByName(`{name}`), because it doesn't exist");
+                    Debug.LogError($"[Theme] Can't RemoveColorByName(`{name}`), because it doesn't exist");
                 return false;
             }
             return RemoveColor(colorRef);

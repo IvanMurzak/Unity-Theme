@@ -5,31 +5,22 @@ namespace Unity.Theme.Tests.Base
 {
     public static partial class TestUtils
     {
-        public const string Theme1Name = "__Theme1";
-        public const string Theme2Name = "__Theme2";
-        public const string Color1Name = "__Color1";
-        public const string Color2Name = "__Color2";
-        public const string Color1Theme1Value = "#FF0000";
-        public const string Color2Theme1Value = "#00FF00";
-        public const string Color1Theme2Value = "#FFFF00";
-        public const string Color2Theme2Value = "#00FFFF";
-
         public static void BuildTestTheme()
         {
-            Theme.Instance.SetOrAddTheme(Theme1Name, setCurrent: true);
-            Theme.Instance.SetOrAddColor(Color1Name, Color1Theme1Value);
-            Theme.Instance.SetOrAddColor(Color2Name, Color2Theme1Value);
+            Theme.Instance.SetOrAddTheme(C_Theme1.Name, setCurrent: true);
+            Theme.Instance.SetOrAddColor(C_Color.Name1, C_Theme1.Color1.Value);
+            Theme.Instance.SetOrAddColor(C_Color.Name2, C_Theme1.Color2.Value);
 
-            Theme.Instance.SetOrAddTheme(Theme2Name, setCurrent: true);
-            Theme.Instance.SetOrAddColor(Color1Name, Color1Theme2Value);
-            Theme.Instance.SetOrAddColor(Color2Name, Color2Theme2Value);
+            Theme.Instance.SetOrAddTheme(C_Theme2.Name, setCurrent: true);
+            Theme.Instance.SetOrAddColor(C_Color.Name1, C_Theme2.Color1.Value);
+            Theme.Instance.SetOrAddColor(C_Color.Name2, C_Theme2.Color2.Value);
         }
         public static void DeleteTestTheme()
         {
-            Theme.Instance.RemoveTheme(Theme1Name);
-            Theme.Instance.RemoveTheme(Theme2Name);
-            Theme.Instance.RemoveColorByName(Color1Name);
-            Theme.Instance.RemoveColorByName(Color2Name);
+            Theme.Instance.RemoveTheme(C_Theme1.Name);
+            Theme.Instance.RemoveTheme(C_Theme2.Name);
+            Theme.Instance.RemoveColorByName(C_Color.Name1);
+            Theme.Instance.RemoveColorByName(C_Color.Name2);
         }
 
         public static IEnumerator RunNoLogs(Func<IEnumerator> test)
