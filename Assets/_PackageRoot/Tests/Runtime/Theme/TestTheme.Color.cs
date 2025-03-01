@@ -8,12 +8,11 @@ namespace Unity.Theme.Tests
 {
     public partial class TestTheme : TestBase
     {
-        const string ColorName_Undefined = "___Undefined___";
         [UnityTest] public IEnumerator SetColor_NoLogs() => TestUtils.RunNoLogs(SetColor);
         [UnityTest] public IEnumerator SetColor()
         {
-            LogAssert.Expect(LogType.Error, $"[Theme] SetColor error. Color with name '{ColorName_Undefined}' not found");
-            Theme.Instance.SetColor(ColorName_Undefined, Color.red);
+            LogAssert.Expect(LogType.Error, $"[Theme] SetColor error. Color with name '{TestUtils.C_Color.Name_Undefined}' not found");
+            Theme.Instance.SetColor(TestUtils.C_Color.Name_Undefined, Color.red);
             yield return null;
         }
     }
