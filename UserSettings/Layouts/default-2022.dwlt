@@ -43,7 +43,7 @@ MonoBehaviour:
     width: 2560
     height: 1349.3334
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Console
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 471}
   m_MaxSize: {x: 10000, y: 10000}
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -69,10 +69,11 @@ MonoBehaviour:
     height: 570.00006
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 19}
-  m_Selected: 0
+  - {fileID: 18}
+  m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -98,7 +99,8 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 51
+  controlID: 15
+  draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -122,6 +124,7 @@ MonoBehaviour:
   m_MaxSize: {x: 0, y: 0}
   vertical: 0
   controlID: 0
+  draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,7 +222,8 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 98
+  controlID: 103
+  draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -230,7 +234,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: TestRunnerWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -239,14 +243,13 @@ MonoBehaviour:
     y: 0
     width: 1320.6666
     height: 729.3333
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
-  - {fileID: 18}
   - {fileID: 15}
-  m_Selected: 1
+  m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -759,9 +762,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1152.091, y: 1127.262, z: -1.762332}
+    m_Target: {x: -2.1692586, y: 675.2924, z: -0.78483653}
     speed: 2
-    m_Value: {x: 1152.091, y: 1127.262, z: -1.762332}
+    m_Value: {x: -2.1692586, y: 675.2924, z: -0.78483653}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -811,9 +814,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1285.029
+    m_Target: 117.09702
     speed: 2
-    m_Value: 1285.029
+    m_Value: 117.09702
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -877,7 +880,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 86f7ffffc4f7ffff5ef8ffff2cfbffff
+      m_ExpandedIDs: 0afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -918,13 +921,14 @@ MonoBehaviour:
   m_TitleContent:
     m_Text: Test Runner
     m_Image: {fileID: 0}
-    m_Tooltip: 
+    m_Tooltip: Test framework for running Edit mode and Play mode tests in Unity.
+      Part of the com.unity.test-framework package.
   m_Pos:
     serializedVersion: 2
-    x: -2560
+    x: 0
     y: 72.66667
-    width: 1150.3334
-    height: 756.3333
+    width: 1319.6666
+    height: 708.3333
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -936,12 +940,12 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_Spl:
-    ID: 1209
+    ID: 180
     splitterInitialOffset: 513.6667
     currentActiveSplitter: -1
     realSizes:
-    - 484.66666
-    - 201.33334
+    - 450.66666
+    - 187.33334
     relativeSizes:
     - 0.7067307
     - 0.29326928
@@ -951,7 +955,7 @@ MonoBehaviour:
     maxSizes:
     - 0
     - 0
-    lastTotalSize: 686
+    lastTotalSize: 638
     splitSize: 6
     xOffset: 0
     m_Version: 1
@@ -959,9 +963,522 @@ MonoBehaviour:
     oldMinSizes: 
     oldMaxSizes: 
     oldSplitSize: 0
-  m_TestTypeToolbarIndex: 1
-  m_PlayModeTestListGUI:
-    m_Window: {fileID: 0}
+  m_TestTypeToolbarIndex: 0
+  m_TestListGUIs:
+  - m_Window: {fileID: 17}
+    runProgress:
+      RunGuid: 7fdc57a6-fa37-4d21-b958-c0e89ccb9bee
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 1
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 1
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[Unity-Theme][suite]'
+      name: Unity-Theme
+      fullName: Unity-Theme
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1015
+      uniqueId: '[Unity.Theme.Tests.Editor.dll][suite]'
+      name: Unity.Theme.Tests.Editor.dll
+      fullName: C:/Projects/Unity/Ivan Murzak Unity Modules/Unity-Theme/Library/ScriptAssemblies/Unity.Theme.Tests.Editor.dll
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[Unity-Theme][suite]'
+    - id: 1016
+      uniqueId: Unity.Theme.Tests.Editor.dll/[Unity][suite]
+      name: Unity
+      fullName: Unity
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1015
+      parentUniqueId: '[Unity.Theme.Tests.Editor.dll][suite]'
+    - id: 1017
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/[Theme][suite]
+      name: Theme
+      fullName: Unity.Theme
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1016
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/[Unity][suite]
+    - id: 1018
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/[Tests][suite]
+      name: Tests
+      fullName: Unity.Theme.Tests
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1017
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/[Theme][suite]
+    - id: 1019
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor][suite]
+      name: Editor
+      fullName: Unity.Theme.Tests.Editor
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1018
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/[Tests][suite]
+    - id: 1002
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+      name: TestColorBinder
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1019
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor][suite]
+    - id: 1005
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_Create_Image]
+      name: ColorBinder_Create_Image
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_Create_Image
+      resultStatus: 1
+      duration: 0.0224432
+      messages: 
+      output: 'SetColor: ''<b>Primary</b>'' #D0BCFFFF at <b><color=cyan>Prefabs</color>/New
+        Game Object</b>
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+    - id: 1004
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_Create_Image_NoLogs]
+      name: ColorBinder_Create_Image_NoLogs
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_Create_Image_NoLogs
+      resultStatus: 1
+      duration: 0.0023319
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+    - id: 1009
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_Create_SpriteRenderer]
+      name: ColorBinder_Create_SpriteRenderer
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_Create_SpriteRenderer
+      resultStatus: 1
+      duration: 0.0017564
+      messages: 
+      output: 'SetColor: ''<b>Primary</b>'' #D0BCFFFF at <b><color=cyan>Prefabs</color>/New
+        Game Object</b>
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+    - id: 1008
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_Create_SpriteRenderer_NoLogs]
+      name: ColorBinder_Create_SpriteRenderer_NoLogs
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_Create_SpriteRenderer_NoLogs
+      resultStatus: 1
+      duration: 0.0010469
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+    - id: 1007
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_Create_TextMeshProUGUI]
+      name: ColorBinder_Create_TextMeshProUGUI
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_Create_TextMeshProUGUI
+      resultStatus: 1
+      duration: 0.0239277
+      messages: 
+      output: 'SetColor: ''<b>Primary</b>'' #D0BCFFFF at <b><color=cyan>Prefabs</color>/New
+        Game Object</b>
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+    - id: 1006
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_Create_TextMeshProUGUI_NoLogs]
+      name: ColorBinder_Create_TextMeshProUGUI_NoLogs
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_Create_TextMeshProUGUI_NoLogs
+      resultStatus: 1
+      duration: 0.0016516
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+    - id: 1011
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_SetColor_Image]
+      name: ColorBinder_SetColor_Image
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_SetColor_Image
+      resultStatus: 1
+      duration: 0.0063243
+      messages: 
+      output: 'SetColor: ''<b>Primary</b>'' #D0BCFFFF at <b><color=cyan>Prefabs</color>/New
+        Game Object</b>
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+    - id: 1010
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_SetColor_Image_NoLogs]
+      name: ColorBinder_SetColor_Image_NoLogs
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_SetColor_Image_NoLogs
+      resultStatus: 1
+      duration: 0.0018331
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+    - id: 1015
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_SetColor_SpriteRenderer]
+      name: ColorBinder_SetColor_SpriteRenderer
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_SetColor_SpriteRenderer
+      resultStatus: 1
+      duration: 0.0019381
+      messages: 
+      output: 'SetColor: ''<b>Primary</b>'' #D0BCFFFF at <b><color=cyan>Prefabs</color>/New
+        Game Object</b>
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+    - id: 1014
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_SetColor_SpriteRenderer_NoLogs]
+      name: ColorBinder_SetColor_SpriteRenderer_NoLogs
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_SetColor_SpriteRenderer_NoLogs
+      resultStatus: 1
+      duration: 0.0017452
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+    - id: 1013
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_SetColor_TextMeshProUGUI]
+      name: ColorBinder_SetColor_TextMeshProUGUI
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_SetColor_TextMeshProUGUI
+      resultStatus: 1
+      duration: 0.0020388
+      messages: 
+      output: 'SetColor: ''<b>Primary</b>'' #D0BCFFFF at <b><color=cyan>Prefabs</color>/New
+        Game Object</b>
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+    - id: 1012
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_SetColor_TextMeshProUGUI_NoLogs]
+      name: ColorBinder_SetColor_TextMeshProUGUI_NoLogs
+      fullName: Unity.Theme.Tests.Editor.TestColorBinder.ColorBinder_SetColor_TextMeshProUGUI_NoLogs
+      resultStatus: 1
+      duration: 0.0017939
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1003
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/Editor/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.Editor.TestColorBinder][suite]
+    m_ResultText: Unity.Theme.Tests.Editor.dll (12 tests) (0.000s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 02d65cf6
+      m_LastClickedID: -161688062
+      m_ExpandedIDs: 02d65cf628bb5605ad73f92936d60333ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  - m_Window: {fileID: 17}
+    runProgress:
+      RunGuid: 7fdc57a6-fa37-4d21-b958-c0e89ccb9bee
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 1
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 1
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[Unity-Theme][suite]'
+      name: Unity-Theme
+      fullName: Unity-Theme
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: ad73f929ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  - m_Window: {fileID: 0}
+    runProgress:
+      RunGuid: 7fdc57a6-fa37-4d21-b958-c0e89ccb9bee
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 1
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 1
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
     m_NewResultList: []
     m_ResultText: 
     m_ResultStacktrace: 
@@ -992,81 +1509,9 @@ MonoBehaviour:
       FailedHidden: 0
       NotRunHidden: 0
       m_SearchString: 
-      selectedCategoryMask: 0
+      selectedCategories: []
       availableCategories: []
     m_SelectedOption: 0
-  m_EditModeTestListGUI:
-    m_Window: {fileID: 17}
-    m_NewResultList:
-    - id: 1000
-      uniqueId: '[Unity-Theme][suite]'
-      name: Unity-Theme
-      fullName: Unity-Theme
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 
-      parentUniqueId: 
-    m_ResultText: "Each_Is_Empty (0.122s)\n---\nSystem.Exception : Failed to IntantiateNetwork<CastawaysPlayer>\n---\nat
-      Castaways.TestNetworkInventoryBase.IntantiateNetwork[O,T] () [0x00090] in F:\\Projects\\Unity\\BranchGG\\Assets\\Code\\Tests\\Editor\\Network\\TestNetworkInventoryBase.cs:89
-      \r\n  at Castaways.TestNetworkInventoryBase.InstantiateNetworkInventory (CastawaysCommon.Item[]
-      items) [0x00028] in F:\\Projects\\Unity\\BranchGG\\Assets\\Code\\Tests\\Editor\\Network\\TestNetworkInventoryBase.cs:55
-      \r\n  at Castaways.TestNetworkInventory_GetItemAtSlot.Each_Is_Empty () [0x00001]
-      in F:\\Projects\\Unity\\BranchGG\\Assets\\Code\\Tests\\Editor\\Network\\TestNetworkInventory_GetItem.cs:18
-      \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
-      at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
-      invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
-      culture) [0x0006a] in <391154401d904e0ca279fe00c621b01b>:0\n---\nFailed to
-      IntantiateNetwork<CastawaysPlayer, NetworkInventory>\r\nZenjectException: Unable
-      to resolve 'NetworkChat' while building object with type 'CastawaysPlayer'.
-      Object graph:\nCastawaysPlayer"
-    m_ResultStacktrace: "  at Castaways.TestNetworkInventoryBase.IntantiateNetwork[O,T]
-      () [0x00090] in F:\\Projects\\Unity\\BranchGG\\Assets\\Code\\Tests\\Editor\\Network\\TestNetworkInventoryBase.cs:89
-      \r\n  at Castaways.TestNetworkInventoryBase.InstantiateNetworkInventory (CastawaysCommon.Item[]
-      items) [0x00028] in F:\\Projects\\Unity\\BranchGG\\Assets\\Code\\Tests\\Editor\\Network\\TestNetworkInventoryBase.cs:55
-      \r\n  at Castaways.TestNetworkInventory_GetItemAtSlot.Each_Is_Empty () [0x00001]
-      in F:\\Projects\\Unity\\BranchGG\\Assets\\Code\\Tests\\Editor\\Network\\TestNetworkInventory_GetItem.cs:18
-      \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
-      at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
-      invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
-      culture) [0x0006a] in <391154401d904e0ca279fe00c621b01b>:0 "
-    m_TestListState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 756586af
-      m_LastClickedID: -1350146699
-      m_ExpandedIDs: 3188c69c7378b4a171c71cb8a9f3cdbcea399cbe3e4291c4473f96cf0cb9b8d4e82815dcebb2b8de7933ecdedadb6be15cb353e4c1b879e5103303e8827c36eb8f70ac112c00aa176c6c0926ad73f929c6d8032a9c40483ec5e3ec5472deae5629c6dd5c50138c696f6ced7fffffff7f
-      m_RenameOverlay:
-        m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
-        m_EditFieldRect:
-          serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-        m_UserData: 0
-        m_IsWaitingForDelay: 0
-        m_IsRenaming: 0
-        m_OriginalEventType: 11
-        m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
-      m_SearchString: 
-    m_TestRunnerUIFilter:
-      PassedHidden: 0
-      FailedHidden: 0
-      NotRunHidden: 0
-      m_SearchString: 
-      selectedCategoryMask: 0
-      availableCategories:
-      - Uncategorized
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1088,9 +1533,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 72.66667
+    y: 802
     width: 1319.6666
-    height: 708.3333
+    height: 549.00006
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1141,7 +1586,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 3840, y: 2160}
+  m_TargetSize: {x: 1024, y: 768}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -1150,16 +1595,16 @@ MonoBehaviour:
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 0c000000000000000000000013000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 0c000000000000000000000011000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -1280
-    m_HBaseRangeMax: 1280
-    m_VBaseRangeMin: -720
-    m_VBaseRangeMax: 720
+    m_HBaseRangeMin: -341.33334
+    m_HBaseRangeMax: 341.33334
+    m_VBaseRangeMin: -256
+    m_VBaseRangeMax: 256
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1179,7 +1624,7 @@ MonoBehaviour:
       y: 21
       width: 1319.6666
       height: 528.00006
-    m_Scale: {x: 0.3666667, y: 0.3666667}
+    m_Scale: {x: 1, y: 1}
     m_Translation: {x: 659.8333, y: 264.00003}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -1187,12 +1632,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1799.5452
-      y: -720
-      width: 3599.0903
-      height: 1440
+      x: -659.8333
+      y: -264.00003
+      width: 1319.6666
+      height: 528.00006
     m_MinimalGUI: 1
-  m_defaultScale: 0.3666667
+  m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1979.5, y: 823.5001}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -1290,8 +1735,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/Samples/Sample2
+    m_Folders: []
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1300,14 +1744,14 @@ MonoBehaviour:
   m_StartGridSize: 16
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\Projects\Unity\Ivan Murzak Unity Modules\Unity-Theme
+  m_LastProjectPath: C:\Projects\Unity\Ivan Murzak Unity Modules\Unity-Theme
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 62800200
     m_LastClickedID: 163938
-    m_ExpandedIDs: 0000000000450000384d00003a4d00003c4d00003e4d0000404d0000424d0000444d0000464d0000484d00004a4d00004c4d00004e4d0000504d0000524d0000544d0000564d0000584d00005a4d00005c4d00005e4d0000604d0000624d0000644d0000664d0000684d00006a4d00006c4d00006e4d0000704d0000724d0000744d0000764d0000784d00007a4d00007c4d00007e4d0000804d0000824d0000844d0000864d0000884d00008a4d00008c4d00008e4d0000904d0000924d0000944d0000964d0000984d00009a4d00009c4d00009e4d0000
+    m_ExpandedIDs: 00000000c4480000c6480000c8480000ca480000cc480000ce480000d0480000d2480000d4480000d6480000d8480000da480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1332,10 +1776,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 15.666626}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff0000000000450000384d00003a4d00003c4d00003e4d0000404d0000424d0000444d0000464d0000484d00004a4d00004c4d00004e4d0000504d0000524d0000544d0000564d0000584d00005a4d00005c4d00005e4d0000604d0000624d0000644d0000664d0000684d00006a4d00006c4d00006e4d0000704d0000724d0000744d0000764d0000784d00007a4d00007c4d00007e4d0000804d0000824d0000844d0000864d0000884d00008a4d00008c4d00008e4d0000904d0000924d0000944d0000964d0000984d00009a4d00009c4d00009e4d0000
+    m_ExpandedIDs: ffffffff00000000c4480000c6480000c8480000ca480000cc480000ce480000d0480000d2480000d4480000d6480000d8480000da480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

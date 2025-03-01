@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.TestTools;
 using System.Collections;
 
-namespace Unity.Theme.Tests.Editor
+namespace Unity.Theme.Tests.Runtime
 {
     public partial class TestColorBinder : TestBase
     {
