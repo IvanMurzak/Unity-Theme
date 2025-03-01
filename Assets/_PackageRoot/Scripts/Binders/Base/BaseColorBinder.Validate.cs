@@ -16,72 +16,19 @@ namespace Unity.Theme.Binders
 
             if (string.IsNullOrEmpty(data.colorGuid))
             {
-                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"Color GUID is <b><color=red>null</color></b> at <b>{GameObjectPath()}</b>", gameObject);
+                if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
+                    Debug.LogError($"[Theme] Color GUID is <b><color=red>null</color></b> at <b>{GameObjectPath()}</b>", gameObject);
                 return;
             }
             if (!data.IsConnected)
             {
-                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"Color with GUID='{data.colorGuid}' not found in database at <b>{GameObjectPath()}</b>", gameObject);
+                if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
+                    Debug.LogError($"[Theme] Color with GUID='{data.colorGuid}' not found in database at <b>{GameObjectPath()}</b>", gameObject);
                 return;
             }
 #if UNITY_EDITOR
-            TrySetColor(Theme.Instance.CurrentTheme);
+            InvalidateColor(Theme.Instance.CurrentTheme);
 #endif
         }
-
-        // UTILS ---------------------------------------------------------------------------//
-        protected string GameObjectPath()                                                   //
-        {                                                                                   //
-            if (this.IsNull())                                                              //
-                return null;                                                                //
-                                                                                            //
-#pragma warning disable CS0168                                                              //
-            try { return GameObjectPath(transform).ToString(); }                            //
-            catch (MissingReferenceException e) { /* ignore */ }                            //
-#pragma warning restore CS0168                                                              //
-            return null;                                                                    //
-        }                                                                                   //
-        protected StringBuilder GameObjectPath(Transform trans, StringBuilder path = null)  //
-        {                                                                                   //
-            if (trans.IsNull())                                                             //
-                return null;                                                                //
-                                                                                            //
-            if (path == null)                                                               //
-                path = new StringBuilder();                                                 //
-                                                                                            //
-            if (path.Length == 0)                                                           //
-            {                                                                               //
-                path.Append(trans.name);                                                    //
-            }                                                                               //
-            else                                                                            //
-            {                                                                               //
-                // $"{trans.name}/{path}"                                                   //
-                path.Insert(0, "/");                                                        //
-                path.Insert(0, trans.name);                                                 //
-            }                                                                               //
-                                                                                            //
-            if (trans.parent.IsNull())                                                      //
-            {                                                                               //
-                var isPrefab = string.IsNullOrEmpty(trans.gameObject.scene.name);           //
-                if (isPrefab)                                                               //
-                {                                                                           //
-                    path.Insert(0, "<color=cyan>Prefabs</color>/");                         //
-                }                                                                           //
-                else                                                                        //
-                {                                                                           //
-                    path.Insert(0, "</color>/");                                            //
-                    path.Insert(0, trans.gameObject.scene.name);                            //
-                    path.Insert(0, "<color=cyan>");                                         //
-                }                                                                           //
-                return path;                                                                //
-            }                                                                               //
-            else                                                                            //
-            {                                                                               //
-                return GameObjectPath(trans.parent, path);                                  //
-            }                                                                               //
-        }                                                                                   //
-        // =================================================================================//
     }
 }

@@ -6,10 +6,12 @@ namespace Unity.Theme.Tests.Base
 {
     public static partial class TestUtils
     {
+        static uint gameObjectCounter = 0;
+
         public static B CreateColorBinder<T, B>(out T target, GameObject gameObject = null) where T : Component where B : GenericColorBinder<T>
         {
             if (gameObject == null)
-                gameObject = new GameObject();
+                gameObject = new GameObject($"_{gameObjectCounter++}");
 
             target = gameObject.AddComponent<T>();
             return gameObject.AddComponent<B>();
@@ -26,7 +28,29 @@ namespace Unity.Theme.Tests.Base
         public static void SetColor(BaseColorBinder colorBinder, ColorData colorData)
         {
             Assert.True(colorBinder.SetColor(colorData));
-            Assert.AreEqual(colorData.Color, colorBinder.GetColor().Value);
+
+            var targetColor = colorData.Color;
+            if (colorBinder.IsAlphaOverridden())
+                targetColor = targetColor.SetA(colorBinder.GetAlphaOverrideValue());
+            Assert.AreEqual(targetColor, colorBinder.GetColor().Value);
+        }
+        public static void SetColorByName(BaseColorBinder colorBinder, string name)
+        {
+            Assert.True(colorBinder.SetColorByName(name));
+
+            var targetColor = Theme.Instance.GetColorByName(name).Color;
+            if (colorBinder.IsAlphaOverridden())
+                targetColor = targetColor.SetA(colorBinder.GetAlphaOverrideValue());
+            Assert.AreEqual(targetColor, colorBinder.GetColor().Value);
+        }
+        public static void SetAlphaOverride(BaseColorBinder colorBinder, bool overrideAlpha, float alpha)
+        {
+            Assert.True(colorBinder.SetAlphaOverride(overrideAlpha, alpha));
+            Assert.AreEqual(overrideAlpha, colorBinder.IsAlphaOverridden());
+            var expected = overrideAlpha
+                ? colorBinder.GetAlphaOverrideValue()
+                : 1.0f;
+            Assert.AreEqual(expected, colorBinder.GetAlphaOverrideValue(), $"{colorBinder.GetType().Name} alpha override value, overrideAlpha={overrideAlpha}, alpha={alpha}");
         }
     }
 }

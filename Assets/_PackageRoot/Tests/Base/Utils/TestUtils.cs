@@ -26,10 +26,10 @@ namespace Unity.Theme.Tests.Base
         }
         public static void DeleteTestTheme()
         {
-            Theme.Instance.RemoveColorByName(Color1Name);
-            Theme.Instance.RemoveColorByName(Color2Name);
             Theme.Instance.RemoveTheme(Theme1Name);
             Theme.Instance.RemoveTheme(Theme2Name);
+            Theme.Instance.RemoveColorByName(Color1Name);
+            Theme.Instance.RemoveColorByName(Color2Name);
         }
 
         public static IEnumerator RunNoLogs(Func<IEnumerator> test)

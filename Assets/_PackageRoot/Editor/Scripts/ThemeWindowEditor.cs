@@ -36,7 +36,7 @@ namespace Unity.Theme.Editor
 
         private void SaveChanges(string message)
         {
-            if (Theme.Instance?.debugLevel <= DebugLevel.Log)
+            if (Theme.IsLogActive(DebugLevel.Log))
                 Debug.Log(message);
             saveChangesMessage = message;
             base.SaveChanges();

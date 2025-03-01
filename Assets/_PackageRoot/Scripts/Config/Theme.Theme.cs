@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Theme.Utils;
 using UnityEngine;
 
 namespace Unity.Theme
@@ -34,12 +35,24 @@ namespace Unity.Theme
                 {
                     if (currentThemeIndex != value)
                     {
+                        if (debugLevel.IsActive(DebugLevel.Trace))
+                        {
+                            if (currentThemeIndex >= 0 && currentThemeIndex < themes.Count)
+                                Debug.Log(Application.isEditor
+                                    ? $"[Theme] Theme changed '<b>{themes[currentThemeIndex].themeName}</b>' -> '<b>{themes[value].themeName}</b>'"
+                                    : $"[Theme] Theme changed '{themes[currentThemeIndex].themeName}' -> '{themes[value].themeName}'");
+                            else
+                                Debug.Log(Application.isEditor
+                                    ? $"[Theme] Theme changed -> '<b>{themes[value].themeName}</b>'"
+                                    : $"[Theme] Theme changed -> '{themes[value].themeName}'");
+                        }
+
                         currentThemeIndex = value;
                         NotifyThemeChanged(CurrentTheme);
                     }
                 }
-                else if (debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"Theme index {value} is out of range");
+                else if (debugLevel.IsActive(DebugLevel.Error))
+                    Debug.LogError($"[Theme] Theme index {value} is out of range");
             }
         }
         public string CurrentThemeName
@@ -104,17 +117,7 @@ namespace Unity.Theme
         }
 
         protected virtual void NotifyThemeChanged(ThemeData theme)
-        {
-            try
-            {
-                onThemeChanged?.Invoke(theme);
-            }
-            catch (Exception e)
-            {
-                if (debugLevel <= DebugLevel.Exception)
-                    Debug.LogException(e);
-            }
-        }
+            => Safe.Run(onThemeChanged, theme, logLevel: debugLevel);
     }
 #pragma warning restore CA2235 // Mark all non-serializable fields
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Theme.Utils;
 using UnityEngine;
 
 namespace Unity.Theme
@@ -31,7 +32,7 @@ namespace Unity.Theme
             if (!ColorUtility.TryParseHtmlString(colorHex, out var color))
             {
                 color = DefaultColor;
-                if (debugLevel <= DebugLevel.Error)
+                if (debugLevel.IsActive(DebugLevel.Error))
                     Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
             }
             return AddColor(colorName, color);
@@ -62,7 +63,7 @@ namespace Unity.Theme
             if (!ColorUtility.TryParseHtmlString(colorHex, out var color))
             {
                 color = DefaultColor;
-                if (debugLevel <= DebugLevel.Error)
+                if (debugLevel.IsActive(DebugLevel.Error))
                     Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
             }
             return SetColor(colorName, color);
@@ -72,7 +73,7 @@ namespace Unity.Theme
             var colorData = GetColorByName(colorName);
             if (colorData == null)
             {
-                if (debugLevel <= DebugLevel.Error)
+                if (debugLevel.IsActive(DebugLevel.Error))
                     Debug.LogError($"SetColor error. Color with name '{colorName}' not found");
                 return null;
             }
@@ -84,7 +85,7 @@ namespace Unity.Theme
             if (!ColorUtility.TryParseHtmlString(colorHex, out var color))
             {
                 color = DefaultColor;
-                if (debugLevel <= DebugLevel.Error)
+                if (debugLevel.IsActive(DebugLevel.Error))
                     Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
             }
             return SetOrAddColor(colorName, color);
@@ -139,7 +140,7 @@ namespace Unity.Theme
             var colorRef = colors.FirstOrDefault(x => x.name == name);
             if (colorRef == null)
             {
-                if (debugLevel <= DebugLevel.Error)
+                if (debugLevel.IsActive(DebugLevel.Error))
                     Debug.LogError($"Can't RemoveColorByName(`{name}`), because it doesn't exist");
                 return false;
             }
@@ -166,25 +167,14 @@ namespace Unity.Theme
         {
             foreach (var theme in themes)
             {
-                theme.colors.Sort((l, r) => ColorDataRef.Compare(
+                theme.colors.Sort((l, r) => ColorDataRef.CompareByName(
                     colors.FirstOrDefault(x => x.Guid == l.Guid),
                     colors.FirstOrDefault(x => x.Guid == r.Guid)));
             }
         }
 
         protected virtual void NotifyColorChanged(ColorData colorData, ThemeData theme = null)
-        {
-            theme ??= CurrentTheme;
-            try
-            {
-                onThemeColorChanged?.Invoke(CurrentTheme, colorData);
-            }
-            catch (Exception e)
-            {
-                if (debugLevel <= DebugLevel.Exception)
-                    Debug.LogException(e);
-            }
-        }
+            => Safe.Run(onThemeColorChanged, theme ??= CurrentTheme, colorData, logLevel: debugLevel);
     }
 #pragma warning restore CA2235 // Mark all non-serializable fields
 }

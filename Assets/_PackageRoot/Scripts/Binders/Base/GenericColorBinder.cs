@@ -16,7 +16,7 @@ namespace Unity.Theme.Binders
                     return; // skip if same value
 
                 target = value;
-                TrySetColor(Theme.Instance?.CurrentTheme);
+                InvalidateColor(Theme.Instance?.CurrentTheme);
             }
         }
 
@@ -32,14 +32,14 @@ namespace Unity.Theme.Binders
         {
             if (target.IsNull())
             {
-                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"{typeof(T).Name} not found at <b>{GameObjectPath()}</b>", gameObject);
+                if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
+                    Debug.LogError($"[Theme] {typeof(T).Name} not found at <b>{GameObjectPath()}</b>", gameObject);
                 return false;
             }
             return base.InternalSetColor(color);
         }
         protected override bool CanApplyColor() => target.IsNotNull();
-        protected override void SetColor(Color color) => SetColor(target, color);
+        protected override void SetColorInternal(Color color) => SetColor(target, color);
         public override Color? GetColor() => GetColor(target);
 
         protected abstract void SetColor(T target, Color color);

@@ -39,7 +39,7 @@ namespace Unity.Theme
         {
             if (!ColorUtility.TryParseHtmlString(hex, out var color))
             {
-                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
+                if (Theme.IsLogActive(DebugLevel.Error))
                     Debug.LogError($"Invalid hex color: {hex}");
             }
             return color;

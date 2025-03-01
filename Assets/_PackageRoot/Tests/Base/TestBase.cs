@@ -19,12 +19,19 @@ namespace Unity.Theme.Tests.Base
         }
         public virtual IEnumerator TearDown()
         {
-            yield return null;
-            TestUtils.DeleteTestTheme();
-            yield return null;
-            Theme.Instance.debugLevel = startDebugLevel;
+            CleanScene();
             Theme.Instance.CurrentThemeName = startThemeName;
+            TestUtils.DeleteTestTheme();
+            Theme.Instance.debugLevel = startDebugLevel;
             Debug.Log($"<b>Test End </b> --------------------------------------------");
+            yield return null;
+        }
+
+        public void CleanScene()
+        {
+            GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+            foreach (GameObject obj in allObjects)
+                GameObject.DestroyImmediate(obj);
         }
     }
 }

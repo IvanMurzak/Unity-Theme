@@ -9,13 +9,10 @@ namespace Unity.Theme
     [Serializable]
     public partial class Theme
     {
-        public static     Color    DefaultColor                => Color.white;
+        public static Color DefaultColor => Color.white;
 
-        public delegate   void     OnTheme                     (ThemeData theme);
-        public delegate   void     OnColor                     (ThemeData theme, ColorData color);
-
-        public            OnTheme  onThemeChanged;
-        public            OnColor  onThemeColorChanged;
+        public event Action<ThemeData> onThemeChanged;
+        public event Action<ThemeData, ColorData>  onThemeColorChanged;
 
         public void OnValidate()
         {

@@ -20,10 +20,10 @@ namespace Unity.Theme
             this.name = name;
         }
 
-        public static int Compare(ColorDataRef l, ColorDataRef r)
+        public static int CompareByName(ColorDataRef l, ColorDataRef r)
             => l.name.CompareTo(r.name);
 
-        public static int Compare(string colorNameL, string colorNameR)
+        public static int CompareByName(string colorNameL, string colorNameR)
             => colorNameL.CompareTo(colorNameR);
     }
 }
