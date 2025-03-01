@@ -11,6 +11,9 @@ namespace Unity.Theme.Binders
 
         protected virtual void Validate()
         {
+            if (this.IsNull())
+                return;
+
             if (string.IsNullOrEmpty(data.colorGuid))
             {
                 if (Theme.Instance?.debugLevel <= DebugLevel.Error)
