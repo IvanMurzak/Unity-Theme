@@ -32,5 +32,17 @@ namespace Unity.Theme
             color.a = a;
             return color;
         }
+        public static bool HexToColor(this string hex, out Color color)
+            => ColorUtility.TryParseHtmlString(hex, out color);
+
+        public static Color HexToColor(this string hex)
+        {
+            if (!ColorUtility.TryParseHtmlString(hex, out var color))
+            {
+                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
+                    Debug.LogError($"Invalid hex color: {hex}");
+            }
+            return color;
+        }
     }
 }
