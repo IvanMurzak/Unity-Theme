@@ -78,6 +78,7 @@ namespace Unity.Theme
                 return null;
             }
             colorData.Color = color;
+            NotifyColorChanged(colorData);
             return colorData;
         }
         public ColorData SetOrAddColor(string colorName, string colorHex)

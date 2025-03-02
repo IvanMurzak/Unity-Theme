@@ -9,11 +9,13 @@ namespace Unity.Theme.Tests.Base
             public static class Color1
             {
                 public const string Value = "#FF0000";
+                public const string ValueAlternative = "#AA0000";
             }
 
             public static class Color2
             {
                 public const string Value = "#00FF00";
+                public const string ValueAlternative = "#00AA00";
             }
         }
         public static class C_Theme2
@@ -23,11 +25,13 @@ namespace Unity.Theme.Tests.Base
             public static class Color1
             {
                 public const string Value = "#FFFF00";
+                public const string ValueAlternative = "#AAAA00";
             }
 
             public static class Color2
             {
                 public const string Value = "#00FFFF";
+                public const string ValueAlternative = "#00AA00";
             }
         }
         public static class C_Color

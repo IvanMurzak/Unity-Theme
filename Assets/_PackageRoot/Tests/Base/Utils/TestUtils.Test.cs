@@ -47,6 +47,35 @@ namespace Unity.Theme.Tests.Base
             SetColorByName(colorBinder, C_Color.Name2);
             Assert.AreEqual(C_Theme1.Color2.Value.HexToColor(), getter(target));
         }
+        public static IEnumerator ColorBinder_UpdateColor<T, B>(Func<T, Color> getter) where T : Component where B : GenericColorBinder<T>
+        {
+            var colorBinder = CreateGenericColorBinder<T, B>(out var target);
+            yield return null;
+
+            Theme.Instance.CurrentThemeName = C_Theme1.Name;
+
+            SetColorByName(colorBinder, C_Color.Name1);
+            Assert.AreEqual(C_Theme1.Color1.Value.HexToColor(), getter(target));
+
+            Theme.Instance.SetColor(C_Color.Name1, C_Theme1.Color1.ValueAlternative);
+            yield return null;
+            Assert.AreEqual(C_Theme1.Color1.ValueAlternative.HexToColor(), getter(target));
+
+            SetColorByName(colorBinder, C_Color.Name2);
+            Assert.AreEqual(C_Theme1.Color2.Value.HexToColor(), getter(target));
+
+            Theme.Instance.SetColor(C_Color.Name2, C_Theme1.Color2.ValueAlternative);
+            yield return null;
+            Assert.AreEqual(C_Theme1.Color2.ValueAlternative.HexToColor(), getter(target));
+
+            SetColorByName(colorBinder, C_Color.Name1);
+            Assert.AreEqual(C_Theme1.Color1.ValueAlternative.HexToColor(), getter(target));
+
+            Theme.Instance.SetColor(C_Color.Name1, C_Theme1.Color1.Value);
+            yield return null;
+            Assert.AreEqual(C_Theme1.Color1.Value.HexToColor(), getter(target));
+
+        }
         public static IEnumerator ColorBinder_SwitchTheme<T, B>(Func<T, Color> getter) where T : Component where B : GenericColorBinder<T>
         {
             var colorBinder = CreateGenericColorBinder<T, B>(out var target);
