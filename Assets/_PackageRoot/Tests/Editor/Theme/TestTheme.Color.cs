@@ -24,5 +24,23 @@ namespace Unity.Theme.Tests
             Assert.AreEqual(color, Theme.Instance.GetColorByName(TestUtils.C_Color.Name1).Color);
             yield return null;
         }
+        [UnityTest] public IEnumerator AddColor_NoLogs() => TestUtils.RunNoLogs(AddColor);
+        [UnityTest] public IEnumerator AddColor()
+        {
+            var color = Color.yellow;
+            Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
+            Theme.Instance.AddColor(TestUtils.C_Color.Name_NewColor, color);
+            Assert.AreEqual(color, Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor).Color);
+
+            Theme.Instance.RemoveColorByName(TestUtils.C_Color.Name_NewColor);
+            Assert.IsNull(Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor));
+
+            Theme.Instance.AddColor(TestUtils.C_Color.Name_NewColor, color.ToHexRGB());
+            Assert.AreEqual(color, Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor).Color);
+
+            Theme.Instance.RemoveColorByName(TestUtils.C_Color.Name_NewColor);
+            Assert.IsNull(Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor));
+            yield return null;
+        }
     }
 }

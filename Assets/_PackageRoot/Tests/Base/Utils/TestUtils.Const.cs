@@ -37,6 +37,7 @@ namespace Unity.Theme.Tests.Base
         public static class C_Color
         {
             public const string Name_Undefined = "___Undefined___";
+            public const string Name_NewColor = "__ColorNew__";
             public const string Name1 = "__Color1__";
             public const string Name2 = "__Color2__";
         }
