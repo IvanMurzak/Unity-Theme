@@ -108,9 +108,7 @@ namespace Unity.Theme
         {
             foreach (var theme in themes)
             {
-                var toRemove = theme.colors.FirstOrDefault(x => x.Guid == color.Guid);
-                if (toRemove != null)
-                    theme.colors.Remove(toRemove);
+                theme.colors.RemoveAll(x => x.Guid == color.Guid);
             }
             var refToRemove = colors.FirstOrDefault(x => x.Guid == color.Guid);
             if (refToRemove != null)
@@ -127,9 +125,7 @@ namespace Unity.Theme
             var color = CurrentTheme.colors.FirstOrDefault(x => x.Guid == colorRef.Guid);
             foreach (var theme in themes)
             {
-                var toRemove = theme.colors.FirstOrDefault(x => x.Guid == colorRef.Guid);
-                if (toRemove != null)
-                    theme.colors.Remove(toRemove);
+                theme.colors.RemoveAll(x => x.Guid == colorRef.Guid);
             }
             var result = colors.Remove(colorRef);
             if (result)
