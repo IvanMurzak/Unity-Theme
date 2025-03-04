@@ -29,17 +29,31 @@ namespace Unity.Theme.Tests
         {
             var color = Color.yellow;
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
-            Theme.Instance.AddColor(TestUtils.C_Color.Name_NewColor, color);
-            Assert.AreEqual(color, Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor).Color);
 
+            // Add default color
+            Theme.Instance.AddColor(TestUtils.C_Color.Name_NewColor);
+            Assert.AreEqual(Theme.DefaultColor, Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor).Color);
             Theme.Instance.RemoveColorByName(TestUtils.C_Color.Name_NewColor);
             Assert.IsNull(Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor));
 
+            // Add color by HEX - RGB
             Theme.Instance.AddColor(TestUtils.C_Color.Name_NewColor, color.ToHexRGB());
             Assert.AreEqual(color, Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor).Color);
-
             Theme.Instance.RemoveColorByName(TestUtils.C_Color.Name_NewColor);
             Assert.IsNull(Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor));
+
+            // Add color by HEX - RGBA
+            Theme.Instance.AddColor(TestUtils.C_Color.Name_NewColor, color.ToHexRGBA());
+            Assert.AreEqual(color, Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor).Color);
+            Theme.Instance.RemoveColorByName(TestUtils.C_Color.Name_NewColor);
+            Assert.IsNull(Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor));
+
+            // Add color by instance
+            Theme.Instance.AddColor(TestUtils.C_Color.Name_NewColor, color);
+            Assert.AreEqual(color, Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor).Color);
+            Theme.Instance.RemoveColorByName(TestUtils.C_Color.Name_NewColor);
+            Assert.IsNull(Theme.Instance.GetColorByName(TestUtils.C_Color.Name_NewColor));
+
             yield return null;
         }
     }

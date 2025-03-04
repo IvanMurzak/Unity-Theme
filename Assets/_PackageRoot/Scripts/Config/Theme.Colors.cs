@@ -143,14 +143,14 @@ namespace Unity.Theme
             }
             return RemoveColor(colorRef);
         }
-        public void UpdateColor(ThemeData theme, ColorData color)
+        public void UpdateColor(ThemeData theme, string guid, Color color)
         {
-            var index = theme.colors.FindIndex(x => x.Guid == color.Guid);
+            var index = theme.colors.FindIndex(x => x.Guid == guid);
             if (index >= 0)
             {
-                theme.colors[index] = color;
+                theme.colors[index].Color = color;
                 if (CurrentTheme == theme)
-                    NotifyColorChanged(color, theme);
+                    NotifyColorChanged(theme.colors[index], theme);
             }
         }
 

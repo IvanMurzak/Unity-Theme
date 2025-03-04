@@ -213,8 +213,7 @@ namespace Unity.Theme.Editor
 
             uiThemeColor.colorField.RegisterValueChangedCallback(evt =>
             {
-                themeColor.Color = evt.newValue;
-                config.UpdateColor(uiTheme.theme, themeColor);
+                config.UpdateColor(uiTheme.theme, themeColor.Guid, evt.newValue);
                 UIGenerateColorPreviews(uiTheme);
                 SaveChanges($"Theme color[{config.GetColorName(themeColor.Guid)}] changed: {evt.newValue}");
             });
