@@ -34,6 +34,22 @@ namespace Unity.Theme.Tests.Base
                 public const string ValueAlternative = "#00AA00";
             }
         }
+        public static class C_ThemeNew
+        {
+            public const string Name = "__ThemeNew__";
+
+            public static class Color1
+            {
+                public const string Value = "#FFFFAA";
+                public const string ValueAlternative = "#AAAA33";
+            }
+
+            public static class Color2
+            {
+                public const string Value = "#33FFFF";
+                public const string ValueAlternative = "#33AA33";
+            }
+        }
         public static class C_Color
         {
             public const string Name_Undefined = "___Undefined___";

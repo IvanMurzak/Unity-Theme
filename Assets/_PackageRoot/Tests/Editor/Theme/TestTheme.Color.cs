@@ -101,25 +101,25 @@ namespace Unity.Theme.Tests
             Assert.IsFalse(Theme.Instance.RemoveColorByName(TestUtils.C_Color.Name_Undefined));
 
             // Add default color
-            Theme.Instance.SetOrAddColor(TestUtils.C_Color.Name_Undefined);
+            Assert.NotNull(Theme.Instance.SetOrAddColor(TestUtils.C_Color.Name_Undefined));
             Assert.AreEqual(Theme.DefaultColor, Theme.Instance.GetColorByName(TestUtils.C_Color.Name_Undefined).Color);
             Assert.IsTrue(Theme.Instance.RemoveColorByName(TestUtils.C_Color.Name_Undefined));
             Assert.IsNull(Theme.Instance.GetColorByName(TestUtils.C_Color.Name_Undefined));
 
             // Add color by HEX - RGB
-            Theme.Instance.SetOrAddColor(TestUtils.C_Color.Name_Undefined, color.ToHexRGB());
+            Assert.NotNull(Theme.Instance.SetOrAddColor(TestUtils.C_Color.Name_Undefined, color.ToHexRGB()));
             Assert.AreEqual(color, Theme.Instance.GetColorByName(TestUtils.C_Color.Name_Undefined).Color);
             Assert.IsTrue(Theme.Instance.RemoveColorByName(TestUtils.C_Color.Name_Undefined));
             Assert.IsNull(Theme.Instance.GetColorByName(TestUtils.C_Color.Name_Undefined));
 
             // Add color by HEX - RGBA
-            Theme.Instance.SetOrAddColor(TestUtils.C_Color.Name_Undefined, color.ToHexRGBA());
+            Assert.NotNull(Theme.Instance.SetOrAddColor(TestUtils.C_Color.Name_Undefined, color.ToHexRGBA()));
             Assert.AreEqual(color, Theme.Instance.GetColorByName(TestUtils.C_Color.Name_Undefined).Color);
             Assert.IsTrue(Theme.Instance.RemoveColorByName(TestUtils.C_Color.Name_Undefined));
             Assert.IsNull(Theme.Instance.GetColorByName(TestUtils.C_Color.Name_Undefined));
 
             // Add color by instance
-            Theme.Instance.SetOrAddColor(TestUtils.C_Color.Name_Undefined, color);
+            Assert.NotNull(Theme.Instance.SetOrAddColor(TestUtils.C_Color.Name_Undefined, color));
             Assert.AreEqual(color, Theme.Instance.GetColorByName(TestUtils.C_Color.Name_Undefined).Color);
             Assert.IsTrue(Theme.Instance.RemoveColorByName(TestUtils.C_Color.Name_Undefined));
             Assert.IsNull(Theme.Instance.GetColorByName(TestUtils.C_Color.Name_Undefined));
