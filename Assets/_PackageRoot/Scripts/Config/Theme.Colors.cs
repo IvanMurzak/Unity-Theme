@@ -81,6 +81,7 @@ namespace Unity.Theme
             NotifyColorChanged(colorData);
             return colorData;
         }
+        public ColorData SetOrAddColor(string colorName) => SetOrAddColor(colorName, DefaultColor);
         public ColorData SetOrAddColor(string colorName, string colorHex)
         {
             if (!ColorUtility.TryParseHtmlString(colorHex, out var color))
@@ -137,8 +138,8 @@ namespace Unity.Theme
             var colorRef = colors.FirstOrDefault(x => x.name == name);
             if (colorRef == null)
             {
-                if (debugLevel.IsActive(DebugLevel.Error))
-                    Debug.LogError($"[Theme] Can't RemoveColorByName(`{name}`), because it doesn't exist");
+                if (debugLevel.IsActive(DebugLevel.Warning))
+                    Debug.LogWarning($"[Theme] Can't RemoveColorByName(`{name}`), because it doesn't exist");
                 return false;
             }
             return RemoveColor(colorRef);
