@@ -4,10 +4,34 @@ namespace Unity.Theme.Binders
 {
     public abstract partial class BaseColorBinder : MonoBehaviour
     {
+        /// <summary>
+        /// Set color by name from current theme
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public bool SetColorByName(string name) => SetColor(Theme.Instance?.GetColorByName(name));
+
+        /// <summary>
+        /// Set color by GUID from current theme
+        /// </summary>
+        /// <param name="colorGuid"></param>
+        /// <returns></returns>
         public bool SetColorByGuid(string colorGuid) => SetColor(Theme.Instance?.GetColorByGuid(colorGuid));
+
+        /// <summary>
+        /// Set color data reference
+        /// </summary>
+        /// <param name="colorData"></param>
+        /// <returns></returns>
         public bool SetColor(ColorDataRef colorData) => SetColorByGuid(colorData.Guid);
+
+        /// <summary>
+        /// Set color data
+        /// </summary>
+        /// <param name="colorData"></param>
+        /// <returns></returns>
         public bool SetColor(ColorData colorData) => SetColorInternal(colorData);
+
         /// <summary>
         /// Set color with alpha override
         /// </summary>
@@ -28,11 +52,13 @@ namespace Unity.Theme.Binders
             InvalidateColor(Theme.Instance?.CurrentTheme);
             return true;
         }
+
         /// <summary>
         /// Get alpha override status
         /// </summary>
         /// <returns>Returns true if alpha is overridden, otherwise - false</returns>
         public bool IsAlphaOverridden() => data.overrideAlpha;
+
         /// <summary>
         /// Get alpha override value
         /// </summary>

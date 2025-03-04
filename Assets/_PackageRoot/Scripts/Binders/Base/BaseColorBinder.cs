@@ -166,6 +166,11 @@ namespace Unity.Theme.Binders
             return true;
         }
         protected abstract void SetColorInternal(Color color);
+
+        /// <summary>
+        /// Get color from target
+        /// </summary>
+        /// <returns>Returns nullable color</returns>
         public abstract Color? GetColor();
 
         private void SetDirty(Object obj)

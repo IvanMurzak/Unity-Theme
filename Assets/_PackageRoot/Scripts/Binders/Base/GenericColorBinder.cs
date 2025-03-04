@@ -7,6 +7,9 @@ namespace Unity.Theme.Binders
     {
         [SerializeField] T target;
 
+        /// <summary>
+        /// Target component to apply color
+        /// </summary>
         public T Target
         {
             get => target;
@@ -20,6 +23,10 @@ namespace Unity.Theme.Binders
             }
         }
 
+        /// <summary>
+        /// List of targets components to apply color
+        /// It is used to mark as dirty when color is changed, needed for prefab and scene editing
+        /// </summary>
         protected override IEnumerable<Object> ColorTargets { get { yield return target; } }
 
         protected override void Awake()
@@ -40,6 +47,11 @@ namespace Unity.Theme.Binders
         }
         protected override bool CanApplyColor() => target.IsNotNull();
         protected override void SetColorInternal(Color color) => SetColor(target, color);
+
+        /// <summary>
+        /// Get color from target component
+        /// </summary>
+        /// <returns>Returns nullable Color</returns>
         public override Color? GetColor() => GetColor(target);
 
         protected abstract void SetColor(T target, Color color);
