@@ -2,6 +2,13 @@
 
 ![npm](https://img.shields.io/npm/v/extensions.unity.theme) [![openupm](https://img.shields.io/npm/v/extensions.unity.theme?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.theme/) ![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme) [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
+| Unity Version | Editor | Player | Build |
+|---------------|--------|--------|-------|
+| 2022.3.57f1   | ![2022.3.57f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2022.3.57f1_editor.yml?label=2022.3.57f1-Editor) | ![2022.3.57f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2022.3.57f1_player.yml?label=2022.3.57f1-Player) | ![2022.3.57f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2022.3.57f1_build.yml?label=2022.3.57f1-Build) |
+| 2023.1.20f1   | ![2023.1.20f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2023.1.20f1_editor.yml?label=2023.1.20f1-Editor) | ![2023.1.20f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2023.1.20f1_player.yml?label=2023.1.20f1-Player) | ![2023.1.20f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2023.1.20f1_build.yml?label=2023.1.20f1-Build) |
+| 2023.2.20f1   | ![2023.2.20f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2023.2.20f1_editor.yml?label=2023.2.20f1-Editor) | ![2023.2.20f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2023.2.20f1_player.yml?label=2023.2.20f1-Player) | ![2023.2.20f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/2023.2.20f1_build.yml?label=2023.2.20f1-Build) |
+| 6000.0.37f1   | ![6000.0.37f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/6000.0.37f1_editor.yml?label=6000.0.37f1-Editor) | ![6000.0.37f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/6000.0.37f1_player.yml?label=6000.0.37f1-Player) | ![6000.0.37f1](https://img.shields.io/github/actions/workflow/status/IvanMurzak/Unity-Theme/6000.0.37f1_build.yml?label=6000.0.37f1-Build) |
+
 Create palettes of colors and components to change specific colors on a specific visual element. Very useful for UI.
 
 ![Unity-Theme-1](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/1c545d11-aea4-4cd2-8aaa-75539bbb6699)
@@ -97,19 +104,13 @@ using TMPro;
 namespace Unity.Theme.Binders
 {
     [AddComponentMenu("Theme/TextMeshPro Color Binder")]
-    public class TextMeshProColorBinder : BaseColorBinder
+    public class TextMeshProColorBinder : GenericColorBinder<TextMeshProUGUI>
     {
-        [SerializeField] TextMeshProUGUI textMeshPro;
+        protected override void SetColor(TextMeshProUGUI target, Color color)
+            => target.color = color;
 
-        protected override void Awake()
-        {
-            if (textMeshPro == null) textMeshPro = GetComponent<TextMeshProUGUI>();
-            base.Awake();
-        }
-        protected override void SetColor(Color color)
-        {
-            textMeshPro.color = color;
-        }
+        protected override Color? GetColor(TextMeshProUGUI target)
+            => target.color;
     }
 }
 ```
@@ -136,7 +137,7 @@ The version 3.x.x has a different database structure, so you need to migrate you
 
 Take a look at the `guid: 6b934efb-0b9b-42fd-82fd-7a0dbd1de53c`, the file contains it 3 times, depends on your setup. You would need to copy the guid to the `Unity-Theme-Database.json` file.
 
-```
+```yaml
   colors:
   - guid: 6b934efb-0b9b-42fd-82fd-7a0dbd1de53c
     name: Primary

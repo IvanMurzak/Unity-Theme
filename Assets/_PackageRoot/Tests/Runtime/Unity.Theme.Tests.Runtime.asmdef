@@ -1,0 +1,19 @@
+{
+    "name": "Unity.Theme.Tests.Runtime",
+    "rootNamespace": "Unity.Theme.Tests.Runtime",
+    "references": [
+        "Unity.Theme.Tests.Base",
+        "Unity.TextMeshPro",
+        "Unity.Theme",
+        "UnityEngine.TestRunner"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

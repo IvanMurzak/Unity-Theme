@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -177,7 +176,7 @@ MonoBehaviour:
     colorGuid: 1c31e8b9-953e-4278-8afe-8308ab87227a
     overrideAlpha: 0
     alpha: 1
-  image: {fileID: 166118184}
+  target: {fileID: 166118184}
 --- !u!114 &166118184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3882353, g: 0.23137255, b: 0.28235295, a: 1}
+  m_Color: {r: 0.3882353, g: 0.21568628, b: 0.2509804, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -270,7 +269,7 @@ MonoBehaviour:
     colorGuid: 1c31e8b9-953e-4278-8afe-8308ab87227a
     overrideAlpha: 0
     alpha: 1
-  image: {fileID: 455028418}
+  target: {fileID: 455028418}
 --- !u!114 &455028418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3882353, g: 0.23137255, b: 0.28235295, a: 1}
+  m_Color: {r: 0.3882353, g: 0.21568628, b: 0.2509804, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -346,7 +345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -49.99994}
+  m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 150, y: -100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &514268101
@@ -429,7 +428,7 @@ MonoBehaviour:
     colorGuid: 5d255797-0487-457d-9309-dea410a1f02b
     overrideAlpha: 0
     alpha: 1
-  image: {fileID: 521320735}
+  target: {fileID: 521320735}
 --- !u!114 &521320735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +617,7 @@ MonoBehaviour:
     colorGuid: 5d255797-0487-457d-9309-dea410a1f02b
     overrideAlpha: 0
     alpha: 1
-  image: {fileID: 1112631966}
+  target: {fileID: 1112631966}
 --- !u!114 &1112631966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,7 +689,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.45, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.5, y: -35.00006}
+  m_AnchoredPosition: {x: -12.5, y: -35}
   m_SizeDelta: {x: -75, y: -230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1204950108
@@ -747,7 +746,7 @@ MonoBehaviour:
     colorGuid: 0774ae24-94db-4d65-b751-3f0c755ce1bc
     overrideAlpha: 0
     alpha: 1
-  image: {fileID: 1204950111}
+  target: {fileID: 1204950111}
 --- !u!114 &1204950111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -841,7 +840,7 @@ MonoBehaviour:
     colorGuid: 1c31e8b9-953e-4278-8afe-8308ab87227a
     overrideAlpha: 0
     alpha: 1
-  image: {fileID: 1229332221}
+  target: {fileID: 1229332221}
 --- !u!114 &1229332221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,7 +854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3882353, g: 0.23137255, b: 0.28235295, a: 1}
+  m_Color: {r: 0.3882353, g: 0.21568628, b: 0.2509804, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -934,7 +933,7 @@ MonoBehaviour:
     colorGuid: 0774ae24-94db-4d65-b751-3f0c755ce1bc
     overrideAlpha: 0
     alpha: 1
-  image: {fileID: 1233163870}
+  target: {fileID: 1233163870}
 --- !u!114 &1233163870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1007,7 +1006,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.45, y: 1}
-  m_AnchoredPosition: {x: 112.49988, y: -35.00006}
+  m_AnchoredPosition: {x: 112.49988, y: -35}
   m_SizeDelta: {x: -275, y: -230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1452508896
@@ -1064,7 +1063,7 @@ MonoBehaviour:
     colorGuid: 0774ae24-94db-4d65-b751-3f0c755ce1bc
     overrideAlpha: 0
     alpha: 1
-  image: {fileID: 1452508899}
+  target: {fileID: 1452508899}
 --- !u!114 &1452508899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1157,7 +1156,7 @@ MonoBehaviour:
     colorGuid: 6b072958-1f3d-42d4-9ca9-705f108286b7
     overrideAlpha: 0
     alpha: 1
-  image: {fileID: 1607249511}
+  target: {fileID: 1607249511}
 --- !u!114 &1607249511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,7 +1446,7 @@ MonoBehaviour:
     colorGuid: c17be719-c931-47e7-8478-115cd5ccfd24
     overrideAlpha: 0
     alpha: 1
-  image: {fileID: 1717525514}
+  target: {fileID: 1717525514}
 --- !u!114 &1717525514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1461,7 +1460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9372549, g: 0.72156864, b: 0.78431374, a: 1}
+  m_Color: {r: 0.9372549, g: 0.7372549, b: 0.81960785, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -1540,7 +1539,7 @@ MonoBehaviour:
     colorGuid: 0774ae24-94db-4d65-b751-3f0c755ce1bc
     overrideAlpha: 0
     alpha: 1
-  image: {fileID: 1731738397}
+  target: {fileID: 1731738397}
 --- !u!114 &1731738397
 MonoBehaviour:
   m_ObjectHideFlags: 0

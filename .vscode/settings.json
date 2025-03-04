@@ -62,6 +62,8 @@
     "cSpell.words": [
         "imgui",
         "jsonserialize",
+        "Mathf",
+        "UGUI",
         "uielements"
     ]
 }

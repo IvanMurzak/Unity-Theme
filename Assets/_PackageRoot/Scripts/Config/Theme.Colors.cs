@@ -1,19 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Theme.Utils;
 using UnityEngine;
 
 namespace Unity.Theme
 {
 #pragma warning disable CA2235 // Mark all non-serializable fields
     public partial class Theme
-    {        
+    {
         public IEnumerable<string> ColorNames => colors?.Select(x => x.name);
         public IEnumerable<string> ColorGuids => colors?.Select(x => x.Guid);
-        
+
         public ColorDataRef GetColorRef(ColorData colorData)            => GetColorRef(colorData.Guid);
         public ColorDataRef GetColorRef(string guid)                    => string.IsNullOrEmpty(guid) ? null : colors.FirstOrDefault(x => x.Guid == guid);
-        
+
         public string    GetColorGuidByIndex(int index)                 => colors?[index]?.Guid;
         public int       GetColorIndexByGuid(string guid)               => colors?.FindIndex(x => x.Guid == guid) ?? -1;
         public string    GetColorName  (string guid)                    => GetColorRef(guid)?.name;
@@ -31,8 +32,8 @@ namespace Unity.Theme
             if (!ColorUtility.TryParseHtmlString(colorHex, out var color))
             {
                 color = DefaultColor;
-                if (debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
+                if (debugLevel.IsActive(DebugLevel.Error))
+                    Debug.LogError($"[Theme] Color HEX can't be parsed from '{colorHex}'");
             }
             return AddColor(colorName, color);
         }
@@ -62,8 +63,8 @@ namespace Unity.Theme
             if (!ColorUtility.TryParseHtmlString(colorHex, out var color))
             {
                 color = DefaultColor;
-                if (debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
+                if (debugLevel.IsActive(DebugLevel.Error))
+                    Debug.LogError($"[Theme] Color HEX can't be parsed from '{colorHex}'");
             }
             return SetColor(colorName, color);
         }
@@ -72,20 +73,22 @@ namespace Unity.Theme
             var colorData = GetColorByName(colorName);
             if (colorData == null)
             {
-                if (debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"SetColor error. Color with name '{colorName}' not found");
+                if (debugLevel.IsActive(DebugLevel.Error))
+                    Debug.LogError($"[Theme] SetColor error. Color with name '{colorName}' not found");
                 return null;
             }
             colorData.Color = color;
+            NotifyColorChanged(colorData);
             return colorData;
         }
+        public ColorData SetOrAddColor(string colorName) => SetOrAddColor(colorName, DefaultColor);
         public ColorData SetOrAddColor(string colorName, string colorHex)
         {
             if (!ColorUtility.TryParseHtmlString(colorHex, out var color))
             {
                 color = DefaultColor;
-                if (debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"Color HEX can't be parsed from '{colorHex}'");
+                if (debugLevel.IsActive(DebugLevel.Error))
+                    Debug.LogError($"[Theme] Color HEX can't be parsed from '{colorHex}'");
             }
             return SetOrAddColor(colorName, color);
         }
@@ -106,9 +109,7 @@ namespace Unity.Theme
         {
             foreach (var theme in themes)
             {
-                var toRemove = theme.colors.FirstOrDefault(x => x.Guid == color.Guid);
-                if (toRemove != null)
-                    theme.colors.Remove(toRemove);
+                theme.colors.RemoveAll(x => x.Guid == color.Guid);
             }
             var refToRemove = colors.FirstOrDefault(x => x.Guid == color.Guid);
             if (refToRemove != null)
@@ -125,9 +126,7 @@ namespace Unity.Theme
             var color = CurrentTheme.colors.FirstOrDefault(x => x.Guid == colorRef.Guid);
             foreach (var theme in themes)
             {
-                var toRemove = theme.colors.FirstOrDefault(x => x.Guid == colorRef.Guid);
-                if (toRemove != null)
-                    theme.colors.Remove(toRemove);
+                theme.colors.RemoveAll(x => x.Guid == colorRef.Guid);
             }
             var result = colors.Remove(colorRef);
             if (result)
@@ -139,20 +138,20 @@ namespace Unity.Theme
             var colorRef = colors.FirstOrDefault(x => x.name == name);
             if (colorRef == null)
             {
-                if (debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"Can't RemoveColorByName(`{name}`), because it doesn't exist");
+                if (debugLevel.IsActive(DebugLevel.Warning))
+                    Debug.LogWarning($"[Theme] Can't RemoveColorByName(`{name}`), because it doesn't exist");
                 return false;
             }
             return RemoveColor(colorRef);
         }
-        public void UpdateColor(ThemeData theme, ColorData color)
+        public void UpdateColor(ThemeData theme, string guid, Color color)
         {
-            var index = theme.colors.FindIndex(x => x.Guid == color.Guid);
+            var index = theme.colors.FindIndex(x => x.Guid == guid);
             if (index >= 0)
             {
-                theme.colors[index] = color;
+                theme.colors[index].Color = color;
                 if (CurrentTheme == theme)
-                    NotifyColorChanged(color, theme);
+                    NotifyColorChanged(theme.colors[index], theme);
             }
         }
 
@@ -166,25 +165,14 @@ namespace Unity.Theme
         {
             foreach (var theme in themes)
             {
-                theme.colors.Sort((l, r) => ColorDataRef.Compare(
+                theme.colors.Sort((l, r) => ColorDataRef.CompareByName(
                     colors.FirstOrDefault(x => x.Guid == l.Guid),
                     colors.FirstOrDefault(x => x.Guid == r.Guid)));
             }
         }
 
         protected virtual void NotifyColorChanged(ColorData colorData, ThemeData theme = null)
-        {
-            theme ??= CurrentTheme;
-            try
-            {
-                onThemeColorChanged?.Invoke(CurrentTheme, colorData);
-            }
-            catch (Exception e)
-            {
-                if (debugLevel <= DebugLevel.Exception)
-                    Debug.LogException(e);
-            }
-        }
+            => Safe.Run(onThemeColorChanged, theme ??= CurrentTheme, colorData, logLevel: debugLevel);
     }
 #pragma warning restore CA2235 // Mark all non-serializable fields
 }

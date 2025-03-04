@@ -26,6 +26,7 @@ namespace Unity.Theme.Editor
             window.Focus();
             return window;
         }
+        public static void ShowWindowVoid() => ShowWindow();
 
         public void Invalidate() => CreateGUI();
         void OnValidate()
@@ -35,7 +36,7 @@ namespace Unity.Theme.Editor
 
         private void SaveChanges(string message)
         {
-            if (Theme.Instance?.debugLevel <= DebugLevel.Log)
+            if (Theme.IsLogActive(DebugLevel.Log))
                 Debug.Log(message);
             saveChangesMessage = message;
             base.SaveChanges();
@@ -63,7 +64,7 @@ namespace Unity.Theme.Editor
             root.Add(panel);
 
             uiThemeColors.Clear();
-            
+
             // Settings
             // -----------------------------------------------------------------
 
@@ -72,14 +73,14 @@ namespace Unity.Theme.Editor
 
             UpdateDropdownCurrentTheme(config);
 
-            dropdownCurrentTheme.RegisterValueChangedCallback(evt => 
+            dropdownCurrentTheme.RegisterValueChangedCallback(evt =>
             {
                 config.CurrentThemeName = evt.newValue;
                 SaveChanges($"Theme Changed: {evt.newValue}");
             });
-            
+
             enumDebugLevel.value = config.debugLevel;
-            enumDebugLevel.RegisterValueChangedCallback(evt => 
+            enumDebugLevel.RegisterValueChangedCallback(evt =>
             {
                 config.debugLevel = (DebugLevel)evt.newValue;
                 SaveChanges($"Debug status changed: {evt.newValue}");
@@ -104,7 +105,7 @@ namespace Unity.Theme.Editor
                 var themeName = inputFieldNewThemeName.value;
                 inputFieldNewThemeName.value = "New Theme";
                 var theme = config.AddTheme(themeName);
-                
+
                 UpdateDropdownCurrentTheme(config);
 
                 UIAddTheme(config, rootThemes, theme);
@@ -149,7 +150,7 @@ namespace Unity.Theme.Editor
                 config.SortColorsByName();
                 SaveChanges($"Sorted colors");
             };
-            
+
             uiTheme.contContent.style.display = new StyleEnum<DisplayStyle>(theme.expanded ? DisplayStyle.Flex : DisplayStyle.None);
             uiTheme.toggleFoldout.value = theme.expanded;
             uiTheme.toggleFoldout.RegisterValueChangedCallback(evt =>
@@ -212,8 +213,7 @@ namespace Unity.Theme.Editor
 
             uiThemeColor.colorField.RegisterValueChangedCallback(evt =>
             {
-                themeColor.Color = evt.newValue;
-                config.UpdateColor(uiTheme.theme, themeColor);
+                config.UpdateColor(uiTheme.theme, themeColor.Guid, evt.newValue);
                 UIGenerateColorPreviews(uiTheme);
                 SaveChanges($"Theme color[{config.GetColorName(themeColor.Guid)}] changed: {evt.newValue}");
             });

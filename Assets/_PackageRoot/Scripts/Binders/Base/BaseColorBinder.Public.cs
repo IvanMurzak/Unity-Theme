@@ -4,29 +4,65 @@ namespace Unity.Theme.Binders
 {
     public abstract partial class BaseColorBinder : MonoBehaviour
     {
+        /// <summary>
+        /// Set color by name from current theme
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public bool SetColorByName(string name) => SetColor(Theme.Instance?.GetColorByName(name));
+
+        /// <summary>
+        /// Set color by GUID from current theme
+        /// </summary>
+        /// <param name="colorGuid"></param>
+        /// <returns></returns>
         public bool SetColorByGuid(string colorGuid) => SetColor(Theme.Instance?.GetColorByGuid(colorGuid));
+
+        /// <summary>
+        /// Set color data reference
+        /// </summary>
+        /// <param name="colorData"></param>
+        /// <returns></returns>
         public bool SetColor(ColorDataRef colorData) => SetColorByGuid(colorData.Guid);
-        public bool SetColor(ColorData colorData)
+
+        /// <summary>
+        /// Set color data
+        /// </summary>
+        /// <param name="colorData"></param>
+        /// <returns></returns>
+        public bool SetColor(ColorData colorData) => SetColorInternal(colorData);
+
+        /// <summary>
+        /// Set color with alpha override
+        /// </summary>
+        /// <param name="overrideAlpha">If true - override the original alpha color with new alpha value. If false - disable alpha override.</param>
+        /// <param name="alpha">alpha value in the range from 0.0 to 1.0</param>
+        /// <returns>Operation success</returns>
+        public bool SetAlphaOverride(bool overrideAlpha, float alpha = 1.0f)
         {
-            if (colorData == null)
-            {
-                if (Theme.Instance?.debugLevel <= DebugLevel.Error)
-                    Debug.LogError($"Color is null. Can't set it as a color for the binder", gameObject);
-                return false;
-            }
-            if (data.colorGuid == colorData.Guid)
-                return true; // skip if the same color
+            if (data.overrideAlpha == overrideAlpha && data.alpha == alpha)
+                return true; // skip if the same alpha
 
-            data.colorGuid = colorData.Guid;
-            var color = GetTargetColor(colorData);
+            data.overrideAlpha = overrideAlpha;
+            data.alpha = alpha;
 
-            if (Theme.Instance?.debugLevel <= DebugLevel.Log)
-                Debug.Log($"SetColor: '<b>{data.ColorName}</b>' {color.ToHexRGBA()} at <b>{GameObjectPath()}</b>", gameObject);
+            if (Theme.IsLogActive(DebugLevel.Trace) && this.IsNotNull())
+                Debug.Log($"[Theme] SetAlpha: '<b>{data.ColorName}</b>' {alpha} at <b>{GameObjectPath()}</b>", gameObject);
 
-            SetColor(color);
-            SetDirty();
+            InvalidateColor(Theme.Instance?.CurrentTheme);
             return true;
         }
+
+        /// <summary>
+        /// Get alpha override status
+        /// </summary>
+        /// <returns>Returns true if alpha is overridden, otherwise - false</returns>
+        public bool IsAlphaOverridden() => data.overrideAlpha;
+
+        /// <summary>
+        /// Get alpha override value
+        /// </summary>
+        /// <returns>Alpha value [0.0 - 1.0]. Returns 1.0 if 'overrideAlpha' is false</returns>
+        public float GetAlphaOverrideValue() => data.overrideAlpha ? data.alpha : 1.0f;
     }
 }
