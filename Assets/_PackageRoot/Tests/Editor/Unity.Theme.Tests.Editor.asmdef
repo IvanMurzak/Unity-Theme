@@ -1,6 +1,6 @@
 {
     "name": "Unity.Theme.Tests.Editor",
-    "rootNamespace": "Unity.Theme.Tests.Editor",
+    "rootNamespace": "Unity.Theme.Tests",
     "references": [
         "Unity.Theme.Tests.Base",
         "Unity.TextMeshPro",
