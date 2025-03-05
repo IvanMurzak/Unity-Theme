@@ -121,17 +121,30 @@ namespace Unity.Theme.Binders
 
 ---
 
-## Migration from 2.x.x version
+## Migration from `2.x.x` version
 
-> ❗❗❗**WARNING**
-> Before you start the migration, please close Unity project to avoid any data loss.
-> When you finished, you need to delete the `Assets/Resources/Unity-Theme Database.asset` file.
+The version `3.x.x` or newer has a different database structure, so you need to migrate your data manually if you want to keep existed binders to still be connected to a right color. The binders are using GUIDs to connect to colors.
 
-The version 3.x.x has a different database structure, so you need to migrate your data manually if you want to keep existed binders to still be connected to a right color. The binders are using GUIDs to connect to colors.
+> ❗❗❗**Please follow the exact steps order**
 
-### To do
+### Step 1
 
-**You need to copy GUIDs** from `Assets/Resources/Unity-Theme Database.asset`  to `Assets/Resources/Unity-Theme-Database.json`. To do that, please take a look at the samples below. You may see what is data format of old and new databases, and how to copy GUIDs.
+Close Unity project to avoid any data loss.
+
+### Step 2 - backup
+
+- Make a backup copy of `Assets/Resources/Unity-Theme Database.asset`, put it outside of a project.
+- Make a screenshot of colors in each theme to reproduce them later with color picker.
+
+### Step 3 - database template
+
+- Download [Unity-Theme-Database.json](https://raw.githubusercontent.com/IvanMurzak/Unity-Theme/refs/heads/main/Assets/Resources/Unity-Theme-Database.json).
+- Save it at `Assets/Resources/Unity-Theme-Database.json`.
+- Use it as a template. Feel free to delete all existed colors if you want.
+
+### Step 4 - data migration
+
+**You need to copy GUIDs** from `Assets/Resources/Unity-Theme Database.asset`  to `Assets/Resources/Unity-Theme-Database.json`. To do that, please take a look at the samples below. You may see what is data format of old and new databases, and how to copy GUIDs. You may ignore color for now, it is easier to change color values later using color picker tool and the screenshot of old color palette.
 
 #### Sample of `Assets/Resources/Unity-Theme Database.asset` - old file (source)
 
@@ -185,7 +198,7 @@ When you done, you may need to close & open Unity project to let Unity-Theme to 
   "themes": [
     {
       "guid": "4cfe4185-bc3e-4247-969f-1da1d3f2bdec",
-      "expanded": false,
+      "expanded": true,
       "themeName": "Light",
       "colors": [
         { "guid": "6b934efb-0b9b-42fd-82fd-7a0dbd1de53c", "colorHex": "#6750A4FF" },
@@ -206,3 +219,22 @@ When you done, you may need to close & open Unity project to let Unity-Theme to 
   ]
 }
 ```
+
+### Step 5 - package update
+
+- Delete Unity-Theme `2.x.x` from the project while Unity is closed
+
+```bash
+openupm remove extensions.unity.theme
+```
+
+- Install latest Unity-Theme
+
+```bash
+openupm add extensions.unity.theme
+```
+
+### Step 6 - cleaning up
+
+- Delete the `Assets/Resources/Unity-Theme Database.asset` file (original and copy).
+- ✅ migration completed, well done!
