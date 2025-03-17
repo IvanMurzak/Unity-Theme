@@ -26,6 +26,8 @@ namespace Unity.Theme
         public ColorData GetColorFirst()                                => GetColorFirst(CurrentTheme);
         public ColorData GetColorFirst(ThemeData theme)                 => theme?.colors?.FirstOrDefault();
 
+        public IReadOnlyList<ColorDataRef> GetColors()                  => colors;
+
         public ColorDataRef AddColor(string colorName) => AddColor(colorName, DefaultColor);
         public ColorDataRef AddColor(string colorName, string colorHex)
         {

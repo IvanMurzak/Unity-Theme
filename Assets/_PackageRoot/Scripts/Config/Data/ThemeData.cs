@@ -8,13 +8,13 @@ namespace Unity.Theme
     [Serializable]
     public class ThemeData
     {
-        [SerializeField, HideInInspector] 
+        [SerializeField, HideInInspector]
         private string guid;
 
         public bool expanded = true;
         public string themeName = "New Theme";
         public List<ColorData> colors = new List<ColorData>();
-        
+
         public ThemeData() { }
         public ThemeData(string guid) : this()
         {
@@ -22,5 +22,6 @@ namespace Unity.Theme
         }
         public string Guid => guid;
         public ColorData GetColorByGuid(string guid) => string.IsNullOrEmpty(guid) ? null : colors?.FirstOrDefault(x => x.Guid == guid);
+        public ColorData GetColorByRef(ColorDataRef colorRef) => GetColorByGuid(colorRef.Guid);
     }
 }

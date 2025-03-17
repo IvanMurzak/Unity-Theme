@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
+using System;
 
 namespace Unity.Theme.Editor
 {
@@ -15,8 +16,9 @@ namespace Unity.Theme.Editor
         [SerializeField] VisualTreeAsset templateTheme;
         [SerializeField] VisualTreeAsset templateThemeColor;
 
-        private Dictionary<string, UITheme> uiThemeColors = new Dictionary<string, UITheme>();
-        private DropdownField dropdownCurrentTheme;
+        Dictionary<string, UITheme> uiThemeColors = new Dictionary<string, UITheme>();
+        Dictionary<VisualElement, UIThemeColor> uiThemeColorsSet = new Dictionary<VisualElement, UIThemeColor>();
+        DropdownField dropdownCurrentTheme;
 
         [MenuItem("Window/Unity-Theme")]
         public static ThemeWindowEditor ShowWindow()
@@ -127,7 +129,7 @@ namespace Unity.Theme.Editor
                 btnDelete       = themePanel.Query<Button>("btnRemove").First(),
                 toggleFoldout   = themePanel.Query<Toggle>("toggleFoldout").First(),
                 textFieldName   = themePanel.Query<TextField>("textFieldName").First(),
-                contColors      = themePanel.Query<VisualElement>("contColors").First(),
+                contColors      = themePanel.Query<ListView>("contColors").First(),
                 contPreview     = themePanel.Query<VisualElement>("contPreview").First(),
                 contContent     = themePanel.Query<VisualElement>("contContent").First(),
                 theme           = theme,
@@ -136,12 +138,18 @@ namespace Unity.Theme.Editor
 
             themePanel.Query<Button>("btnAddColor").First().clicked += () =>
             {
+                if (config.debugLevel.IsActive(DebugLevel.Trace))
+                    Debug.Log($"[Theme] Adding new Color");
+
                 var colorName = "New";
                 var themeColorRef = config.AddColor(colorName);
                 var themeColor = new ColorData(themeColorRef);
 
                 foreach (var uiTheme in uiThemeColors.Values)
-                    UIAddThemeColor(config, uiTheme, new ColorData(themeColor));
+                {
+                    theme.colors.Add(new ColorData(themeColor));
+                    uiTheme.contColors.Rebuild();
+                }
 
                 SaveChanges($"Color added: {colorName}");
             };
@@ -152,6 +160,91 @@ namespace Unity.Theme.Editor
             };
 
             uiTheme.contContent.style.display = new StyleEnum<DisplayStyle>(theme.expanded ? DisplayStyle.Flex : DisplayStyle.None);
+            uiTheme.contColors.itemsSource = config.GetColors() as List<ColorDataRef>;
+            uiTheme.contColors.selectionType = SelectionType.None;
+            uiTheme.contColors.showFoldoutHeader = false;
+            uiTheme.contColors.reorderable = true;
+            uiTheme.contColors.reorderMode = ListViewReorderMode.Animated;
+
+            uiTheme.contColors.itemIndexChanged += (oldIndex, newIndex) =>
+            {
+                if (config.debugLevel.IsActive(DebugLevel.Trace))
+                    Debug.Log($"[Theme] Color moved: {oldIndex} -> {newIndex}");
+
+                // Update order in other themes
+                uiThemeColors
+                    .Where(pair => pair.Key != theme.Guid)
+                    .Select(pair => pair.Value)
+                    .ToList()
+                    .ForEach(otherTheme =>
+                    {
+                        otherTheme.contColors.Rebuild();
+                        UIGenerateColorPreviews(config, otherTheme);
+                    });
+
+                UIGenerateColorPreviews(config, uiTheme);
+
+                SaveChanges($"Color moved: {oldIndex} -> {newIndex}");
+            };
+
+            uiTheme.contColors.makeItem = templateThemeColor.Instantiate;
+            uiTheme.contColors.bindItem = (ui, i) =>
+            {
+                var uiThemeColor = new UIThemeColor(config, theme, ui, i);
+                uiThemeColorsSet[ui] = uiThemeColor;
+
+                uiThemeColor.onNameChanged += (newName) =>
+                {
+                    var colorRef = config.GetColors()[i];
+                    var themeColor = theme.GetColorByRef(colorRef);
+
+                    colorRef.name = newName;
+                    foreach (var uiTheme in uiThemeColors.Values)
+                    {
+                        if (uiTheme.colors.ContainsKey(themeColor.Guid))
+                            uiTheme.colors[themeColor.Guid].txtName.value = newName;
+                    }
+                    SaveChanges($"Theme color[{colorRef.name}] changed: {newName}");
+                };
+
+                uiThemeColor.onColorChanged += (newColor) =>
+                {
+                    var colorRef = config.GetColors()[i];
+
+                    config.UpdateColor(uiTheme.theme, colorRef.Guid, newColor);
+                    UIGenerateColorPreviews(config, uiTheme);
+                    SaveChanges($"Theme color[{config.GetColorName(colorRef.Guid)}] changed: {newColor}");
+                };
+
+                uiThemeColor.onDeleteRequest += () =>
+                {
+                    var colorRef = config.GetColors()[i];
+                    var themeColor = theme.GetColorByRef(colorRef);
+
+                    var colorName = config.GetColorName(colorRef.Guid);
+                    uiTheme.theme.colors.Remove(themeColor);
+                    // uiTheme.contColors.itemsSource.Remove(themeColorPanel);
+                    // foreach (var uiTheme in uiThemeColors.Values)
+                    // {
+                    //     if (uiTheme.colors.ContainsKey(themeColor.Guid))
+                    //     {
+                    //         uiTheme.colors[themeColor.Guid].root.RemoveFromHierarchy();
+                    //         uiTheme.colors.Remove(themeColor.Guid);
+                    //     }
+                    // }
+                    config.RemoveColor(colorRef);
+                    UIGenerateColorPreviews(config, uiTheme);
+                    SaveChanges($"Theme color[{colorName}] deleted");
+                };
+            };
+            uiTheme.contColors.unbindItem = (ui, i) =>
+            {
+                uiThemeColorsSet.GetValueOrDefault(ui)?.Dispose();
+                uiThemeColorsSet.Remove(ui);
+            };
+
+
+            uiTheme.contColors.virtualizationMethod = CollectionVirtualizationMethod.DynamicHeight;
             uiTheme.toggleFoldout.value = theme.expanded;
             uiTheme.toggleFoldout.RegisterValueChangedCallback(evt =>
             {
@@ -175,73 +268,33 @@ namespace Unity.Theme.Editor
                 SaveChanges($"Theme deleted: {theme.themeName}");
             };
 
-            UIGenerateColorPreviews(uiTheme);
+            UIGenerateColorPreviews(config, uiTheme);
 
-            foreach (var themeColor in theme.colors)
-                UIAddThemeColor(config, uiTheme, themeColor);
+            uiTheme.contColors.Rebuild();
         }
-        void UIAddThemeColor(Theme config, UITheme uiTheme, ColorData themeColor)
-        {
-            var themeColorPanel = templateThemeColor.Instantiate();
-            uiTheme.contColors.Add(themeColorPanel);
+        // UIThemeColor UIAddThemeColor(Theme config, ThemeData theme, UITheme uiTheme, int orderIndex)
+        // {
+        //     //var themeColorPanel = templateThemeColor.Instantiate();
+        //     //((List<VisualElement>)uiTheme.contColors.itemsSource).Add(themeColorPanel);
 
-            var uiThemeColor = new UIThemeColor
-            {
-                root        = themeColorPanel,
-                btnDelete   = themeColorPanel.Query<Button>("btnDelete").First(),
-                txtName     = themeColorPanel.Query<TextField>("txtName").First(),
-                colorField  = themeColorPanel.Query<ColorField>("color").First()
-            };
-            uiTheme.colors[themeColor.Guid] = uiThemeColor;
+        //     uiTheme.contColors.Cr
 
-            uiThemeColor.txtName.value = config.GetColorName(themeColor.Guid);
-            uiThemeColor.colorField.value = themeColor.Color;
 
-            uiThemeColor.txtName.RegisterValueChangedCallback(evt =>
-            {
-                var colorName = config.GetColorName(themeColor.Guid);
-                var colorRef = config.GetColorRef(themeColor.Guid);
+        //     var themeColor = theme.colors[orderIndex];
+        //     var uiThemeColor = new UIThemeColor(themeColorPanel);
+        //     uiTheme.colors[themeColor.Guid] = uiThemeColor;
 
-                colorRef.name = evt.newValue;
-                foreach (var uiTheme in uiThemeColors.Values)
-                {
-                    if (uiTheme.colors.ContainsKey(themeColor.Guid))
-                        uiTheme.colors[themeColor.Guid].txtName.value = evt.newValue;
-                }
-                SaveChanges($"Theme color[{colorRef.name}] changed: {evt.newValue}");
-            });
+        //     UIColorBind(config, theme, uiTheme, uiThemeColor, orderIndex);
+        //     return uiThemeColor;
+        // }
 
-            uiThemeColor.colorField.RegisterValueChangedCallback(evt =>
-            {
-                config.UpdateColor(uiTheme.theme, themeColor.Guid, evt.newValue);
-                UIGenerateColorPreviews(uiTheme);
-                SaveChanges($"Theme color[{config.GetColorName(themeColor.Guid)}] changed: {evt.newValue}");
-            });
-
-            uiThemeColor.btnDelete.clicked += () =>
-            {
-                var colorName = config.GetColorName(themeColor.Guid);
-                uiTheme.theme.colors.Remove(themeColor);
-                uiTheme.contColors.Remove(themeColorPanel);
-                foreach (var uiTheme in uiThemeColors.Values)
-                {
-                    if (uiTheme.colors.ContainsKey(themeColor.Guid))
-                    {
-                        uiTheme.colors[themeColor.Guid].root.RemoveFromHierarchy();
-                        uiTheme.colors.Remove(themeColor.Guid);
-                    }
-                }
-                config.RemoveColor(themeColor);
-                UIGenerateColorPreviews(uiTheme);
-                SaveChanges($"Theme color[{colorName}] deleted");
-            };
-        }
-        void UIGenerateColorPreviews(UITheme uiTheme)
+        void UIGenerateColorPreviews(Theme config, UITheme uiTheme)
         {
             uiTheme.contPreview.Clear();
             var colorFillTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath(colorFillTemplateGuid));
-            foreach (var themeColor in uiTheme.theme.colors)
+            foreach (var colorRef in config.GetColors())
             {
+                var themeColor = uiTheme.theme.GetColorByRef(colorRef);
                 var colorFill = colorFillTemplate.Instantiate();
                 colorFill.Query<VisualElement>("colorFill").Last().style.unityBackgroundImageTintColor = new StyleColor(themeColor.Color);
                 uiTheme.contPreview.Add(colorFill);
@@ -254,18 +307,65 @@ namespace Unity.Theme.Editor
             public TextField textFieldName;
             public Button btnDelete;
             public Toggle toggleFoldout;
-            public VisualElement contColors;
+            public ListView contColors;
             public VisualElement contPreview;
             public VisualElement contContent;
             public ThemeData theme;
             public Dictionary<string, UIThemeColor> colors;
         }
-        struct UIThemeColor
+        class UIThemeColor : IDisposable
         {
             public VisualElement root;
             public ColorField colorField;
             public TextField txtName;
             public Button btnDelete;
+
+            public event Action<string> onNameChanged;
+            public event Action<Color> onColorChanged;
+            public event Action onDeleteRequest;
+
+            readonly Theme config;
+            readonly ThemeData theme;
+            readonly int colorIndex;
+
+            public UIThemeColor(Theme config, ThemeData theme, VisualElement root, int colorIndex)
+            {
+                this.root   = root;
+                btnDelete   = root.Query<Button>("btnDelete").First();
+                txtName     = root.Query<TextField>("txtName").First();
+                colorField  = root.Query<ColorField>("color").First();
+
+                this.config     = config;
+                this.theme      = theme;
+                this.colorIndex = colorIndex;
+
+                UIColorBind();
+            }
+
+            void UIColorBind()
+            {
+                var colorRef = config.GetColors()[colorIndex];
+                var themeColor = theme.GetColorByRef(colorRef);
+
+                txtName.value = config.GetColorName(colorRef.Guid);
+                colorField.value = themeColor.Color;
+
+                txtName.RegisterValueChangedCallback(evt => onNameChanged?.Invoke(evt.newValue));
+                colorField.RegisterValueChangedCallback(evt => onColorChanged?.Invoke(evt.newValue));
+                btnDelete.clicked += () => onDeleteRequest?.Invoke();
+            }
+
+            public void Dispose()
+            {
+                root = null;
+                colorField = null;
+                txtName = null;
+                btnDelete = null;
+
+                onNameChanged = null;
+                onColorChanged = null;
+                onDeleteRequest = null;
+            }
         }
     }
 }

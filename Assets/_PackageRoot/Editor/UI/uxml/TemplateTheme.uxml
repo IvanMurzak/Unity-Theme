@@ -6,8 +6,8 @@
         <ui:Button text="REMOVE" display-tooltip-when-elided="true" name="btnRemove" class="Button-Alert" />
     </ui:VisualElement>
     <ui:VisualElement name="contPreview" class="ContentItem" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: stretch; margin-top: 3px; margin-left: 25px; justify-content: space-around; align-items: auto;" />
-    <ui:VisualElement name="contContent" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); margin-left: 21px;">
-        <ui:VisualElement name="contColors" class="ContentItem" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); margin-top: 4px;" />
+    <ui:VisualElement name="contContent" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0);">
+        <ui:ListView name="contColors" class="ContentItem" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); margin-top: 4px;" />
         <ui:VisualElement class="ContentItem" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-self: flex-end;">
             <ui:Button text="SORT" display-tooltip-when-elided="true" name="btnSortColors" class="Button-Accept" style="display: none;" />
             <ui:Button text="ADD COLOR" display-tooltip-when-elided="true" name="btnAddColor" class="Button-Accept" />
