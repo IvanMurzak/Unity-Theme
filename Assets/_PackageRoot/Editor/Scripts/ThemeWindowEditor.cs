@@ -281,7 +281,7 @@ namespace Unity.Theme.Editor
             {
                 uiTheme.contContent.style.display = new StyleEnum<DisplayStyle>(evt.newValue ? DisplayStyle.Flex : DisplayStyle.None);
                 theme.expanded = evt.newValue;
-                // SaveChanges($"Theme foldout changed: {evt.newValue}");
+                // SaveChanges($"[Theme] Theme foldout changed: {evt.newValue}");
             });
 
             uiTheme.textFieldName.value = theme.themeName;
