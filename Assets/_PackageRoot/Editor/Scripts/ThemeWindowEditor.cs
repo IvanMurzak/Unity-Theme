@@ -352,14 +352,17 @@ namespace Unity.Theme.Editor
 
                 txtName.RegisterValueChangedCallback(evt => onNameChanged?.Invoke(evt.newValue));
                 colorField.RegisterValueChangedCallback(evt => onColorChanged?.Invoke(evt.newValue));
-                btnDelete.clicked += () => onDeleteRequest?.Invoke();
+                btnDelete.clicked += OnClickColorDelete;
             }
+            void OnClickColorDelete() => onDeleteRequest?.Invoke();
 
             public void Dispose()
             {
                 root = null;
                 colorField = null;
                 txtName = null;
+                if (btnDelete != null)
+                    btnDelete.clicked -= OnClickColorDelete;
                 btnDelete = null;
 
                 onNameChanged = null;
