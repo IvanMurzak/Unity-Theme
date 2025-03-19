@@ -16,8 +16,8 @@ namespace Unity.Theme.Editor
         [SerializeField] VisualTreeAsset templateTheme;
         [SerializeField] VisualTreeAsset templateThemeColor;
 
-        Dictionary<string, UITheme> uiThemeColors = new Dictionary<string, UITheme>();
-        Dictionary<VisualElement, UIThemeColor> uiThemeColorsSet = new Dictionary<VisualElement, UIThemeColor>();
+        Dictionary<string, UITheme> uiThemes = new Dictionary<string, UITheme>();
+        Dictionary<VisualElement, UIThemeColor> uiThemeColors = new Dictionary<VisualElement, UIThemeColor>();
         DropdownField dropdownCurrentTheme;
 
         [MenuItem("Window/Unity-Theme")]
@@ -65,6 +65,7 @@ namespace Unity.Theme.Editor
             rootVisualElement.Add(root);
             root.Add(panel);
 
+            uiThemes.Clear();
             uiThemeColors.Clear();
 
             // Settings
@@ -123,7 +124,7 @@ namespace Unity.Theme.Editor
             var themePanel = templateTheme.Instantiate();
             rootThemes.Add(themePanel);
 
-            var uiTheme = uiThemeColors[theme.Guid] = new UITheme()
+            var uiTheme = uiThemes[theme.Guid] = new UITheme()
             {
                 root            = themePanel,
                 btnDelete       = themePanel.Query<Button>("btnRemove").First(),
@@ -145,7 +146,7 @@ namespace Unity.Theme.Editor
                 var themeColorRef = config.AddColor(colorName);
                 var themeColor = new ColorData(themeColorRef);
 
-                foreach (var uiTheme in uiThemeColors.Values)
+                foreach (var uiTheme in uiThemes.Values)
                 {
                     theme.colors.Add(new ColorData(themeColor));
                     uiTheme.listColors.Rebuild();
@@ -173,7 +174,7 @@ namespace Unity.Theme.Editor
                     Debug.Log($"[Theme] Color moved: {oldIndex} -> {newIndex}");
 
                 // Update order in other themes
-                uiThemeColors
+                uiThemes
                     .Where(pair => pair.Key != theme.Guid)
                     .Select(pair => pair.Value)
                     .ToList()
@@ -194,7 +195,7 @@ namespace Unity.Theme.Editor
                 var uiThemeColor = new UIThemeColor(config, theme, ui, i);
 
                 uiTheme.colors[uiThemeColor.ColorGuid] = uiThemeColor;
-                uiThemeColorsSet[ui] = uiThemeColor;
+                uiThemeColors[ui] = uiThemeColor;
 
                 uiThemeColor.onNameChanged += (newName) =>
                 {
@@ -208,7 +209,7 @@ namespace Unity.Theme.Editor
                     var themeColor = theme.GetColorByRef(colorRef);
 
                     colorRef.name = newName;
-                    foreach (var uiTheme in uiThemeColors.Values)
+                    foreach (var uiTheme in uiThemes.Values)
                     {
                         if (uiTheme.colors.TryGetValue(themeColor.Guid, out var uiThemeColor))
                             uiThemeColor.txtName.value = newName;
@@ -240,27 +241,27 @@ namespace Unity.Theme.Editor
                             Debug.LogError($"[Theme] ColorRef is null");
                         return;
                     }
-                    var themeColor = theme.GetColorByRef(colorRef);
-                    var colorName = config.GetColorName(colorRef.Guid);
-
-                    uiTheme.theme.colors.Remove(themeColor);
-
                     config.RemoveColor(colorRef);
-                    UIGenerateColorPreviews(config, uiTheme);
-                    SaveChanges($"Theme color[{colorName}] deleted");
+
+                    foreach (var uiTheme in uiThemes.Values)
+                    {
+                        uiTheme.listColors.Rebuild();
+                        UIGenerateColorPreviews(config, uiTheme);
+                    }
+
+                    SaveChanges($"Theme color[{colorRef.name}] deleted");
                 };
             };
             uiTheme.listColors.unbindItem = (ui, i) =>
             {
-                var uiThemeColor = uiThemeColorsSet.GetValueOrDefault(ui);
+                var uiThemeColor = uiThemeColors.GetValueOrDefault(ui);
                 if (uiThemeColor == null)
                     return;
 
                 uiTheme.colors.Remove(uiThemeColor.ColorGuid);
                 uiThemeColor.Dispose();
-                uiThemeColorsSet.Remove(ui);
+                uiThemeColors.Remove(ui);
             };
-
 
             uiTheme.listColors.virtualizationMethod = CollectionVirtualizationMethod.DynamicHeight;
             uiTheme.toggleFoldout.value = theme.expanded;
@@ -281,7 +282,7 @@ namespace Unity.Theme.Editor
             {
                 config.RemoveTheme(theme);
                 rootThemes.Remove(themePanel);
-                uiThemeColors.Remove(theme.Guid);
+                uiThemes.Remove(theme.Guid);
                 UpdateDropdownCurrentTheme(config);
                 SaveChanges($"Theme deleted: {theme.themeName}");
             };
@@ -304,7 +305,7 @@ namespace Unity.Theme.Editor
             }
         }
 
-        class UITheme
+        class UITheme : IDisposable
         {
             public VisualElement root;
             public TextField textFieldName;
@@ -315,6 +316,12 @@ namespace Unity.Theme.Editor
             public VisualElement contContent;
             public ThemeData theme;
             public Dictionary<string, UIThemeColor> colors;
+
+            public void Dispose()
+            {
+                colors?.Clear();
+                colors = null;
+            }
         }
         class UIThemeColor : IDisposable
         {
@@ -331,7 +338,7 @@ namespace Unity.Theme.Editor
             readonly ThemeData theme;
             readonly int colorIndex;
 
-            public string ColorGuid => config.GetColorByIndex(colorIndex)?.Guid;
+            public string ColorGuid { get; private set; }
 
             public UIThemeColor(Theme config, ThemeData theme, VisualElement root, int colorIndex)
             {
@@ -343,6 +350,8 @@ namespace Unity.Theme.Editor
                 this.config     = config;
                 this.theme      = theme;
                 this.colorIndex = colorIndex;
+
+                ColorGuid = config.GetColorByIndex(colorIndex).Guid;
 
                 UIColorBind();
             }
@@ -356,9 +365,10 @@ namespace Unity.Theme.Editor
                         Debug.LogError($"[Theme] ColorRef is null");
                     return;
                 }
-                var themeColor = theme.GetColorByRef(colorRef);
-
+                ColorGuid = colorRef.Guid;
                 txtName.value = config.GetColorName(colorRef.Guid);
+
+                var themeColor = theme.GetColorByRef(colorRef);
                 colorField.value = themeColor.Color;
 
                 txtName.RegisterValueChangedCallback(evt => onNameChanged?.Invoke(evt.newValue));
