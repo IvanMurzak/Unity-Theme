@@ -37,10 +37,7 @@ namespace Unity.Theme.Editor
         public static void ShowWindowVoid() => ShowWindow();
 
         public void Invalidate() => CreateGUI();
-        void OnValidate()
-        {
-            Theme.Instance.OnValidate();
-        }
+        void OnValidate() => Theme.Instance.OnValidate();
 
         private void SaveChanges(string message)
         {
