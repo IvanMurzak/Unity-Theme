@@ -27,6 +27,28 @@ namespace Unity.Theme
         public ColorData GetColorFirst(ThemeData theme)                 => theme?.colors?.FirstOrDefault();
 
         public IReadOnlyList<ColorDataRef> GetColors()                  => colors;
+        public ColorDataRef GetColorByIndex(int index)
+        {
+            if (colors == null)
+            {
+                if (debugLevel.IsActive(DebugLevel.Error))
+                    Debug.LogError($"[Theme] GetColorByIndex error. Colors list is null");
+                return null;
+            }
+            if (index < 0)
+            {
+                if (debugLevel.IsActive(DebugLevel.Error))
+                    Debug.LogError($"[Theme] GetColorByIndex error. Index can't be less than 0");
+                return null;
+            }
+            if (index >= colors.Count)
+            {
+                if (debugLevel.IsActive(DebugLevel.Error))
+                    Debug.LogError($"[Theme] GetColorByIndex error. Index({index}) can't be greater than colors count({colors.Count})");
+                return null;
+            }
+            return colors[index];
+        }
 
         public ColorDataRef AddColor(string colorName) => AddColor(colorName, DefaultColor);
         public ColorDataRef AddColor(string colorName, string colorHex)

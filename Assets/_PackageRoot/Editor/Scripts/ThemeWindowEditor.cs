@@ -195,21 +195,33 @@ namespace Unity.Theme.Editor
 
                 uiThemeColor.onNameChanged += (newName) =>
                 {
-                    var colorRef = config.GetColors()[i];
+                    var colorRef = config.GetColorByIndex(i);
+                    if (colorRef == null)
+                    {
+                        if (config.debugLevel.IsActive(DebugLevel.Error))
+                            Debug.LogError($"[Theme] ColorRef is null");
+                        return;
+                    }
                     var themeColor = theme.GetColorByRef(colorRef);
 
                     colorRef.name = newName;
                     foreach (var uiTheme in uiThemeColors.Values)
                     {
-                        if (uiTheme.colors.ContainsKey(themeColor.Guid))
-                            uiTheme.colors[themeColor.Guid].txtName.value = newName;
+                        if (uiTheme.colors.TryGetValue(themeColor.Guid, out var uiThemeColor))
+                            uiThemeColor.txtName.value = newName;
                     }
                     SaveChanges($"Theme color[{colorRef.name}] changed: {newName}");
                 };
 
                 uiThemeColor.onColorChanged += (newColor) =>
                 {
-                    var colorRef = config.GetColors()[i];
+                    var colorRef = config.GetColorByIndex(i);
+                    if (colorRef == null)
+                    {
+                        if (config.debugLevel.IsActive(DebugLevel.Error))
+                            Debug.LogError($"[Theme] ColorRef is null");
+                        return;
+                    }
 
                     config.UpdateColor(uiTheme.theme, colorRef.Guid, newColor);
                     UIGenerateColorPreviews(config, uiTheme);
@@ -218,20 +230,18 @@ namespace Unity.Theme.Editor
 
                 uiThemeColor.onDeleteRequest += () =>
                 {
-                    var colorRef = config.GetColors()[i];
+                    var colorRef = config.GetColorByIndex(i);
+                    if (colorRef == null)
+                    {
+                        if (config.debugLevel.IsActive(DebugLevel.Error))
+                            Debug.LogError($"[Theme] ColorRef is null");
+                        return;
+                    }
                     var themeColor = theme.GetColorByRef(colorRef);
 
                     var colorName = config.GetColorName(colorRef.Guid);
                     uiTheme.theme.colors.Remove(themeColor);
-                    // uiTheme.listColors.itemsSource.Remove(themeColorPanel);
-                    // foreach (var uiTheme in uiThemeColors.Values)
-                    // {
-                    //     if (uiTheme.colors.ContainsKey(themeColor.Guid))
-                    //     {
-                    //         uiTheme.colors[themeColor.Guid].root.RemoveFromHierarchy();
-                    //         uiTheme.colors.Remove(themeColor.Guid);
-                    //     }
-                    // }
+
                     config.RemoveColor(colorRef);
                     UIGenerateColorPreviews(config, uiTheme);
                     SaveChanges($"Theme color[{colorName}] deleted");
