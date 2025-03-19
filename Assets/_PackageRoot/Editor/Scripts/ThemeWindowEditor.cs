@@ -156,6 +156,7 @@ namespace Unity.Theme.Editor
             themePanel.Query<Button>("btnSortColors").First().clicked += () =>
             {
                 config.SortColorsByName();
+
                 SaveChanges($"Sorted colors");
             };
 
@@ -191,6 +192,8 @@ namespace Unity.Theme.Editor
             uiTheme.listColors.bindItem = (ui, i) =>
             {
                 var uiThemeColor = new UIThemeColor(config, theme, ui, i);
+
+                uiTheme.colors[uiThemeColor.ColorGuid] = uiThemeColor;
                 uiThemeColorsSet[ui] = uiThemeColor;
 
                 uiThemeColor.onNameChanged += (newName) =>
@@ -238,8 +241,8 @@ namespace Unity.Theme.Editor
                         return;
                     }
                     var themeColor = theme.GetColorByRef(colorRef);
-
                     var colorName = config.GetColorName(colorRef.Guid);
+
                     uiTheme.theme.colors.Remove(themeColor);
 
                     config.RemoveColor(colorRef);
@@ -249,7 +252,12 @@ namespace Unity.Theme.Editor
             };
             uiTheme.listColors.unbindItem = (ui, i) =>
             {
-                uiThemeColorsSet.GetValueOrDefault(ui)?.Dispose();
+                var uiThemeColor = uiThemeColorsSet.GetValueOrDefault(ui);
+                if (uiThemeColor == null)
+                    return;
+
+                uiTheme.colors.Remove(uiThemeColor.ColorGuid);
+                uiThemeColor.Dispose();
                 uiThemeColorsSet.Remove(ui);
             };
 
@@ -296,7 +304,7 @@ namespace Unity.Theme.Editor
             }
         }
 
-        struct UITheme
+        class UITheme
         {
             public VisualElement root;
             public TextField textFieldName;
@@ -323,6 +331,8 @@ namespace Unity.Theme.Editor
             readonly ThemeData theme;
             readonly int colorIndex;
 
+            public string ColorGuid => config.GetColorByIndex(colorIndex)?.Guid;
+
             public UIThemeColor(Theme config, ThemeData theme, VisualElement root, int colorIndex)
             {
                 this.root   = root;
@@ -339,7 +349,13 @@ namespace Unity.Theme.Editor
 
             void UIColorBind()
             {
-                var colorRef = config.GetColors()[colorIndex];
+                var colorRef = config.GetColorByIndex(colorIndex);
+                if (colorRef == null)
+                {
+                    if (config.debugLevel.IsActive(DebugLevel.Error))
+                        Debug.LogError($"[Theme] ColorRef is null");
+                    return;
+                }
                 var themeColor = theme.GetColorByRef(colorRef);
 
                 txtName.value = config.GetColorName(colorRef.Guid);

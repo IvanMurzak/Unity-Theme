@@ -187,12 +187,13 @@ namespace Unity.Theme
         }
         public void SortColorsByName()
         {
-            foreach (var theme in themes)
-            {
-                theme.colors.Sort((l, r) => ColorDataRef.CompareByName(
-                    colors.FirstOrDefault(x => x.Guid == l.Guid),
-                    colors.FirstOrDefault(x => x.Guid == r.Guid)));
-            }
+            colors.Sort((l, r) => ColorDataRef.CompareByName(l, r));
+            // foreach (var theme in themes)
+            // {
+            //     theme.colors.Sort((l, r) => ColorDataRef.CompareByName(
+            //         colors.FirstOrDefault(x => x.Guid == l.Guid),
+            //         colors.FirstOrDefault(x => x.Guid == r.Guid)));
+            // }
         }
 
         protected virtual void NotifyColorChanged(ColorData colorData, ThemeData theme = null)
