@@ -129,7 +129,7 @@ namespace Unity.Theme.Editor
                 btnDelete       = themePanel.Query<Button>("btnRemove").First(),
                 toggleFoldout   = themePanel.Query<Toggle>("toggleFoldout").First(),
                 textFieldName   = themePanel.Query<TextField>("textFieldName").First(),
-                contColors      = themePanel.Query<ListView>("contColors").First(),
+                listColors      = themePanel.Query<ListView>("listColors").First(),
                 contPreview     = themePanel.Query<VisualElement>("contPreview").First(),
                 contContent     = themePanel.Query<VisualElement>("contContent").First(),
                 theme           = theme,
@@ -148,7 +148,7 @@ namespace Unity.Theme.Editor
                 foreach (var uiTheme in uiThemeColors.Values)
                 {
                     theme.colors.Add(new ColorData(themeColor));
-                    uiTheme.contColors.Rebuild();
+                    uiTheme.listColors.Rebuild();
                 }
 
                 SaveChanges($"Color added: {colorName}");
@@ -160,13 +160,13 @@ namespace Unity.Theme.Editor
             };
 
             uiTheme.contContent.style.display = new StyleEnum<DisplayStyle>(theme.expanded ? DisplayStyle.Flex : DisplayStyle.None);
-            uiTheme.contColors.itemsSource = config.GetColors() as List<ColorDataRef>;
-            uiTheme.contColors.selectionType = SelectionType.None;
-            uiTheme.contColors.showFoldoutHeader = false;
-            uiTheme.contColors.reorderable = true;
-            uiTheme.contColors.reorderMode = ListViewReorderMode.Animated;
+            uiTheme.listColors.itemsSource = config.GetColors() as List<ColorDataRef>;
+            uiTheme.listColors.selectionType = SelectionType.None;
+            uiTheme.listColors.showFoldoutHeader = false;
+            uiTheme.listColors.reorderable = true;
+            uiTheme.listColors.reorderMode = ListViewReorderMode.Animated;
 
-            uiTheme.contColors.itemIndexChanged += (oldIndex, newIndex) =>
+            uiTheme.listColors.itemIndexChanged += (oldIndex, newIndex) =>
             {
                 if (config.debugLevel.IsActive(DebugLevel.Trace))
                     Debug.Log($"[Theme] Color moved: {oldIndex} -> {newIndex}");
@@ -178,7 +178,7 @@ namespace Unity.Theme.Editor
                     .ToList()
                     .ForEach(otherTheme =>
                     {
-                        otherTheme.contColors.Rebuild();
+                        otherTheme.listColors.Rebuild();
                         UIGenerateColorPreviews(config, otherTheme);
                     });
 
@@ -187,8 +187,8 @@ namespace Unity.Theme.Editor
                 SaveChanges($"Color moved: {oldIndex} -> {newIndex}");
             };
 
-            uiTheme.contColors.makeItem = templateThemeColor.Instantiate;
-            uiTheme.contColors.bindItem = (ui, i) =>
+            uiTheme.listColors.makeItem = templateThemeColor.Instantiate;
+            uiTheme.listColors.bindItem = (ui, i) =>
             {
                 var uiThemeColor = new UIThemeColor(config, theme, ui, i);
                 uiThemeColorsSet[ui] = uiThemeColor;
@@ -223,7 +223,7 @@ namespace Unity.Theme.Editor
 
                     var colorName = config.GetColorName(colorRef.Guid);
                     uiTheme.theme.colors.Remove(themeColor);
-                    // uiTheme.contColors.itemsSource.Remove(themeColorPanel);
+                    // uiTheme.listColors.itemsSource.Remove(themeColorPanel);
                     // foreach (var uiTheme in uiThemeColors.Values)
                     // {
                     //     if (uiTheme.colors.ContainsKey(themeColor.Guid))
@@ -237,14 +237,14 @@ namespace Unity.Theme.Editor
                     SaveChanges($"Theme color[{colorName}] deleted");
                 };
             };
-            uiTheme.contColors.unbindItem = (ui, i) =>
+            uiTheme.listColors.unbindItem = (ui, i) =>
             {
                 uiThemeColorsSet.GetValueOrDefault(ui)?.Dispose();
                 uiThemeColorsSet.Remove(ui);
             };
 
 
-            uiTheme.contColors.virtualizationMethod = CollectionVirtualizationMethod.DynamicHeight;
+            uiTheme.listColors.virtualizationMethod = CollectionVirtualizationMethod.DynamicHeight;
             uiTheme.toggleFoldout.value = theme.expanded;
             uiTheme.toggleFoldout.RegisterValueChangedCallback(evt =>
             {
@@ -270,23 +270,8 @@ namespace Unity.Theme.Editor
 
             UIGenerateColorPreviews(config, uiTheme);
 
-            uiTheme.contColors.Rebuild();
+            uiTheme.listColors.Rebuild();
         }
-        // UIThemeColor UIAddThemeColor(Theme config, ThemeData theme, UITheme uiTheme, int orderIndex)
-        // {
-        //     //var themeColorPanel = templateThemeColor.Instantiate();
-        //     //((List<VisualElement>)uiTheme.contColors.itemsSource).Add(themeColorPanel);
-
-        //     uiTheme.contColors.Cr
-
-
-        //     var themeColor = theme.colors[orderIndex];
-        //     var uiThemeColor = new UIThemeColor(themeColorPanel);
-        //     uiTheme.colors[themeColor.Guid] = uiThemeColor;
-
-        //     UIColorBind(config, theme, uiTheme, uiThemeColor, orderIndex);
-        //     return uiThemeColor;
-        // }
 
         void UIGenerateColorPreviews(Theme config, UITheme uiTheme)
         {
@@ -307,7 +292,7 @@ namespace Unity.Theme.Editor
             public TextField textFieldName;
             public Button btnDelete;
             public Toggle toggleFoldout;
-            public ListView contColors;
+            public ListView listColors;
             public VisualElement contPreview;
             public VisualElement contContent;
             public ThemeData theme;
