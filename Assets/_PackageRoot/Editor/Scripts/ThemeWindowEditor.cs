@@ -26,6 +26,12 @@ namespace Unity.Theme.Editor
             var window = GetWindow<ThemeWindowEditor>();
             window.titleContent = new GUIContent("Unity-Theme");
             window.Focus();
+
+            Undo.undoRedoPerformed += () =>
+            {
+                Debug.Log("Undo/Redo");
+                window.Invalidate();
+            };
             return window;
         }
         public static void ShowWindowVoid() => ShowWindow();
@@ -41,9 +47,12 @@ namespace Unity.Theme.Editor
             if (Theme.IsLogActive(DebugLevel.Log))
                 Debug.Log(message);
             saveChangesMessage = message;
+
+            Undo.RecordObject(Theme.Instance.AssetFile, message); // Undo record started
             base.SaveChanges();
             Theme.Instance.Save();
-            Undo.RecordObject(Theme.Instance.AssetFile, message);
+            Theme.Instance.InvalidateAssetFile();
+            EditorUtility.SetDirty(Theme.Instance.AssetFile); // Undo record completed
         }
 
         private void UpdateDropdownCurrentTheme(Theme config)
@@ -79,14 +88,14 @@ namespace Unity.Theme.Editor
             dropdownCurrentTheme.RegisterValueChangedCallback(evt =>
             {
                 config.CurrentThemeName = evt.newValue;
-                SaveChanges($"Theme Changed: {evt.newValue}");
+                SaveChanges($"[Theme] Theme Changed: {evt.newValue}");
             });
 
             enumDebugLevel.value = config.debugLevel;
             enumDebugLevel.RegisterValueChangedCallback(evt =>
             {
                 config.debugLevel = (DebugLevel)evt.newValue;
-                SaveChanges($"Debug status changed: {evt.newValue}");
+                SaveChanges($"[Theme] Debug status changed: {evt.newValue}");
             });
 
             // Themes
@@ -112,14 +121,14 @@ namespace Unity.Theme.Editor
                 UpdateDropdownCurrentTheme(config);
 
                 UIAddTheme(config, rootThemes, theme);
-                SaveChanges($"Theme added: {themeName}");
+                SaveChanges($"[Theme] Theme added: {themeName}");
             });
 
             foreach (var theme in config.Themes)
                 UIAddTheme(config, rootThemes, theme);
         }
 
-        void RebuildThemes(Theme config)
+        void RebuildThemeColors(Theme config)
         {
             foreach (var uiTheme in uiThemes.Values)
                 uiTheme.RebuildColors(config);
@@ -158,13 +167,13 @@ namespace Unity.Theme.Editor
                     uiTheme.listColors.Rebuild();
                 }
 
-                SaveChanges($"Color added: {colorName}");
+                SaveChanges($"[Theme] Color added: {colorName}");
             };
             themePanel.Query<Button>("btnSortColors").First().clicked += () =>
             {
                 config.SortColorsByName();
-                RebuildThemes(config);
-                SaveChanges($"Sorted colors");
+                RebuildThemeColors(config);
+                SaveChanges($"[Theme] Sorted colors");
             };
 
             uiTheme.contContent.style.display = new StyleEnum<DisplayStyle>(theme.expanded ? DisplayStyle.Flex : DisplayStyle.None);
@@ -177,7 +186,7 @@ namespace Unity.Theme.Editor
             uiTheme.listColors.itemIndexChanged += (oldIndex, newIndex) =>
             {
                 if (config.debugLevel.IsActive(DebugLevel.Trace))
-                    Debug.Log($"[Theme] Color moved: {oldIndex} -> {newIndex}");
+                    Debug.Log($"[Theme] Color moved: {oldIndex} -> {newIndex} (started)");
 
                 // Update order in other themes
                 uiThemes
@@ -188,7 +197,7 @@ namespace Unity.Theme.Editor
 
                 uiTheme.RebuildColorPreviews(config);
 
-                SaveChanges($"Color moved: {oldIndex} -> {newIndex}");
+                SaveChanges($"[Theme] Color moved: {oldIndex} -> {newIndex}");
             };
 
             uiTheme.listColors.makeItem = templateThemeColor.Instantiate;
@@ -216,7 +225,7 @@ namespace Unity.Theme.Editor
                         if (uiTheme.colors.TryGetValue(themeColor.Guid, out var uiThemeColor))
                             uiThemeColor.txtName.value = newName;
                     }
-                    SaveChanges($"Theme color[{colorRef.name}] changed: {newName}");
+                    SaveChanges($"[Theme] Color[{colorRef.name}] changed: {newName}");
                 };
 
                 uiThemeColor.onColorChanged += (newColor) =>
@@ -231,7 +240,7 @@ namespace Unity.Theme.Editor
 
                     config.UpdateColor(uiTheme.theme, colorRef.Guid, newColor);
                     uiTheme.RebuildColorPreviews(config);
-                    SaveChanges($"Theme color[{config.GetColorName(colorRef.Guid)}] changed: {newColor}");
+                    SaveChanges($"[Theme] Color[{config.GetColorName(colorRef.Guid)}] changed: {newColor}");
                 };
 
                 uiThemeColor.onDeleteRequest += () =>
@@ -245,9 +254,8 @@ namespace Unity.Theme.Editor
                     }
                     config.RemoveColor(colorRef);
 
-                    RebuildThemes(config);
-
-                    SaveChanges($"Theme color[{colorRef.name}] deleted");
+                    RebuildThemeColors(config);
+                    SaveChanges($"[Theme] Color[{colorRef.name}] deleted");
                 };
             };
             uiTheme.listColors.unbindItem = (ui, i) =>
@@ -274,7 +282,7 @@ namespace Unity.Theme.Editor
             uiTheme.textFieldName.RegisterValueChangedCallback(evt =>
             {
                 theme.themeName = evt.newValue;
-                SaveChanges($"Theme name changed: {evt.newValue}");
+                SaveChanges($"[Theme] Theme name changed: {evt.newValue}");
             });
             uiTheme.btnDelete.clicked += () =>
             {
@@ -282,7 +290,7 @@ namespace Unity.Theme.Editor
                 rootThemes.Remove(themePanel);
                 uiThemes.Remove(theme.Guid);
                 UpdateDropdownCurrentTheme(config);
-                SaveChanges($"Theme deleted: {theme.themeName}");
+                SaveChanges($"[Theme] Theme deleted: {theme.themeName}");
             };
 
             uiTheme.RebuildColors(config);

@@ -11,6 +11,7 @@ namespace Unity.Theme
         public static string AssetsFilePath => $"Assets/Resources/{ResourcesFileName}.json";
 #if UNITY_EDITOR
         public TextAsset AssetFile => UnityEditor.AssetDatabase.LoadAssetAtPath<TextAsset>(AssetsFilePath);
+        public void InvalidateAssetFile() => UnityEditor.AssetDatabase.ImportAsset(AssetsFilePath);
 #endif
 
         public static Theme GetOrCreateInstance()
