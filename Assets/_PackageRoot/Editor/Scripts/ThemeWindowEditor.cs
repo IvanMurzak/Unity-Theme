@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEditor.UIElements;
-using System;
 
 namespace Unity.Theme.Editor
 {
-    public class ThemeWindowEditor : EditorWindow
+    public partial class ThemeWindowEditor : EditorWindow
     {
         const string colorFillTemplateGuid = "07c8baad910b3e244bd677fa7d79370b";
 
@@ -300,111 +298,6 @@ namespace Unity.Theme.Editor
             };
 
             uiTheme.RebuildColors(config);
-        }
-
-        class UITheme : IDisposable
-        {
-            public VisualElement root;
-            public TextField textFieldName;
-            public Button btnDelete;
-            public Toggle toggleFoldout;
-            public ListView listColors;
-            public VisualElement contPreview;
-            public VisualElement contContent;
-            public ThemeData theme;
-            public Dictionary<string, UIThemeColor> colors;
-
-            public void RebuildColors(Theme config)
-            {
-                RebuildColorPreviews(config);
-                listColors.Rebuild();
-            }
-            public void RebuildColorPreviews(Theme config)
-            {
-                contPreview.Clear();
-                var colorFillTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath(colorFillTemplateGuid));
-                foreach (var colorRef in config.GetColors())
-                {
-                    var themeColor = theme.GetColorByRef(colorRef);
-                    var colorFill = colorFillTemplate.Instantiate();
-                    colorFill.Query<VisualElement>("colorFill").Last().style.unityBackgroundImageTintColor = new StyleColor(themeColor.Color);
-                    contPreview.Add(colorFill);
-                }
-            }
-
-            public void Dispose()
-            {
-                colors?.Clear();
-                colors = null;
-            }
-        }
-        class UIThemeColor : IDisposable
-        {
-            public VisualElement root;
-            public ColorField colorField;
-            public TextField txtName;
-            public Button btnDelete;
-
-            public event Action<string> onNameChanged;
-            public event Action<Color> onColorChanged;
-            public event Action onDeleteRequest;
-
-            readonly Theme config;
-            readonly ThemeData theme;
-            readonly int colorIndex;
-
-            public string ColorGuid { get; private set; }
-
-            public UIThemeColor(Theme config, ThemeData theme, VisualElement root, int colorIndex)
-            {
-                this.root   = root;
-                btnDelete   = root.Query<Button>("btnDelete").First();
-                txtName     = root.Query<TextField>("txtName").First();
-                colorField  = root.Query<ColorField>("color").First();
-
-                this.config     = config;
-                this.theme      = theme;
-                this.colorIndex = colorIndex;
-
-                ColorGuid = config.GetColorByIndex(colorIndex).Guid;
-
-                UIColorBind();
-            }
-
-            void UIColorBind()
-            {
-                var colorRef = config.GetColorByIndex(colorIndex);
-                if (colorRef == null)
-                {
-                    if (config.debugLevel.IsActive(DebugLevel.Error))
-                        Debug.LogError($"[Theme] ColorRef is null");
-                    return;
-                }
-                ColorGuid = colorRef.Guid;
-                txtName.value = config.GetColorName(colorRef.Guid);
-
-                var themeColor = theme.GetColorByRef(colorRef);
-                colorField.value = themeColor.Color;
-
-                txtName.RegisterValueChangedCallback(evt => onNameChanged?.Invoke(evt.newValue));
-                colorField.RegisterValueChangedCallback(evt => onColorChanged?.Invoke(evt.newValue));
-                btnDelete.clicked += OnClickColorDelete;
-            }
-            void OnClickColorDelete() => onDeleteRequest?.Invoke();
-
-            public void Dispose()
-            {
-                root = null;
-                colorField = null;
-                txtName = null;
-                if (btnDelete != null)
-                    btnDelete.clicked -= OnClickColorDelete;
-                btnDelete = null;
-
-                onNameChanged = null;
-                onColorChanged = null;
-                onDeleteRequest = null;
-            }
         }
     }
 }
