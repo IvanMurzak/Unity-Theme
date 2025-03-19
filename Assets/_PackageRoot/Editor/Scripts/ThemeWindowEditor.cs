@@ -27,17 +27,18 @@ namespace Unity.Theme.Editor
             window.titleContent = new GUIContent("Unity-Theme");
             window.Focus();
 
-            Undo.undoRedoPerformed += () =>
-            {
-                Debug.Log("Undo/Redo");
-                window.Invalidate();
-            };
             return window;
         }
         public static void ShowWindowVoid() => ShowWindow();
 
         public void Invalidate() => CreateGUI();
         void OnValidate() => Theme.Instance.OnValidate();
+        void OnUndoRedoPerformed()
+        {
+            if (Theme.IsLogActive(DebugLevel.Trace))
+                Debug.Log("Undo or redo performed");
+            Invalidate();
+        }
 
         private void SaveChanges(string message)
         {
@@ -59,8 +60,16 @@ namespace Unity.Theme.Editor
         }
         private void OnThemeChanged(ThemeData themeData) => Repaint();
 
-        private void OnEnable() => Theme.Instance.onThemeChanged += OnThemeChanged;
-        private void OnDisable() => Theme.Instance.onThemeChanged -= OnThemeChanged;
+        private void OnEnable()
+        {
+            Theme.Instance.onThemeChanged += OnThemeChanged;
+            // Undo.undoRedoPerformed += OnUndoRedoPerformed;
+        }
+        private void OnDisable()
+        {
+            Theme.Instance.onThemeChanged -= OnThemeChanged;
+            // Undo.undoRedoPerformed -= OnUndoRedoPerformed;
+        }
         public void CreateGUI()
         {
             rootVisualElement.Clear();
