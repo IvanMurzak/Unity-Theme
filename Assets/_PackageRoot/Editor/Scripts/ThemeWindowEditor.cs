@@ -119,6 +119,12 @@ namespace Unity.Theme.Editor
                 UIAddTheme(config, rootThemes, theme);
         }
 
+        void RebuildThemes(Theme config)
+        {
+            foreach (var uiTheme in uiThemes.Values)
+                uiTheme.RebuildColors(config);
+        }
+
         void UIAddTheme(Theme config, VisualElement rootThemes, ThemeData theme)
         {
             var themePanel = templateTheme.Instantiate();
@@ -157,7 +163,7 @@ namespace Unity.Theme.Editor
             themePanel.Query<Button>("btnSortColors").First().clicked += () =>
             {
                 config.SortColorsByName();
-
+                RebuildThemes(config);
                 SaveChanges($"Sorted colors");
             };
 
@@ -178,13 +184,9 @@ namespace Unity.Theme.Editor
                     .Where(pair => pair.Key != theme.Guid)
                     .Select(pair => pair.Value)
                     .ToList()
-                    .ForEach(otherTheme =>
-                    {
-                        otherTheme.listColors.Rebuild();
-                        UIGenerateColorPreviews(config, otherTheme);
-                    });
+                    .ForEach(otherTheme => otherTheme.RebuildColors(config));
 
-                UIGenerateColorPreviews(config, uiTheme);
+                uiTheme.RebuildColorPreviews(config);
 
                 SaveChanges($"Color moved: {oldIndex} -> {newIndex}");
             };
@@ -228,7 +230,7 @@ namespace Unity.Theme.Editor
                     }
 
                     config.UpdateColor(uiTheme.theme, colorRef.Guid, newColor);
-                    UIGenerateColorPreviews(config, uiTheme);
+                    uiTheme.RebuildColorPreviews(config);
                     SaveChanges($"Theme color[{config.GetColorName(colorRef.Guid)}] changed: {newColor}");
                 };
 
@@ -243,11 +245,7 @@ namespace Unity.Theme.Editor
                     }
                     config.RemoveColor(colorRef);
 
-                    foreach (var uiTheme in uiThemes.Values)
-                    {
-                        uiTheme.listColors.Rebuild();
-                        UIGenerateColorPreviews(config, uiTheme);
-                    }
+                    RebuildThemes(config);
 
                     SaveChanges($"Theme color[{colorRef.name}] deleted");
                 };
@@ -287,22 +285,7 @@ namespace Unity.Theme.Editor
                 SaveChanges($"Theme deleted: {theme.themeName}");
             };
 
-            UIGenerateColorPreviews(config, uiTheme);
-
-            uiTheme.listColors.Rebuild();
-        }
-
-        void UIGenerateColorPreviews(Theme config, UITheme uiTheme)
-        {
-            uiTheme.contPreview.Clear();
-            var colorFillTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath(colorFillTemplateGuid));
-            foreach (var colorRef in config.GetColors())
-            {
-                var themeColor = uiTheme.theme.GetColorByRef(colorRef);
-                var colorFill = colorFillTemplate.Instantiate();
-                colorFill.Query<VisualElement>("colorFill").Last().style.unityBackgroundImageTintColor = new StyleColor(themeColor.Color);
-                uiTheme.contPreview.Add(colorFill);
-            }
+            uiTheme.RebuildColors(config);
         }
 
         class UITheme : IDisposable
@@ -316,6 +299,24 @@ namespace Unity.Theme.Editor
             public VisualElement contContent;
             public ThemeData theme;
             public Dictionary<string, UIThemeColor> colors;
+
+            public void RebuildColors(Theme config)
+            {
+                RebuildColorPreviews(config);
+                listColors.Rebuild();
+            }
+            public void RebuildColorPreviews(Theme config)
+            {
+                contPreview.Clear();
+                var colorFillTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath(colorFillTemplateGuid));
+                foreach (var colorRef in config.GetColors())
+                {
+                    var themeColor = theme.GetColorByRef(colorRef);
+                    var colorFill = colorFillTemplate.Instantiate();
+                    colorFill.Query<VisualElement>("colorFill").Last().style.unityBackgroundImageTintColor = new StyleColor(themeColor.Color);
+                    contPreview.Add(colorFill);
+                }
+            }
 
             public void Dispose()
             {
