@@ -301,7 +301,7 @@ jobs:
             short_sha=$(git log -1 --pretty=format:'%h' $sha)
             echo "- [\`$short_sha\`]($repo_url/commit/$sha) — $message by @$username" >> release.md
           done
-          printf "release_body<<ENDOFRELEASEBODY\n%s\nENDOFRELEASEBODY\n" "$(cat release.md)" >> $GITHUB_ENV
+          printf "release_body<<ENDOFRELEASEBODY\n%s\nENDOFRELEASEBODY\n" "$(cat release.md)" >> $GITHUB_OUTPUT
           echo "success=true" >> $GITHUB_OUTPUT
 
       - name: Create Tag and Release
@@ -309,7 +309,7 @@ jobs:
         with:
           tag_name: ${{ needs.check-version-tag.outputs.version }}
           name: ${{ needs.check-version-tag.outputs.version }}
-          body: ${{ env.release_body }}
+          body: ${{ steps.rel_desc.outputs.release_body }}
           draft: false
           prerelease: false
         env:
