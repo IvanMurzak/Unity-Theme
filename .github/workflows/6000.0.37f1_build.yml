@@ -12,7 +12,7 @@ jobs:
   editor-tests:
     uses: ./.github/workflows/main.yml
     with:
-      projectPath: './'
+      projectPath: './Unity-Theme'
       unityVersion: '6000.0.37f1'
       testMode: 'standalone'
     secrets: inherit
