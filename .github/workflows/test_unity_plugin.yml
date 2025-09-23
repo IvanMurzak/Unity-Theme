@@ -25,9 +25,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest, ubuntu-latest]
+        include:
+          - os: [self-hosted, windows]
+            os-name: windows-self-hosted
+          - os: [self-hosted, linux]
+            os-name: linux-self-hosted
+          - os: windows-latest
+            os-name: windows-latest
+          - os: ubuntu-latest
+            os-name: ubuntu-latest
 
-    name: ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.os }}
+    name: ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.os-name }}
     runs-on: ${{ matrix.os }}
 
     # permissions: # minimize the default token
@@ -61,18 +69,23 @@ jobs:
           path: |
             ${{ inputs.projectPath }}/Library
             ~/.cache/unity3d
-          key: Library-${{ inputs.unityVersion }}-${{ matrix.os }}
+          key: Library-${{ inputs.unityVersion }}-${{ matrix.os-name }}
 
       # --------------------------------------------------------------------- #
       - name: Generate custom image name
         id: custom_image
         run: |
-          if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
+          # Convert matrix.os to lowercase for comparison
+          MATRIX_OS_LOWER=$(echo "${{ matrix.os }}" | tr '[:upper:]' '[:lower:]')
+
+          if [[ "$MATRIX_OS_LOWER" == *"ubuntu"* ]] || [[ "$MATRIX_OS_LOWER" == *"linux"* ]]; then
             echo "image=unityci/editor:ubuntu-${{ inputs.unityVersion }}-base-3" >> $GITHUB_OUTPUT
-          elif [ "${{ matrix.os }}" == "windows-latest" ]; then
+            echo "Using Ubuntu Unity image for matrix.os: ${{ matrix.os }}"
+          elif [[ "$MATRIX_OS_LOWER" == *"windows"* ]]; then
             echo "image=unityci/editor:windows-${{ inputs.unityVersion }}-base-3" >> $GITHUB_OUTPUT
+            echo "Using Windows Unity image for matrix.os: ${{ matrix.os }}"
           else
-            echo "::error::Unsupported OS: ${{ matrix.os }}"
+            echo "::error::Unsupported matrix.os: ${{ matrix.os }}"
             exit 1
           fi
         shell: bash
@@ -89,13 +102,13 @@ jobs:
           testMode:       ${{ inputs.testMode }}
           customImage:    ${{ steps.custom_image.outputs.image }}
           githubToken:    ${{ secrets.GITHUB_TOKEN }}
-          checkName:      ${{ inputs.unityVersion }} ${{ inputs.testMode }} ${{ matrix.os }} Test Results
-          artifactsPath:  artifacts-${{ inputs.unityVersion }}-${{ inputs.testMode }}-${{ matrix.os }}
+          checkName:      ${{ inputs.unityVersion }} ${{ inputs.testMode }} ${{ matrix.os-name }} Test Results
+          artifactsPath:  artifacts-${{ inputs.unityVersion }}-${{ inputs.testMode }}-${{ matrix.os-name }}
           customParameters: -CI true -GITHUB_ACTIONS true
 
       # --------------------------------------------------------------------- #
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: Test results for ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.os }}
+          name: Test results for ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.os-name }}
           path: ${{ steps.tests.outputs.artifactsPath }}

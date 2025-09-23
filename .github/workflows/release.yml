@@ -55,7 +55,7 @@ jobs:
           tag: ${{ steps.get_version.outputs.current-version }}
 
   build-unity-installer:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, ubuntu-latest]
     needs: [setup, check-version-tag]
     if: needs.check-version-tag.outputs.tag_exists == 'false'
     steps:
