@@ -5,16 +5,28 @@ on:
     branches:
       - main
 
-env:
-  ___UnityProjectPath: './Unity-Theme'
-  ___UnityPackageRoot: './Assets/root'
-  ___InstallerProjectPath: './Installer'
-  ___InstallerFileName: 'Unity-Theme-Installer'
-  ___InstallerExportMethod: 'com.IvanMurzak.Unity.Theme.Installer.PackageExporter.ExportPackage'
-  ___InstallerUnityVersion: '2022.3.57f1'
-
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      UnityProjectPath: ${{ steps.vars.outputs.UnityProjectPath }}
+      UnityPackageRoot: ${{ steps.vars.outputs.UnityPackageRoot }}
+      InstallerProjectPath: ${{ steps.vars.outputs.InstallerProjectPath }}
+      InstallerFileName: ${{ steps.vars.outputs.InstallerFileName }}
+      InstallerExportMethod: ${{ steps.vars.outputs.InstallerExportMethod }}
+      InstallerUnityVersion: ${{ steps.vars.outputs.InstallerUnityVersion }}
+    steps:
+      - id: vars
+        run: |
+          echo "UnityProjectPath=./Unity-Theme" >> $GITHUB_OUTPUT
+          echo "UnityPackageRoot=./Assets/root" >> $GITHUB_OUTPUT
+          echo "InstallerProjectPath=./Installer" >> $GITHUB_OUTPUT
+          echo "InstallerFileName=Unity-Theme-Installer" >> $GITHUB_OUTPUT
+          echo "InstallerExportMethod=com.IvanMurzak.Unity.Theme.Installer.PackageExporter.ExportPackage" >> $GITHUB_OUTPUT
+          echo "InstallerUnityVersion=2022.3.57f1" >> $GITHUB_OUTPUT
+
   check-version-tag:
+    needs: setup
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.get_version.outputs.current-version }}
@@ -30,7 +42,7 @@ jobs:
         id: get_version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
         with:
-          path: ${{ env.___UnityProjectPath }}/${{ env.___UnityPackageRoot }}
+          path: ${{ needs.setup.outputs.UnityProjectPath }}/${{ needs.setup.outputs.UnityPackageRoot }}
 
       - name: Find previous version tag
         id: prev_tag
@@ -44,7 +56,7 @@ jobs:
 
   build-unity-installer:
     runs-on: ubuntu-latest
-    needs: check-version-tag
+    needs: [setup, check-version-tag]
     if: needs.check-version-tag.outputs.tag_exists == 'false'
     steps:
       - name: Checkout repository
@@ -53,7 +65,7 @@ jobs:
       - name: Cache Unity Library
         uses: actions/cache@v4
         with:
-          path: ${{ env.___InstallerProjectPath }}/Library
+          path: ${{ needs.setup.outputs.InstallerProjectPath }}/Library
           key: Library-Unity-Installer
 
       - name: Test Unity Installer (EditMode)
@@ -63,9 +75,9 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          projectPath: ${{ env.___InstallerProjectPath }}
-          unityVersion: ${{ env.___InstallerUnityVersion }}
-          customImage: 'unityci/editor:ubuntu-${{ env.___InstallerUnityVersion }}-base-3'
+          projectPath: ${{ needs.setup.outputs.InstallerProjectPath }}
+          unityVersion: ${{ needs.setup.outputs.InstallerUnityVersion }}
+          customImage: 'unityci/editor:ubuntu-${{ needs.setup.outputs.InstallerUnityVersion }}-base-3'
           testMode: editmode
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           checkName: Unity Installer EditMode Test Results
@@ -75,8 +87,8 @@ jobs:
       - name: Clean Unity artifacts and reset git state
         run: |
           # Force remove Unity generated files with restricted permissions
-          sudo rm -rf ${{ env.___InstallerProjectPath }}/Logs/ || true
-          sudo rm -rf ${{ env.___InstallerProjectPath }}/Temp/ || true
+          sudo rm -rf ${{ needs.setup.outputs.InstallerProjectPath }}/Logs/ || true
+          sudo rm -rf ${{ needs.setup.outputs.InstallerProjectPath }}/Temp/ || true
           sudo rm -rf ./artifacts-installer-editmode/ || true
 
           # Reset only tracked files to their committed state
@@ -90,19 +102,19 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          projectPath: ${{ env.___InstallerProjectPath }}
-          unityVersion: ${{ env.___InstallerUnityVersion }}
-          customImage: 'unityci/editor:ubuntu-${{ env.___InstallerUnityVersion }}-base-3'
-          buildName: ${{ env.___InstallerFileName }}
+          projectPath: ${{ needs.setup.outputs.InstallerProjectPath }}
+          unityVersion: ${{ needs.setup.outputs.InstallerUnityVersion }}
+          customImage: 'unityci/editor:ubuntu-${{ needs.setup.outputs.InstallerUnityVersion }}-base-3'
+          buildName: ${{ needs.setup.outputs.InstallerFileName }}
           buildsPath: build
-          buildMethod: ${{ env.___InstallerExportMethod }}
+          buildMethod: ${{ needs.setup.outputs.InstallerExportMethod }}
           customParameters: -CI true -GITHUB_ACTIONS true
 
       - name: Upload Unity Package as artifact
         uses: actions/upload-artifact@v4
         with:
           name: unity-installer-package
-          path: ${{ env.___InstallerProjectPath }}/build/${{ env.___InstallerFileName }}.unitypackage
+          path: ${{ needs.setup.outputs.InstallerProjectPath }}/build/${{ needs.setup.outputs.InstallerFileName }}.unitypackage
 
   # --- UNITY TESTS ---
   # -------------------
@@ -110,37 +122,37 @@ jobs:
   # --- EDIT MODE ---
 
   test-unity-2022-3-57f1-editmode:
-    needs: [build-unity-installer]
+    needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: ${{ env.___UnityProjectPath }}
+      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
       unityVersion: '2022.3.57f1'
       testMode: 'editmode'
     secrets: inherit
 
   test-unity-2023-1-20f1-editmode:
-    needs: [build-unity-installer]
+    needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: ${{ env.___UnityProjectPath }}
+      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
       unityVersion: '2023.1.20f1'
       testMode: 'editmode'
     secrets: inherit
 
   test-unity-2023-2-20f1-editmode:
-    needs: [build-unity-installer]
+    needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: ${{ env.___UnityProjectPath }}
+      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
       unityVersion: '2023.2.20f1'
       testMode: 'editmode'
     secrets: inherit
 
   test-unity-6000-0-37f1-editmode:
-    needs: [build-unity-installer]
+    needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: ${{ env.___UnityProjectPath }}
+      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
       unityVersion: '6000.0.37f1'
       testMode: 'editmode'
     secrets: inherit
@@ -148,37 +160,37 @@ jobs:
   # --- PLAY MODE ---
 
   test-unity-2022-3-57f1-playmode:
-    needs: [build-unity-installer]
+    needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: ${{ env.___UnityProjectPath }}
+      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
       unityVersion: '2022.3.57f1'
       testMode: 'playmode'
     secrets: inherit
 
   test-unity-2023-1-20f1-playmode:
-    needs: [build-unity-installer]
+    needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: ${{ env.___UnityProjectPath }}
+      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
       unityVersion: '2023.1.20f1'
       testMode: 'playmode'
     secrets: inherit
 
   test-unity-2023-2-20f1-playmode:
-    needs: [build-unity-installer]
+    needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: ${{ env.___UnityProjectPath }}
+      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
       unityVersion: '2023.2.20f1'
       testMode: 'playmode'
     secrets: inherit
 
   test-unity-6000-0-37f1-playmode:
-    needs: [build-unity-installer]
+    needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: ${{ env.___UnityProjectPath }}
+      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
       unityVersion: '6000.0.37f1'
       testMode: 'playmode'
     secrets: inherit
@@ -186,37 +198,37 @@ jobs:
   # --- STANDALONE ---
 
   test-unity-2022-3-57f1-standalone:
-    needs: [build-unity-installer]
+    needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: ${{ env.___UnityProjectPath }}
+      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
       unityVersion: '2022.3.57f1'
       testMode: 'standalone'
     secrets: inherit
 
   test-unity-2023-1-20f1-standalone:
-    needs: [build-unity-installer]
+    needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: ${{ env.___UnityProjectPath }}
+      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
       unityVersion: '2023.1.20f1'
       testMode: 'standalone'
     secrets: inherit
 
   test-unity-2023-2-20f1-standalone:
-    needs: [build-unity-installer]
+    needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: ${{ env.___UnityProjectPath }}
+      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
       unityVersion: '2023.2.20f1'
       testMode: 'standalone'
     secrets: inherit
 
   test-unity-6000-0-37f1-standalone:
-    needs: [build-unity-installer]
+    needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: ${{ env.___UnityProjectPath }}
+      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
       unityVersion: '6000.0.37f1'
       testMode: 'standalone'
     secrets: inherit
@@ -305,7 +317,7 @@ jobs:
 
   publish-unity-installer:
     runs-on: ubuntu-latest
-    needs: release-unity-plugin
+    needs: [setup, release-unity-plugin]
     steps:
       - name: Download Unity Package artifact
         uses: actions/download-artifact@v4
@@ -316,7 +328,7 @@ jobs:
       - name: Upload Unity Package to Release
         uses: softprops/action-gh-release@v2
         with:
-          files: ./${{ env.___InstallerFileName }}.unitypackage
+          files: ./${{ needs.setup.outputs.InstallerFileName }}.unitypackage
           tag_name: ${{ needs.release-unity-plugin.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
