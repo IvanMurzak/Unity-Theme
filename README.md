@@ -5,6 +5,7 @@
 [![Unity Asset Store](https://img.shields.io/badge/Asset%20Store-View-blue?logo=unity&labelColor=333A41 'Asset Store')](https://u3d.as/3DQp)
 [![Unity Editor](https://img.shields.io/badge/Editor-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Editor supported')](https://unity.com/releases/editor/archive)
 [![Unity Runtime](https://img.shields.io/badge/Runtime-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Runtime supported')](https://unity.com/releases/editor/archive)
+
 [![Stars](https://img.shields.io/github/stars/IvanMurzak/Unity-Theme 'Stars')](https://github.com/IvanMurzak/Unity-Theme/stargazers)
 [![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme)](https://github.com/IvanMurzak/Unity-Theme/blob/main/LICENSE)
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
@@ -33,22 +34,27 @@ Create palettes of colors and components to change specific colors on a specific
 
 # Installation
 
+## Option 1 - Installer
+
 - **[⬇️ Download Installer](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.1.2/Unity-Theme-Installer.unitypackage)**
 - **📂 Import installer into Unity project**
   > - You may use double click on the file - Unity will open it
   > - OR: You may open Unity Editor first, then click on `Assets/Import Package/Custom Package`, then choose the file
 
-<details>
-  <summary><b>Alternative: Install via OpenUPM</b></summary>
+## Option 2 - OpenUPM-CLI
 
-- [Install OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
-- Open command line in Unity project folder
+- [⬇️ Install OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
+- 📟 Open command line in Unity project folder
 
 ```bash
 openupm add extensions.unity.theme
 ```
 
-</details>
+## Option 3 - Asset Store
+
+- **[▶️ Open Asset Store](https://u3d.as/3DQp)**
+
+---
 
 ## Usage
 
