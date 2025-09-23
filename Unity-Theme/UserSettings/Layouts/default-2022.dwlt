@@ -1,0 +1,5099 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 261.33334
+    y: 430.6667
+    width: 1071.3334
+    height: 697.3334
+  m_ShowMode: 0
+  m_Title: Package Manager
+  m_RootView: {fileID: 5}
+  m_MinSize: {x: 800, y: 271}
+  m_MaxSize: {x: 4000, y: 4021}
+  m_Maximized: 0
+--- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 2.6666667
+    y: 0.6666667
+    width: 0.6666667
+    height: 6.666667
+  m_ShowMode: 0
+  m_Title: 
+  m_RootView: {fileID: 8}
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_Maximized: 0
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 0
+    y: 42.666668
+    width: 2560
+    height: 1349.3334
+  m_ShowMode: 4
+  m_Title: Hierarchy
+  m_RootView: {fileID: 9}
+  m_MinSize: {x: 875, y: 471}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_Maximized: 1
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: PackageManagerWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1071.3334
+    height: 697.3334
+  m_MinSize: {x: 800, y: 250}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 17}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 4}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1071.3334
+    height: 697.3334
+  m_MinSize: {x: 800, y: 271}
+  m_MaxSize: {x: 4000, y: 4021}
+  vertical: 0
+  controlID: 14
+  draggingID: 0
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ConsoleWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 729.3333
+    width: 1320.6666
+    height: 570.00006
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 22}
+  m_Panes:
+  - {fileID: 23}
+  - {fileID: 22}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 13}
+  - {fileID: 6}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1320.6666
+    height: 1299.3334
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 8096, y: 16192}
+  vertical: 1
+  controlID: 22
+  draggingID: 0
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0.6666667
+    height: 6.666667
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  vertical: 0
+  controlID: 0
+  draggingID: 0
+--- !u!114 &9
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 10}
+  - {fileID: 12}
+  - {fileID: 11}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 2560
+    height: 1349.3334
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_UseTopView: 1
+  m_TopViewHeight: 30
+  m_UseBottomView: 1
+  m_BottomViewHeight: 20
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12011, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 2560
+    height: 30
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_LastLoadedLayoutName: 
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12042, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 1329.3334
+    width: 2560
+    height: 20
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 7}
+  - {fileID: 14}
+  - {fileID: 15}
+  - {fileID: 16}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 2560
+    height: 1299.3334
+  m_MinSize: {x: 400, y: 100}
+  m_MaxSize: {x: 32384, y: 16192}
+  vertical: 0
+  controlID: 132
+  draggingID: 0
+--- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: TestRunnerWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1320.6666
+    height: 729.3333
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 21}
+  m_Panes:
+  - {fileID: 21}
+  - {fileID: 19}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ThemeWindowEditor
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1320.6666
+    y: 0
+    width: 462
+    height: 1299.3334
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 18}
+  m_Panes:
+  - {fileID: 24}
+  - {fileID: 18}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SceneHierarchyWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1782.6666
+    y: 0
+    width: 412.00012
+    height: 1299.3334
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 20}
+  m_Panes:
+  - {fileID: 20}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ProjectBrowser
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 2194.6667
+    y: 0
+    width: 365.33325
+    height: 1299.3334
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 25}
+  m_Panes:
+  - {fileID: 25}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &17
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13953, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 800, y: 250}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Package Manager
+    m_Image: {fileID: 5076950121296946556, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 261.33334
+    y: 430.6667
+    width: 1071.3334
+    height: 676.3334
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+--- !u!114 &18
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96dc507415f5b554ca672aac54a39b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Unity-Theme
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1320.6667
+    y: 72.66667
+    width: 460
+    height: 1278.3334
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  templateControlPanel: {fileID: 9197481963319205126, guid: 37fdbddf207484e478ce74ceeb17c8d1, type: 3}
+  templateTheme: {fileID: 9197481963319205126, guid: b258793507f973d4585bf2185fe1a4cf, type: 3}
+  templateThemeColor: {fileID: 9197481963319205126, guid: 4f55717dde579854cb7c9168b0857992, type: 3}
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Scene
+    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: -2560
+    y: 72.66667
+    width: 837
+    height: 756.3333
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData:
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 24.666666}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Tool Settings
+      index: 0
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: -141, y: -26.666664}
+      snapOffsetDelta: {x: 0, y: -0.000022888184}
+      snapCorner: 3
+      id: unity-grid-and-snap-toolbar
+      index: 1
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 24.666666}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-scene-view-toolbar
+      index: 0
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 1
+      id: unity-search-toolbar
+      index: 1
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 26.666666}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-transform-toolbar
+      index: 2
+      layout: 2
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: overlay-container--left
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 197}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-component-tools
+      index: 1
+      layout: 2
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 67.5, y: 86}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Orientation
+      index: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Light Settings
+      index: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 49.666687}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Camera
+      index: 3
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Cloth Constraints
+      index: 1
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Cloth Collisions
+      index: 2
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Navmesh Display
+      index: 4
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Agent Display
+      index: 5
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Obstacle Display
+      index: 6
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Occlusion Culling
+      index: 3
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Physics Debugger
+      index: 4
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Scene Visibility
+      index: 5
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 24.666666}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Particles
+      index: 6
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Tilemap
+      index: 11
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Tilemap Palette Helper
+      index: 12
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Open Tile Palette
+      index: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Tilemap Focus
+      index: 1
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: Floating
+      floating: 1
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: -218, y: -327.3333}
+      snapOffsetDelta: {x: 0, y: 119.99997}
+      snapCorner: 3
+      id: AINavigationOverlay
+      index: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: APV Overlay
+      index: 9
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/TrailRenderer
+      index: 7
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 48, y: 10.666687}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: UnityEditor.SceneViewCameraOverlay
+      index: 8
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: UnityEditor.SceneViewCameraOverlay (0)
+      index: 11
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    m_OverlaysVisible: 1
+  m_WindowGUID: 527b62c2c6b472f44be934983b3f212e
+  m_Gizmos: 1
+  m_OverrideSceneCullingMask: 6917529027641081856
+  m_SceneIsLit: 0
+  m_SceneLighting: 1
+  m_2DMode: 1
+  m_isRotationLocked: 0
+  m_PlayAudio: 0
+  m_AudioPlay: 0
+  m_Position:
+    m_Target: {x: -2.1692586, y: 675.2924, z: -0.78483653}
+    speed: 2
+    m_Value: {x: -2.1692586, y: 675.2924, z: -0.78483653}
+  m_RenderMode: 0
+  m_CameraMode:
+    drawMode: 0
+    name: Shaded
+    section: Shading Mode
+  m_ValidateTrueMetals: 0
+  m_DoValidateTrueMetals: 0
+  m_SceneViewState:
+    m_AlwaysRefresh: 1
+    showFog: 1
+    showSkybox: 0
+    showFlares: 1
+    showImageEffects: 1
+    showParticleSystems: 1
+    showVisualEffectGraphs: 1
+    m_FxEnabled: 1
+  m_Grid:
+    xGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0}
+    yGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0}
+    zGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0}
+    m_ShowGrid: 0
+    m_GridAxis: 1
+    m_gridOpacity: 0.5
+  m_Rotation:
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
+  m_Size:
+    m_Target: 117.09702
+    speed: 2
+    m_Value: 117.09702
+  m_Ortho:
+    m_Target: 1
+    speed: 2
+    m_Value: 1
+  m_CameraSettings:
+    m_Speed: 1.3233997
+    m_SpeedNormalized: 0.65999985
+    m_SpeedMin: 0.01
+    m_SpeedMax: 2
+    m_EasingEnabled: 1
+    m_EasingDuration: 0.4
+    m_AccelerationEnabled: 1
+    m_FieldOfViewHorizontalOrVertical: 60
+    m_NearClip: 0.03
+    m_FarClip: 10000
+    m_DynamicClip: 1
+    m_OcclusionCulling: 0
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewOrtho: 0
+  m_ReplacementShader: {fileID: 0}
+  m_ReplacementString: 
+  m_SceneVisActive: 1
+  m_LastLockedObject: {fileID: 0}
+  m_ViewIsLockedToObject: 0
+--- !u!114 &20
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Hierarchy
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1782.6667
+    y: 72.66667
+    width: 410.00012
+    height: 1278.3334
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 2efbffff
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 15}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 0
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: d1650c47ffe3d7748a881725c9b54ce9
+--- !u!114 &21
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: Test framework for running Edit mode and Play mode tests in Unity.
+      Part of the com.unity.test-framework package.
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 72.66667
+    width: 1319.6666
+    height: 708.3333
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_Spl:
+    ID: 173
+    splitterInitialOffset: 513.6667
+    currentActiveSplitter: -1
+    realSizes:
+    - 450.66666
+    - 187.33334
+    relativeSizes:
+    - 0.7067307
+    - 0.29326928
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 638
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 0
+  m_TestListGUIs:
+  - m_Window: {fileID: 21}
+    runProgress:
+      RunGuid: e20a872f-4de8-4e6d-a770-eb99c187ccd4
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 1
+          testNames:
+          - Unity.Theme.Tests
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 0.99999887
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[Unity-Theme][suite]'
+      name: Unity-Theme
+      fullName: Unity-Theme
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1075
+      uniqueId: '[Unity.Theme.Tests.Editor.dll][suite]'
+      name: Unity.Theme.Tests.Editor.dll
+      fullName: C:/Projects/Unity/Unity-Theme/Unity-Theme/Library/ScriptAssemblies/Unity.Theme.Tests.Editor.dll
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[Unity-Theme][suite]'
+    - id: 1076
+      uniqueId: Unity.Theme.Tests.Editor.dll/[Unity][suite]
+      name: Unity
+      fullName: Unity
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1075
+      parentUniqueId: '[Unity.Theme.Tests.Editor.dll][suite]'
+    - id: 1077
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/[Theme][suite]
+      name: Theme
+      fullName: Unity.Theme
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1076
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/[Unity][suite]
+    - id: 1078
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests][suite]
+      name: Tests
+      fullName: Unity.Theme.Tests
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1077
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/[Theme][suite]
+    - id: 1001
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+      name: TestColorBinder
+      fullName: Unity.Theme.Tests.TestColorBinder
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1078
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests][suite]
+    - id: 1047
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.Create_Image]
+      name: Create_Image
+      fullName: Unity.Theme.Tests.TestColorBinder.Create_Image
+      resultStatus: 1
+      duration: 0.0600014
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_0</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_0</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_0</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_0</b>
+
+        [Theme] Unsubscribing at
+        <b><color=cyan>Prefabs</color>/_0</b>
+
+        [Theme] Theme changed ''<b>__Theme1__</b>''
+        -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1046
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.Create_Image_NoLogs]
+      name: Create_Image_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.Create_Image_NoLogs
+      resultStatus: 1
+      duration: 0.0106411
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1055
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.Create_Outline]
+      name: Create_Outline
+      fullName: Unity.Theme.Tests.TestColorBinder.Create_Outline
+      resultStatus: 1
+      duration: 0.0120581
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_2</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_2</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_2</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_2</b>
+
+        [Theme] Unsubscribing at
+        <b><color=cyan>Prefabs</color>/_2</b>
+
+        [Theme] Theme changed ''<b>__Theme1__</b>''
+        -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1054
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.Create_Outline_NoLogs]
+      name: Create_Outline_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.Create_Outline_NoLogs
+      resultStatus: 1
+      duration: 0.0119303
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1053
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.Create_Shadow]
+      name: Create_Shadow
+      fullName: Unity.Theme.Tests.TestColorBinder.Create_Shadow
+      resultStatus: 1
+      duration: 0.0083356
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_4</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_4</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_4</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_4</b>
+
+        [Theme] Unsubscribing at
+        <b><color=cyan>Prefabs</color>/_4</b>
+
+        [Theme] Theme changed ''<b>__Theme1__</b>''
+        -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1052
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.Create_Shadow_NoLogs]
+      name: Create_Shadow_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.Create_Shadow_NoLogs
+      resultStatus: 1
+      duration: 0.0067824
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1051
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.Create_SpriteRenderer]
+      name: Create_SpriteRenderer
+      fullName: Unity.Theme.Tests.TestColorBinder.Create_SpriteRenderer
+      resultStatus: 1
+      duration: 0.0087027
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_6</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_6</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_6</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_6</b>
+
+        [Theme] Unsubscribing at
+        <b><color=cyan>Prefabs</color>/_6</b>
+
+        [Theme] Theme changed ''<b>__Theme1__</b>''
+        -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1050
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.Create_SpriteRenderer_NoLogs]
+      name: Create_SpriteRenderer_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.Create_SpriteRenderer_NoLogs
+      resultStatus: 1
+      duration: 0.0087761
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1049
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.Create_TextMeshProUGUI]
+      name: Create_TextMeshProUGUI
+      fullName: Unity.Theme.Tests.TestColorBinder.Create_TextMeshProUGUI
+      resultStatus: 1
+      duration: 0.0872086
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_8</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_8</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_8</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_8</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_8</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_8</b>
+
+        [Theme] Unsubscribing at
+        <b><color=cyan>Prefabs</color>/_8</b>
+
+        [Theme] Theme changed ''<b>__Theme1__</b>''
+        -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1048
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.Create_TextMeshProUGUI_NoLogs]
+      name: Create_TextMeshProUGUI_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.Create_TextMeshProUGUI_NoLogs
+      resultStatus: 1
+      duration: 0.0087873
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1067
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_Image]
+      name: SetColor_Image
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_Image
+      resultStatus: 1
+      duration: 0.0088052
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_10</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_10</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_10</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_10</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_10</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_10</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_10</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1066
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_Image_NoLogs]
+      name: SetColor_Image_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_Image_NoLogs
+      resultStatus: 1
+      duration: 0.0034016
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1075
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_Outline]
+      name: SetColor_Outline
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_Outline
+      resultStatus: 1
+      duration: 0.0058702
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_12</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_12</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_12</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_12</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_12</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_12</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_12</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1074
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_Outline_NoLogs]
+      name: SetColor_Outline_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_Outline_NoLogs
+      resultStatus: 1
+      duration: 0.0035855
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1057
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_Image]
+      name: SetColor_OverrideAlpha_Image
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_Image
+      resultStatus: 1
+      duration: 0.0095812
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme] SetAlpha: ''<b>__Color1__</b>''
+        0.2 at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme] SetColor
+        ''<b>__Color1__</b>'' #FF000033 at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme] SetAlpha:
+        ''<b>__Color1__</b>'' 0.2 at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme]
+        Invalidating color at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme]
+        SetColor ''<b>__Color1__</b>'' #FF0000FF at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_14</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1056
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_Image_NoLogs]
+      name: SetColor_OverrideAlpha_Image_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_Image_NoLogs
+      resultStatus: 1
+      duration: 0.0039795
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1065
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_Outline]
+      name: SetColor_OverrideAlpha_Outline
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_Outline
+      resultStatus: 1
+      duration: 0.0075257
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme] SetAlpha: ''<b>__Color1__</b>''
+        0.2 at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme] SetColor
+        ''<b>__Color1__</b>'' #FF000033 at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme] SetAlpha:
+        ''<b>__Color1__</b>'' 0.2 at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme]
+        Invalidating color at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme]
+        SetColor ''<b>__Color1__</b>'' #FF0000FF at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_16</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1064
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_Outline_NoLogs]
+      name: SetColor_OverrideAlpha_Outline_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_Outline_NoLogs
+      resultStatus: 1
+      duration: 0.0043826
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1063
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_Shadow]
+      name: SetColor_OverrideAlpha_Shadow
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_Shadow
+      resultStatus: 1
+      duration: 0.008807
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme] SetAlpha: ''<b>__Color1__</b>''
+        0.2 at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme] SetColor
+        ''<b>__Color1__</b>'' #FF000033 at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme] SetAlpha:
+        ''<b>__Color1__</b>'' 0.2 at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme]
+        Invalidating color at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme]
+        SetColor ''<b>__Color1__</b>'' #FF0000FF at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_18</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1062
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_Shadow_NoLogs]
+      name: SetColor_OverrideAlpha_Shadow_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_Shadow_NoLogs
+      resultStatus: 1
+      duration: 0.0049924
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1061
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_SpriteRenderer]
+      name: SetColor_OverrideAlpha_SpriteRenderer
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_SpriteRenderer
+      resultStatus: 1
+      duration: 0.009352
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme] SetAlpha: ''<b>__Color1__</b>''
+        0.2 at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme] SetColor
+        ''<b>__Color1__</b>'' #FF000033 at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme] SetAlpha:
+        ''<b>__Color1__</b>'' 0.2 at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme]
+        Invalidating color at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme]
+        SetColor ''<b>__Color1__</b>'' #FF0000FF at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_20</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1060
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_SpriteRenderer_NoLogs]
+      name: SetColor_OverrideAlpha_SpriteRenderer_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_SpriteRenderer_NoLogs
+      resultStatus: 1
+      duration: 0.0051518
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1059
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_TextMeshProUGUI]
+      name: SetColor_OverrideAlpha_TextMeshProUGUI
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_TextMeshProUGUI
+      resultStatus: 1
+      duration: 0.010144
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme] SetAlpha: ''<b>__Color1__</b>''
+        0.2 at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme] SetColor
+        ''<b>__Color1__</b>'' #FF000033 at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme] SetAlpha:
+        ''<b>__Color1__</b>'' 0.2 at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme]
+        Invalidating color at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme]
+        SetColor ''<b>__Color1__</b>'' #FF0000FF at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_22</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1058
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_TextMeshProUGUI_NoLogs]
+      name: SetColor_OverrideAlpha_TextMeshProUGUI_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_OverrideAlpha_TextMeshProUGUI_NoLogs
+      resultStatus: 1
+      duration: 0.0057407
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1073
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_Shadow]
+      name: SetColor_Shadow
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_Shadow
+      resultStatus: 1
+      duration: 0.0076705
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_24</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_24</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_24</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_24</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_24</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_24</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_24</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1072
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_Shadow_NoLogs]
+      name: SetColor_Shadow_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_Shadow_NoLogs
+      resultStatus: 1
+      duration: 0.0040896
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1071
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_SpriteRenderer]
+      name: SetColor_SpriteRenderer
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_SpriteRenderer
+      resultStatus: 1
+      duration: 0.00633
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_26</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_26</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_26</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_26</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_26</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_26</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_26</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1070
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_SpriteRenderer_NoLogs]
+      name: SetColor_SpriteRenderer_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_SpriteRenderer_NoLogs
+      resultStatus: 1
+      duration: 0.0045926
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1069
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_TextMeshProUGUI]
+      name: SetColor_TextMeshProUGUI
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_TextMeshProUGUI
+      resultStatus: 1
+      duration: 0.0064034
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_28</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_28</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_28</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_28</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_28</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_28</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_28</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1068
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SetColor_TextMeshProUGUI_NoLogs]
+      name: SetColor_TextMeshProUGUI_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SetColor_TextMeshProUGUI_NoLogs
+      resultStatus: 1
+      duration: 0.0054764
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1077
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchColor_Image]
+      name: SwitchColor_Image
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchColor_Image
+      resultStatus: 1
+      duration: 0.008025
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_30</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_30</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_30</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_30</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_30</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_30</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_30</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_30</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_30</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1076
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchColor_Image_NoLogs]
+      name: SwitchColor_Image_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchColor_Image_NoLogs
+      resultStatus: 1
+      duration: 0.004632
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1085
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchColor_Outline]
+      name: SwitchColor_Outline
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchColor_Outline
+      resultStatus: 1
+      duration: 0.0106033
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_32</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_32</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_32</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_32</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_32</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_32</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_32</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_32</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_32</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1084
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchColor_Outline_NoLogs]
+      name: SwitchColor_Outline_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchColor_Outline_NoLogs
+      resultStatus: 1
+      duration: 0.0049144
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1083
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchColor_Shadow]
+      name: SwitchColor_Shadow
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchColor_Shadow
+      resultStatus: 1
+      duration: 0.0063791
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_34</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_34</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_34</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_34</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_34</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_34</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_34</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_34</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_34</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1082
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchColor_Shadow_NoLogs]
+      name: SwitchColor_Shadow_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchColor_Shadow_NoLogs
+      resultStatus: 1
+      duration: 0.003845
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1081
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchColor_SpriteRenderer]
+      name: SwitchColor_SpriteRenderer
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchColor_SpriteRenderer
+      resultStatus: 1
+      duration: 0.0059729
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_36</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_36</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_36</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_36</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_36</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_36</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_36</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_36</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_36</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1080
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchColor_SpriteRenderer_NoLogs]
+      name: SwitchColor_SpriteRenderer_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchColor_SpriteRenderer_NoLogs
+      resultStatus: 1
+      duration: 0.0067837
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1079
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchColor_TextMeshProUGUI]
+      name: SwitchColor_TextMeshProUGUI
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchColor_TextMeshProUGUI
+      resultStatus: 1
+      duration: 0.0068891
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_38</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_38</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_38</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_38</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_38</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_38</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_38</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_38</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_38</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1078
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchColor_TextMeshProUGUI_NoLogs]
+      name: SwitchColor_TextMeshProUGUI_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchColor_TextMeshProUGUI_NoLogs
+      resultStatus: 1
+      duration: 0.0047491
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1087
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchTheme_Image]
+      name: SwitchTheme_Image
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchTheme_Image
+      resultStatus: 1
+      duration: 0.0076072
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_40</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_40</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_40</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_40</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_40</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_40</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_40</b>
+
+        [Theme] SetColor
+        ''<b>__Color1__</b>'' #FFFF00FF at <b><color=cyan>Prefabs</color>/_40</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_40</b>
+
+        [Theme] SetColor
+        ''<b>__Color2__</b>'' #00FFFFFF at <b><color=cyan>Prefabs</color>/_40</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_40</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_40</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme2__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1086
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchTheme_Image_NoLogs]
+      name: SwitchTheme_Image_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchTheme_Image_NoLogs
+      resultStatus: 1
+      duration: 0.0038527
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1095
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchTheme_Outline]
+      name: SwitchTheme_Outline
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchTheme_Outline
+      resultStatus: 1
+      duration: 0.0084689
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_42</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_42</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_42</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_42</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_42</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_42</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_42</b>
+
+        [Theme] SetColor
+        ''<b>__Color1__</b>'' #FFFF00FF at <b><color=cyan>Prefabs</color>/_42</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_42</b>
+
+        [Theme] SetColor
+        ''<b>__Color2__</b>'' #00FFFFFF at <b><color=cyan>Prefabs</color>/_42</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_42</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_42</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme2__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1094
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchTheme_Outline_NoLogs]
+      name: SwitchTheme_Outline_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchTheme_Outline_NoLogs
+      resultStatus: 1
+      duration: 0.0039055
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1093
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchTheme_Shadow]
+      name: SwitchTheme_Shadow
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchTheme_Shadow
+      resultStatus: 1
+      duration: 0.007743
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_44</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_44</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_44</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_44</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_44</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_44</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_44</b>
+
+        [Theme] SetColor
+        ''<b>__Color1__</b>'' #FFFF00FF at <b><color=cyan>Prefabs</color>/_44</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_44</b>
+
+        [Theme] SetColor
+        ''<b>__Color2__</b>'' #00FFFFFF at <b><color=cyan>Prefabs</color>/_44</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_44</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_44</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme2__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1092
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchTheme_Shadow_NoLogs]
+      name: SwitchTheme_Shadow_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchTheme_Shadow_NoLogs
+      resultStatus: 1
+      duration: 0.0038941
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1091
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchTheme_SpriteRenderer]
+      name: SwitchTheme_SpriteRenderer
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchTheme_SpriteRenderer
+      resultStatus: 1
+      duration: 0.0069586
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_46</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_46</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_46</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_46</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_46</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_46</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_46</b>
+
+        [Theme] SetColor
+        ''<b>__Color1__</b>'' #FFFF00FF at <b><color=cyan>Prefabs</color>/_46</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_46</b>
+
+        [Theme] SetColor
+        ''<b>__Color2__</b>'' #00FFFFFF at <b><color=cyan>Prefabs</color>/_46</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_46</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_46</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme2__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1090
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchTheme_SpriteRenderer_NoLogs]
+      name: SwitchTheme_SpriteRenderer_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchTheme_SpriteRenderer_NoLogs
+      resultStatus: 1
+      duration: 0.0042851
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1089
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchTheme_TextMeshProUGUI]
+      name: SwitchTheme_TextMeshProUGUI
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchTheme_TextMeshProUGUI
+      resultStatus: 1
+      duration: 0.0124333
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_48</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_48</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_48</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_48</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_48</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_48</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_48</b>
+
+        [Theme] SetColor
+        ''<b>__Color1__</b>'' #FFFF00FF at <b><color=cyan>Prefabs</color>/_48</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_48</b>
+
+        [Theme] SetColor
+        ''<b>__Color2__</b>'' #00FFFFFF at <b><color=cyan>Prefabs</color>/_48</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_48</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_48</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme2__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1088
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.SwitchTheme_TextMeshProUGUI_NoLogs]
+      name: SwitchTheme_TextMeshProUGUI_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.SwitchTheme_TextMeshProUGUI_NoLogs
+      resultStatus: 1
+      duration: 0.0054466
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1097
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.UpdateColor_Image]
+      name: UpdateColor_Image
+      fullName: Unity.Theme.Tests.TestColorBinder.UpdateColor_Image
+      resultStatus: 1
+      duration: 0.011816
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00AA00FF at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_50</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1096
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.UpdateColor_Image_NoLogs]
+      name: UpdateColor_Image_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.UpdateColor_Image_NoLogs
+      resultStatus: 1
+      duration: 0.0109751
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1105
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.UpdateColor_Outline]
+      name: UpdateColor_Outline
+      fullName: Unity.Theme.Tests.TestColorBinder.UpdateColor_Outline
+      resultStatus: 1
+      duration: 0.0146626
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00AA00FF at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_52</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1104
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.UpdateColor_Outline_NoLogs]
+      name: UpdateColor_Outline_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.UpdateColor_Outline_NoLogs
+      resultStatus: 1
+      duration: 0.0043228
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1103
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.UpdateColor_Shadow]
+      name: UpdateColor_Shadow
+      fullName: Unity.Theme.Tests.TestColorBinder.UpdateColor_Shadow
+      resultStatus: 1
+      duration: 0.0097749
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00AA00FF at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_54</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1102
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.UpdateColor_Shadow_NoLogs]
+      name: UpdateColor_Shadow_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.UpdateColor_Shadow_NoLogs
+      resultStatus: 1
+      duration: 0.0037331
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1101
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.UpdateColor_SpriteRenderer]
+      name: UpdateColor_SpriteRenderer
+      fullName: Unity.Theme.Tests.TestColorBinder.UpdateColor_SpriteRenderer
+      resultStatus: 1
+      duration: 0.0095578
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00AA00FF at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_56</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1100
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.UpdateColor_SpriteRenderer_NoLogs]
+      name: UpdateColor_SpriteRenderer_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.UpdateColor_SpriteRenderer_NoLogs
+      resultStatus: 1
+      duration: 0.0049339
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1099
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.UpdateColor_TextMeshProUGUI]
+      name: UpdateColor_TextMeshProUGUI
+      fullName: Unity.Theme.Tests.TestColorBinder.UpdateColor_TextMeshProUGUI
+      resultStatus: 1
+      duration: 0.0096767
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme]
+        SetDirty at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] Subscribing
+        at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00AA00FF at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] Unsubscribing
+        at <b><color=cyan>Prefabs</color>/_58</b>
+
+        [Theme] Theme changed
+        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1098
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestColorBinder/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder.UpdateColor_TextMeshProUGUI_NoLogs]
+      name: UpdateColor_TextMeshProUGUI_NoLogs
+      fullName: Unity.Theme.Tests.TestColorBinder.UpdateColor_TextMeshProUGUI_NoLogs
+      resultStatus: 1
+      duration: 0.005044
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1045
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestColorBinder][suite]
+    - id: 1062
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+      name: TestTheme
+      fullName: Unity.Theme.Tests.TestTheme
+      resultStatus: 1
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1078
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests][suite]
+    - id: 1112
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestTheme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme.AddColor]
+      name: AddColor
+      fullName: Unity.Theme.Tests.TestTheme.AddColor
+      resultStatus: 1
+      duration: 0.0041392
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b>
+        --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1106
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+    - id: 1111
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestTheme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme.AddColor_NoLogs]
+      name: AddColor_NoLogs
+      fullName: Unity.Theme.Tests.TestTheme.AddColor_NoLogs
+      resultStatus: 1
+      duration: 0.0035821
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1106
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+    - id: 1118
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestTheme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme.AddTheme]
+      name: AddTheme
+      fullName: Unity.Theme.Tests.TestTheme.AddTheme
+      resultStatus: 1
+      duration: 0.0067133
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__ThemeNew__</b>''
+
+        [Theme]
+        Theme changed -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme changed ''<b>__Theme2__</b>''
+        -> ''<b>__ThemeNew__</b>''
+
+        [Theme] Theme changed -> ''<b>__Theme2__</b>''
+
+        [Theme]
+        Theme changed ''<b>__Theme2__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1106
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+    - id: 1117
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestTheme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme.AddTheme_NoLogs]
+      name: AddTheme_NoLogs
+      fullName: Unity.Theme.Tests.TestTheme.AddTheme_NoLogs
+      resultStatus: 1
+      duration: 0.0043199
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1106
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+    - id: 1110
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestTheme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme.SetColor]
+      name: SetColor
+      fullName: Unity.Theme.Tests.TestTheme.SetColor
+      resultStatus: 1
+      duration: 0.0037472
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b>
+        --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1106
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+    - id: 1109
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestTheme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme.SetColor_NoLogs]
+      name: SetColor_NoLogs
+      fullName: Unity.Theme.Tests.TestTheme.SetColor_NoLogs
+      resultStatus: 1
+      duration: 0.003406
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1106
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+    - id: 1108
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestTheme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme.SetColor_Undefined]
+      name: SetColor_Undefined
+      fullName: Unity.Theme.Tests.TestTheme.SetColor_Undefined
+      resultStatus: 1
+      duration: 0.0059099
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] SetColor
+        error. Color with name ''___Undefined___'' not found
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b>
+        --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1106
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+    - id: 1107
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestTheme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme.SetColor_Undefined_NoLogs]
+      name: SetColor_Undefined_NoLogs
+      fullName: Unity.Theme.Tests.TestTheme.SetColor_Undefined_NoLogs
+      resultStatus: 1
+      duration: 0.0033777
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] SetColor
+        error. Color with name ''___Undefined___'' not found
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1106
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+    - id: 1114
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestTheme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme.SetOrAddColor]
+      name: SetOrAddColor
+      fullName: Unity.Theme.Tests.TestTheme.SetOrAddColor
+      resultStatus: 1
+      duration: 0.0037976
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End </b>
+        --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1106
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+    - id: 1113
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestTheme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme.SetOrAddColor_NoLogs]
+      name: SetOrAddColor_NoLogs
+      fullName: Unity.Theme.Tests.TestTheme.SetOrAddColor_NoLogs
+      resultStatus: 1
+      duration: 0.0042887
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1106
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+    - id: 1116
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestTheme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme.SetOrAddColor_Undefined]
+      name: SetOrAddColor_Undefined
+      fullName: Unity.Theme.Tests.TestTheme.SetOrAddColor_Undefined
+      resultStatus: 1
+      duration: 0.0077069
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Can''t
+        RemoveColorByName(`___Undefined___`), because it doesn''t exist
+
+        [Theme]
+        Theme changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1106
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+    - id: 1115
+      uniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/TestTheme/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme.SetOrAddColor_Undefined_NoLogs]
+      name: SetOrAddColor_Undefined_NoLogs
+      fullName: Unity.Theme.Tests.TestTheme.SetOrAddColor_Undefined_NoLogs
+      resultStatus: 1
+      duration: 0.0038855
+      messages: 
+      output: '<b>Test Start </b> ------------------------------------------
+
+        [Theme]
+        Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+
+        <b>Test End
+        </b> --------------------------------------------
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1106
+      parentUniqueId: Unity.Theme.Tests.Editor.dll/Unity/Theme/Tests/[Unity.Theme.Tests.Editor][Unity.Theme.Tests.TestTheme][suite]
+    m_ResultText: Tests (72 tests) (0.000s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 182eb8ae
+      m_LastClickedID: -1363661288
+      m_ExpandedIDs: 02d65cf628bb5605ad73f92936d60333ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  - m_Window: {fileID: 21}
+    runProgress:
+      RunGuid: e20a872f-4de8-4e6d-a770-eb99c187ccd4
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 1
+          testNames:
+          - Unity.Theme.Tests
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 0.99999887
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[Unity-Theme][suite]'
+      name: Unity-Theme
+      fullName: Unity-Theme
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: ad73f929ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  - m_Window: {fileID: 0}
+    runProgress:
+      RunGuid: e20a872f-4de8-4e6d-a770-eb99c187ccd4
+      ExecutionSettings:
+        m_TargetPlatform: 0
+        m_HasTargetPlatform: 0
+        filter:
+          testMode: 0
+          testNames: []
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        filters:
+        - testMode: 1
+          testNames:
+          - Unity.Theme.Tests
+          groupNames: []
+          categoryNames: []
+          assemblyNames: []
+        runSynchronously: 0
+        playerHeartbeatTimeout: 600
+        orderedTestNames: []
+        ignoreTests: []
+        featureFlags:
+          fileCleanUpCheck: 0
+          requiresSplashScreen: 0
+          strictDomainReload: 0
+          disableNestedEnumeratorBugfix: 0
+        randomOrderSeed: 0
+      HasFinished: 1
+      Progress: 0.99999887
+      CurrentStepName: Unlock Reload Assemblies
+      CurrentStageName: 
+    m_NewResultList: []
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategories: []
+      availableCategories: []
+    m_SelectedOption: 0
+--- !u!114 &22
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 802
+    width: 1319.6666
+    height: 549.00006
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+--- !u!114 &23
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Game
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 802
+    width: 1319.6666
+    height: 549.00006
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_SerializedViewNames: []
+  m_SerializedViewValues: []
+  m_PlayModeViewName: GameView
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+  m_TargetSize: {x: 512, y: 512}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_EnterPlayModeBehavior: 0
+  m_UseMipMap: 0
+  m_VSyncEnabled: 0
+  m_Gizmos: 0
+  m_Stats: 0
+  m_SelectedSizes: 07000000000000000000000011000000000000000000000000000000000000000000000000000000
+  m_ZoomArea:
+    m_HRangeLocked: 0
+    m_VRangeLocked: 0
+    hZoomLockedByDefault: 0
+    vZoomLockedByDefault: 0
+    m_HBaseRangeMin: -170.66667
+    m_HBaseRangeMax: 170.66667
+    m_VBaseRangeMin: -170.66667
+    m_VBaseRangeMax: 170.66667
+    m_HAllowExceedBaseRangeMin: 1
+    m_HAllowExceedBaseRangeMax: 1
+    m_VAllowExceedBaseRangeMin: 1
+    m_VAllowExceedBaseRangeMax: 1
+    m_ScaleWithWindow: 0
+    m_HSlider: 0
+    m_VSlider: 0
+    m_IgnoreScrollWheelUntilClicked: 0
+    m_EnableMouseInput: 1
+    m_EnableSliderZoomHorizontal: 0
+    m_EnableSliderZoomVertical: 0
+    m_UniformScale: 1
+    m_UpDirection: 1
+    m_DrawArea:
+      serializedVersion: 2
+      x: 0
+      y: 21
+      width: 1319.6666
+      height: 528.00006
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 659.8333, y: 264.00003}
+    m_MarginLeft: 0
+    m_MarginRight: 0
+    m_MarginTop: 0
+    m_MarginBottom: 0
+    m_LastShownAreaInsideMargins:
+      serializedVersion: 2
+      x: -659.8333
+      y: -264.00003
+      width: 1319.6666
+      height: 528.00006
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1979.5, y: 823.5001}
+  m_ClearInEditMode: 1
+  m_NoCameraWarning: 1
+  m_LowResolutionForAspectRatios: 00000000000000000000
+  m_XRRenderMode: 0
+  m_RenderTexture: {fileID: 0}
+--- !u!114 &24
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: -440750813802333266, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1320.6667
+    y: 72.66667
+    width: 460
+    height: 1278.3334
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
+  m_PreviewResizer:
+    m_CachedPref: -442
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_LastInspectedObjectInstanceID: 18400
+  m_LastVerticalScrollValue: 0
+  m_GlobalObjectId: 
+  m_InspectorMode: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_PreviewWindow: {fileID: 0}
+--- !u!114 &25
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_TitleContent:
+    m_Text: Project
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 2194.6667
+    y: 72.66667
+    width: 364.33325
+    height: 1278.3334
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SkipHidden: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Assets/root
+    m_Globs: []
+    m_OriginalText: 
+    m_ImportLogFlags: 0
+    m_FilterByTypeIntersection: 0
+  m_ViewMode: 0
+  m_StartGridSize: 16
+  m_LastFolders: []
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: C:\Projects\Unity\Unity-Theme\Unity-Theme
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 62800200
+    m_LastClickedID: 163938
+    m_ExpandedIDs: 00000000dc470000de470000e0470000e2470000e4470000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: ffffffff00000000dc470000de470000e0470000e2470000e4470000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 16}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 16}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 16
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 115

@@ -1,0 +1,16 @@
+{
+    "name": "com.IvanMurzak.Unity.Theme.Installer",
+    "rootNamespace": "com.IvanMurzak.Unity.Theme.Installer",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
