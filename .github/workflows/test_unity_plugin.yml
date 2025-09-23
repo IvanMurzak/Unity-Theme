@@ -27,9 +27,9 @@ jobs:
       matrix:
         include:
           - os: windows
-            runs-on: [self-hosted, windows, windows-latest]
-          - os: linux
-            runs-on: [self-hosted, linux, ubuntu-latest]
+            runs-on: [self-hosted, windows-latest]
+          - os: ubuntu
+            runs-on: [self-hosted, ubuntu-latest]
 
     name: ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.os }}
     runs-on: ${{ matrix.runs-on }}
@@ -71,16 +71,7 @@ jobs:
       - name: Generate custom image name
         id: custom_image
         run: |
-          if [[ "${{ matrix.os }}" == "linux" ]]; then
-            echo "image=unityci/editor:ubuntu-${{ inputs.unityVersion }}-base-3" >> $GITHUB_OUTPUT
-            echo "Using Ubuntu Unity image for OS: ${{ matrix.os }}"
-          elif [[ "${{ matrix.os }}" == "windows" ]]; then
-            echo "image=unityci/editor:windows-${{ inputs.unityVersion }}-base-3" >> $GITHUB_OUTPUT
-            echo "Using Windows Unity image for OS: ${{ matrix.os }}"
-          else
-            echo "::error::Unsupported matrix.os: ${{ matrix.os }}"
-            exit 1
-          fi
+          echo "image=unityci/editor:${{ matrix.os }}-${{ inputs.unityVersion }}-base-3" >> $GITHUB_OUTPUT
         shell: bash
 
       - uses: game-ci/unity-test-runner@v4
