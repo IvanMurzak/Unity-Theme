@@ -6,12 +6,12 @@ on:
     types: [opened, synchronize, reopened]
 
 env:
-  ___UnityProjectPath: ./Unity-Theme
-  ___UnityPackageRoot: Assets/root
-  ___InstallerProjectPath: ./Installer
-  ___InstallerFileName: Unity-Theme-Installer
-  ___InstallerExportMethod: com.IvanMurzak.Unity.Theme.Installer.PackageExporter.ExportPackage
-  ___InstallerUnityVersion: 2022.3.57f1
+  ___UnityProjectPath: './Unity-Theme'
+  ___UnityPackageRoot: './Assets/root'
+  ___InstallerProjectPath: './Installer'
+  ___InstallerFileName: 'Unity-Theme-Installer'
+  ___InstallerExportMethod: 'com.IvanMurzak.Unity.Theme.Installer.PackageExporter.ExportPackage'
+  ___InstallerUnityVersion: '2022.3.57f1'
 
 jobs:
   # --- EDIT MODE ---
