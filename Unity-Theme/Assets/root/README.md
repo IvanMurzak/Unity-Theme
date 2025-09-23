@@ -1,6 +1,6 @@
 # Unity-Theme
 
-![npm](https://img.shields.io/npm/v/extensions.unity.theme) [![openupm](https://img.shields.io/npm/v/extensions.unity.theme?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.theme/) ![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme) [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
+[![openupm](https://img.shields.io/npm/v/extensions.unity.theme?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.theme/) ![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme) [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
 | Unity Version | Editor test | Player test | Build test |
 |---------------|-------------|-------------|------------|
@@ -24,7 +24,15 @@ Create palettes of colors and components to change specific colors on a specific
 - ✔️ Easy way to add custom color binder by new C# class with just a few lines of code
 - ✔️ Rename color even after binding to a component, with no broken links
 
-## Installation
+# Installation
+
+- **[⬇️ Download Installer](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.1.1/Unity-Theme-Installer.unitypackage)**
+- **📂 Import installer into Unity project**
+  > - You may use double click on the file - Unity will open it
+  > - OR: You may open Unity Editor first, then click on `Assets/Import Package/Custom Package`, then choose the file
+
+<details>
+  <summary><b>Alternative: Install via OpenUPM</b></summary>
 
 - [Install OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
 - Open command line in Unity project folder
@@ -32,6 +40,8 @@ Create palettes of colors and components to change specific colors on a specific
 ```bash
 openupm add extensions.unity.theme
 ```
+
+</details>
 
 ## Usage
 
