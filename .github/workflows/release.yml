@@ -5,6 +5,14 @@ on:
     branches:
       - main
 
+env:
+  ___UnityProjectPath: ./Unity-Theme
+  ___UnityPackageRoot: Assets/root
+  ___InstallerProjectPath: ./Installer
+  ___InstallerFileName: Unity-Theme-Installer
+  ___InstallerExportMethod: com.IvanMurzak.Unity.Theme.Installer.PackageExporter.ExportPackage
+  ___InstallerUnityVersion: 2022.3.57f1
+
 jobs:
   check-version-tag:
     runs-on: ubuntu-latest
@@ -22,7 +30,7 @@ jobs:
         id: get_version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
         with:
-          path: Unity-Theme/Assets/root
+          path: ${{ env.___UnityProjectPath }}/${{ env.___UnityPackageRoot }}
 
       - name: Find previous version tag
         id: prev_tag
@@ -45,7 +53,7 @@ jobs:
       - name: Cache Unity Library
         uses: actions/cache@v4
         with:
-          path: ./AssetStore-Installer/Library
+          path: ${{ env.___InstallerProjectPath }}/Library
           key: Library-Unity-Installer
 
       - name: Test Unity Installer (EditMode)
@@ -55,9 +63,9 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          projectPath: ./AssetStore-Installer
-          unityVersion: 2022.3.61f1
-          customImage: 'unityci/editor:ubuntu-2022.3.61f1-base-3'
+          projectPath: ${{ env.___InstallerProjectPath }}
+          unityVersion: ${{ env.___InstallerUnityVersion }}
+          customImage: 'unityci/editor:ubuntu-${{ env.___InstallerUnityVersion }}-base-3'
           testMode: editmode
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           checkName: Unity Installer EditMode Test Results
@@ -67,8 +75,8 @@ jobs:
       - name: Clean Unity artifacts and reset git state
         run: |
           # Force remove Unity generated files with restricted permissions
-          sudo rm -rf ./AssetStore-Installer/Logs/ || true
-          sudo rm -rf ./AssetStore-Installer/Temp/ || true
+          sudo rm -rf ${{ env.___InstallerProjectPath }}/Logs/ || true
+          sudo rm -rf ${{ env.___InstallerProjectPath }}/Temp/ || true
           sudo rm -rf ./artifacts-installer-editmode/ || true
 
           # Reset only tracked files to their committed state
@@ -82,31 +90,40 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          projectPath: ./AssetStore-Installer
-          unityVersion: 2022.3.61f1
-          customImage: 'unityci/editor:ubuntu-2022.3.61f1-base-3'
-          buildName: AI-Game-Dev-Installer
+          projectPath: ${{ env.___InstallerProjectPath }}
+          unityVersion: ${{ env.___InstallerUnityVersion }}
+          customImage: 'unityci/editor:ubuntu-${{ env.___InstallerUnityVersion }}-base-3'
+          buildName: ${{ env.___InstallerFileName }}
           buildsPath: build
-          buildMethod: com.IvanMurzak.Unity.MCP.Installer.PackageExporter.ExportPackage
+          buildMethod: ${{ env.___InstallerExportMethod }}
           customParameters: -CI true -GITHUB_ACTIONS true
 
       - name: Upload Unity Package as artifact
         uses: actions/upload-artifact@v4
         with:
           name: unity-installer-package
-          path: ./AssetStore-Installer/build/AI-Game-Dev-Installer.unitypackage
+          path: ${{ env.___InstallerProjectPath }}/build/${{ env.___InstallerFileName }}.unitypackage
 
   # --- UNITY TESTS ---
   # -------------------
 
   # --- EDIT MODE ---
 
-  test-unity-2022-3-61f1-editmode:
+  test-unity-2022-3-57f1-editmode:
     needs: [build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
-      unityVersion: '2022.3.61f1'
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '2022.3.57f1'
+      testMode: 'editmode'
+    secrets: inherit
+
+  test-unity-2023-1-20f1-editmode:
+    needs: [build-unity-installer]
+    uses: ./.github/workflows/test_unity_plugin.yml
+    with:
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '2023.1.20f1'
       testMode: 'editmode'
     secrets: inherit
 
@@ -114,28 +131,37 @@ jobs:
     needs: [build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
+      projectPath: ${{ env.___UnityProjectPath }}
       unityVersion: '2023.2.20f1'
       testMode: 'editmode'
     secrets: inherit
 
-  test-unity-6000-2-3f1-editmode:
+  test-unity-6000-0-37f1-editmode:
     needs: [build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
-      unityVersion: '6000.2.3f1'
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '6000.0.37f1'
       testMode: 'editmode'
     secrets: inherit
 
   # --- PLAY MODE ---
 
-  test-unity-2022-3-61f1-playmode:
+  test-unity-2022-3-57f1-playmode:
     needs: [build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
-      unityVersion: '2022.3.61f1'
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '2022.3.57f1'
+      testMode: 'playmode'
+    secrets: inherit
+
+  test-unity-2023-1-20f1-playmode:
+    needs: [build-unity-installer]
+    uses: ./.github/workflows/test_unity_plugin.yml
+    with:
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '2023.1.20f1'
       testMode: 'playmode'
     secrets: inherit
 
@@ -143,28 +169,37 @@ jobs:
     needs: [build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
+      projectPath: ${{ env.___UnityProjectPath }}
       unityVersion: '2023.2.20f1'
       testMode: 'playmode'
     secrets: inherit
 
-  test-unity-6000-2-3f1-playmode:
+  test-unity-6000-0-37f1-playmode:
     needs: [build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
-      unityVersion: '6000.2.3f1'
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '6000.0.37f1'
       testMode: 'playmode'
     secrets: inherit
 
   # --- STANDALONE ---
 
-  test-unity-2022-3-61f1-standalone:
+  test-unity-2022-3-57f1-standalone:
     needs: [build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
-      unityVersion: '2022.3.61f1'
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '2022.3.57f1'
+      testMode: 'standalone'
+    secrets: inherit
+
+  test-unity-2023-1-20f1-standalone:
+    needs: [build-unity-installer]
+    uses: ./.github/workflows/test_unity_plugin.yml
+    with:
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '2023.1.20f1'
       testMode: 'standalone'
     secrets: inherit
 
@@ -172,17 +207,17 @@ jobs:
     needs: [build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
+      projectPath: ${{ env.___UnityProjectPath }}
       unityVersion: '2023.2.20f1'
       testMode: 'standalone'
     secrets: inherit
 
-  test-unity-6000-2-3f1-standalone:
+  test-unity-6000-0-37f1-standalone:
     needs: [build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
-      unityVersion: '6000.2.3f1'
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '6000.0.37f1'
       testMode: 'standalone'
     secrets: inherit
 
@@ -193,15 +228,18 @@ jobs:
     needs: [
       check-version-tag,
       build-unity-installer,
-      test-unity-2022-3-61f1-editmode,
-      test-unity-2022-3-61f1-playmode,
-      test-unity-2022-3-61f1-standalone,
+      test-unity-2022-3-57f1-editmode,
+      test-unity-2022-3-57f1-playmode,
+      test-unity-2022-3-57f1-standalone,
+      test-unity-2023-1-20f1-editmode,
+      test-unity-2023-1-20f1-playmode,
+      test-unity-2023-1-20f1-standalone,
       test-unity-2023-2-20f1-editmode,
       test-unity-2023-2-20f1-playmode,
       test-unity-2023-2-20f1-standalone,
-      test-unity-6000-2-3f1-editmode,
-      test-unity-6000-2-3f1-playmode,
-      test-unity-6000-2-3f1-standalone
+      test-unity-6000-0-37f1-editmode,
+      test-unity-6000-0-37f1-playmode,
+      test-unity-6000-0-37f1-standalone
     ]
     if: needs.check-version-tag.outputs.tag_exists == 'false'
     outputs:
@@ -278,7 +316,7 @@ jobs:
       - name: Upload Unity Package to Release
         uses: softprops/action-gh-release@v2
         with:
-          files: ./AI-Game-Dev-Installer.unitypackage
+          files: ./${{ env.___InstallerFileName }}.unitypackage
           tag_name: ${{ needs.release-unity-plugin.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -289,13 +327,6 @@ jobs:
     needs: [publish-unity-installer]
     if: always()
     steps:
-      - name: Delete MCP Server artifacts
-        uses: geekyeggo/delete-artifact@v5
-        with:
-          name: mcp-server-zips
-          failOnError: false
-        continue-on-error: true
-
       - name: Delete Unity Package artifacts
         uses: geekyeggo/delete-artifact@v5
         with:

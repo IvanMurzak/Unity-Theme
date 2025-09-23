@@ -5,82 +5,114 @@ on:
     branches: [main, dev]
     types: [opened, synchronize, reopened]
 
+env:
+  ___UnityProjectPath: ./Unity-Theme
+  ___UnityPackageRoot: Assets/root
+  ___InstallerProjectPath: ./Installer
+  ___InstallerFileName: Unity-Theme-Installer
+  ___InstallerExportMethod: com.IvanMurzak.Unity.Theme.Installer.PackageExporter.ExportPackage
+  ___InstallerUnityVersion: 2022.3.57f1
+
 jobs:
   # --- EDIT MODE ---
 
-  test-unity-2022-3-61f1-editmode:
+  test-unity-2022-3-57f1-editmode:
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
-      unityVersion: '2022.3.61f1'
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '2022.3.57f1'
+      testMode: 'editmode'
+    secrets: inherit
+
+  test-unity-2023-1-20f1-editmode:
+    uses: ./.github/workflows/test_unity_plugin.yml
+    with:
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '2023.1.20f1'
       testMode: 'editmode'
     secrets: inherit
 
   test-unity-2023-2-20f1-editmode:
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
+      projectPath: ${{ env.___UnityProjectPath }}
       unityVersion: '2023.2.20f1'
       testMode: 'editmode'
     secrets: inherit
 
-  test-unity-6000-2-3f1-editmode:
+  test-unity-6000-0-37f1-editmode:
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
-      unityVersion: '6000.2.3f1'
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '6000.0.37f1'
       testMode: 'editmode'
     secrets: inherit
 
   # --- PLAY MODE ---
 
-  test-unity-2022-3-61f1-playmode:
+  test-unity-2022-3-57f1-playmode:
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
-      unityVersion: '2022.3.61f1'
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '2022.3.57f1'
+      testMode: 'playmode'
+    secrets: inherit
+
+  test-unity-2023-1-20f1-playmode:
+    uses: ./.github/workflows/test_unity_plugin.yml
+    with:
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '2023.1.20f1'
       testMode: 'playmode'
     secrets: inherit
 
   test-unity-2023-2-20f1-playmode:
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
+      projectPath: ${{ env.___UnityProjectPath }}
       unityVersion: '2023.2.20f1'
       testMode: 'playmode'
     secrets: inherit
 
-  test-unity-6000-2-3f1-playmode:
+  test-unity-6000-0-37f1-playmode:
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
-      unityVersion: '6000.2.3f1'
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '6000.0.37f1'
       testMode: 'playmode'
     secrets: inherit
 
   # --- STANDALONE ---
 
-  test-unity-2022-3-61f1-standalone:
+  test-unity-2022-3-57f1-standalone:
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
-      unityVersion: '2022.3.61f1'
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '2022.3.57f1'
+      testMode: 'standalone'
+    secrets: inherit
+
+  test-unity-2023-1-20f1-standalone:
+    uses: ./.github/workflows/test_unity_plugin.yml
+    with:
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '2023.1.20f1'
       testMode: 'standalone'
     secrets: inherit
 
   test-unity-2023-2-20f1-standalone:
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
+      projectPath: ${{ env.___UnityProjectPath }}
       unityVersion: '2023.2.20f1'
       testMode: 'standalone'
     secrets: inherit
 
-  test-unity-6000-2-3f1-standalone:
+  test-unity-6000-0-37f1-standalone:
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
-      projectPath: './Unity-Theme-Plugin'
-      unityVersion: '6000.2.3f1'
+      projectPath: ${{ env.___UnityProjectPath }}
+      unityVersion: '6000.0.37f1'
       testMode: 'standalone'
     secrets: inherit
 
