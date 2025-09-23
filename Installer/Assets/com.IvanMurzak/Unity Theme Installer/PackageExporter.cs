@@ -2,7 +2,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace com.IvanMurzak
+namespace com.IvanMurzak.Unity.Theme.Installer
 {
     public static class PackageExporter
     {
