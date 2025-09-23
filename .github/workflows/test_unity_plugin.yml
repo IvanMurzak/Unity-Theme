@@ -27,12 +27,12 @@ jobs:
       matrix:
         include:
           - os: windows
-            runners: [[self-hosted, windows], windows-latest]
+            runs-on: [self-hosted, windows, windows-latest]
           - os: linux
-            runners: [[self-hosted, linux], ubuntu-latest]
+            runs-on: [self-hosted, linux, ubuntu-latest]
 
     name: ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.runners }}
+    runs-on: ${{ matrix.runs-on }}
 
     # permissions: # minimize the default token
     #   contents: write
