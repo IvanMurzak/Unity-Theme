@@ -26,17 +26,13 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: [self-hosted, windows]
-            os-name: windows-self-hosted
-          - os: [self-hosted, linux]
-            os-name: linux-self-hosted
-          - os: windows-latest
-            os-name: windows-latest
-          - os: ubuntu-latest
-            os-name: ubuntu-latest
+          - os: windows
+            runs-on: [windows-latest]
+          - os: ubuntu
+            runs-on: [ubuntu-latest]
 
-    name: ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.os-name }}
-    runs-on: ${{ matrix.os }}
+    name: ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.runs-on }}
 
     # permissions: # minimize the default token
     #   contents: write
@@ -69,25 +65,13 @@ jobs:
           path: |
             ${{ inputs.projectPath }}/Library
             ~/.cache/unity3d
-          key: Library-${{ inputs.unityVersion }}-${{ matrix.os-name }}
+          key: Library-${{ inputs.unityVersion }}-${{ matrix.os }}
 
       # --------------------------------------------------------------------- #
       - name: Generate custom image name
         id: custom_image
         run: |
-          # Convert matrix.os to lowercase for comparison
-          MATRIX_OS_LOWER=$(echo "${{ matrix.os }}" | tr '[:upper:]' '[:lower:]')
-
-          if [[ "$MATRIX_OS_LOWER" == *"ubuntu"* ]] || [[ "$MATRIX_OS_LOWER" == *"linux"* ]]; then
-            echo "image=unityci/editor:ubuntu-${{ inputs.unityVersion }}-base-3" >> $GITHUB_OUTPUT
-            echo "Using Ubuntu Unity image for matrix.os: ${{ matrix.os }}"
-          elif [[ "$MATRIX_OS_LOWER" == *"windows"* ]]; then
-            echo "image=unityci/editor:windows-${{ inputs.unityVersion }}-base-3" >> $GITHUB_OUTPUT
-            echo "Using Windows Unity image for matrix.os: ${{ matrix.os }}"
-          else
-            echo "::error::Unsupported matrix.os: ${{ matrix.os }}"
-            exit 1
-          fi
+          echo "image=unityci/editor:${{ matrix.os }}-${{ inputs.unityVersion }}-base-3" >> $GITHUB_OUTPUT
         shell: bash
 
       - uses: game-ci/unity-test-runner@v4
@@ -102,13 +86,13 @@ jobs:
           testMode:       ${{ inputs.testMode }}
           customImage:    ${{ steps.custom_image.outputs.image }}
           githubToken:    ${{ secrets.GITHUB_TOKEN }}
-          checkName:      ${{ inputs.unityVersion }} ${{ inputs.testMode }} ${{ matrix.os-name }} Test Results
-          artifactsPath:  artifacts-${{ inputs.unityVersion }}-${{ inputs.testMode }}-${{ matrix.os-name }}
+          checkName:      ${{ inputs.unityVersion }} ${{ inputs.testMode }} ${{ matrix.os }} Test Results
+          artifactsPath:  artifacts-${{ inputs.unityVersion }}-${{ inputs.testMode }}-${{ matrix.os }}
           customParameters: -CI true -GITHUB_ACTIONS true
 
       # --------------------------------------------------------------------- #
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: Test results for ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.os-name }}
+          name: Test results for ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.os }}
           path: ${{ steps.tests.outputs.artifactsPath }}

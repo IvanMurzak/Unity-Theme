@@ -1,20 +1,14 @@
-# Unity-Theme
+# [Unity-Theme (Color Palette)](https://github.com/IvanMurzak/Unity-Theme)
 
 [![openupm](https://img.shields.io/npm/v/extensions.unity.theme?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.theme/)
 [![r](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg 'Tests Passed')](https://github.com/IvanMurzak/Unity-Theme/actions/workflows/release.yml)
 [![Unity Asset Store](https://img.shields.io/badge/Asset%20Store-View-blue?logo=unity&labelColor=333A41 'Asset Store')](https://u3d.as/3DQp)
 [![Unity Editor](https://img.shields.io/badge/Editor-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Editor supported')](https://unity.com/releases/editor/archive)
 [![Unity Runtime](https://img.shields.io/badge/Runtime-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Runtime supported')](https://unity.com/releases/editor/archive)
+
 [![Stars](https://img.shields.io/github/stars/IvanMurzak/Unity-Theme 'Stars')](https://github.com/IvanMurzak/Unity-Theme/stargazers)
 [![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme)](https://github.com/IvanMurzak/Unity-Theme/blob/main/LICENSE)
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
-
-| Unity Version | Editor test | Player test | Build test |
-|---------------|-------------|-------------|------------|
-| 2022.3.57f1   | ![2022.3.57f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-57f1-editmode) | ![2022.3.57f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-57f1-playmode) | ![2022.3.57f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-57f1-standalone) |
-| 2023.1.20f1   | ![2023.1.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-1-20f1-editmode) | ![2023.1.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-1-20f1-playmode) | ![2023.1.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-1-20f1-standalone) |
-| 2023.2.20f1   | ![2023.2.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-20f1-editmode) | ![2023.2.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-20f1-playmode) | ![2023.2.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-20f1-standalone) |
-| 6000.0.37f1   | ![6000.0.37f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-0-37f1-editmode) | ![6000.0.37f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-0-37f1-playmode) | ![6000.0.37f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-0-37f1-standalone) |
 
 Create palettes of colors and components to change specific colors on a specific visual element. Very useful for UI.
 
@@ -31,26 +25,40 @@ Create palettes of colors and components to change specific colors on a specific
 - ✔️ Easy way to add custom color binder by new C# class with just a few lines of code
 - ✔️ Rename color even after binding to a component, with no broken links
 
+## Stability status
+
+| Unity Version | Editor test | Player test | Build test |
+|---------------|-------------|-------------|------------|
+| 2022.3.57f1   | ![2022.3.57f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-57f1-editmode) | ![2022.3.57f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-57f1-playmode) | ![2022.3.57f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-57f1-standalone) |
+| 2023.1.20f1   | ![2023.1.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-1-20f1-editmode) | ![2023.1.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-1-20f1-playmode) | ![2023.1.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-1-20f1-standalone) |
+| 2023.2.20f1   | ![2023.2.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-20f1-editmode) | ![2023.2.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-20f1-playmode) | ![2023.2.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-20f1-standalone) |
+| 6000.0.37f1   | ![6000.0.37f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-0-37f1-editmode) | ![6000.0.37f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-0-37f1-playmode) | ![6000.0.37f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-0-37f1-standalone) |
+
 # Installation
+
+### Option 1 - Installer
 
 - **[⬇️ Download Installer](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.1.2/Unity-Theme-Installer.unitypackage)**
 - **📂 Import installer into Unity project**
   > - You may use double click on the file - Unity will open it
   > - OR: You may open Unity Editor first, then click on `Assets/Import Package/Custom Package`, then choose the file
 
-<details>
-  <summary><b>Alternative: Install via OpenUPM</b></summary>
+### Option 2 - OpenUPM-CLI
 
-- [Install OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
-- Open command line in Unity project folder
+- [⬇️ Install OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
+- 📟 Open command line in Unity project folder
 
 ```bash
 openupm add extensions.unity.theme
 ```
 
-</details>
+### Option 3 - Asset Store
 
-## Usage
+- **[▶️ Open Asset Store](https://u3d.as/3DQp)**
+
+---
+
+# Usage
 
 - Go to `Window/Unity-Theme`
 - Customize color palettes as you want
