@@ -28,22 +28,32 @@ jobs:
       - uses: actions/checkout@v4
         with:
           lfs: false
+
       - uses: actions/cache@v4
         with:
           path: ${{ inputs.projectPath }}/Library
           key: Library-${{ inputs.unityVersion }}
           restore-keys: |
             Library-
+
+      - name: Generate custom image name
+        id: custom_image
+        run: |
+          echo "image=unityci/editor:ubuntu-${{ inputs.unityVersion }}-base-3" >> $GITHUB_OUTPUT
+        shell: bash
+
       - uses: game-ci/unity-test-runner@v4
         id: tests
         env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_LICENSE:  ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL:    ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          projectPath: ${{ inputs.projectPath }}
-          unityVersion: ${{ inputs.unityVersion }}
-          testMode: ${{ inputs.testMode }}
+          projectPath:   ${{ inputs.projectPath }}
+          unityVersion:  ${{ inputs.unityVersion }}
+          testMode:      ${{ inputs.testMode }}
+          customImage:   ${{ steps.custom_image.outputs.image }}
           artifactsPath: ${{ inputs.testMode }}-artifacts
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          checkName: ${{ inputs.unityVersion }} ${{ inputs.testMode }} Test Results
+          githubToken:   ${{ secrets.GITHUB_TOKEN }}
+          checkName:     ${{ inputs.unityVersion }} ${{ inputs.testMode }} Test Results
+          customParameters: -CI true -GITHUB_ACTIONS true
