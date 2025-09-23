@@ -7,7 +7,7 @@
     "url": "https://github.com/IvanMurzak"
   },
   "license": "MIT",
-  "version": "4.1.2",
+  "version": "4.1.3",
   "unity": "2022.3",
   "description": "Create palettes of colors and components for change specific color on a specific visual element. Very useful to UI.",
   "keywords": [
