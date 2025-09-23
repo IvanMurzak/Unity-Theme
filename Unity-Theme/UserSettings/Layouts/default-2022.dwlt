@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 800, y: 271}
   m_MaxSize: {x: 4000, y: 4021}
   vertical: 0
-  controlID: 229
+  controlID: 14
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 111
+  controlID: 132
   draggingID: 0
 --- !u!114 &13
 MonoBehaviour:
@@ -345,8 +345,8 @@ MonoBehaviour:
     y: 0
     width: 462
     height: 1299.3334
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 24}
@@ -372,8 +372,8 @@ MonoBehaviour:
     y: 0
     width: 412.00012
     height: 1299.3334
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -989,7 +989,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 9cf2ffff4cf5ffff20fbffff
+      m_ExpandedIDs: 2efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1049,7 +1049,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_Spl:
-    ID: 152
+    ID: 173
     splitterInitialOffset: 513.6667
     currentActiveSplitter: -1
     realSizes:
@@ -1138,7 +1138,7 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1081
+      parentId: 1000
       parentUniqueId: '[Unity-Theme][suite]'
     - id: 1076
       uniqueId: Unity.Theme.Tests.Editor.dll/[Unity][suite]
@@ -1216,17 +1216,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_0</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_0</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_0</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_0</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_0</b>
@@ -1234,11 +1234,11 @@ MonoBehaviour:
         [Theme] Subscribing
         at <b><color=cyan>Prefabs</color>/_0</b>
 
-        [Theme] Unsubscribing
-        at <b><color=cyan>Prefabs</color>/_0</b>
+        [Theme] Unsubscribing at
+        <b><color=cyan>Prefabs</color>/_0</b>
 
-        [Theme] Theme changed
-        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+        [Theme] Theme changed ''<b>__Theme1__</b>''
+        -> ''<b>Dark</b>''
 
         <b>Test End </b> --------------------------------------------
 
@@ -1264,14 +1264,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -1295,17 +1295,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_2</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_2</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_2</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_2</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_2</b>
@@ -1313,11 +1313,11 @@ MonoBehaviour:
         [Theme] Subscribing
         at <b><color=cyan>Prefabs</color>/_2</b>
 
-        [Theme] Unsubscribing
-        at <b><color=cyan>Prefabs</color>/_2</b>
+        [Theme] Unsubscribing at
+        <b><color=cyan>Prefabs</color>/_2</b>
 
-        [Theme] Theme changed
-        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+        [Theme] Theme changed ''<b>__Theme1__</b>''
+        -> ''<b>Dark</b>''
 
         <b>Test End </b> --------------------------------------------
 
@@ -1343,14 +1343,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -1374,17 +1374,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_4</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_4</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_4</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_4</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_4</b>
@@ -1392,11 +1392,11 @@ MonoBehaviour:
         [Theme] Subscribing
         at <b><color=cyan>Prefabs</color>/_4</b>
 
-        [Theme] Unsubscribing
-        at <b><color=cyan>Prefabs</color>/_4</b>
+        [Theme] Unsubscribing at
+        <b><color=cyan>Prefabs</color>/_4</b>
 
-        [Theme] Theme changed
-        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+        [Theme] Theme changed ''<b>__Theme1__</b>''
+        -> ''<b>Dark</b>''
 
         <b>Test End </b> --------------------------------------------
 
@@ -1422,14 +1422,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -1453,17 +1453,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_6</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_6</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_6</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_6</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_6</b>
@@ -1471,11 +1471,11 @@ MonoBehaviour:
         [Theme] Subscribing
         at <b><color=cyan>Prefabs</color>/_6</b>
 
-        [Theme] Unsubscribing
-        at <b><color=cyan>Prefabs</color>/_6</b>
+        [Theme] Unsubscribing at
+        <b><color=cyan>Prefabs</color>/_6</b>
 
-        [Theme] Theme changed
-        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+        [Theme] Theme changed ''<b>__Theme1__</b>''
+        -> ''<b>Dark</b>''
 
         <b>Test End </b> --------------------------------------------
 
@@ -1501,14 +1501,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -1532,17 +1532,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_8</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_8</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_8</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_8</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_8</b>
@@ -1556,11 +1556,11 @@ MonoBehaviour:
         [Theme] Invalidating color
         at <b><color=cyan>Prefabs</color>/_8</b>
 
-        [Theme] Unsubscribing
-        at <b><color=cyan>Prefabs</color>/_8</b>
+        [Theme] Unsubscribing at
+        <b><color=cyan>Prefabs</color>/_8</b>
 
-        [Theme] Theme changed
-        ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+        [Theme] Theme changed ''<b>__Theme1__</b>''
+        -> ''<b>Dark</b>''
 
         <b>Test End </b> --------------------------------------------
 
@@ -1586,14 +1586,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -1617,17 +1617,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_10</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_10</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_10</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_10</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_10</b>
@@ -1671,14 +1671,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -1702,17 +1702,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_12</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_12</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_12</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_12</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_12</b>
@@ -1756,14 +1756,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -1787,17 +1787,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_14</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_14</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_14</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_14</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_14</b>
@@ -1865,14 +1865,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -1896,17 +1896,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_16</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_16</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_16</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_16</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_16</b>
@@ -1974,14 +1974,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -2005,17 +2005,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_18</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_18</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_18</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_18</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_18</b>
@@ -2083,14 +2083,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -2114,17 +2114,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_20</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_20</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_20</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_20</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_20</b>
@@ -2192,14 +2192,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -2223,17 +2223,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_22</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_22</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_22</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_22</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_22</b>
@@ -2301,14 +2301,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -2332,17 +2332,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_24</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_24</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_24</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_24</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_24</b>
@@ -2386,14 +2386,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -2417,17 +2417,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_26</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_26</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_26</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_26</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_26</b>
@@ -2471,14 +2471,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -2502,17 +2502,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_28</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_28</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_28</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_28</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_28</b>
@@ -2556,14 +2556,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -2587,17 +2587,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_30</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_30</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_30</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_30</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_30</b>
@@ -2647,14 +2647,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -2678,17 +2678,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_32</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_32</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_32</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_32</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_32</b>
@@ -2738,14 +2738,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -2769,17 +2769,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_34</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_34</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_34</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_34</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_34</b>
@@ -2829,14 +2829,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -2860,17 +2860,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_36</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_36</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_36</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_36</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_36</b>
@@ -2920,14 +2920,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -2951,17 +2951,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_38</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_38</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_38</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_38</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_38</b>
@@ -3011,14 +3011,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -3042,17 +3042,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_40</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_40</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_40</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_40</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_40</b>
@@ -3114,14 +3114,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -3145,17 +3145,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_42</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_42</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_42</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_42</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_42</b>
@@ -3217,14 +3217,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -3248,17 +3248,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_44</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_44</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_44</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_44</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_44</b>
@@ -3320,14 +3320,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -3351,17 +3351,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_46</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_46</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_46</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_46</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_46</b>
@@ -3423,14 +3423,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -3454,17 +3454,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_48</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_48</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_48</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_48</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_48</b>
@@ -3526,14 +3526,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -3557,17 +3557,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_50</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_50</b>
@@ -3581,44 +3581,44 @@ MonoBehaviour:
         [Theme] SetDirty
         at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #AA0000FF at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme] SetColor
-        ''<b>__Color2__</b>'' #00FF00FF at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme] SetColor
-        ''<b>__Color2__</b>'' #00AA00FF at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00AA00FF at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #AA0000FF at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #FF0000FF at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_50</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_50</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_50</b>
 
         [Theme] Unsubscribing
         at <b><color=cyan>Prefabs</color>/_50</b>
@@ -3650,14 +3650,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -3681,17 +3681,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_52</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_52</b>
@@ -3705,44 +3705,44 @@ MonoBehaviour:
         [Theme] SetDirty
         at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #AA0000FF at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme] SetColor
-        ''<b>__Color2__</b>'' #00FF00FF at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme] SetColor
-        ''<b>__Color2__</b>'' #00AA00FF at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00AA00FF at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #AA0000FF at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #FF0000FF at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_52</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_52</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_52</b>
 
         [Theme] Unsubscribing
         at <b><color=cyan>Prefabs</color>/_52</b>
@@ -3774,14 +3774,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -3805,17 +3805,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_54</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_54</b>
@@ -3829,44 +3829,44 @@ MonoBehaviour:
         [Theme] SetDirty
         at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #AA0000FF at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme] SetColor
-        ''<b>__Color2__</b>'' #00FF00FF at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme] SetColor
-        ''<b>__Color2__</b>'' #00AA00FF at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00AA00FF at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #AA0000FF at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #FF0000FF at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_54</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_54</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_54</b>
 
         [Theme] Unsubscribing
         at <b><color=cyan>Prefabs</color>/_54</b>
@@ -3898,14 +3898,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -3929,17 +3929,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_56</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_56</b>
@@ -3953,44 +3953,44 @@ MonoBehaviour:
         [Theme] SetDirty
         at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #AA0000FF at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme] SetColor
-        ''<b>__Color2__</b>'' #00FF00FF at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme] SetColor
-        ''<b>__Color2__</b>'' #00AA00FF at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00AA00FF at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #AA0000FF at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #FF0000FF at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_56</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_56</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_56</b>
 
         [Theme] Unsubscribing
         at <b><color=cyan>Prefabs</color>/_56</b>
@@ -4022,14 +4022,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -4053,17 +4053,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Invalidating color at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] Invalidating
+        color at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme]
-        SetColor ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] SetColor
+        ''<b>Primary</b>'' #6750A4FF at <b><color=cyan>Prefabs</color>/_58</b>
 
         [Theme]
         SetDirty at <b><color=cyan>Prefabs</color>/_58</b>
@@ -4077,44 +4077,44 @@ MonoBehaviour:
         [Theme] SetDirty
         at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #AA0000FF at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme] SetColor
-        ''<b>__Color2__</b>'' #00FF00FF at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00FF00FF at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme] SetColor
-        ''<b>__Color2__</b>'' #00AA00FF at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] SetColor ''<b>__Color2__</b>''
+        #00AA00FF at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #AA0000FF at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #AA0000FF at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme] Invalidating
-        color at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] Invalidating color
+        at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme] SetColor
-        ''<b>__Color1__</b>'' #FF0000FF at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] SetColor ''<b>__Color1__</b>''
+        #FF0000FF at <b><color=cyan>Prefabs</color>/_58</b>
 
-        [Theme]
-        SetDirty at <b><color=cyan>Prefabs</color>/_58</b>
+        [Theme] SetDirty
+        at <b><color=cyan>Prefabs</color>/_58</b>
 
         [Theme] Unsubscribing
         at <b><color=cyan>Prefabs</color>/_58</b>
@@ -4146,14 +4146,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -4193,17 +4193,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End </b>
+        --------------------------------------------
 
 '
       stacktrace: 
@@ -4227,14 +4227,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -4258,14 +4258,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__ThemeNew__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__ThemeNew__</b>''
 
         [Theme]
         Theme changed -> ''<b>__Theme2__</b>''
@@ -4278,8 +4278,8 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>__Theme2__</b>'' -> ''<b>Dark</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -4303,14 +4303,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -4334,17 +4334,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End </b>
+        --------------------------------------------
 
 '
       stacktrace: 
@@ -4368,14 +4368,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -4399,20 +4399,20 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        SetColor error. Color with name ''___Undefined___'' not found
+        [Theme] SetColor
+        error. Color with name ''___Undefined___'' not found
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End </b>
+        --------------------------------------------
 
 '
       stacktrace: 
@@ -4436,17 +4436,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        SetColor error. Color with name ''___Undefined___'' not found
+        [Theme] SetColor
+        error. Color with name ''___Undefined___'' not found
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -4470,17 +4470,17 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End </b>
+        --------------------------------------------
 
 '
       stacktrace: 
@@ -4504,14 +4504,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -4535,20 +4535,20 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Can''t RemoveColorByName(`___Undefined___`), because it doesn''t exist
+        [Theme] Can''t
+        RemoveColorByName(`___Undefined___`), because it doesn''t exist
 
         [Theme]
         Theme changed ''<b>__Theme1__</b>'' -> ''<b>Dark</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -4572,14 +4572,14 @@ MonoBehaviour:
         [Theme]
         Theme changed ''<b>Dark</b>'' -> ''<b>__Theme1__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme1__</b>'' -> ''<b>__Theme2__</b>''
 
-        [Theme]
-        Theme changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
+        [Theme] Theme
+        changed ''<b>__Theme2__</b>'' -> ''<b>__Theme1__</b>''
 
-        <b>Test
-        End </b> --------------------------------------------
+        <b>Test End
+        </b> --------------------------------------------
 
 '
       stacktrace: 
@@ -4945,7 +4945,7 @@ MonoBehaviour:
     m_CachedPref: -442
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -2602
+  m_LastInspectedObjectInstanceID: 18400
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
@@ -4996,7 +4996,8 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/root
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -5012,7 +5013,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 62800200
     m_LastClickedID: 163938
-    m_ExpandedIDs: 00000000084c00000a4c00000c4c00000e4c0000104c0000
+    m_ExpandedIDs: 00000000dc470000de470000e0470000e2470000e4470000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -5040,7 +5041,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000084c00000a4c00000c4c00000e4c0000104c0000
+    m_ExpandedIDs: ffffffff00000000dc470000de470000e0470000e2470000e4470000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
