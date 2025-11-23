@@ -31,7 +31,7 @@ namespace Unity.Theme.Binders
                 if (entry.colorData == null)
                 {
 #if UNITY_EDITOR
-                    LogError("Color data for entry '{0}' at index {1} is <b><color=red>null</color>", entry.label, i);
+                    LogError("Color data for entry '{0}' at index {1} is <b><color=red>null</color></b>", entry.label, i);
 #else
                     LogError("Color data for entry '{0}' at index {1} is null", entry.label, i);
 #endif
