@@ -21,16 +21,11 @@ namespace Unity.Theme.Editor
             labelContainer.style.flexDirection = FlexDirection.Row;
             labelContainer.style.marginBottom = 4;
 
-            // Create label field
+            // Create label field (readonly)
             var labelField = new TextField("Label");
             labelField.value = labelProperty.stringValue;
+            labelField.isReadOnly = true;
             labelField.style.flexGrow = 1;
-
-            labelField.RegisterValueChangedCallback(evt =>
-            {
-                labelProperty.stringValue = evt.newValue;
-                labelProperty.serializedObject.ApplyModifiedProperties();
-            });
 
             labelContainer.Add(labelField);
 
