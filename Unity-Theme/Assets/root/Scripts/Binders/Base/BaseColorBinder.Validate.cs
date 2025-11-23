@@ -1,9 +1,6 @@
-using System.Text;
-using UnityEngine;
-
 namespace Unity.Theme.Binders
 {
-    public abstract partial class BaseColorBinder : MonoBehaviour
+    public abstract partial class BaseColorBinder : LogableMonoBehaviour
     {
 #if UNITY_EDITOR
         protected virtual void OnValidate() => UnityEditor.EditorApplication.delayCall += Validate;
@@ -14,16 +11,19 @@ namespace Unity.Theme.Binders
             if (this.IsNull())
                 return;
 
+
             if (string.IsNullOrEmpty(data.colorGuid))
             {
-                if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
-                    Debug.LogError($"[Theme] Color GUID is <b><color=red>null</color></b> at <b>{GameObjectPath()}</b>", gameObject);
+#if UNITY_EDITOR
+                LogError("Color GUID is <b><color=red>null</color></b> or <b><color=red>empty</color></b>");
+#else
+                LogError("Color GUID is null or empty");
+#endif
                 return;
             }
             if (!data.IsConnected)
             {
-                if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
-                    Debug.LogError($"[Theme] Color with GUID='{data.colorGuid}' not found in database at <b>{GameObjectPath()}</b>", gameObject);
+                LogError("Color with GUID='{0}' not found in database", data.colorGuid);
                 return;
             }
 #if UNITY_EDITOR

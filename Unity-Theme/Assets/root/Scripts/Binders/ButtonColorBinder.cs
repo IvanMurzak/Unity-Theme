@@ -35,7 +35,14 @@ namespace Unity.Theme.Binders
 
         protected override void SetColors(Button target, Color[] colors)
         {
-            if (target == null || colors == null || colors.Length != 5)
+            if (target.IsNull())
+            {
+                if (Theme.IsLogActive(DebugLevel.Error))
+                    Debug.LogError($"[Theme] Button target is null for ButtonColorBinder at <b>{GameObjectPath()}</b>", gameObject);
+                return;
+            }
+
+            if (colors == null || colors.Length != 5)
             {
                 if (Theme.IsLogActive(DebugLevel.Error))
                     Debug.LogError($"[Theme] Invalid target or colors array for ButtonColorBinder at <b>{GameObjectPath()}</b>", gameObject);
@@ -60,7 +67,7 @@ namespace Unity.Theme.Binders
 
         protected override Color[] GetColors(Button target)
         {
-            if (target == null)
+            if (target.IsNull())
                 return new Color[5];
 
             var colorBlock = target.colors;

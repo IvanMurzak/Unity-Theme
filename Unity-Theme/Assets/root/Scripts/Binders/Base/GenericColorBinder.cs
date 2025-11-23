@@ -39,8 +39,7 @@ namespace Unity.Theme.Binders
         {
             if (target.IsNull())
             {
-                if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
-                    Debug.LogError($"[Theme] {typeof(T).Name} not found at <b>{GameObjectPath()}</b>", gameObject);
+                LogError($"{typeof(T).Name} not found");
                 return false;
             }
             return base.InternalSetColor(color);

@@ -1,9 +1,6 @@
-using System.Text;
-using UnityEngine;
-
 namespace Unity.Theme.Binders
 {
-    public abstract partial class BaseMultiColorBinder : MonoBehaviour
+    public abstract partial class BaseMultiColorBinder : LogableMonoBehaviour
     {
 #if UNITY_EDITOR
         protected virtual void OnValidate() => UnityEditor.EditorApplication.delayCall += Validate;
@@ -20,35 +17,42 @@ namespace Unity.Theme.Binders
             for (int i = 0; i < colorEntries.Length; i++)
             {
                 var entry = colorEntries[i];
-
                 if (entry == null)
                 {
-                    if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
-                        Debug.LogError($"[Theme] Color entry at index {i} is <b><color=red>null</color></b> at <b>{GameObjectPath()}</b>", gameObject);
+#if UNITY_EDITOR
+                    LogError("Color entry at index {0} is <b><color=red>null</color></b>", i);
+#else
+                    LogError("Color entry at index {0} is null", i);
+#endif
                     hasErrors = true;
                     continue;
                 }
 
                 if (entry.colorData == null)
                 {
-                    if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
-                        Debug.LogError($"[Theme] Color data for entry '{entry.label}' at index {i} is <b><color=red>null</color></b> at <b>{GameObjectPath()}</b>", gameObject);
+#if UNITY_EDITOR
+                    LogError("Color data for entry '{0}' at index {1} is <b><color=red>null</color>", entry.label, i);
+#else
+                    LogError("Color data for entry '{0}' at index {1} is null", entry.label, i);
+#endif
                     hasErrors = true;
                     continue;
                 }
 
                 if (string.IsNullOrEmpty(entry.colorData.colorGuid))
                 {
-                    if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
-                        Debug.LogError($"[Theme] Color GUID for entry '{entry.label}' at index {i} is <b><color=red>null</color></b> at <b>{GameObjectPath()}</b>", gameObject);
+#if UNITY_EDITOR
+                    LogError("Color GUID for entry '{0}' at index {1} is <b><color=red>null</color></b>", entry.label, i);
+#else
+                    LogError("Color GUID for entry '{0}' at index {1} is null", entry.label, i);
+#endif
                     hasErrors = true;
                     continue;
                 }
 
                 if (!entry.colorData.IsConnected)
                 {
-                    if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
-                        Debug.LogError($"[Theme] Color with GUID='{entry.colorData.colorGuid}' for entry '{entry.label}' at index {i} not found in database at <b>{GameObjectPath()}</b>", gameObject);
+                    LogError("Color with GUID='{0}' for entry '{1}' at index {2} not found in database", entry.colorData.colorGuid, entry.label, i);
                     hasErrors = true;
                 }
             }

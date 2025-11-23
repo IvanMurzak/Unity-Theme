@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Unity.Theme.Binders
 {
-    public abstract partial class BaseMultiColorBinder : MonoBehaviour
+    public abstract partial class BaseMultiColorBinder : LogableMonoBehaviour
     {
         /// <summary>
         /// Set color by name from current theme for a specific entry index
@@ -14,7 +14,7 @@ namespace Unity.Theme.Binders
         {
             if (index < 0 || index >= colorEntries.Length)
             {
-                Debug.LogError($"[Theme] Invalid color entry index: {index}. Valid range is 0-{colorEntries.Length - 1}", gameObject);
+                LogError("Invalid color entry index: {0}. Valid range is 0-{1}", index, colorEntries.Length - 1);
                 return false;
             }
             return SetColor(index, Theme.Instance?.GetColorByName(name));
@@ -30,7 +30,7 @@ namespace Unity.Theme.Binders
         {
             if (index < 0 || index >= colorEntries.Length)
             {
-                Debug.LogError($"[Theme] Invalid color entry index: {index}. Valid range is 0-{colorEntries.Length - 1}", gameObject);
+                LogError("Invalid color entry index: {0}. Valid range is 0-{1}", index, colorEntries.Length - 1);
                 return false;
             }
             return SetColor(index, Theme.Instance?.GetColorByGuid(colorGuid));
@@ -47,7 +47,7 @@ namespace Unity.Theme.Binders
             int index = GetIndexByLabel(label);
             if (index < 0)
             {
-                Debug.LogError($"[Theme] Color entry with label '{label}' not found", gameObject);
+                LogError("Color entry with label '{0}' not found", label);
                 return false;
             }
             return SetColorByName(index, name);
@@ -63,12 +63,12 @@ namespace Unity.Theme.Binders
         {
             if (index < 0 || index >= colorEntries.Length)
             {
-                Debug.LogError($"[Theme] Invalid color entry index: {index}. Valid range is 0-{colorEntries.Length - 1}", gameObject);
+                LogError("Invalid color entry index: {0}. Valid range is 0-{1}", index, colorEntries.Length - 1);
                 return false;
             }
             if (colorData == null)
             {
-                Debug.LogError($"[Theme] Color data is null. Can't set it for entry at index {index}", gameObject);
+                LogError("Color data is null. Can't set it for entry at index {0}", index);
                 return false;
             }
             if (colorEntries[index].colorData.colorGuid == colorData.Guid)
@@ -90,19 +90,18 @@ namespace Unity.Theme.Binders
         {
             if (index < 0 || index >= colorEntries.Length)
             {
-                Debug.LogError($"[Theme] Invalid color entry index: {index}. Valid range is 0-{colorEntries.Length - 1}", gameObject);
+                LogError("Invalid color entry index: {0}. Valid range is 0-{1}", index, colorEntries.Length - 1);
                 return false;
             }
 
             var entry = colorEntries[index];
-            if (entry.colorData.overrideAlpha == overrideAlpha && entry.colorData.alpha == alpha)
+            if (entry.colorData.overrideAlpha == overrideAlpha && Mathf.Abs(entry.colorData.alpha - alpha) < Mathf.Epsilon)
                 return true; // skip if the same alpha
 
             entry.colorData.overrideAlpha = overrideAlpha;
             entry.colorData.alpha = alpha;
 
-            if (Theme.IsLogActive(DebugLevel.Trace) && this.IsNotNull())
-                Debug.Log($"[Theme] SetAlpha for '{entry.label}': {alpha} at <b>{GameObjectPath()}</b>", gameObject);
+            LogTrace($"SetAlpha for '{entry.label}': {alpha}");
 
             InvalidateColors(Theme.Instance?.CurrentTheme);
             return true;
@@ -120,7 +119,7 @@ namespace Unity.Theme.Binders
             int index = GetIndexByLabel(label);
             if (index < 0)
             {
-                Debug.LogError($"[Theme] Color entry with label '{label}' not found", gameObject);
+                LogError("Color entry with label '{0}' not found", label);
                 return false;
             }
             return SetAlphaOverride(index, overrideAlpha, alpha);
