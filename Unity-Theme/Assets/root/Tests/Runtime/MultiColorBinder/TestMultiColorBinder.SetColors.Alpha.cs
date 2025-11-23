@@ -5,16 +5,16 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using System.Collections;
 using NUnit.Framework;
-using UnityEngine.TestTools.Utils;
 
 namespace Unity.Theme.Tests
 {
     public partial class TestMultiColorBinder : TestBase
     {
-        [UnityTest] public IEnumerator SetColors_OverrideAlpha_Button_NoLogs() => TestUtils.RunNoLogs(SetColors_OverrideAlpha_Button);
-        [UnityTest] public IEnumerator SetColors_OverrideAlpha_Button()
+        [UnityTest] public IEnumerator SetColors_OverrideAlpha_Selectable_NoLogs() => TestUtils.RunNoLogs(SetColors_OverrideAlpha_Selectable);
+        [UnityTest]
+        public IEnumerator SetColors_OverrideAlpha_Selectable()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
@@ -32,10 +32,11 @@ namespace Unity.Theme.Tests
             Assert.AreEqual(TestUtils.C_Theme1.Color1.Value.HexToColor(), colorBlock.normalColor);
         }
 
-        [UnityTest] public IEnumerator SetColors_OverrideAlpha_ByLabel_Button_NoLogs() => TestUtils.RunNoLogs(SetColors_OverrideAlpha_ByLabel_Button);
-        [UnityTest] public IEnumerator SetColors_OverrideAlpha_ByLabel_Button()
+        [UnityTest] public IEnumerator SetColors_OverrideAlpha_ByLabel_Selectable_NoLogs() => TestUtils.RunNoLogs(SetColors_OverrideAlpha_ByLabel_Selectable);
+        [UnityTest]
+        public IEnumerator SetColors_OverrideAlpha_ByLabel_Selectable()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
@@ -50,10 +51,11 @@ namespace Unity.Theme.Tests
             Assert.AreEqual(TestUtils.C_Theme1.Color1.Value.HexToColor().SetA(0.3f), colorBlock.normalColor);
         }
 
-        [UnityTest] public IEnumerator SetColors_MultipleAlphaOverrides_Button_NoLogs() => TestUtils.RunNoLogs(SetColors_MultipleAlphaOverrides_Button);
-        [UnityTest] public IEnumerator SetColors_MultipleAlphaOverrides_Button()
+        [UnityTest] public IEnumerator SetColors_MultipleAlphaOverrides_Selectable_NoLogs() => TestUtils.RunNoLogs(SetColors_MultipleAlphaOverrides_Selectable);
+        [UnityTest]
+        public IEnumerator SetColors_MultipleAlphaOverrides_Selectable()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
@@ -74,10 +76,11 @@ namespace Unity.Theme.Tests
             Assert.AreEqual(TestUtils.C_Theme1.Color3.Value.HexToColor().SetA(0.4f), colorBlock.pressedColor);
         }
 
-        [UnityTest] public IEnumerator SetColors_AlphaOverride_InvalidIndex_Button_NoLogs() => TestUtils.RunNoLogs(SetColors_AlphaOverride_InvalidIndex_Button);
-        [UnityTest] public IEnumerator SetColors_AlphaOverride_InvalidIndex_Button()
+        [UnityTest] public IEnumerator SetColors_AlphaOverride_InvalidIndex_Selectable_NoLogs() => TestUtils.RunNoLogs(SetColors_AlphaOverride_InvalidIndex_Selectable);
+        [UnityTest]
+        public IEnumerator SetColors_AlphaOverride_InvalidIndex_Selectable()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             // Test invalid index for alpha override - expect error logs

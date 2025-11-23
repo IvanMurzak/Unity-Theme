@@ -10,18 +10,20 @@ namespace Unity.Theme.Tests
 {
     public partial class TestMultiColorBinder : TestBase
     {
-        [UnityTest] public IEnumerator UpdateColors_Button_NoLogs() => TestUtils.RunNoLogs(UpdateColors_Button);
-        [UnityTest] public IEnumerator UpdateColors_Button() =>
-            TestUtils.MultiColorBinder_UpdateColor<Button, ButtonColorBinder>(target =>
+        [UnityTest] public IEnumerator UpdateColors_Selectable_NoLogs() => TestUtils.RunNoLogs(UpdateColors_Selectable);
+        [UnityTest]
+        public IEnumerator UpdateColors_Selectable() =>
+            TestUtils.MultiColorBinder_UpdateColor<Selectable, SelectableColorBinder>(target =>
             {
                 var cb = target.colors;
                 return new[] { cb.normalColor, cb.highlightedColor, cb.pressedColor, cb.selectedColor, cb.disabledColor };
             });
 
-        [UnityTest] public IEnumerator UpdateColors_MultipleEntries_Button_NoLogs() => TestUtils.RunNoLogs(UpdateColors_MultipleEntries_Button);
-        [UnityTest] public IEnumerator UpdateColors_MultipleEntries_Button()
+        [UnityTest] public IEnumerator UpdateColors_MultipleEntries_Selectable_NoLogs() => TestUtils.RunNoLogs(UpdateColors_MultipleEntries_Selectable);
+        [UnityTest]
+        public IEnumerator UpdateColors_MultipleEntries_Selectable()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
@@ -56,10 +58,11 @@ namespace Unity.Theme.Tests
             yield return null;
         }
 
-        [UnityTest] public IEnumerator UpdateColors_WithAlphaOverride_Button_NoLogs() => TestUtils.RunNoLogs(UpdateColors_WithAlphaOverride_Button);
-        [UnityTest] public IEnumerator UpdateColors_WithAlphaOverride_Button()
+        [UnityTest] public IEnumerator UpdateColors_WithAlphaOverride_Selectable_NoLogs() => TestUtils.RunNoLogs(UpdateColors_WithAlphaOverride_Selectable);
+        [UnityTest]
+        public IEnumerator UpdateColors_WithAlphaOverride_Selectable()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;

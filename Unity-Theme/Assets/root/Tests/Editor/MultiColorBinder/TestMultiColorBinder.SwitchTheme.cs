@@ -10,18 +10,20 @@ namespace Unity.Theme.Tests
 {
     public partial class TestMultiColorBinder : TestBase
     {
-        [UnityTest] public IEnumerator SwitchTheme_Button_NoLogs() => TestUtils.RunNoLogs(SwitchTheme_Button);
-        [UnityTest] public IEnumerator SwitchTheme_Button() =>
-            TestUtils.MultiColorBinder_SwitchTheme<Button, ButtonColorBinder>(target =>
+        [UnityTest] public IEnumerator SwitchTheme_Selectable_NoLogs() => TestUtils.RunNoLogs(SwitchTheme_Selectable);
+        [UnityTest]
+        public IEnumerator SwitchTheme_Selectable() =>
+            TestUtils.MultiColorBinder_SwitchTheme<Selectable, SelectableColorBinder>(target =>
             {
                 var cb = target.colors;
                 return new[] { cb.normalColor, cb.highlightedColor, cb.pressedColor, cb.selectedColor, cb.disabledColor };
             });
 
-        [UnityTest] public IEnumerator SwitchTheme_AllStates_Button_NoLogs() => TestUtils.RunNoLogs(SwitchTheme_AllStates_Button);
-        [UnityTest] public IEnumerator SwitchTheme_AllStates_Button()
+        [UnityTest] public IEnumerator SwitchTheme_AllStates_Selectable_NoLogs() => TestUtils.RunNoLogs(SwitchTheme_AllStates_Selectable);
+        [UnityTest]
+        public IEnumerator SwitchTheme_AllStates_Selectable()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             // Set theme 1
@@ -48,10 +50,11 @@ namespace Unity.Theme.Tests
             Assert.AreEqual(TestUtils.C_Theme2.Color3.Value.HexToColor(), colorBlock.pressedColor);
         }
 
-        [UnityTest] public IEnumerator SwitchTheme_WithAlphaOverride_Button_NoLogs() => TestUtils.RunNoLogs(SwitchTheme_WithAlphaOverride_Button);
-        [UnityTest] public IEnumerator SwitchTheme_WithAlphaOverride_Button()
+        [UnityTest] public IEnumerator SwitchTheme_WithAlphaOverride_Selectable_NoLogs() => TestUtils.RunNoLogs(SwitchTheme_WithAlphaOverride_Selectable);
+        [UnityTest]
+        public IEnumerator SwitchTheme_WithAlphaOverride_Selectable()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             // Set theme 1 with alpha override

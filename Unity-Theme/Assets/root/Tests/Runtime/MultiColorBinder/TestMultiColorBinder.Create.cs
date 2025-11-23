@@ -10,12 +10,13 @@ namespace Unity.Theme.Tests
 {
     public partial class TestMultiColorBinder : TestBase
     {
-        [UnityTest] public IEnumerator Create_Button_NoLogs() => TestUtils.RunNoLogs(Create_Button);
-        [UnityTest] public IEnumerator Create_Button()
+        [UnityTest] public IEnumerator Create_Selectable_NoLogs() => TestUtils.RunNoLogs(Create_Selectable);
+        [UnityTest]
+        public IEnumerator Create_Selectable()
         {
-            var binder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var binder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
 
-            // Verify ButtonColorBinder has 5 color entries (Normal, Highlighted, Pressed, Selected, Disabled)
+            // Verify SelectableColorBinder has 5 color entries (Normal, Highlighted, Pressed, Selected, Disabled)
             TestUtils.AssertColorEntryCount(binder, 5);
 
             // Verify all colors are initialized
@@ -26,10 +27,11 @@ namespace Unity.Theme.Tests
             yield return null;
         }
 
-        [UnityTest] public IEnumerator Create_Button_LabelsInitialized_NoLogs() => TestUtils.RunNoLogs(Create_Button_LabelsInitialized);
-        [UnityTest] public IEnumerator Create_Button_LabelsInitialized()
+        [UnityTest] public IEnumerator Create_Selectable_LabelsInitialized_NoLogs() => TestUtils.RunNoLogs(Create_Selectable_LabelsInitialized);
+        [UnityTest]
+        public IEnumerator Create_Selectable_LabelsInitialized()
         {
-            var binder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var binder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
 
             // Verify labels are correctly initialized
             Assert.AreEqual(0, binder.GetIndexByLabel("Normal"));

@@ -10,15 +10,16 @@ namespace Unity.Theme.Tests
 {
     public partial class TestMultiColorBinder : TestBase
     {
-        [UnityTest] public IEnumerator ButtonStates_AllFiveStates_NoLogs() => TestUtils.RunNoLogs(ButtonStates_AllFiveStates);
-        [UnityTest] public IEnumerator ButtonStates_AllFiveStates()
+        [UnityTest] public IEnumerator SelectableStates_AllFiveStates_NoLogs() => TestUtils.RunNoLogs(SelectableStates_AllFiveStates);
+        [UnityTest]
+        public IEnumerator SelectableStates_AllFiveStates()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
 
-            // Set all 5 button states with different colors
+            // Set all 5 Selectable states with different colors
             TestUtils.SetMultiColorByLabel(colorBinder, "Normal", TestUtils.C_Color.Name1);
             TestUtils.SetMultiColorByLabel(colorBinder, "Highlighted", TestUtils.C_Color.Name2);
             TestUtils.SetMultiColorByLabel(colorBinder, "Pressed", TestUtils.C_Color.Name3);
@@ -33,10 +34,11 @@ namespace Unity.Theme.Tests
             Assert.AreEqual(TestUtils.C_Theme1.Color5.Value.HexToColor(), colorBlock.disabledColor);
         }
 
-        [UnityTest] public IEnumerator ButtonStates_PreservesColorMultiplier_NoLogs() => TestUtils.RunNoLogs(ButtonStates_PreservesColorMultiplier);
-        [UnityTest] public IEnumerator ButtonStates_PreservesColorMultiplier()
+        [UnityTest] public IEnumerator SelectableStates_PreservesColorMultiplier_NoLogs() => TestUtils.RunNoLogs(SelectableStates_PreservesColorMultiplier);
+        [UnityTest]
+        public IEnumerator SelectableStates_PreservesColorMultiplier()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
@@ -55,10 +57,11 @@ namespace Unity.Theme.Tests
             Assert.AreEqual(TestUtils.C_Theme1.Color1.Value.HexToColor(), colorBlock.normalColor);
         }
 
-        [UnityTest] public IEnumerator ButtonStates_PreservesFadeDuration_NoLogs() => TestUtils.RunNoLogs(ButtonStates_PreservesFadeDuration);
-        [UnityTest] public IEnumerator ButtonStates_PreservesFadeDuration()
+        [UnityTest] public IEnumerator SelectableStates_PreservesFadeDuration_NoLogs() => TestUtils.RunNoLogs(SelectableStates_PreservesFadeDuration);
+        [UnityTest]
+        public IEnumerator SelectableStates_PreservesFadeDuration()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
@@ -77,10 +80,11 @@ namespace Unity.Theme.Tests
             Assert.AreEqual(TestUtils.C_Theme1.Color1.Value.HexToColor(), colorBlock.normalColor);
         }
 
-        [UnityTest] public IEnumerator ButtonStates_GetColors_ReturnsAllFive_NoLogs() => TestUtils.RunNoLogs(ButtonStates_GetColors_ReturnsAllFive);
-        [UnityTest] public IEnumerator ButtonStates_GetColors_ReturnsAllFive()
+        [UnityTest] public IEnumerator SelectableStates_GetColors_ReturnsAllFive_NoLogs() => TestUtils.RunNoLogs(SelectableStates_GetColors_ReturnsAllFive);
+        [UnityTest]
+        public IEnumerator SelectableStates_GetColors_ReturnsAllFive()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
@@ -102,10 +106,11 @@ namespace Unity.Theme.Tests
             Assert.AreEqual(TestUtils.C_Theme1.Color5.Value.HexToColor(), colors[4]);
         }
 
-        [UnityTest] public IEnumerator ButtonStates_DifferentAlphaPerState_NoLogs() => TestUtils.RunNoLogs(ButtonStates_DifferentAlphaPerState);
-        [UnityTest] public IEnumerator ButtonStates_DifferentAlphaPerState()
+        [UnityTest] public IEnumerator SelectableStates_DifferentAlphaPerState_NoLogs() => TestUtils.RunNoLogs(SelectableStates_DifferentAlphaPerState);
+        [UnityTest]
+        public IEnumerator SelectableStates_DifferentAlphaPerState()
         {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Button, ButtonColorBinder>(out var target);
+            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
             yield return null;
 
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;

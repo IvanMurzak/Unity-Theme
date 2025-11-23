@@ -8,73 +8,7 @@ namespace Unity.Theme.Binders
     /// Supports binding all 5 button states: Normal, Highlighted, Pressed, Selected, and Disabled
     /// </summary>
     [RequireComponent(typeof(Button))]
-    public class ButtonColorBinder : GenericMultiColorBinder<Button>
+    public class ButtonColorBinder : SelectableColorBinder
     {
-        // Color entry indices for Button's ColorBlock
-        private const int NORMAL_INDEX = 0;
-        private const int HIGHLIGHTED_INDEX = 1;
-        private const int PRESSED_INDEX = 2;
-        private const int SELECTED_INDEX = 3;
-        private const int DISABLED_INDEX = 4;
-
-        protected override void Awake()
-        {
-            // Initialize color entries if not already set
-            if (colorEntries == null || colorEntries.Length != 5)
-            {
-                colorEntries = new MultiColorBinderEntry[5];
-                colorEntries[NORMAL_INDEX] = new MultiColorBinderEntry("Normal");
-                colorEntries[HIGHLIGHTED_INDEX] = new MultiColorBinderEntry("Highlighted");
-                colorEntries[PRESSED_INDEX] = new MultiColorBinderEntry("Pressed");
-                colorEntries[SELECTED_INDEX] = new MultiColorBinderEntry("Selected");
-                colorEntries[DISABLED_INDEX] = new MultiColorBinderEntry("Disabled");
-            }
-
-            base.Awake();
-        }
-
-        protected override void SetColors(Button targetComponent, Color[] colors)
-        {
-            if (targetComponent.IsNull())
-            {
-                LogError("Button target is null");
-                return;
-            }
-
-            if (colors == null || colors.Length != 5)
-            {
-                LogError("Invalid colors array. Expected 5 colors for Button states.");
-                return;
-            }
-
-            // Get the current ColorBlock to preserve non-color properties
-            var colorBlock = targetComponent.colors;
-
-            // Update all color properties
-            colorBlock.normalColor = colors[NORMAL_INDEX];
-            colorBlock.highlightedColor = colors[HIGHLIGHTED_INDEX];
-            colorBlock.pressedColor = colors[PRESSED_INDEX];
-            colorBlock.selectedColor = colors[SELECTED_INDEX];
-            colorBlock.disabledColor = colors[DISABLED_INDEX];
-
-            // Apply the modified ColorBlock back to the button
-            targetComponent.colors = colorBlock;
-        }
-
-        protected override Color[] GetColors(Button target)
-        {
-            if (target.IsNull())
-                return new Color[5];
-
-            var colorBlock = target.colors;
-            return new Color[]
-            {
-                colorBlock.normalColor,
-                colorBlock.highlightedColor,
-                colorBlock.pressedColor,
-                colorBlock.selectedColor,
-                colorBlock.disabledColor
-            };
-        }
     }
 }
