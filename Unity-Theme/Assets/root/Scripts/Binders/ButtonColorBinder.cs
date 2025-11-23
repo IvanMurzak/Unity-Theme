@@ -33,24 +33,22 @@ namespace Unity.Theme.Binders
             base.Awake();
         }
 
-        protected override void SetColors(Button target, Color[] colors)
+        protected override void SetColors(Button targetComponent, Color[] colors)
         {
-            if (target.IsNull())
+            if (targetComponent.IsNull())
             {
-                if (Theme.IsLogActive(DebugLevel.Error))
-                    Debug.LogError($"[Theme] Button target is null for ButtonColorBinder at <b>{GameObjectPath()}</b>", gameObject);
+                LogError("Button target is null");
                 return;
             }
 
             if (colors == null || colors.Length != 5)
             {
-                if (Theme.IsLogActive(DebugLevel.Error))
-                    Debug.LogError($"[Theme] Invalid target or colors array for ButtonColorBinder at <b>{GameObjectPath()}</b>", gameObject);
+                LogError("Invalid colors array. Expected 5 colors for Button states.");
                 return;
             }
 
             // Get the current ColorBlock to preserve non-color properties
-            var colorBlock = target.colors;
+            var colorBlock = targetComponent.colors;
 
             // Update all color properties
             colorBlock.normalColor = colors[NORMAL_INDEX];
@@ -59,10 +57,8 @@ namespace Unity.Theme.Binders
             colorBlock.selectedColor = colors[SELECTED_INDEX];
             colorBlock.disabledColor = colors[DISABLED_INDEX];
 
-            // Note: colorMultiplier and fadeDuration are preserved from the original ColorBlock
-
             // Apply the modified ColorBlock back to the button
-            target.colors = colorBlock;
+            targetComponent.colors = colorBlock;
         }
 
         protected override Color[] GetColors(Button target)

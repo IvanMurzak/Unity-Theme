@@ -11,5 +11,5 @@
   ],
   "Host": "http://localhost:8080",
   "TimeoutMs": 10000,
-  "KeepConnected": true
+  "KeepConnected": false
 }

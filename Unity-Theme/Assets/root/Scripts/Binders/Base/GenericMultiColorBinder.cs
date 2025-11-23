@@ -58,15 +58,15 @@ namespace Unity.Theme.Binders
         /// <summary>
         /// Set colors to target component
         /// </summary>
-        /// <param name="target">Target component</param>
+        /// <param name="targetComponent">Target component</param>
         /// <param name="colors">Array of colors to apply</param>
-        protected abstract void SetColors(T target, Color[] colors);
+        protected abstract void SetColors(T targetComponent, Color[] colors);
 
         /// <summary>
         /// Get colors from target component
         /// </summary>
-        /// <param name="target">Target component</param>
+        /// <param name="targetComponent">Target component</param>
         /// <returns>Array of colors from the target</returns>
-        protected abstract Color[] GetColors(T target);
+        protected abstract Color[] GetColors(T targetComponent);
     }
 }
