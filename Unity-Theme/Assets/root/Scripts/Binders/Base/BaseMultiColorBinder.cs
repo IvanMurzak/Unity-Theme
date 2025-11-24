@@ -9,6 +9,12 @@ namespace Unity.Theme.Binders
         [SerializeField] protected FixedMultiColorBinderEntries colorEntries = new FixedMultiColorBinderEntries();
 
         /// <summary>
+        /// Defines the labels for each color entry that this binder manages.
+        /// Derived classes must implement this to specify their color entry names.
+        /// </summary>
+        protected abstract string[] ColorEntries { get; }
+
+        /// <summary>
         /// List of objects that should be marked as dirty when color is changed.
         /// This is useful when editing prefabs in the editor.
         /// </summary>
@@ -17,24 +23,7 @@ namespace Unity.Theme.Binders
 
         protected virtual void Awake()
         {
-            colorEntries = colorEntries ?? new FixedMultiColorBinderEntries();
-
-            // Initialize any null entries
-            for (int i = 0; i < colorEntries.Length; i++)
-            {
-                if (colorEntries[i] == null)
-                    colorEntries[i] = new MultiColorBinderEntry();
-                if (colorEntries[i].colorData == null)
-                    colorEntries[i].colorData = new ColorBinderData();
-
-                // Set default color GUID if not set
-                if (string.IsNullOrEmpty(colorEntries[i].colorData.colorGuid) &&
-                    string.IsNullOrEmpty(colorEntries[i].colorData.ColorName))
-                {
-                    colorEntries[i].colorData.colorGuid = Theme.Instance?.GetColorFirst().Guid;
-                }
-            }
-
+            FixColorEntries();
             ValidateColorConnections();
         }
 
@@ -83,6 +72,36 @@ namespace Unity.Theme.Binders
             }
 #endif
         }
+        protected virtual void FixColorEntries()
+        {
+            // Get the expected color entries from derived class
+            var expectedEntries = ColorEntries;
+
+            // Initialize color entries if not already set or if length doesn't match
+            if (colorEntries == null || colorEntries.Length != expectedEntries.Length)
+            {
+                var entries = new MultiColorBinderEntry[expectedEntries.Length];
+                for (int i = 0; i < expectedEntries.Length; i++)
+                    entries[i] = new MultiColorBinderEntry(expectedEntries[i]);
+
+                colorEntries = new FixedMultiColorBinderEntries(entries);
+            }
+
+            // Initialize any null entries
+            for (int i = 0; i < colorEntries.Length; i++)
+            {
+                if (colorEntries[i] == null)
+                    colorEntries[i] = new MultiColorBinderEntry(i < expectedEntries.Length ? expectedEntries[i] : string.Empty);
+
+                if (colorEntries[i].colorData == null)
+                    colorEntries[i].colorData = new ColorBinderData();
+
+                // Set default color GUID if not set
+                if (string.IsNullOrEmpty(colorEntries[i].colorData.colorGuid) &&
+                    string.IsNullOrEmpty(colorEntries[i].colorData.ColorName))
+                    colorEntries[i].colorData.colorGuid = Theme.Instance?.GetColorFirst().Guid;
+            }
+        }
         protected virtual void InvalidateColors(ThemeData theme)
         {
             try
@@ -112,7 +131,7 @@ namespace Unity.Theme.Binders
                 var currentColors = GetColors();
 
                 // Check if colors have changed
-                bool hasChanged = false;
+                var hasChanged = false;
                 if (currentColors == null || currentColors.Length != targetColors.Length)
                 {
                     hasChanged = true;

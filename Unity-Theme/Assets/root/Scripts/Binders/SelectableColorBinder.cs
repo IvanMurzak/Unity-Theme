@@ -17,37 +17,20 @@ namespace Unity.Theme.Binders
         private const int SELECTED_INDEX = 3;
         private const int DISABLED_INDEX = 4;
 
-        protected override void Awake()
+        /// <summary>
+        /// Defines the color entry labels for Selectable's ColorBlock states
+        /// </summary>
+        protected override string[] ColorEntries => new string[]
         {
-            // Initialize color entries if not already set
-            if (colorEntries == null || colorEntries.Length != 5)
-            {
-                var entries = new MultiColorBinderEntry[5];
-                entries[NORMAL_INDEX] = new MultiColorBinderEntry("Normal");
-                entries[HIGHLIGHTED_INDEX] = new MultiColorBinderEntry("Highlighted");
-                entries[PRESSED_INDEX] = new MultiColorBinderEntry("Pressed");
-                entries[SELECTED_INDEX] = new MultiColorBinderEntry("Selected");
-                entries[DISABLED_INDEX] = new MultiColorBinderEntry("Disabled");
-                colorEntries = new FixedMultiColorBinderEntries(entries);
-            }
-
-            base.Awake();
-        }
+            "Normal",
+            "Highlighted",
+            "Pressed",
+            "Selected",
+            "Disabled"
+        };
 
         protected override void SetColors(Selectable targetComponent, Color[] colors)
         {
-            if (targetComponent.IsNull())
-            {
-                LogError("Selectable target is null");
-                return;
-            }
-
-            if (colors == null || colors.Length != 5)
-            {
-                LogError("Invalid colors array. Expected 5 colors for Selectable states.");
-                return;
-            }
-
             // Get the current ColorBlock to preserve non-color properties
             var colorBlock = targetComponent.colors;
 
@@ -64,9 +47,6 @@ namespace Unity.Theme.Binders
 
         protected override Color[] GetColors(Selectable target)
         {
-            if (target.IsNull())
-                return new Color[5];
-
             var colorBlock = target.colors;
             return new Color[]
             {
