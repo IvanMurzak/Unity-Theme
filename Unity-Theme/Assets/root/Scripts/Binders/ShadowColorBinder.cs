@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace Unity.Theme.Binders
 {
+    /// <summary>
+    /// Binds a theme color to the Shadow component's effectColor property.
+    /// </summary>
     [AddComponentMenu("Theme/Shadow Color Binder")]
     public class ShadowColorBinder : GenericColorBinder<Shadow>
     {

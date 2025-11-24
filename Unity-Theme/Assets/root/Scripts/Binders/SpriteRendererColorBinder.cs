@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Unity.Theme.Binders
 {
+    /// <summary>
+    /// Binds theme colors to a SpriteRenderer's color property.
+    /// </summary>
     [AddComponentMenu("Theme/SpriteRenderer Color Binder")]
     public class SpriteRendererColorBinder : GenericColorBinder<SpriteRenderer>
     {
