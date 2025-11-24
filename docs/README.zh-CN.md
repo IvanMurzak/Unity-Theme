@@ -1,79 +1,79 @@
-# [Unity-Theme (Color Palette)](https://github.com/IvanMurzak/Unity-Theme)
+# [Unity-Theme（调色板）](https://github.com/IvanMurzak/Unity-Theme)
 
 [![openupm](https://img.shields.io/npm/v/extensions.unity.theme?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.theme/)
-[![r](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg 'Tests Passed')](https://github.com/IvanMurzak/Unity-Theme/actions/workflows/release.yml)
-[![Unity Editor](https://img.shields.io/badge/Editor-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Editor supported')](https://unity.com/releases/editor/archive)
-[![Unity Runtime](https://img.shields.io/badge/Runtime-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Runtime supported')](https://unity.com/releases/editor/archive)
+[![r](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg '测试通过')](https://github.com/IvanMurzak/Unity-Theme/actions/workflows/release.yml)
+[![Unity Editor](https://img.shields.io/badge/Editor-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity 编辑器支持')](https://unity.com/releases/editor/archive)
+[![Unity Runtime](https://img.shields.io/badge/Runtime-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity 运行时支持')](https://unity.com/releases/editor/archive)
 
 [![Stars](https://img.shields.io/github/stars/IvanMurzak/Unity-Theme 'Stars')](https://github.com/IvanMurzak/Unity-Theme/stargazers)
 [![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme)](https://github.com/IvanMurzak/Unity-Theme/blob/main/LICENSE)
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
-Create palettes of colors and components to change specific colors on a specific visual element. Very useful for UI.
+创建颜色调色板和组件，以更改特定视觉元素上的特定颜色。对 UI 非常有用。
 
 ![Unity-Theme-1](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/1c545d11-aea4-4cd2-8aaa-75539bbb6699)
 
 <div align="center" width="100%">
 
-<b>[中文](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.zh-CN.md) | [日本語](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.ja.md) | [Español](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.es.md)</b>
+<b>[English](https://github.com/IvanMurzak/Unity-Theme/blob/main/README.md) | [日本語](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.ja.md) | [Español](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.es.md)</b>
 
 </div>
 
-## Features
+## 功能特性
 
-- ✔️ Name colors
-- ✔️ Create custom themes with names
-- ✔️ Add as many colors as you need
-- ✔️ Name a theme as you want
-- ✔️ Change theme any moment by name
-- ✔️ Bind color to: `Image`, `SpriteRenderer`, `TextMeshPro`, etc
-- ✔️ Easy way to add custom color binder by new C# class with just a few lines of code
-- ✔️ Rename color even after binding to a component, with no broken links
+- ✔️ 为颜色命名
+- ✔️ 创建带名称的自定义主题
+- ✔️ 添加任意数量的颜色
+- ✔️ 自由命名主题
+- ✔️ 随时通过名称更改主题
+- ✔️ 将颜色绑定到：`Image`、`SpriteRenderer`、`TextMeshPro` 等
+- ✔️ 通过几行代码创建新的 C# 类，轻松添加自定义颜色绑定器
+- ✔️ 绑定到组件后也可重命名颜色，不会破坏链接
 
-## Stability status
+## 稳定性状态
 
-| Unity Version | Editor test | Player test | Build test |
+| Unity 版本    | 编辑器测试 | 播放器测试 | 构建测试 |
 |---------------|-------------|-------------|------------|
 | 2022.3.57f1   | ![2022.3.57f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-57f1-editmode) | ![2022.3.57f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-57f1-playmode) | ![2022.3.57f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-57f1-standalone) |
 | 2023.1.20f1   | ![2023.1.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-1-20f1-editmode) | ![2023.1.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-1-20f1-playmode) | ![2023.1.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-1-20f1-standalone) |
 | 2023.2.20f1   | ![2023.2.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-20f1-editmode) | ![2023.2.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-20f1-playmode) | ![2023.2.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-20f1-standalone) |
 | 6000.0.37f1   | ![6000.0.37f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-0-37f1-editmode) | ![6000.0.37f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-0-37f1-playmode) | ![6000.0.37f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-0-37f1-standalone) |
 
-# Installation
+# 安装
 
-### Option 1 - Installer
+### 选项 1 - 安装程序
 
-- **[⬇️ Download Installer](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.1.3/Unity-Theme-Installer.unitypackage)**
-- **📂 Import installer into Unity project**
-  > - You may use double click on the file - Unity will open it
-  > - OR: You may open Unity Editor first, then click on `Assets/Import Package/Custom Package`, then choose the file
+- **[⬇️ 下载安装程序](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.1.3/Unity-Theme-Installer.unitypackage)**
+- **📂 将安装程序导入 Unity 项目**
+  > - 您可以双击文件 - Unity 将打开它
+  > - 或者：您可以先打开 Unity 编辑器，然后点击 `Assets/Import Package/Custom Package`，然后选择该文件
 
-### Option 2 - OpenUPM-CLI
+### 选项 2 - OpenUPM-CLI
 
-- [⬇️ Install OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
-- 📟 Open command line in Unity project folder
+- [⬇️ 安装 OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
+- 📟 在 Unity 项目文件夹中打开命令行
 
 ```bash
 openupm add extensions.unity.theme
 ```
 
-### Option 3 - Asset Store
+### 选项 3 - Asset Store
 
-- **[▶️ Open Asset Store](https://u3d.as/3DQp)**
+- **[▶️ 打开 Asset Store](https://u3d.as/3DQp)**
 
 ---
 
-# Usage
+# 使用方法
 
-- Go to `Window/Unity-Theme`
-- Customize color palettes as you want
-- Add `ColorBinder` components to a target GameObject
+- 转到 `Window/Unity-Theme`
+- 根据需要自定义调色板
+- 将 `ColorBinder` 组件添加到目标 GameObject
 
-### Color Binder
+### 颜色绑定器
 
-A component that binds a color to a specific target, such as `Image`, `SpriteRenderer`, `TextMeshPro`, or anything else.
+一个将颜色绑定到特定目标的组件，例如 `Image`、`SpriteRenderer`、`TextMeshPro` 或其他任何对象。
 
-There is a list of built-in color binders:
+内置颜色绑定器列表：
 
 - ✔️ Light
 - ✔️ Image
@@ -92,15 +92,15 @@ There is a list of built-in color binders:
 
 ![Unity-Theme-Binder](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/6198af48-9f0e-4cda-b5e9-40508bbd5c45)
 
-### Color palettes
+### 调色板
 
-Modify palettes, instant response with all connected GameObjects.
+修改调色板，所有连接的 GameObjects 会立即响应。
 
 ![Unity-Theme-Palettes](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/179215af-23f1-4a8e-bb29-a7169f3433a5)
 
-## C# Api
+## C# API
 
-### Colors
+### 颜色
 
 ```csharp
 using Unity.Theme;
@@ -119,7 +119,7 @@ Theme.Instance.RemoveColor(colorData);
 Theme.Instance.RemoveAllColors();
 ```
 
-### Themes
+### 主题
 
 ```csharp
 using Unity.Theme;
@@ -134,9 +134,9 @@ Theme.Instance.RemoveTheme("Light");
 Theme.Instance.RemoveAllThemes();
 ```
 
-### Create a custom `ColorBinder`
+### 创建自定义 `ColorBinder`
 
-If you need to bind color to something else, you may extend from `BaseColorBinder` as listed below.
+如果您需要将颜色绑定到其他对象，可以如下所示从 `BaseColorBinder` 扩展。
 
 ```C#
 using UnityEngine;
@@ -156,40 +156,40 @@ namespace Unity.Theme.Binders
 }
 ```
 
-## Other
+## 其他
 
-- **[Color palette builder](https://m3.material.io/theme-builder#/custom)** by Google's Material Design V3
+- **[调色板构建器](https://m3.material.io/theme-builder#/custom)**，由 Google 的 Material Design V3 提供
 
 ---
 
-## Migration from `2.x.x` version
+## 从 `2.x.x` 版本迁移
 
-The version `3.x.x` or newer has a different database structure, so you need to migrate your data manually if you want to keep existed binders to still be connected to a right color. The binders are using GUIDs to connect to colors.
+版本 `3.x.x` 或更高版本具有不同的数据库结构，因此如果您想保持现有绑定器仍然连接到正确的颜色，则需要手动迁移数据。绑定器使用 GUID 连接到颜色。
 
-> ❗❗❗**Please follow the exact steps order**
+> ❗❗❗**请严格按照以下步骤顺序操作**
 
-### Step 1
+### 步骤 1
 
-Close Unity project to avoid any data loss.
+关闭 Unity 项目以避免任何数据丢失。
 
-### Step 2 - backup
+### 步骤 2 - 备份
 
-- Make a backup copy of `Assets/Resources/Unity-Theme Database.asset`, put it outside of a project.
-- Make a screenshot of colors in each theme to reproduce them later with color picker.
+- 制作 `Assets/Resources/Unity-Theme Database.asset` 的备份副本，将其放在项目外部。
+- 截取每个主题中颜色的屏幕截图，以便稍后使用颜色选择器重现它们。
 
-### Step 3 - database template
+### 步骤 3 - 数据库模板
 
-- Download [Unity-Theme-Database.json](https://raw.githubusercontent.com/IvanMurzak/Unity-Theme/refs/heads/main/Assets/Resources/Unity-Theme-Database.json).
-- Save it at `Assets/Resources/Unity-Theme-Database.json`.
-- Use it as a template. Feel free to delete all existed colors if you want.
+- 下载 [Unity-Theme-Database.json](https://raw.githubusercontent.com/IvanMurzak/Unity-Theme/refs/heads/main/Assets/Resources/Unity-Theme-Database.json)。
+- 将其保存在 `Assets/Resources/Unity-Theme-Database.json`。
+- 将其用作模板。如果需要，可以删除所有现有颜色。
 
-### Step 4 - data migration
+### 步骤 4 - 数据迁移
 
-**You need to copy GUIDs** from `Assets/Resources/Unity-Theme Database.asset`  to `Assets/Resources/Unity-Theme-Database.json`. To do that, please take a look at the samples below. You may see what is data format of old and new databases, and how to copy GUIDs. You may ignore color for now, it is easier to change color values later using color picker tool and the screenshot of old color palette.
+**您需要将 GUID 复制**从 `Assets/Resources/Unity-Theme Database.asset` 到 `Assets/Resources/Unity-Theme-Database.json`。为此，请查看下面的示例。您可以看到新旧数据库的数据格式，以及如何复制 GUID。您现在可以忽略颜色值，稍后使用颜色选择器工具和旧调色板的屏幕截图更改颜色值更容易。
 
-#### Sample of `Assets/Resources/Unity-Theme Database.asset` - old file (source)
+#### `Assets/Resources/Unity-Theme Database.asset` 示例 - 旧文件（源）
 
-Take a look at the `guid: 6b934efb-0b9b-42fd-82fd-7a0dbd1de53c`, the file contains it 3 times, depends on your setup. You would need to copy the guid to the `Unity-Theme-Database.json` file.
+注意 `guid: 6b934efb-0b9b-42fd-82fd-7a0dbd1de53c`，该文件包含它 3 次，具体取决于您的设置。您需要将 guid 复制到 `Unity-Theme-Database.json` 文件。
 
 ```yaml
   colors:
@@ -222,10 +222,10 @@ Take a look at the `guid: 6b934efb-0b9b-42fd-82fd-7a0dbd1de53c`, the file contai
       color: {r: 0.15294118, g: 0.15294118, b: 0.15686275, a: 1}
 ```
 
-### Sample of `Assets/Resources/Unity-Theme-Database.json` - new file (destination)
+### `Assets/Resources/Unity-Theme-Database.json` 示例 - 新文件（目标）
 
-That is the file that you need to make in the end of the migration process.
-When you done, you may need to close & open Unity project to let Unity-Theme to reload the data.
+这是您在迁移过程结束时需要制作的文件。
+完成后，您可能需要关闭并打开 Unity 项目以让 Unity-Theme 重新加载数据。
 
 ```json
 {
@@ -261,21 +261,21 @@ When you done, you may need to close & open Unity project to let Unity-Theme to 
 }
 ```
 
-### Step 5 - package update
+### 步骤 5 - 包更新
 
-- Delete Unity-Theme `2.x.x` from the project while Unity is closed
+- 在 Unity 关闭时从项目中删除 Unity-Theme `2.x.x`
 
 ```bash
 openupm remove extensions.unity.theme
 ```
 
-- Install latest Unity-Theme
+- 安装最新的 Unity-Theme
 
 ```bash
 openupm add extensions.unity.theme
 ```
 
-### Step 6 - cleaning up
+### 步骤 6 - 清理
 
-- Delete the `Assets/Resources/Unity-Theme Database.asset` file (original and copy).
-- ✅ migration completed, well done!
+- 删除 `Assets/Resources/Unity-Theme Database.asset` 文件（原始文件和副本）。
+- ✅ 迁移完成，干得好！
