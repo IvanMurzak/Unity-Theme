@@ -13,8 +13,8 @@ namespace Unity.Theme.Tests
         [UnityTest] public IEnumerator UpdateColor_Image_NoLogs() => TestUtils.RunNoLogs(UpdateColor_Image);
         [UnityTest] public IEnumerator UpdateColor_Image() => TestUtils.ColorBinder_UpdateColor<Image, ImageColorBinder>(target => target.color);
 
-        [UnityTest] public IEnumerator UpdateColor_TextMeshProUGUI_NoLogs() => TestUtils.RunNoLogs(UpdateColor_TextMeshProUGUI);
-        [UnityTest] public IEnumerator UpdateColor_TextMeshProUGUI() => TestUtils.ColorBinder_UpdateColor<TextMeshProUGUI, TextMeshProColorBinder>(target => target.color);
+        [UnityTest] public IEnumerator UpdateColor_TMP_Text_NoLogs() => TestUtils.RunNoLogs(UpdateColor_TMP_Text);
+        [UnityTest] public IEnumerator UpdateColor_TMP_Text() => TestUtils.ColorBinder_UpdateColor<TMP_Text, TextMeshProColorBinder>(target => target.color);
 
         [UnityTest] public IEnumerator UpdateColor_SpriteRenderer_NoLogs() => TestUtils.RunNoLogs(UpdateColor_SpriteRenderer);
         [UnityTest] public IEnumerator UpdateColor_SpriteRenderer() => TestUtils.ColorBinder_UpdateColor<SpriteRenderer, SpriteRendererColorBinder>(target => target.color);

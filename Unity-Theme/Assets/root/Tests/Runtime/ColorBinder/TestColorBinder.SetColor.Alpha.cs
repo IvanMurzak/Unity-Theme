@@ -15,8 +15,8 @@ namespace Unity.Theme.Tests
         [UnityTest] public IEnumerator SetColor_OverrideAlpha_Image_NoLogs() => TestUtils.RunNoLogs(SetColor_OverrideAlpha_Image);
         [UnityTest] public IEnumerator SetColor_OverrideAlpha_Image() => TestUtils.ColorBinder_SetColor_OverrideAlpha<Image, ImageColorBinder>(target => target.color);
 
-        [UnityTest] public IEnumerator SetColor_OverrideAlpha_TextMeshProUGUI_NoLogs() => TestUtils.RunNoLogs(SetColor_OverrideAlpha_TextMeshProUGUI);
-        [UnityTest] public IEnumerator SetColor_OverrideAlpha_TextMeshProUGUI() => TestUtils.ColorBinder_SetColor_OverrideAlpha<TextMeshProUGUI, TextMeshProColorBinder>(target => target.color);
+        [UnityTest] public IEnumerator SetColor_OverrideAlpha_TMP_Text_NoLogs() => TestUtils.RunNoLogs(SetColor_OverrideAlpha_TMP_Text);
+        [UnityTest] public IEnumerator SetColor_OverrideAlpha_TMP_Text() => TestUtils.ColorBinder_SetColor_OverrideAlpha<TMP_Text, TextMeshProColorBinder>(target => target.color);
 
         [UnityTest] public IEnumerator SetColor_OverrideAlpha_SpriteRenderer_NoLogs() => TestUtils.RunNoLogs(SetColor_OverrideAlpha_SpriteRenderer);
         [UnityTest] public IEnumerator SetColor_OverrideAlpha_SpriteRenderer() => TestUtils.ColorBinder_SetColor_OverrideAlpha<SpriteRenderer, SpriteRendererColorBinder>(target => target.color);
