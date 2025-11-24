@@ -6,7 +6,7 @@ namespace Unity.Theme.Binders
     [ExecuteAlways, ExecuteInEditMode]
     public abstract partial class BaseMultiColorBinder : LogableMonoBehaviour
     {
-        [SerializeField] protected MultiColorBinderEntry[] colorEntries = new MultiColorBinderEntry[0];
+        [SerializeField] protected FixedMultiColorBinderEntries colorEntries = new FixedMultiColorBinderEntries();
 
         /// <summary>
         /// List of objects that should be marked as dirty when color is changed.
@@ -17,7 +17,7 @@ namespace Unity.Theme.Binders
 
         protected virtual void Awake()
         {
-            colorEntries = colorEntries ?? new MultiColorBinderEntry[0];
+            colorEntries = colorEntries ?? new FixedMultiColorBinderEntries();
 
             // Initialize any null entries
             for (int i = 0; i < colorEntries.Length; i++)
@@ -173,7 +173,7 @@ namespace Unity.Theme.Binders
         {
             if (Theme.IsLogActive(DebugLevel.Log))
             {
-                var colorNames = string.Join(", ", System.Array.ConvertAll(colorEntries, e => $"'{e.label}'"));
+                var colorNames = string.Join(", ", System.Array.ConvertAll(colorEntries.Entries, e => $"'{e.label}'"));
                 LogTrace($"SetColors {colorNames}");
             }
             SetColorsInternal(colors);

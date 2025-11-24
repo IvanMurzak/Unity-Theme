@@ -22,12 +22,13 @@ namespace Unity.Theme.Binders
             // Initialize color entries if not already set
             if (colorEntries == null || colorEntries.Length != 5)
             {
-                colorEntries = new MultiColorBinderEntry[5];
-                colorEntries[NORMAL_INDEX] = new MultiColorBinderEntry("Normal");
-                colorEntries[HIGHLIGHTED_INDEX] = new MultiColorBinderEntry("Highlighted");
-                colorEntries[PRESSED_INDEX] = new MultiColorBinderEntry("Pressed");
-                colorEntries[SELECTED_INDEX] = new MultiColorBinderEntry("Selected");
-                colorEntries[DISABLED_INDEX] = new MultiColorBinderEntry("Disabled");
+                var entries = new MultiColorBinderEntry[5];
+                entries[NORMAL_INDEX] = new MultiColorBinderEntry("Normal");
+                entries[HIGHLIGHTED_INDEX] = new MultiColorBinderEntry("Highlighted");
+                entries[PRESSED_INDEX] = new MultiColorBinderEntry("Pressed");
+                entries[SELECTED_INDEX] = new MultiColorBinderEntry("Selected");
+                entries[DISABLED_INDEX] = new MultiColorBinderEntry("Disabled");
+                colorEntries = new FixedMultiColorBinderEntries(entries);
             }
 
             base.Awake();
