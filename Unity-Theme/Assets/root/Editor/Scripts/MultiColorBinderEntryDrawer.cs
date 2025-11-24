@@ -13,13 +13,13 @@ namespace Unity.Theme.Editor
             var root = new VisualElement();
             root.style.marginBottom = 8;
 
-            var labelProperty = property.FindPropertyRelative("label");
-            var colorDataProperty = property.FindPropertyRelative("colorData");
+            var labelProperty = property.FindPropertyRelative(nameof(Binders.MultiColorBinderEntry.label));
+            var colorDataProperty = property.FindPropertyRelative(nameof(Binders.MultiColorBinderEntry.colorData));
 
             // Create a container for the label
             var labelContainer = new VisualElement();
             labelContainer.style.flexDirection = FlexDirection.Row;
-            labelContainer.style.marginBottom = 4;
+            labelContainer.style.marginBottom = 0;
 
             // Create label field (readonly)
             var labelField = new TextField("Label");

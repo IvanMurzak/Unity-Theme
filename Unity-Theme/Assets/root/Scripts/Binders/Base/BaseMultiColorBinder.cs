@@ -192,9 +192,22 @@ namespace Unity.Theme.Binders
         {
             if (Theme.IsLogActive(DebugLevel.Log))
             {
-                var colorNames = string.Join(", ", System.Array.ConvertAll(colorEntries.Entries, e => $"'{e.label}'"));
+                var colorNames = string.Join(", ", System.Array.ConvertAll(colorEntries.colorBindings, e => $"'{e.label}'"));
                 LogTrace($"SetColors {colorNames}");
             }
+
+            if (colors == null || colors.Length != ColorEntries.Length)
+            {
+                LogError("Invalid colors array. Expected {0} colors for {1} states.", ColorEntries.Length, GetType().Name);
+                FixColorEntries();
+
+                // Double check after fixing
+                if (colors == null || colors.Length != ColorEntries.Length)
+                    return false;
+
+                Log("Fixed color entries length.");
+            }
+
             SetColorsInternal(colors);
             return true;
         }
@@ -214,7 +227,7 @@ namespace Unity.Theme.Binders
             }
         }
 
-        protected abstract void SetColorsInternal(Color[] colors);
+        protected abstract bool SetColorsInternal(Color[] colors);
 
         /// <summary>
         /// Get colors from target

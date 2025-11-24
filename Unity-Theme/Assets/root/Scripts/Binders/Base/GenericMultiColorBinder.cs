@@ -47,20 +47,15 @@ namespace Unity.Theme.Binders
         }
 
         protected override bool CanApplyColors() => target.IsNotNull();
-        protected override void SetColorsInternal(Color[] colors)
+        protected override bool SetColorsInternal(Color[] colors)
         {
             if (target.IsNull())
             {
                 LogError("{0} target is null", GetType().Name);
-                return;
-            }
-
-            if (colors == null || colors.Length != ColorEntries.Length)
-            {
-                LogError("Invalid colors array. Expected {0} colors for {1} states.", ColorEntries.Length, GetType().Name);
-                return;
+                return false;
             }
             SetColors(target, colors);
+            return true;
         }
 
         /// <summary>

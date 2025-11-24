@@ -20,9 +20,9 @@ namespace Unity.Theme.Editor
             var sliderAlpha = root.Query<Slider>("sliderAlpha").First();
             var colorFill = root.Query<VisualElement>("colorFill").Last();
 
-            var colorGuid = property.FindPropertyRelative("colorGuid");
-            var overrideAlpha = property.FindPropertyRelative("overrideAlpha");
-            var alpha = property.FindPropertyRelative("alpha");
+            var colorGuid = property.FindPropertyRelative(nameof(Binders.ColorBinderData.colorGuid));
+            var overrideAlpha = property.FindPropertyRelative(nameof(Binders.ColorBinderData.overrideAlpha));
+            var alpha = property.FindPropertyRelative(nameof(Binders.ColorBinderData.alpha));
 
             dropdownColor.choices = Theme.Instance?.ColorNames?.ToList() ?? new List<string>() { "error" };
             dropdownColor.value = Theme.Instance?.GetColorName(colorGuid.stringValue);

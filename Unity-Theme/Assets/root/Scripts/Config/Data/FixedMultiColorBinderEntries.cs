@@ -10,29 +10,20 @@ namespace Unity.Theme.Binders
     [Serializable]
     public class FixedMultiColorBinderEntries
     {
-        [SerializeField] private MultiColorBinderEntry[] entries;
-
-        /// <summary>
-        /// Gets the array of color entries.
-        /// </summary>
-        public MultiColorBinderEntry[] Entries
-        {
-            get => entries;
-            set => entries = value;
-        }
+        [SerializeField] public MultiColorBinderEntry[] colorBindings;
 
         /// <summary>
         /// Gets the number of entries in the array.
         /// </summary>
-        public int Length => entries?.Length ?? 0;
+        public int Length => colorBindings?.Length ?? 0;
 
         /// <summary>
         /// Indexer to access individual entries.
         /// </summary>
         public MultiColorBinderEntry this[int index]
         {
-            get => entries[index];
-            set => entries[index] = value;
+            get => colorBindings[index];
+            set => colorBindings[index] = value;
         }
 
         /// <summary>
@@ -40,7 +31,7 @@ namespace Unity.Theme.Binders
         /// </summary>
         public FixedMultiColorBinderEntries()
         {
-            entries = new MultiColorBinderEntry[0];
+            colorBindings = new MultiColorBinderEntry[0];
         }
 
         /// <summary>
@@ -49,10 +40,10 @@ namespace Unity.Theme.Binders
         /// <param name="size">The number of entries to create.</param>
         public FixedMultiColorBinderEntries(int size)
         {
-            entries = new MultiColorBinderEntry[size];
+            colorBindings = new MultiColorBinderEntry[size];
             for (int i = 0; i < size; i++)
             {
-                entries[i] = new MultiColorBinderEntry();
+                colorBindings[i] = new MultiColorBinderEntry();
             }
         }
 
@@ -62,7 +53,7 @@ namespace Unity.Theme.Binders
         /// <param name="entries">The entries to wrap.</param>
         public FixedMultiColorBinderEntries(MultiColorBinderEntry[] entries)
         {
-            this.entries = entries ?? new MultiColorBinderEntry[0];
+            this.colorBindings = entries ?? new MultiColorBinderEntry[0];
         }
     }
 }

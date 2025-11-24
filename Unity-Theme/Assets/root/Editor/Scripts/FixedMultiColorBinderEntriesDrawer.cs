@@ -16,7 +16,7 @@ namespace Unity.Theme.Binders
             var root = new VisualElement();
 
             // Get the entries array property
-            var entriesProperty = property.FindPropertyRelative("entries");
+            var entriesProperty = property.FindPropertyRelative(nameof(FixedMultiColorBinderEntries.colorBindings));
 
             if (entriesProperty == null || !entriesProperty.isArray)
             {
@@ -29,7 +29,7 @@ namespace Unity.Theme.Binders
             // Create a foldout for the entries
             var foldout = new Foldout
             {
-                text = $"Entries ({entriesProperty.arraySize})",
+                text = $"Color Bindings ({entriesProperty.arraySize})",
                 value = true // Start expanded
             };
 
