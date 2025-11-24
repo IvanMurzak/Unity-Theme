@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(if not exist \"c:\\Projects\\Unity\\Unity-Theme\\docs\" mkdir \"c:\\Projects\\Unity\\Unity-Theme\\docs\")",
+      "Bash(mkdir:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
