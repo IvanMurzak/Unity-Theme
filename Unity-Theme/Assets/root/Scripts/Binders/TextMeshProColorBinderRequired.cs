@@ -3,7 +3,7 @@ using TMPro;
 
 namespace Unity.Theme.Binders
 {
-    [RequireComponent(typeof(TMP_Text))]
+    [RequireComponent(typeof(TextMeshProUGUI))]
     [AddComponentMenu("Theme/TextMeshPro Color Binder (Required)")]
     public class TextMeshProColorBinderRequired : TextMeshProColorBinder
     {

@@ -13,8 +13,8 @@ namespace Unity.Theme.Tests
         [UnityTest] public IEnumerator SwitchColor_Image_NoLogs() => TestUtils.RunNoLogs(SwitchColor_Image);
         [UnityTest] public IEnumerator SwitchColor_Image() => TestUtils.ColorBinder_SwitchColor<Image, ImageColorBinder>(target => target.color);
 
-        [UnityTest] public IEnumerator SwitchColor_TMP_Text_NoLogs() => TestUtils.RunNoLogs(SwitchColor_TMP_Text);
-        [UnityTest] public IEnumerator SwitchColor_TMP_Text() => TestUtils.ColorBinder_SwitchColor<TMP_Text, TextMeshProColorBinder>(target => target.color);
+        [UnityTest] public IEnumerator SwitchColor_TextMeshProUGUI_NoLogs() => TestUtils.RunNoLogs(SwitchColor_TextMeshProUGUI);
+        [UnityTest] public IEnumerator SwitchColor_TextMeshProUGUI() => TestUtils.ColorBinder_SwitchColor<TextMeshProUGUI, TextMeshProColorBinder>(target => target.color);
 
         [UnityTest] public IEnumerator SwitchColor_SpriteRenderer_NoLogs() => TestUtils.RunNoLogs(SwitchColor_SpriteRenderer);
         [UnityTest] public IEnumerator SwitchColor_SpriteRenderer() => TestUtils.ColorBinder_SwitchColor<SpriteRenderer, SpriteRendererColorBinder>(target => target.color);

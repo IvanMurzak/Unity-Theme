@@ -18,11 +18,11 @@ namespace Unity.Theme.Tests
             yield return null;
         }
 
-        [UnityTest] public IEnumerator Create_TMP_Text_NoLogs() => TestUtils.RunNoLogs(Create_TMP_Text);
+        [UnityTest] public IEnumerator Create_TextMeshProUGUI_NoLogs() => TestUtils.RunNoLogs(Create_TextMeshProUGUI);
         [UnityTest]
-        public IEnumerator Create_TMP_Text()
+        public IEnumerator Create_TextMeshProUGUI()
         {
-            TestUtils.CreateGenericColorBinder<TMP_Text, TextMeshProColorBinder>(out var target);
+            TestUtils.CreateGenericColorBinder<TextMeshProUGUI, TextMeshProColorBinder>(out var target);
             yield return null;
         }
 
