@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Unity.Theme.Binders
 {
     [ExecuteAlways, ExecuteInEditMode]
-    public abstract partial class BaseColorBinder : MonoBehaviour
+    public abstract partial class BaseColorBinder : LogableMonoBehaviour
     {
         [SerializeField] protected ColorBinderData data = new ColorBinderData();
 
@@ -22,10 +22,7 @@ namespace Unity.Theme.Binders
                 data.colorGuid = Theme.Instance?.GetColorFirst().Guid;
 
             if (!data.IsConnected)
-            {
-                if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
-                    Debug.LogError($"[Theme] Color with GUID='{data.colorGuid}' not found in database at <b>{GameObjectPath()}</b>", gameObject);
-            }
+                LogError("Color with GUID='{0}' not found in database", data.colorGuid);
         }
 
         protected virtual void OnEnable() => Enable();
@@ -39,8 +36,7 @@ namespace Unity.Theme.Binders
         {
             if (IsSubscribed)
                 return;
-            if (Theme.IsLogActive(DebugLevel.Trace) && this.IsNotNull())
-                Debug.Log($"[Theme] Subscribing at <b>{GameObjectPath()}</b>", gameObject);
+            LogTrace("Subscribing");
             Theme.Instance.onThemeChanged += InvalidateColor;
             Theme.Instance.onThemeColorChanged += OnThemeColorChanged;
 #if UNITY_EDITOR
@@ -53,8 +49,7 @@ namespace Unity.Theme.Binders
         {
             if (!IsSubscribed)
                 return;
-            if (Theme.IsLogActive(DebugLevel.Trace) && this.IsNotNull())
-                Debug.Log($"[Theme] Unsubscribing at <b>{GameObjectPath()}</b>", gameObject);
+            LogTrace("Unsubscribing");
             Theme.Instance.onThemeChanged -= InvalidateColor;
             Theme.Instance.onThemeColorChanged -= OnThemeColorChanged;
 #if UNITY_EDITOR
@@ -66,9 +61,7 @@ namespace Unity.Theme.Binders
         protected virtual void SetDirty()
         {
 #if UNITY_EDITOR
-            if (Theme.IsLogActive(DebugLevel.Trace) && this.IsNotNull())
-                Debug.Log($"[Theme] SetDirty at <b>{GameObjectPath()}</b>", gameObject);
-
+            LogTrace("SetDirty");
             SetDirty(this);
             if (ColorTargets != null)
             {
@@ -88,27 +81,24 @@ namespace Unity.Theme.Binders
                     Object.DestroyImmediate(this);
                     return;
                 }
-                if (Theme.IsLogActive(DebugLevel.Trace) && this.IsNotNull())
-                    Debug.Log($"[Theme] Invalidating color at <b>{GameObjectPath()}</b>", gameObject);
+
+                LogTrace("Invalidating color");
                 if (theme == null)
                 {
-                    if (Theme.IsLogActive(DebugLevel.Error))
-                        Debug.LogError($"[Theme] Current theme is null, can't invalidate color at <b>{GameObjectPath()}</b>", gameObject);
+                    LogError("Current theme is null, can't invalidate color");
                     return;
                 }
 
                 var colorData = theme.GetColorByGuid(data.colorGuid);
                 if (colorData == null)
                 {
-                    if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
-                        Debug.LogError($"[Theme] Color with GUID='{data.colorGuid}' not found in database at <b>{GameObjectPath()}</b>", gameObject);
+                    LogError("Color with GUID='{0}' not found in database", data.colorGuid);
                 }
                 else
                 {
                     if (!CanApplyColor())
                     {
-                        if (Theme.IsLogActive(DebugLevel.Warning) && this.IsNotNull())
-                            Debug.LogWarning($"[Theme] Can't apply color at <b>{GameObjectPath()}</b>", gameObject);
+                        LogWarning("Can't apply color");
                         return;
                     }
                     var targetColor = GetTargetColor(colorData);
@@ -138,8 +128,9 @@ namespace Unity.Theme.Binders
         }
         protected virtual bool InternalSetColor(Color color)
         {
-            if (Theme.IsLogActive(DebugLevel.Log) && this.IsNotNull())
-                Debug.Log($"[Theme] SetColor '<b>{data.ColorName}</b>' {color.ToHexRGBA()} at <b>{GameObjectPath()}</b>", gameObject);
+            if (Theme.IsLogActive(DebugLevel.Log))
+                Log("Setting color '<b>{0}</b>' to {1}", data.ColorName, color.ToHexRGBA());
+
             SetColorInternal(color);
             return true;
         }
@@ -148,8 +139,7 @@ namespace Unity.Theme.Binders
         {
             if (colorData == null)
             {
-                if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
-                    Debug.LogError($"[Theme] Color is null. Can't set it as a color for the binder", gameObject);
+                LogError("Color is null. Can't set it as a color for the binder");
                 return false;
             }
             if (data.colorGuid == colorData.Guid)
@@ -158,8 +148,8 @@ namespace Unity.Theme.Binders
             data.colorGuid = colorData.Guid;
             var color = GetTargetColor(colorData);
 
-            if (Theme.IsLogActive(DebugLevel.Log) && this.IsNotNull())
-                Debug.Log($"[Theme] SetColor '<b>{data.ColorName}</b>' {color.ToHexRGBA()} at <b>{GameObjectPath()}</b>", gameObject);
+            if (Theme.IsLogActive(DebugLevel.Log))
+                Log("Setting color '<b>{0}</b>' to {1}", data.ColorName, color.ToHexRGBA());
 
             SetColorInternal(color);
             SetDirty();
@@ -183,6 +173,5 @@ namespace Unity.Theme.Binders
 #endif
         }
         private void OnThemeColorChanged(ThemeData themeData, ColorData colorData) => InvalidateColor(themeData);
-        protected string GameObjectPath() => Extensions.GameObjectPath(this);
     }
 }

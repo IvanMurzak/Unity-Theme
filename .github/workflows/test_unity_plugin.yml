@@ -25,14 +25,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - os: windows
-            runs-on: [windows-latest]
-          - os: ubuntu
-            runs-on: [ubuntu-latest]
+        os: [ubuntu-latest]
+        platform: [base, windows-mono]
 
-    name: ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.runs-on }}
+    name: ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.platform }}
+    runs-on: ${{ matrix.os }}
 
     # permissions: # minimize the default token
     #   contents: write
@@ -65,13 +62,12 @@ jobs:
           path: |
             ${{ inputs.projectPath }}/Library
             ~/.cache/unity3d
-          key: Library-${{ inputs.unityVersion }}-${{ matrix.os }}
+          key: Library-${{ inputs.unityVersion }}-${{ inputs.testMode }}-${{ matrix.platform }}
 
       # --------------------------------------------------------------------- #
       - name: Generate custom image name
         id: custom_image
-        run: |
-          echo "image=unityci/editor:${{ matrix.os }}-${{ inputs.unityVersion }}-base-3" >> $GITHUB_OUTPUT
+        run: echo "image=unityci/editor:ubuntu-${{ inputs.unityVersion }}-${{ matrix.platform }}-3" >> $GITHUB_OUTPUT
         shell: bash
 
       - uses: game-ci/unity-test-runner@v4
@@ -86,13 +82,13 @@ jobs:
           testMode:       ${{ inputs.testMode }}
           customImage:    ${{ steps.custom_image.outputs.image }}
           githubToken:    ${{ secrets.GITHUB_TOKEN }}
-          checkName:      ${{ inputs.unityVersion }} ${{ inputs.testMode }} ${{ matrix.os }} Test Results
-          artifactsPath:  artifacts-${{ inputs.unityVersion }}-${{ inputs.testMode }}-${{ matrix.os }}
+          checkName:      ${{ inputs.unityVersion }} ${{ inputs.testMode }} ${{ matrix.platform }} Test Results
+          artifactsPath:  artifacts-${{ inputs.unityVersion }}-${{ inputs.testMode }}-${{ matrix.platform }}
           customParameters: -CI true -GITHUB_ACTIONS true
 
       # --------------------------------------------------------------------- #
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: Test results for ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.os }}
+          name: Test results for ${{ inputs.unityVersion }} ${{ inputs.testMode }} on ${{ matrix.platform }}
           path: ${{ steps.tests.outputs.artifactsPath }}

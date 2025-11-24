@@ -39,8 +39,7 @@ namespace Unity.Theme.Binders
         {
             if (target.IsNull())
             {
-                if (Theme.IsLogActive(DebugLevel.Error) && this.IsNotNull())
-                    Debug.LogError($"[Theme] {typeof(T).Name} not found at <b>{GameObjectPath()}</b>", gameObject);
+                LogError($"{typeof(T).Name} not found");
                 return false;
             }
             return base.InternalSetColor(color);
@@ -54,8 +53,19 @@ namespace Unity.Theme.Binders
         /// <returns>Returns nullable Color</returns>
         public override Color? GetColor() => GetColor(target);
 
-        protected abstract void SetColor(T target, Color color);
-        protected abstract Color? GetColor(T target);
+        /// <summary>
+        /// Set color to target component
+        /// </summary>
+        /// <param name="targetComponent">Target component</param>
+        /// <param name="color">Color to apply</param>
+        protected abstract void SetColor(T targetComponent, Color color);
+
+        /// <summary>
+        /// Get color from target component
+        /// </summary>
+        /// <param name="targetComponent">Target component</param>
+        /// <returns>Returns nullable Color</returns>
+        protected abstract Color? GetColor(T targetComponent);
 
     }
 }

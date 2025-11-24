@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Unity.Theme.Binders
 {
-    public abstract partial class BaseColorBinder : MonoBehaviour
+    public abstract partial class BaseColorBinder : LogableMonoBehaviour
     {
         /// <summary>
         /// Set color by name from current theme
@@ -40,14 +40,13 @@ namespace Unity.Theme.Binders
         /// <returns>Operation success</returns>
         public bool SetAlphaOverride(bool overrideAlpha, float alpha = 1.0f)
         {
-            if (data.overrideAlpha == overrideAlpha && data.alpha == alpha)
+            if (data.overrideAlpha == overrideAlpha && Mathf.Abs(data.alpha - alpha) < Mathf.Epsilon)
                 return true; // skip if the same alpha
 
             data.overrideAlpha = overrideAlpha;
             data.alpha = alpha;
 
-            if (Theme.IsLogActive(DebugLevel.Trace) && this.IsNotNull())
-                Debug.Log($"[Theme] SetAlpha: '<b>{data.ColorName}</b>' {alpha} at <b>{GameObjectPath()}</b>", gameObject);
+            LogTrace("SetAlpha: '<b>{0}</b>' {1}", data.ColorName, alpha);
 
             InvalidateColor(Theme.Instance?.CurrentTheme);
             return true;

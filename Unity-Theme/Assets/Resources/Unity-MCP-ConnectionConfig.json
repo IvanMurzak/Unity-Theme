@@ -1,7 +1,15 @@
 {
-  "Host": "http://localhost:8080",
-  "Port": 8080,
-  "KeepConnected": true,
   "LogLevel": 3,
-  "TimeoutMs": 10000
+  "EnabledTools": [
+    "*"
+  ],
+  "EnabledPrompts": [
+    "*"
+  ],
+  "EnabledResources": [
+    "*"
+  ],
+  "Host": "http://localhost:8080",
+  "TimeoutMs": 10000,
+  "KeepConnected": false
 }
