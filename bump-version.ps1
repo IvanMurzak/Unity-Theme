@@ -39,6 +39,24 @@ $VersionFiles = @(
         Description = "Root README download URL"
     },
     @{
+        Path        = "docs/README.es.md"
+        Pattern     = "https://github\.com/IvanMurzak/Unity-Theme/releases/download/[\d\.]+/Unity-Theme-Installer\.unitypackage"
+        Replace     = "https://github.com/IvanMurzak/Unity-Theme/releases/download/{VERSION}/Unity-Theme-Installer.unitypackage"
+        Description = "Root README download URL"
+    },
+    @{
+        Path        = "docs/README.ja.md"
+        Pattern     = "https://github\.com/IvanMurzak/Unity-Theme/releases/download/[\d\.]+/Unity-Theme-Installer\.unitypackage"
+        Replace     = "https://github.com/IvanMurzak/Unity-Theme/releases/download/{VERSION}/Unity-Theme-Installer.unitypackage"
+        Description = "Root README download URL"
+    },
+    @{
+        Path        = "docs/README.zh-CN.md"
+        Pattern     = "https://github\.com/IvanMurzak/Unity-Theme/releases/download/[\d\.]+/Unity-Theme-Installer\.unitypackage"
+        Replace     = "https://github.com/IvanMurzak/Unity-Theme/releases/download/{VERSION}/Unity-Theme-Installer.unitypackage"
+        Description = "Root README download URL"
+    },
+    @{
         Path        = "Installer/Assets/com.IvanMurzak/Unity Theme Installer/Installer.cs"
         Pattern     = 'public const string Version = "[\d\.]+";'
         Replace     = 'public const string Version = "{VERSION}";'

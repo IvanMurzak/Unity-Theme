@@ -43,7 +43,7 @@
 
 ### 选项 1 - 安装程序
 
-- **[⬇️ 下载安装程序](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.1.3/Unity-Theme-Installer.unitypackage)**
+- **[⬇️ 下载安装程序](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.2.0/Unity-Theme-Installer.unitypackage)**
 - **📂 将安装程序导入 Unity 项目**
   > - 您可以双击文件 - Unity 将打开它
   > - 或者：您可以先打开 Unity 编辑器，然后点击 `Assets/Import Package/Custom Package`，然后选择该文件

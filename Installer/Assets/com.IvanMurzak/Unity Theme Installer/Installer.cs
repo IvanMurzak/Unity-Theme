@@ -16,7 +16,7 @@ namespace com.IvanMurzak.Unity.Theme.Installer
     public static partial class Installer
     {
         public const string PackageId = "extensions.unity.theme";
-        public const string Version = "4.1.3";
+        public const string Version = "4.2.0";
 
         static Installer()
         {
