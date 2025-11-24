@@ -2,7 +2,6 @@
 
 [![openupm](https://img.shields.io/npm/v/extensions.unity.theme?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.theme/)
 [![r](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg 'Tests Passed')](https://github.com/IvanMurzak/Unity-Theme/actions/workflows/release.yml)
-[![Unity Asset Store](https://img.shields.io/badge/Asset%20Store-View-blue?logo=unity&labelColor=333A41 'Asset Store')](https://u3d.as/3DQp)
 [![Unity Editor](https://img.shields.io/badge/Editor-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Editor supported')](https://unity.com/releases/editor/archive)
 [![Unity Runtime](https://img.shields.io/badge/Runtime-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Runtime supported')](https://unity.com/releases/editor/archive)
 
@@ -70,9 +69,13 @@ A component that binds a color to a specific target, such as `Image`, `SpriteRen
 
 There is a list of built-in color binders:
 
-- `ImageColorBinder`
-- `SpriteRendererColorBinder`
-- `TextMeshProColorBinder`
+- ✔️ Image
+- ✔️ Button
+- ✔️ Toggle
+- ✔️ Material
+- ✔️ Selectable
+- ✔️ TextMeshPro
+- ✔️ SpriteRenderer
 
 ![Unity-Theme-Binder](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/6198af48-9f0e-4cda-b5e9-40508bbd5c45)
 
