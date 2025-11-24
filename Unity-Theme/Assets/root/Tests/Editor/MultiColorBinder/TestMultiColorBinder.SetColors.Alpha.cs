@@ -1,11 +1,8 @@
 using Unity.Theme.Tests.Base;
 using UnityEngine.UI;
 using Unity.Theme.Binders;
-using UnityEngine;
 using UnityEngine.TestTools;
 using System.Collections;
-using NUnit.Framework;
-using UnityEngine.TestTools.Utils;
 
 namespace Unity.Theme.Tests
 {
@@ -13,83 +10,34 @@ namespace Unity.Theme.Tests
     {
         [UnityTest] public IEnumerator SetColors_OverrideAlpha_Selectable_NoLogs() => TestUtils.RunNoLogs(SetColors_OverrideAlpha_Selectable);
         [UnityTest]
-        public IEnumerator SetColors_OverrideAlpha_Selectable()
-        {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
-            yield return null;
-
-            Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
-
-            // Set color and override alpha for first entry (Normal state)
-            TestUtils.SetMultiColorByName(colorBinder, 0, TestUtils.C_Color.Name1);
-            TestUtils.SetMultiAlphaOverride(colorBinder, 0, overrideAlpha: true, alpha: 0.5f);
-
-            var colorBlock = target.colors;
-            Assert.AreEqual(TestUtils.C_Theme1.Color1.Value.HexToColor().SetA(0.5f), colorBlock.normalColor);
-
-            // Disable alpha override
-            TestUtils.SetMultiAlphaOverride(colorBinder, 0, overrideAlpha: false, alpha: 0.5f);
-            colorBlock = target.colors;
-            Assert.AreEqual(TestUtils.C_Theme1.Color1.Value.HexToColor(), colorBlock.normalColor);
-        }
+        public IEnumerator SetColors_OverrideAlpha_Selectable() =>
+            TestUtils.MultiColorBinder_SetColors_OverrideAlpha<Selectable, SelectableColorBinder>(target =>
+            {
+                var cb = target.colors;
+                return new[] { cb.normalColor, cb.highlightedColor, cb.pressedColor, cb.selectedColor, cb.disabledColor };
+            });
 
         [UnityTest] public IEnumerator SetColors_OverrideAlpha_ByLabel_Selectable_NoLogs() => TestUtils.RunNoLogs(SetColors_OverrideAlpha_ByLabel_Selectable);
         [UnityTest]
-        public IEnumerator SetColors_OverrideAlpha_ByLabel_Selectable()
-        {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
-            yield return null;
-
-            Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
-
-            // Set color for Normal state
-            TestUtils.SetMultiColorByLabel(colorBinder, "Normal", TestUtils.C_Color.Name1);
-
-            // Override alpha using label
-            TestUtils.SetMultiAlphaOverrideByLabel(colorBinder, "Normal", overrideAlpha: true, alpha: 0.3f);
-
-            var colorBlock = target.colors;
-            Assert.AreEqual(TestUtils.C_Theme1.Color1.Value.HexToColor().SetA(0.3f), colorBlock.normalColor);
-        }
+        public IEnumerator SetColors_OverrideAlpha_ByLabel_Selectable() =>
+            TestUtils.MultiColorBinder_SetColors_OverrideAlpha_ByLabel<Selectable, SelectableColorBinder>(target =>
+            {
+                var cb = target.colors;
+                return new[] { cb.normalColor, cb.highlightedColor, cb.pressedColor, cb.selectedColor, cb.disabledColor };
+            }, "Normal");
 
         [UnityTest] public IEnumerator SetColors_MultipleAlphaOverrides_Selectable_NoLogs() => TestUtils.RunNoLogs(SetColors_MultipleAlphaOverrides_Selectable);
         [UnityTest]
-        public IEnumerator SetColors_MultipleAlphaOverrides_Selectable()
-        {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
-            yield return null;
-
-            Theme.Instance.CurrentThemeName = TestUtils.C_Theme1.Name;
-
-            // Set colors for multiple states
-            TestUtils.SetMultiColorByName(colorBinder, 0, TestUtils.C_Color.Name1); // Normal
-            TestUtils.SetMultiColorByName(colorBinder, 1, TestUtils.C_Color.Name2); // Highlighted
-            TestUtils.SetMultiColorByName(colorBinder, 2, TestUtils.C_Color.Name3); // Pressed
-
-            // Override alpha for each state with different values
-            TestUtils.SetMultiAlphaOverride(colorBinder, 0, overrideAlpha: true, alpha: 0.8f);
-            TestUtils.SetMultiAlphaOverride(colorBinder, 1, overrideAlpha: true, alpha: 0.6f);
-            TestUtils.SetMultiAlphaOverride(colorBinder, 2, overrideAlpha: true, alpha: 0.4f);
-
-            var colorBlock = target.colors;
-            Assert.AreEqual(TestUtils.C_Theme1.Color1.Value.HexToColor().SetA(0.8f), colorBlock.normalColor);
-            Assert.AreEqual(TestUtils.C_Theme1.Color2.Value.HexToColor().SetA(0.6f), colorBlock.highlightedColor);
-            Assert.AreEqual(TestUtils.C_Theme1.Color3.Value.HexToColor().SetA(0.4f), colorBlock.pressedColor);
-        }
+        public IEnumerator SetColors_MultipleAlphaOverrides_Selectable() =>
+            TestUtils.MultiColorBinder_SetColors_MultipleAlphaOverrides<Selectable, SelectableColorBinder>(target =>
+            {
+                var cb = target.colors;
+                return new[] { cb.normalColor, cb.highlightedColor, cb.pressedColor, cb.selectedColor, cb.disabledColor };
+            });
 
         [UnityTest] public IEnumerator SetColors_AlphaOverride_InvalidIndex_Selectable_NoLogs() => TestUtils.RunNoLogs(SetColors_AlphaOverride_InvalidIndex_Selectable);
         [UnityTest]
-        public IEnumerator SetColors_AlphaOverride_InvalidIndex_Selectable()
-        {
-            var colorBinder = TestUtils.CreateGenericMultiColorBinder<Selectable, SelectableColorBinder>(out var target);
-            yield return null;
-
-            // Test invalid index for alpha override - expect error logs
-            LogAssert.Expect(LogType.Error, new System.Text.RegularExpressions.Regex(@"\[Theme\] Invalid color entry index: 10"));
-            Assert.False(colorBinder.SetAlphaOverride(10, true, 0.5f)); // Index out of range
-
-            LogAssert.Expect(LogType.Error, new System.Text.RegularExpressions.Regex(@"\[Theme\] Invalid color entry index: -1"));
-            Assert.False(colorBinder.SetAlphaOverride(-1, true, 0.5f)); // Negative index
-        }
+        public IEnumerator SetColors_AlphaOverride_InvalidIndex_Selectable() =>
+            TestUtils.MultiColorBinder_SetColors_AlphaOverride_InvalidIndex<Selectable, SelectableColorBinder>();
     }
 }
