@@ -29,29 +29,29 @@ namespace Unity.Theme.Binders
 
         protected override void SetColors(T targetComponent, Color[] colors)
         {
-            if (targetComponent.material != null)
+            if (targetComponent.sharedMaterial != null)
             {
                 if (useCustomProperty && !string.IsNullOrEmpty(customMaterialColorProperty))
                 {
-                    targetComponent.material.SetColor(customMaterialColorProperty, colors[MATERIAL_COLOR_INDEX]);
+                    targetComponent.sharedMaterial.SetColor(customMaterialColorProperty, colors[MATERIAL_COLOR_INDEX]);
                 }
                 else
                 {
-                    targetComponent.material.color = colors[MATERIAL_COLOR_INDEX];
+                    targetComponent.sharedMaterial.color = colors[MATERIAL_COLOR_INDEX];
                 }
             }
         }
 
         protected override Color[] GetColors(T target)
         {
-            if (target.material != null)
+            if (target.sharedMaterial != null)
             {
                 Color color;
                 color = (useCustomProperty && !string.IsNullOrEmpty(customMaterialColorProperty))
-                    ? (target.material.HasProperty(customMaterialColorProperty)
-                        ? target.material.GetColor(customMaterialColorProperty)
+                    ? (target.sharedMaterial.HasProperty(customMaterialColorProperty)
+                        ? target.sharedMaterial.GetColor(customMaterialColorProperty)
                         : Color.white)
-                    : target.material.color;
+                    : target.sharedMaterial.color;
 
                 return new Color[] { color };
             }
