@@ -47,16 +47,11 @@ namespace Unity.Theme.Binders
             if (target.material != null)
             {
                 Color color;
-                if (useCustomProperty && !string.IsNullOrEmpty(customMaterialColorProperty))
-                {
-                    color = target.material.HasProperty(customMaterialColorProperty)
+                color = (useCustomProperty && !string.IsNullOrEmpty(customMaterialColorProperty))
+                    ? (target.material.HasProperty(customMaterialColorProperty)
                         ? target.material.GetColor(customMaterialColorProperty)
-                        : Color.white;
-                }
-                else
-                {
-                    color = target.material.color;
-                }
+                        : Color.white)
+                    : target.material.color;
 
                 return new Color[] { color };
             }
