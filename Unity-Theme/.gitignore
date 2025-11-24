@@ -83,3 +83,6 @@ crashlytics-build.properties
 # Appodeal
 /Assets/Appodeal/**
 /Assets/Appodeal.meta
+
+# MCP Servers
+.vscode/mcp.json
