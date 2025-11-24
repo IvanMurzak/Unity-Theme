@@ -3,6 +3,9 @@ using TMPro;
 
 namespace Unity.Theme.Binders
 {
+    /// <summary>
+    /// Binds theme colors to a TextMeshProUGUI's color property.
+    /// </summary>
     [AddComponentMenu("Theme/TextMeshPro Color Binder")]
     public class TextMeshProColorBinder : GenericColorBinder<TextMeshProUGUI>
     {

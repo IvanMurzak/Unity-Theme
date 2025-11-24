@@ -9,7 +9,7 @@
   "EnabledResources": [
     "*"
   ],
-  "Host": "http://localhost:8080",
+  "Host": "http://localhost:10088",
   "TimeoutMs": 10000,
-  "KeepConnected": false
+  "KeepConnected": true
 }

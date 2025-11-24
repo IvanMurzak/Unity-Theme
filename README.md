@@ -78,11 +78,17 @@ There is a list of built-in color binders:
 - ✔️ Light
 - ✔️ Image
 - ✔️ Button
+- ✔️ Shadow
 - ✔️ Toggle
-- ✔️ Material
+- ✔️ Outline
+- ✔️ Renderer
 - ✔️ Selectable
 - ✔️ TextMeshPro
+- ✔️ LineRenderer
+- ✔️ MeshRenderer
 - ✔️ SpriteRenderer
+- ✔️ SkinnedMeshRenderer
+- ✔️ SpriteShapeRenderer
 
 ![Unity-Theme-Binder](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/6198af48-9f0e-4cda-b5e9-40508bbd5c45)
 
