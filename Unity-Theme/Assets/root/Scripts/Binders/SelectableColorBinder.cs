@@ -7,7 +7,7 @@ namespace Unity.Theme.Binders
     /// Binds theme colors to a Unity Selectable's ColorBlock
     /// Supports binding all 5 states: Normal, Highlighted, Pressed, Selected, and Disabled
     /// </summary>
-    [RequireComponent(typeof(Selectable))]
+    [AddComponentMenu("Theme/Selectable Color Binder")]
     public class SelectableColorBinder : GenericMultiColorBinder<Selectable>
     {
         // Color entry indices for Selectable's ColorBlock

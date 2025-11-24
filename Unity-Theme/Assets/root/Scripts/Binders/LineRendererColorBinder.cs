@@ -7,7 +7,6 @@ namespace Unity.Theme.Binders
     /// Supports binding the color
     /// </summary>
     [AddComponentMenu("Theme/LineRenderer Color Binder")]
-    [RequireComponent(typeof(LineRenderer))]
     public class LineRendererColorBinder : GenericMultiColorBinder<LineRenderer>
     {
         // Color entry indices for LineRenderer

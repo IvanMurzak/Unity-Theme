@@ -7,8 +7,7 @@ namespace Unity.Theme.Binders
     /// Supports binding the main material color property or a custom shader property
     /// </summary>
     [AddComponentMenu("Theme/MeshRenderer Color Binder")]
-    [RequireComponent(typeof(MeshRenderer))]
-    public class MeshRendererColorBinder : RendererColorBinder
+    public class MeshRendererColorBinder : GenericRendererColorBinder<MeshRenderer>
     {
     }
 }
