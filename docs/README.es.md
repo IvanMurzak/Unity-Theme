@@ -1,5 +1,3 @@
-<b>[English](https://github.com/IvanMurzak/Unity-Theme/blob/main/README.md) | [中文](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.zh-CN.md) | [日本語](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.ja.md)</b>
-
 # [Unity-Theme (Paleta de Colores)](https://github.com/IvanMurzak/Unity-Theme)
 
 [![openupm](https://img.shields.io/npm/v/extensions.unity.theme?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.theme/)
@@ -14,6 +12,12 @@
 Crea paletas de colores y componentes para cambiar colores específicos en elementos visuales específicos. Muy útil para UI.
 
 ![Unity-Theme-1](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/1c545d11-aea4-4cd2-8aaa-75539bbb6699)
+
+<div align="center" width="100%">
+
+<b>[English](https://github.com/IvanMurzak/Unity-Theme/blob/main/README.md) | [中文](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.zh-CN.md) | [日本語](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.ja.md)</b>
+
+</div>
 
 ## Características
 

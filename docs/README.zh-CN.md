@@ -1,5 +1,3 @@
-<b>[English](https://github.com/IvanMurzak/Unity-Theme/blob/main/README.md) | [日本語](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.ja.md) | [Español](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.es.md)</b>
-
 # [Unity-Theme（调色板）](https://github.com/IvanMurzak/Unity-Theme)
 
 [![openupm](https://img.shields.io/npm/v/extensions.unity.theme?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.theme/)
@@ -14,6 +12,12 @@
 创建颜色调色板和组件，以更改特定视觉元素上的特定颜色。对 UI 非常有用。
 
 ![Unity-Theme-1](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/1c545d11-aea4-4cd2-8aaa-75539bbb6699)
+
+<div align="center" width="100%">
+
+<b>[English](https://github.com/IvanMurzak/Unity-Theme/blob/main/README.md) | [日本語](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.ja.md) | [Español](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.es.md)</b>
+
+</div>
 
 ## 功能特性
 

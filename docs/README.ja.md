@@ -1,5 +1,3 @@
-<b>[English](https://github.com/IvanMurzak/Unity-Theme/blob/main/README.md) | [中文](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.zh-CN.md) | [Español](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.es.md)</b>
-
 # [Unity-Theme（カラーパレット）](https://github.com/IvanMurzak/Unity-Theme)
 
 [![openupm](https://img.shields.io/npm/v/extensions.unity.theme?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.theme/)
@@ -14,6 +12,12 @@
 カラーパレットとコンポーネントを作成して、特定のビジュアル要素の特定の色を変更します。UI に非常に便利です。
 
 ![Unity-Theme-1](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/1c545d11-aea4-4cd2-8aaa-75539bbb6699)
+
+<div align="center" width="100%">
+
+<b>[English](https://github.com/IvanMurzak/Unity-Theme/blob/main/README.md) | [中文](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.zh-CN.md) | [Español](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.es.md)</b>
+
+</div>
 
 ## 機能
 

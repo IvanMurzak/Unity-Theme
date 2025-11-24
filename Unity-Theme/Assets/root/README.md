@@ -13,6 +13,12 @@ Create palettes of colors and components to change specific colors on a specific
 
 ![Unity-Theme-1](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/1c545d11-aea4-4cd2-8aaa-75539bbb6699)
 
+<div align="center" width="100%">
+
+<b>[中文](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.zh-CN.md) | [日本語](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.ja.md) | [Español](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.es.md)</b>
+
+</div>
+
 ## Features
 
 - ✔️ Name colors
@@ -69,6 +75,7 @@ A component that binds a color to a specific target, such as `Image`, `SpriteRen
 
 There is a list of built-in color binders:
 
+- ✔️ Light
 - ✔️ Image
 - ✔️ Button
 - ✔️ Toggle
