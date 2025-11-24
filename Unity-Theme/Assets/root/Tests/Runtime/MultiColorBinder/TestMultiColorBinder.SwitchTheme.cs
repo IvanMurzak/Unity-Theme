@@ -41,6 +41,7 @@ namespace Unity.Theme.Tests
 
             // Switch to theme 2
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme2.Name;
+            yield return null;
 
             // Verify colors updated to Theme2
             colorBlock = target.colors;
@@ -66,6 +67,7 @@ namespace Unity.Theme.Tests
 
             // Switch to theme 2 - alpha override should be preserved
             Theme.Instance.CurrentThemeName = TestUtils.C_Theme2.Name;
+            yield return null;
 
             colorBlock = target.colors;
             Assert.AreEqual(TestUtils.C_Theme2.Color1.Value.HexToColor().SetA(0.5f), colorBlock.normalColor);
