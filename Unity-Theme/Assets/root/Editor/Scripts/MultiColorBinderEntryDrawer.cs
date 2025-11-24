@@ -27,7 +27,6 @@ namespace Unity.Theme.Editor
             // Create a container for the label
             var labelContainer = new VisualElement();
             labelContainer.style.flexDirection = FlexDirection.Row;
-            // labelContainer.style.marginBottom = 0;
 
             // Create label field (readonly)
             var labelField = new TextField("Label");
