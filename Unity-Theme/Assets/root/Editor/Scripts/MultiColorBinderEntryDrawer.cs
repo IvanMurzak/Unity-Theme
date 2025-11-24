@@ -11,7 +11,15 @@ namespace Unity.Theme.Editor
         public override VisualElement CreatePropertyGUI(SerializedProperty property)
         {
             var root = new VisualElement();
-            root.style.marginBottom = 8;
+            root.style.marginBottom = 4;
+
+            // Add a separator line
+            var separator = new VisualElement();
+            separator.style.height = 1;
+            separator.style.backgroundColor = new StyleColor(new Color(0.5f, 0.5f, 0.5f, 0.3f));
+            separator.style.marginTop = 4;
+            separator.style.marginBottom = 10;
+            root.Add(separator);
 
             var labelProperty = property.FindPropertyRelative(nameof(Binders.MultiColorBinderEntry.label));
             var colorDataProperty = property.FindPropertyRelative(nameof(Binders.MultiColorBinderEntry.colorData));
@@ -19,7 +27,7 @@ namespace Unity.Theme.Editor
             // Create a container for the label
             var labelContainer = new VisualElement();
             labelContainer.style.flexDirection = FlexDirection.Row;
-            labelContainer.style.marginBottom = 0;
+            // labelContainer.style.marginBottom = 0;
 
             // Create label field (readonly)
             var labelField = new TextField("Label");
@@ -38,14 +46,6 @@ namespace Unity.Theme.Editor
             colorDataField.Bind(property.serializedObject);
 
             root.Add(colorDataField);
-
-            // Add a separator line
-            var separator = new VisualElement();
-            separator.style.height = 1;
-            separator.style.backgroundColor = new StyleColor(new Color(0.5f, 0.5f, 0.5f, 0.3f));
-            separator.style.marginTop = 4;
-            separator.style.marginBottom = 4;
-            root.Add(separator);
 
             return root;
         }

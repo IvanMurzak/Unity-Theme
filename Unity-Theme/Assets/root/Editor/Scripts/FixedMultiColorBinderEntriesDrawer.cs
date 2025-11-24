@@ -26,13 +26,6 @@ namespace Unity.Theme.Binders
                 return root;
             }
 
-            // Create a foldout for the entries
-            var foldout = new Foldout
-            {
-                text = $"Color Bindings ({entriesProperty.arraySize})",
-                value = true // Start expanded
-            };
-
             // Add each entry to the foldout
             for (int i = 0; i < entriesProperty.arraySize; i++)
             {
@@ -40,13 +33,11 @@ namespace Unity.Theme.Binders
 
                 // Create a PropertyField for each entry
                 // This will use the MultiColorBinderEntryDrawer for rendering
-                var entryField = new PropertyField(elementProperty, $"Entry {i}");
+                var entryField = new PropertyField(elementProperty, $"Color Binding {i}");
                 entryField.Bind(property.serializedObject);
 
-                foldout.Add(entryField);
+                root.Add(entryField);
             }
-
-            root.Add(foldout);
 
             return root;
         }
