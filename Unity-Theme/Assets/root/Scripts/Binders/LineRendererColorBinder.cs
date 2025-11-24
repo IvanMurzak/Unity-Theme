@@ -3,8 +3,8 @@ using UnityEngine;
 namespace Unity.Theme.Binders
 {
     /// <summary>
-    /// Binds theme colors to a LineRenderer's color
-    /// Supports binding the color
+    /// Binds theme colors to a LineRenderer's color.
+    /// Supports binding separate start and end colors.
     /// </summary>
     [AddComponentMenu("Theme/LineRenderer Color Binder")]
     public class LineRendererColorBinder : GenericMultiColorBinder<LineRenderer>
