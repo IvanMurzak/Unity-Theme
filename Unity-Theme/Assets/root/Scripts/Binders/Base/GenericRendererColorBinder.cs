@@ -29,15 +29,20 @@ namespace Unity.Theme.Binders
 
         protected override void SetColors(T targetComponent, Color[] colors)
         {
-            if (targetComponent.sharedMaterial != null)
+            if (colors == null || colors.Length <= MATERIAL_COLOR_INDEX)
+            {
+                LogError("Invalid colors array provided to SetColors.");
+                return;
+            }
+            if (targetComponent.material != null)
             {
                 if (useCustomProperty && !string.IsNullOrEmpty(customMaterialColorProperty))
                 {
-                    targetComponent.sharedMaterial.SetColor(customMaterialColorProperty, colors[MATERIAL_COLOR_INDEX]);
+                    targetComponent.material.SetColor(customMaterialColorProperty, colors[MATERIAL_COLOR_INDEX]);
                 }
                 else
                 {
-                    targetComponent.sharedMaterial.color = colors[MATERIAL_COLOR_INDEX];
+                    targetComponent.material.color = colors[MATERIAL_COLOR_INDEX];
                 }
             }
         }
