@@ -1,100 +1,106 @@
-# [Unity-Theme (Color Palette)](https://github.com/IvanMurzak/Unity-Theme)
+# [Unity-Theme (Paleta de Colores)](https://github.com/IvanMurzak/Unity-Theme)
 
 [![openupm](https://img.shields.io/npm/v/extensions.unity.theme?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.theme/)
-[![r](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg 'Tests Passed')](https://github.com/IvanMurzak/Unity-Theme/actions/workflows/release.yml)
-[![Unity Editor](https://img.shields.io/badge/Editor-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Editor supported')](https://unity.com/releases/editor/archive)
-[![Unity Runtime](https://img.shields.io/badge/Runtime-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Runtime supported')](https://unity.com/releases/editor/archive)
+[![r](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg 'Pruebas Superadas')](https://github.com/IvanMurzak/Unity-Theme/actions/workflows/release.yml)
+[![Unity Editor](https://img.shields.io/badge/Editor-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Editor compatible')](https://unity.com/releases/editor/archive)
+[![Unity Runtime](https://img.shields.io/badge/Runtime-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Runtime compatible')](https://unity.com/releases/editor/archive)
 
 [![Stars](https://img.shields.io/github/stars/IvanMurzak/Unity-Theme 'Stars')](https://github.com/IvanMurzak/Unity-Theme/stargazers)
 [![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme)](https://github.com/IvanMurzak/Unity-Theme/blob/main/LICENSE)
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
-Create palettes of colors and components to change specific colors on a specific visual element. Very useful for UI.
+Crea paletas de colores y componentes para cambiar colores específicos en elementos visuales específicos. Muy útil para UI.
 
 ![Unity-Theme-1](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/1c545d11-aea4-4cd2-8aaa-75539bbb6699)
 
 <div align="center" width="100%">
 
-<b>[中文](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.zh-CN.md) | [日本語](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.ja.md) | [Español](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.es.md)</b>
+<b>[English](https://github.com/IvanMurzak/Unity-Theme/blob/main/README.md) | [中文](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.zh-CN.md) | [日本語](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.ja.md)</b>
 
 </div>
 
-## Features
+## Características
 
-- ✔️ Name colors
-- ✔️ Create custom themes with names
-- ✔️ Add as many colors as you need
-- ✔️ Name a theme as you want
-- ✔️ Change theme any moment by name
-- ✔️ Bind color to: `Image`, `SpriteRenderer`, `TextMeshPro`, etc
-- ✔️ Easy way to add custom color binder by new C# class with just a few lines of code
-- ✔️ Rename color even after binding to a component, with no broken links
+- ✔️ Nombrar colores
+- ✔️ Crear temas personalizados con nombres
+- ✔️ Agregar tantos colores como necesites
+- ✔️ Nombrar temas como quieras
+- ✔️ Cambiar tema en cualquier momento por nombre
+- ✔️ Vincular color a: `Image`, `SpriteRenderer`, `TextMeshPro`, etc
+- ✔️ Forma fácil de agregar vinculador de color personalizado con una nueva clase C# con solo unas pocas líneas de código
+- ✔️ Renombrar color incluso después de vincular a un componente, sin enlaces rotos
 
-## Stability status
+## Estado de estabilidad
 
-| Unity Version | Editor test | Player test | Build test |
+| Versión Unity | Prueba Editor | Prueba Player | Prueba Build |
 |---------------|-------------|-------------|------------|
 | 2022.3.57f1   | ![2022.3.57f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-57f1-editmode) | ![2022.3.57f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-57f1-playmode) | ![2022.3.57f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-57f1-standalone) |
 | 2023.1.20f1   | ![2023.1.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-1-20f1-editmode) | ![2023.1.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-1-20f1-playmode) | ![2023.1.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-1-20f1-standalone) |
 | 2023.2.20f1   | ![2023.2.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-20f1-editmode) | ![2023.2.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-20f1-playmode) | ![2023.2.20f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-20f1-standalone) |
 | 6000.0.37f1   | ![6000.0.37f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-0-37f1-editmode) | ![6000.0.37f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-0-37f1-playmode) | ![6000.0.37f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-0-37f1-standalone) |
 
-# Installation
+# Instalación
 
-### Option 1 - Installer
+### Opción 1 - Instalador
 
-- **[⬇️ Download Installer](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.1.3/Unity-Theme-Installer.unitypackage)**
-- **📂 Import installer into Unity project**
-  > - You may use double click on the file - Unity will open it
-  > - OR: You may open Unity Editor first, then click on `Assets/Import Package/Custom Package`, then choose the file
+- **[⬇️ Descargar Instalador](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.1.3/Unity-Theme-Installer.unitypackage)**
+- **📂 Importar instalador al proyecto Unity**
+  > - Puede hacer doble clic en el archivo - Unity lo abrirá
+  > - O: Puede abrir Unity Editor primero, luego hacer clic en `Assets/Import Package/Custom Package`, luego elegir el archivo
 
-### Option 2 - OpenUPM-CLI
+### Opción 2 - OpenUPM-CLI
 
-- [⬇️ Install OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
-- 📟 Open command line in Unity project folder
+- [⬇️ Instalar OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
+- 📟 Abrir línea de comandos en la carpeta del proyecto Unity
 
 ```bash
 openupm add extensions.unity.theme
 ```
 
-### Option 3 - Asset Store
+### Opción 3 - Asset Store
 
-- **[▶️ Open Asset Store](https://u3d.as/3DQp)**
+- **[▶️ Abrir Asset Store](https://u3d.as/3DQp)**
 
 ---
 
-# Usage
+# Uso
 
-- Go to `Window/Unity-Theme`
-- Customize color palettes as you want
-- Add `ColorBinder` components to a target GameObject
+- Ir a `Window/Unity-Theme`
+- Personalizar paletas de colores como desees
+- Agregar componentes `ColorBinder` al GameObject de destino
 
-### Color Binder
+### Vinculador de Color
 
-A component that binds a color to a specific target, such as `Image`, `SpriteRenderer`, `TextMeshPro`, or anything else.
+Un componente que vincula un color a un objetivo específico, como `Image`, `SpriteRenderer`, `TextMeshPro`, o cualquier otra cosa.
 
-There is a list of built-in color binders:
+Hay una lista de vinculadores de color incorporados:
 
 - ✔️ Light
 - ✔️ Image
 - ✔️ Button
+- ✔️ Shadow
 - ✔️ Toggle
-- ✔️ Material
+- ✔️ Outline
+- ✔️ Renderer
 - ✔️ Selectable
 - ✔️ TextMeshPro
+- ✔️ LineRenderer
+- ✔️ MeshRenderer
 - ✔️ SpriteRenderer
+- ✔️ SkinnedMeshRenderer
+- ✔️ SpriteShapeRenderer
 
 ![Unity-Theme-Binder](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/6198af48-9f0e-4cda-b5e9-40508bbd5c45)
 
-### Color palettes
+### Paletas de colores
 
-Modify palettes, instant response with all connected GameObjects.
+Modifica paletas, respuesta instantánea con todos los GameObjects conectados.
 
 ![Unity-Theme-Palettes](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/179215af-23f1-4a8e-bb29-a7169f3433a5)
 
-## C# Api
+## API de C#
 
-### Colors
+### Colores
 
 ```csharp
 using Unity.Theme;
@@ -113,7 +119,7 @@ Theme.Instance.RemoveColor(colorData);
 Theme.Instance.RemoveAllColors();
 ```
 
-### Themes
+### Temas
 
 ```csharp
 using Unity.Theme;
@@ -128,9 +134,9 @@ Theme.Instance.RemoveTheme("Light");
 Theme.Instance.RemoveAllThemes();
 ```
 
-### Create a custom `ColorBinder`
+### Crear un `ColorBinder` personalizado
 
-If you need to bind color to something else, you may extend from `BaseColorBinder` as listed below.
+Si necesita vincular color a otra cosa, puede extender desde `BaseColorBinder` como se indica a continuación.
 
 ```C#
 using UnityEngine;
@@ -150,40 +156,40 @@ namespace Unity.Theme.Binders
 }
 ```
 
-## Other
+## Otros
 
-- **[Color palette builder](https://m3.material.io/theme-builder#/custom)** by Google's Material Design V3
+- **[Constructor de paleta de colores](https://m3.material.io/theme-builder#/custom)** de Material Design V3 de Google
 
 ---
 
-## Migration from `2.x.x` version
+## Migración desde la versión `2.x.x`
 
-The version `3.x.x` or newer has a different database structure, so you need to migrate your data manually if you want to keep existed binders to still be connected to a right color. The binders are using GUIDs to connect to colors.
+La versión `3.x.x` o más reciente tiene una estructura de base de datos diferente, por lo que necesita migrar sus datos manualmente si desea mantener los vinculadores existentes conectados al color correcto. Los vinculadores utilizan GUIDs para conectarse a los colores.
 
-> ❗❗❗**Please follow the exact steps order**
+> ❗❗❗**Por favor, siga el orden exacto de los pasos**
 
-### Step 1
+### Paso 1
 
-Close Unity project to avoid any data loss.
+Cerrar el proyecto Unity para evitar cualquier pérdida de datos.
 
-### Step 2 - backup
+### Paso 2 - copia de seguridad
 
-- Make a backup copy of `Assets/Resources/Unity-Theme Database.asset`, put it outside of a project.
-- Make a screenshot of colors in each theme to reproduce them later with color picker.
+- Hacer una copia de seguridad de `Assets/Resources/Unity-Theme Database.asset`, colocarla fuera del proyecto.
+- Hacer una captura de pantalla de los colores en cada tema para reproducirlos más tarde con el selector de color.
 
-### Step 3 - database template
+### Paso 3 - plantilla de base de datos
 
-- Download [Unity-Theme-Database.json](https://raw.githubusercontent.com/IvanMurzak/Unity-Theme/refs/heads/main/Assets/Resources/Unity-Theme-Database.json).
-- Save it at `Assets/Resources/Unity-Theme-Database.json`.
-- Use it as a template. Feel free to delete all existed colors if you want.
+- Descargar [Unity-Theme-Database.json](https://raw.githubusercontent.com/IvanMurzak/Unity-Theme/refs/heads/main/Assets/Resources/Unity-Theme-Database.json).
+- Guardarlo en `Assets/Resources/Unity-Theme-Database.json`.
+- Usarlo como plantilla. Siéntase libre de eliminar todos los colores existentes si lo desea.
 
-### Step 4 - data migration
+### Paso 4 - migración de datos
 
-**You need to copy GUIDs** from `Assets/Resources/Unity-Theme Database.asset`  to `Assets/Resources/Unity-Theme-Database.json`. To do that, please take a look at the samples below. You may see what is data format of old and new databases, and how to copy GUIDs. You may ignore color for now, it is easier to change color values later using color picker tool and the screenshot of old color palette.
+**Necesita copiar los GUIDs** desde `Assets/Resources/Unity-Theme Database.asset` a `Assets/Resources/Unity-Theme-Database.json`. Para hacerlo, consulte los ejemplos a continuación. Puede ver cuál es el formato de datos de las bases de datos antiguas y nuevas, y cómo copiar los GUIDs. Puede ignorar el color por ahora, es más fácil cambiar los valores de color más tarde usando la herramienta de selector de color y la captura de pantalla de la paleta de colores antigua.
 
-#### Sample of `Assets/Resources/Unity-Theme Database.asset` - old file (source)
+#### Ejemplo de `Assets/Resources/Unity-Theme Database.asset` - archivo antiguo (origen)
 
-Take a look at the `guid: 6b934efb-0b9b-42fd-82fd-7a0dbd1de53c`, the file contains it 3 times, depends on your setup. You would need to copy the guid to the `Unity-Theme-Database.json` file.
+Observe el `guid: 6b934efb-0b9b-42fd-82fd-7a0dbd1de53c`, el archivo lo contiene 3 veces, dependiendo de su configuración. Necesitará copiar el guid al archivo `Unity-Theme-Database.json`.
 
 ```yaml
   colors:
@@ -216,10 +222,10 @@ Take a look at the `guid: 6b934efb-0b9b-42fd-82fd-7a0dbd1de53c`, the file contai
       color: {r: 0.15294118, g: 0.15294118, b: 0.15686275, a: 1}
 ```
 
-### Sample of `Assets/Resources/Unity-Theme-Database.json` - new file (destination)
+### Ejemplo de `Assets/Resources/Unity-Theme-Database.json` - archivo nuevo (destino)
 
-That is the file that you need to make in the end of the migration process.
-When you done, you may need to close & open Unity project to let Unity-Theme to reload the data.
+Este es el archivo que necesita crear al final del proceso de migración.
+Cuando termine, es posible que deba cerrar y abrir el proyecto Unity para permitir que Unity-Theme recargue los datos.
 
 ```json
 {
@@ -255,21 +261,21 @@ When you done, you may need to close & open Unity project to let Unity-Theme to 
 }
 ```
 
-### Step 5 - package update
+### Paso 5 - actualización del paquete
 
-- Delete Unity-Theme `2.x.x` from the project while Unity is closed
+- Eliminar Unity-Theme `2.x.x` del proyecto mientras Unity está cerrado
 
 ```bash
 openupm remove extensions.unity.theme
 ```
 
-- Install latest Unity-Theme
+- Instalar Unity-Theme más reciente
 
 ```bash
 openupm add extensions.unity.theme
 ```
 
-### Step 6 - cleaning up
+### Paso 6 - limpieza
 
-- Delete the `Assets/Resources/Unity-Theme Database.asset` file (original and copy).
-- ✅ migration completed, well done!
+- Eliminar el archivo `Assets/Resources/Unity-Theme Database.asset` (original y copia).
+- ✅ migración completada, ¡bien hecho!
