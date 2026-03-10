@@ -80,9 +80,7 @@ crashlytics-build.properties
 # ODIN plugin
 /Assets/Plugins/Sirenix**
 
-# Appodeal
-/Assets/Appodeal/**
-/Assets/Appodeal.meta
-
 # MCP Servers
 .vscode/mcp.json
+
+UserSettings/

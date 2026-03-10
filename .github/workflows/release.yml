@@ -23,7 +23,7 @@ jobs:
           echo "InstallerProjectPath=./Installer" >> $GITHUB_OUTPUT
           echo "InstallerFileName=Unity-Theme-Installer" >> $GITHUB_OUTPUT
           echo "InstallerExportMethod=com.IvanMurzak.Unity.Theme.Installer.PackageExporter.ExportPackage" >> $GITHUB_OUTPUT
-          echo "InstallerUnityVersion=2022.3.57f1" >> $GITHUB_OUTPUT
+          echo "InstallerUnityVersion=2022.3.62f3" >> $GITHUB_OUTPUT
 
   check-version-tag:
     needs: setup
@@ -122,12 +122,12 @@ jobs:
 
   # --- EDIT MODE ---
 
-  test-unity-2022-3-57f1-editmode:
+  test-unity-2022-3-62f3-editmode:
     needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
       projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
-      unityVersion: '2022.3.57f1'
+      unityVersion: '2022.3.62f3'
       testMode: 'editmode'
     secrets: inherit
 
@@ -160,12 +160,12 @@ jobs:
 
   # --- PLAY MODE ---
 
-  test-unity-2022-3-57f1-playmode:
+  test-unity-2022-3-62f3-playmode:
     needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
       projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
-      unityVersion: '2022.3.57f1'
+      unityVersion: '2022.3.62f3'
       testMode: 'playmode'
     secrets: inherit
 
@@ -198,12 +198,12 @@ jobs:
 
   # --- STANDALONE ---
 
-  test-unity-2022-3-57f1-standalone:
+  test-unity-2022-3-62f3-standalone:
     needs: [setup, build-unity-installer]
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
       projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
-      unityVersion: '2022.3.57f1'
+      unityVersion: '2022.3.62f3'
       testMode: 'standalone'
     secrets: inherit
 
@@ -241,9 +241,9 @@ jobs:
     needs: [
       check-version-tag,
       build-unity-installer,
-      test-unity-2022-3-57f1-editmode,
-      test-unity-2022-3-57f1-playmode,
-      test-unity-2022-3-57f1-standalone,
+      test-unity-2022-3-62f3-editmode,
+      test-unity-2022-3-62f3-playmode,
+      test-unity-2022-3-62f3-standalone,
       test-unity-2023-1-20f1-editmode,
       test-unity-2023-1-20f1-playmode,
       test-unity-2023-1-20f1-standalone,
