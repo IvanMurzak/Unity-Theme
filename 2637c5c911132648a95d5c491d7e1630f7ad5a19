@@ -1,0 +1,23 @@
+CLAUDE.md
+  d7cc45c254726887 45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.10",
+  "base_commit_sha": "2637c5c911132648a95d5c491d7e1630f7ad5a19",
+  "prompts": {
+    "d7cc45c254726887": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "68c35ff5-2319-4687-a0b9-7cd588b6deb2",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Ivan Murzak <Ivan.D.Murzak@gmail.com>",
+      "messages": [],
+      "total_additions": 1866,
+      "total_deletions": 1928,
+      "accepted_lines": 571,
+      "overriden_lines": 0
+    }
+  }
+}
