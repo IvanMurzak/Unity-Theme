@@ -1,23 +1,21 @@
-# [Unity-Theme (Color Palette)](https://github.com/IvanMurzak/Unity-Theme)
+<div align="center" width="100%">
+  <h1>Unity-Theme — <i>Color Palette</i></h1>
 
-[![openupm](https://img.shields.io/npm/v/extensions.unity.theme?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/extensions.unity.theme/)
-[![r](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg 'Tests Passed')](https://github.com/IvanMurzak/Unity-Theme/actions/workflows/release.yml)
-[![Unity Editor](https://img.shields.io/badge/Editor-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Editor supported')](https://unity.com/releases/editor/archive)
-[![Unity Runtime](https://img.shields.io/badge/Runtime-X?style=flat&logo=unity&labelColor=333A41&color=49BC5C 'Unity Runtime supported')](https://unity.com/releases/editor/archive)
-
+[![OpenUPM](https://img.shields.io/npm/v/extensions.unity.theme?label=OpenUPM&registry_uri=https://package.openupm.com&labelColor=333A41 'OpenUPM package')](https://openupm.com/packages/extensions.unity.theme/)
+[![Unity Editor](https://img.shields.io/badge/Editor-X?style=flat&logo=unity&labelColor=333A41&color=2A2A2A 'Unity Editor supported')](https://unity.com/releases/editor/archive)
+[![Unity Runtime](https://img.shields.io/badge/Runtime-X?style=flat&logo=unity&labelColor=333A41&color=2A2A2A 'Unity Runtime supported')](https://unity.com/releases/editor/archive)
+[![r](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg 'Tests Passed')](https://github.com/IvanMurzak/Unity-Theme/actions/workflows/release.yml)</br>
 [![Stars](https://img.shields.io/github/stars/IvanMurzak/Unity-Theme 'Stars')](https://github.com/IvanMurzak/Unity-Theme/stargazers)
-[![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme)](https://github.com/IvanMurzak/Unity-Theme/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/IvanMurzak/Unity-Theme?label=License&labelColor=333A41)](https://github.com/IvanMurzak/Unity-Theme/blob/main/LICENSE)
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
-Create palettes of colors and components to change specific colors on a specific visual element. Very useful for UI.
+  <img src="https://github.com/IvanMurzak/Unity-Theme/assets/9135028/1c545d11-aea4-4cd2-8aaa-75539bbb6699" alt="Unity-Theme" width="100%">
 
-![Unity-Theme-1](https://github.com/IvanMurzak/Unity-Theme/assets/9135028/1c545d11-aea4-4cd2-8aaa-75539bbb6699)
-
-<div align="center" width="100%">
-
-<b>[中文](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.zh-CN.md) | [日本語](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.ja.md) | [Español](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.es.md)</b>
+  <b>[中文](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.zh-CN.md) | [日本語](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.ja.md) | [Español](https://github.com/IvanMurzak/Unity-Theme/blob/main/docs/README.es.md)</b>
 
 </div>
+
+Create palettes of colors and components to change specific colors on a specific visual element. Very useful for UI.
 
 ## Features
 
