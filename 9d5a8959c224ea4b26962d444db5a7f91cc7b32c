@@ -1,0 +1,37 @@
+CLAUDE.md
+  d7cc45c254726887 45
+.github/workflows/test_pull_request.yml
+  d7cc45c254726887 39,44,48,53,68,73,77,82,97,102,106,111
+.github/workflows/release.yml
+  d7cc45c254726887 134,139,143,148,163,168,172,177,192,197,201,206,220-225
+docs/README.ja.md
+  d7cc45c254726887 38-39
+docs/README.es.md
+  d7cc45c254726887 38-39
+README.md
+  d7cc45c254726887 38-39
+Unity-Theme/Assets/root/README.md
+  d7cc45c254726887 38-39
+docs/README.zh-CN.md
+  d7cc45c254726887 38-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.10",
+  "base_commit_sha": "9d5a8959c224ea4b26962d444db5a7f91cc7b32c",
+  "prompts": {
+    "d7cc45c254726887": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "68c35ff5-2319-4687-a0b9-7cd588b6deb2",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Ivan Murzak <Ivan.D.Murzak@gmail.com>",
+      "messages": [],
+      "total_additions": 2029,
+      "total_deletions": 2091,
+      "accepted_lines": 917,
+      "overriden_lines": 0
+    }
+  }
+}
