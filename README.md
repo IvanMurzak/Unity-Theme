@@ -41,7 +41,7 @@ Create palettes of colors and components to change specific colors on a specific
 
 ### Option 1 - Installer
 
-- **[⬇️ Download Installer](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.2.0/Unity-Theme-Installer.unitypackage)**
+- **[⬇️ Download Installer](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.3.0/Unity-Theme-Installer.unitypackage)**
 - **📂 Import installer into Unity project**
   > - You may use double click on the file - Unity will open it
   > - OR: You may open Unity Editor first, then click on `Assets/Import Package/Custom Package`, then choose the file

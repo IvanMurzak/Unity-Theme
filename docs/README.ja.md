@@ -41,7 +41,7 @@
 
 ### オプション 1 - インストーラー
 
-- **[⬇️ インストーラーをダウンロード](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.2.0/Unity-Theme-Installer.unitypackage)**
+- **[⬇️ インストーラーをダウンロード](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.3.0/Unity-Theme-Installer.unitypackage)**
 - **📂 インストーラーを Unity プロジェクトにインポート**
   > - ファイルをダブルクリック - Unity が開きます
   > - または：Unity エディタを先に開き、`Assets/Import Package/Custom Package` をクリックしてファイルを選択

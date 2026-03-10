@@ -41,7 +41,7 @@ Crea paletas de colores y componentes para cambiar colores específicos en eleme
 
 ### Opción 1 - Instalador
 
-- **[⬇️ Descargar Instalador](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.2.0/Unity-Theme-Installer.unitypackage)**
+- **[⬇️ Descargar Instalador](https://github.com/IvanMurzak/Unity-Theme/releases/download/4.3.0/Unity-Theme-Installer.unitypackage)**
 - **📂 Importar instalador al proyecto Unity**
   > - Puede hacer doble clic en el archivo - Unity lo abrirá
   > - O: Puede abrir Unity Editor primero, luego hacer clic en `Assets/Import Package/Custom Package`, luego elegir el archivo
