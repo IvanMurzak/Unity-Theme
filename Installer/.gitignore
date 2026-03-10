@@ -76,10 +76,7 @@ crashlytics-build.properties
 # ODIN Ignore all unpacked demos.
 /Assets/Plugins/Sirenix/Demos/*
 
-
 # ODIN plugin
 /Assets/Plugins/Sirenix**
 
-# Appodeal
-/Assets/Appodeal/**
-/Assets/Appodeal.meta
+UserSettings/
