@@ -42,7 +42,7 @@ Binders subscribe to Theme events, call abstract `SetColorInternal(Color)` on in
 Tests use Unity Test Framework (NUnit). Shared test utilities in `Tests/Base/` (`TestBase`, `TestUtils`).
 
 **Run tests via CI:** Tests run automatically on PRs (requires `ci-ok` label). The CI matrix tests:
-- 4 Unity versions: 2022.3.62f3, 2023.1.20f1, 2023.2.20f1, 6000.0.37f1
+- 3 Unity versions: 2022.3.62f3, 2023.2.22f1, 6000.3.9f1
 - 3 modes: editmode, playmode, standalone
 - 2 platforms: base, windows-mono
 
