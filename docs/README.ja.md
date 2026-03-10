@@ -35,7 +35,6 @@
 | Unity バージョン | エディタテスト | プレイヤーテスト | ビルドテスト |
 |---------------|-------------|-------------|------------|
 | 2022.3.62f3   | ![2022.3.62f3](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-62f3-editmode) | ![2022.3.62f3](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-62f3-playmode) | ![2022.3.62f3](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2022-3-62f3-standalone) |
-| 2023.2.22f1   | ![2023.2.22f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-22f1-editmode) | ![2023.2.22f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-22f1-playmode) | ![2023.2.22f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-2023-2-22f1-standalone) |
 | 6000.3.9f1    | ![6000.3.9f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-3-9f1-editmode) | ![6000.3.9f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-3-9f1-playmode) | ![6000.3.9f1](https://github.com/IvanMurzak/Unity-Theme/workflows/release/badge.svg?job=test-unity-6000-3-9f1-standalone) |
 
 # インストール
