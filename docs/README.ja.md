@@ -55,10 +55,6 @@
 openupm add extensions.unity.theme
 ```
 
-### オプション 3 - Asset Store
-
-- **[▶️ Asset Store を開く](https://u3d.as/3DQp)**
-
 ---
 
 # 使用方法

@@ -55,10 +55,6 @@ Create palettes of colors and components to change specific colors on a specific
 openupm add extensions.unity.theme
 ```
 
-### Option 3 - Asset Store
-
-- **[▶️ Open Asset Store](https://u3d.as/3DQp)**
-
 ---
 
 # Usage

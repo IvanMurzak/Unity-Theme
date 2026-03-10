@@ -55,10 +55,6 @@ Crea paletas de colores y componentes para cambiar colores específicos en eleme
 openupm add extensions.unity.theme
 ```
 
-### Opción 3 - Asset Store
-
-- **[▶️ Abrir Asset Store](https://u3d.as/3DQp)**
-
 ---
 
 # Uso
