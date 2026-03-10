@@ -36,30 +36,12 @@ jobs:
       testMode: 'editmode'
     secrets: inherit
 
-  test-unity-2023-1-20f1-editmode:
+  test-unity-6000-3-9f1-editmode:
     needs: setup
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
       projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
-      unityVersion: '2023.1.20f1'
-      testMode: 'editmode'
-    secrets: inherit
-
-  test-unity-2023-2-20f1-editmode:
-    needs: setup
-    uses: ./.github/workflows/test_unity_plugin.yml
-    with:
-      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
-      unityVersion: '2023.2.20f1'
-      testMode: 'editmode'
-    secrets: inherit
-
-  test-unity-6000-0-37f1-editmode:
-    needs: setup
-    uses: ./.github/workflows/test_unity_plugin.yml
-    with:
-      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
-      unityVersion: '6000.0.37f1'
+      unityVersion: '6000.3.9f1'
       testMode: 'editmode'
     secrets: inherit
 
@@ -74,30 +56,12 @@ jobs:
       testMode: 'playmode'
     secrets: inherit
 
-  test-unity-2023-1-20f1-playmode:
+  test-unity-6000-3-9f1-playmode:
     needs: setup
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
       projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
-      unityVersion: '2023.1.20f1'
-      testMode: 'playmode'
-    secrets: inherit
-
-  test-unity-2023-2-20f1-playmode:
-    needs: setup
-    uses: ./.github/workflows/test_unity_plugin.yml
-    with:
-      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
-      unityVersion: '2023.2.20f1'
-      testMode: 'playmode'
-    secrets: inherit
-
-  test-unity-6000-0-37f1-playmode:
-    needs: setup
-    uses: ./.github/workflows/test_unity_plugin.yml
-    with:
-      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
-      unityVersion: '6000.0.37f1'
+      unityVersion: '6000.3.9f1'
       testMode: 'playmode'
     secrets: inherit
 
@@ -112,30 +76,12 @@ jobs:
       testMode: 'standalone'
     secrets: inherit
 
-  test-unity-2023-1-20f1-standalone:
+  test-unity-6000-3-9f1-standalone:
     needs: setup
     uses: ./.github/workflows/test_unity_plugin.yml
     with:
       projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
-      unityVersion: '2023.1.20f1'
-      testMode: 'standalone'
-    secrets: inherit
-
-  test-unity-2023-2-20f1-standalone:
-    needs: setup
-    uses: ./.github/workflows/test_unity_plugin.yml
-    with:
-      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
-      unityVersion: '2023.2.20f1'
-      testMode: 'standalone'
-    secrets: inherit
-
-  test-unity-6000-0-37f1-standalone:
-    needs: setup
-    uses: ./.github/workflows/test_unity_plugin.yml
-    with:
-      projectPath: ${{ needs.setup.outputs.UnityProjectPath }}
-      unityVersion: '6000.0.37f1'
+      unityVersion: '6000.3.9f1'
       testMode: 'standalone'
     secrets: inherit
 
