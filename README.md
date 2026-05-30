@@ -171,7 +171,7 @@ Close Unity project to avoid any data loss.
 
 ### Step 3 - database template
 
-- Download [Unity-Theme-Database.json](https://raw.githubusercontent.com/IvanMurzak/Unity-Theme/refs/heads/main/Assets/Resources/Unity-Theme-Database.json).
+- Download [Unity-Theme-Database.json](https://raw.githubusercontent.com/IvanMurzak/Unity-Theme/refs/heads/main/Unity-Theme/Assets/Resources/Unity-Theme-Database.json).
 - Save it at `Assets/Resources/Unity-Theme-Database.json`.
 - Use it as a template. Feel free to delete all existed colors if you want.
 
